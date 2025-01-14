@@ -1,0 +1,224 @@
+[gd_scene load_steps=11 format=3 uid="uid://cs8rj4npc0qop"]
+
+[ext_resource type="Script" path="res://Scenes/Game/Events/events.gd" id="1_oq1nw"]
+[ext_resource type="Texture2D" uid="uid://cm7slspxam6cu" path="res://Assets/Background/table_bg_placeholder.png" id="2_b0nit"]
+[ext_resource type="PackedScene" uid="uid://dus7ooufchbdn" path="res://Scenes/Tests/Book/book.tscn" id="3_0gqvo"]
+[ext_resource type="Texture2D" uid="uid://bl57cocs385s5" path="res://Assets/Background/PopUps/stock_pop_up_placeholder.png" id="3_lccrf"]
+[ext_resource type="Texture2D" uid="uid://dsku03yxw0it0" path="res://Assets/Background/door_bg_placeholder.png" id="4_k716w"]
+[ext_resource type="Texture2D" uid="uid://ca2qefukgxv2a" path="res://Assets/Background/PopUps/street_placeholder.png" id="6_p7n0r"]
+
+[sub_resource type="Animation" id="Animation_f6da7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Effect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3rxub"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Effect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_njnqv"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Effect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_42486"]
+_data = {
+"RESET": SubResource("Animation_f6da7"),
+"fade_in": SubResource("Animation_3rxub"),
+"fade_out": SubResource("Animation_njnqv")
+}
+
+[node name="Events" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oq1nw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1917.0
+offset_bottom = 1078.0
+color = Color(0.215476, 0.223909, 0.225044, 1)
+
+[node name="Table" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_b0nit")
+
+[node name="BookButton" type="Button" parent="Table"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 225.0
+offset_top = 44.0
+offset_right = 441.0
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Book" parent="Table" instance=ExtResource("3_0gqvo")]
+visible = false
+layout_mode = 1
+offset_left = 176.0
+offset_top = 88.0
+offset_right = 176.0
+offset_bottom = 88.0
+
+[node name="Stock_BG" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 144.0
+offset_top = 360.0
+offset_right = 543.0
+offset_bottom = 1087.0
+color = Color(0.635159, 0.46026, 0.210433, 1)
+
+[node name="StockButton" type="Button" parent="Stock_BG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Stock" type="TextureRect" parent="Stock_BG"]
+visible = false
+layout_mode = 0
+offset_left = -144.0
+offset_top = -360.0
+offset_right = 1776.0
+offset_bottom = 720.0
+texture = ExtResource("3_lccrf")
+
+[node name="Door" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("4_k716w")
+
+[node name="DoorButton" type="Button" parent="Door"]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 397.0
+offset_right = 505.0
+offset_bottom = 612.0
+flat = true
+
+[node name="DoorWindow" type="TextureRect" parent="Door"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -425.0
+offset_right = 580.0
+offset_bottom = 315.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_p7n0r")
+expand_mode = 1
+
+[node name="Dia_Box" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -135.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.704818, 0.538178, 0.132393, 1)
+
+[node name="Label" type="Label" parent="Dia_Box"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "I could swear I had more recipes noted... I'll have to mix new things later."
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Button" type="Button" parent="Dia_Box"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -945.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Effect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_42486")
+}
+
+[connection signal="pressed" from="Table/BookButton" to="." method="_on_book_button_pressed"]
+[connection signal="pressed" from="Stock_BG/StockButton" to="." method="_on_stock_button_pressed"]
+[connection signal="pressed" from="Door/DoorButton" to="." method="_on_door_button_pressed"]
+[connection signal="pressed" from="Dia_Box/Button" to="." method="_on_button_pressed"]

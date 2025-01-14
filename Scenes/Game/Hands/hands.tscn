@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://3g3erktv6bpf"]
+
+[ext_resource type="Script" path="res://Scenes/Tests/TestScene/Inventory.gd" id="1_7mmu5"]
+[ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="1_607gc"]
+
+[node name="Hands" type="GridContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 20
+columns = 3
+script = ExtResource("1_7mmu5")
+
+[node name="Slot" parent="." instance=ExtResource("1_607gc")]
+layout_mode = 2
+
+[node name="Slot2" parent="." instance=ExtResource("1_607gc")]
+layout_mode = 2
+
+[node name="Slot3" parent="." instance=ExtResource("1_607gc")]
+layout_mode = 2

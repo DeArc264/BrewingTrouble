@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Potion" load_steps=6 format=3 uid="uid://b4wbr3wkgysgy"]
+
+[ext_resource type="Texture2D" uid="uid://dvg0e4sa6yhbx" path="res://Assets/Icons/Potions/Flask_A/weird_potion_flask_a.png" id="1_185q4"]
+[ext_resource type="Texture2D" uid="uid://c4itx2dumtnnu" path="res://Assets/Icons/Potions/Flask_B/weird_potion_flask_b.png" id="1_vpj8b"]
+[ext_resource type="Script" path="res://Resources/Item.gd" id="2_5kmq7"]
+[ext_resource type="Texture2D" uid="uid://ktuwjit3fob3" path="res://Assets/Icons/Potions/Flask_C/weird_potion_flask_c.png" id="3_6mop7"]
+[ext_resource type="Script" path="res://Resources/potion.gd" id="5_l0c36"]
+
+[resource]
+script = ExtResource("5_l0c36")
+recipe = Array[ExtResource("2_5kmq7")]([])
+flaskA = ExtResource("1_185q4")
+flaskB = ExtResource("1_vpj8b")
+flaskC = ExtResource("3_6mop7")
+state = "Wasted"
+icon = ExtResource("1_vpj8b")
+name = "Weird Potion"
+description = "A useless potion with unknown effect. Only someone insane would try to sell it."

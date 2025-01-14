@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Faces" load_steps=2 format=3 uid="uid://c7anjy5qg3gso"]
+
+[ext_resource type="Script" path="res://Resources/faces.gd" id="1_s6p1x"]
+
+[resource]
+script = ExtResource("1_s6p1x")
+shape = Array[Texture2D]([])
+nose = Array[Texture2D]([])
+eyes = Array[Texture2D]([])
+mouth = Array[Texture2D]([])
+ears = Array[Texture2D]([])

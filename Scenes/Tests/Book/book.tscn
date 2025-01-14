@@ -1,0 +1,104 @@
+[gd_scene load_steps=6 format=3 uid="uid://dus7ooufchbdn"]
+
+[ext_resource type="Script" path="res://Scenes/Tests/Book/book.gd" id="1_32dp3"]
+[ext_resource type="Texture2D" uid="uid://bdol1yidrh6tj" path="res://Assets/Background/PopUps/pop_up_bg.png" id="1_krvhh"]
+[ext_resource type="Texture2D" uid="uid://bk2wp84ucmxwg" path="res://Assets/Book/livro_receitas.png" id="3_ar4xy"]
+[ext_resource type="Texture2D" uid="uid://cbqkqfthivov1" path="res://Assets/Book/page_1.png" id="4_d5mcg"]
+[ext_resource type="Texture2D" uid="uid://b6f426ihj2pvk" path="res://Assets/Book/page_2.png" id="5_8pjvq"]
+
+[node name="Book" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.835516, 0.835516)
+script = ExtResource("1_32dp3")
+
+[node name="PopUpBg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_krvhh")
+
+[node name="BookBG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_ar4xy")
+expand_mode = 1
+
+[node name="Page1" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -477.0
+offset_top = -342.275
+offset_right = 417.0
+offset_bottom = 206.725
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_d5mcg")
+
+[node name="Page2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -477.0
+offset_top = -342.275
+offset_right = 417.0
+offset_bottom = 206.725
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_8pjvq")
+
+[node name="ReturnButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1699.0
+offset_top = 34.0
+offset_right = 1858.0
+offset_bottom = 114.0
+theme_override_font_sizes/font_size = 50
+text = "X"
+
+[node name="PreviousButton" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 32.0
+offset_top = -40.0
+offset_right = 77.0
+offset_bottom = 40.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "<"
+
+[node name="NextButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -40.0
+offset_right = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = ">"
+
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="PreviousButton" to="." method="_on_previous_button_pressed"]
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

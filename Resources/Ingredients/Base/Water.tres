@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://blob2sv1svnds"]
+
+[ext_resource type="Texture2D" uid="uid://cl5500v5wlmht" path="res://Assets/Icons/Ingredients/Normal/Bases/ingredient_water.png" id="1_4c88e"]
+[ext_resource type="Script" path="res://Resources/ingredient.gd" id="2_504gl"]
+
+[resource]
+script = ExtResource("2_504gl")
+normal_icon = ExtResource("1_4c88e")
+crushed_icon = ExtResource("1_4c88e")
+type = "Base"
+icon = ExtResource("1_4c88e")
+name = "Water"
+description = "The source of life... I guess"

@@ -1,0 +1,126 @@
+[gd_scene load_steps=11 format=3 uid="uid://dy28cq04q01tl"]
+
+[ext_resource type="Script" path="res://Scenes/Game/Home/home.gd" id="1_aowhy"]
+[ext_resource type="PackedScene" uid="uid://gdr3cf0jg005" path="res://Scenes/Game/Table/table.tscn" id="2_effv0"]
+[ext_resource type="PackedScene" uid="uid://v1uemubo3trk" path="res://Scenes/Game/Door/door.tscn" id="3_4ydmy"]
+[ext_resource type="PackedScene" uid="uid://c1p1lg8vh5nr8" path="res://Scenes/Game/Stock/stock.tscn" id="4_f762i"]
+[ext_resource type="PackedScene" uid="uid://cfvv7x84qgvlj" path="res://Scenes/Game/HUD/hud.tscn" id="5_f1pty"]
+[ext_resource type="PackedScene" uid="uid://cs8rj4npc0qop" path="res://Scenes/Game/Events/events.tscn" id="6_ibvh0"]
+
+[sub_resource type="Animation" id="Animation_f6da7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Effect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3rxub"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Effect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_njnqv"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Effect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_42486"]
+_data = {
+"RESET": SubResource("Animation_f6da7"),
+"fade_in": SubResource("Animation_3rxub"),
+"fade_out": SubResource("Animation_njnqv")
+}
+
+[node name="Home" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aowhy")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.109804, 0.109804, 0.109804, 1)
+
+[node name="Door" parent="." instance=ExtResource("3_4ydmy")]
+layout_mode = 1
+
+[node name="Table" parent="." instance=ExtResource("2_effv0")]
+layout_mode = 1
+
+[node name="Stock" parent="." instance=ExtResource("4_f762i")]
+layout_mode = 1
+
+[node name="HUD" parent="." instance=ExtResource("5_f1pty")]
+layout_mode = 1
+mouse_filter = 2
+
+[node name="Events" parent="." instance=ExtResource("6_ibvh0")]
+layout_mode = 1
+
+[node name="Effect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_42486")
+}
+
+[connection signal="day_start" from="Door" to="HUD" method="start_day"]
+[connection signal="move_to_stock" from="Door" to="." method="change_room" binds= ["stock"]]
+[connection signal="move_to_table" from="Door" to="." method="change_room" binds= ["table"]]
+[connection signal="order" from="Door" to="HUD" method="update_note"]
+[connection signal="pay" from="Door" to="HUD" method="_on_door_pay"]
+[connection signal="move_to_door" from="Table" to="." method="change_room" binds= ["door"]]
+[connection signal="move_to_stock" from="Table" to="." method="change_room" binds= ["stock"]]
+[connection signal="new_item" from="Table" to="HUD" method="_get_item"]
+[connection signal="get_ingredient" from="Stock" to="HUD" method="_get_item"]
+[connection signal="move_to_door" from="Stock" to="." method="change_room" binds= ["door"]]
+[connection signal="move_to_table" from="Stock" to="." method="change_room" binds= ["table"]]
+[connection signal="buy_ingredient" from="HUD" to="Stock" method="add_stock_item"]
+[connection signal="day_over" from="HUD" to="." method="_on_day_over"]

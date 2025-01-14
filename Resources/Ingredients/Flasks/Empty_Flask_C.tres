@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ck30j2kwwdvko"]
+
+[ext_resource type="Texture2D" uid="uid://s3qr6m3pncxg" path="res://Assets/Icons/Potions/Flask_C/flask_c_empty.png" id="1_g1dca"]
+[ext_resource type="Script" path="res://Resources/Item.gd" id="2_h7hul"]
+
+[resource]
+script = ExtResource("2_h7hul")
+icon = ExtResource("1_g1dca")
+name = "Empty C"
+recipe = Array[ExtResource("2_h7hul")]([])
+type = "Flask"
+description = ""

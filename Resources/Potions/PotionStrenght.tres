@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Potion" load_steps=9 format=3 uid="uid://d2qnj6b3mkl0d"]
+
+[ext_resource type="Texture2D" uid="uid://p3f316u8kmgi" path="res://Assets/Icons/Potions/Flask_A/strenght_potion_flask_a.png" id="1_ehrud"]
+[ext_resource type="Texture2D" uid="uid://6jqvn031t63t" path="res://Assets/Icons/Potions/Flask_B/strenght_potion_flask_b.png" id="1_hw7j0"]
+[ext_resource type="Script" path="res://Resources/Item.gd" id="2_ugkrt"]
+[ext_resource type="Texture2D" uid="uid://hf8iavdu0ene" path="res://Assets/Icons/Potions/Flask_C/strenght_potion_flask_c.png" id="3_1yqlh"]
+[ext_resource type="Resource" uid="uid://qlwtsvivu18e" path="res://Resources/Ingredients/Plant/Belladona.tres" id="4_bwmt2"]
+[ext_resource type="Resource" uid="uid://cyft3okg1sgdb" path="res://Resources/Ingredients/Base/Wine.tres" id="5_d8r6h"]
+[ext_resource type="Resource" uid="uid://d3qr7snp5bw8y" path="res://Resources/Ingredients/Plant/Lavander.tres" id="5_n5tgf"]
+[ext_resource type="Script" path="res://Resources/potion.gd" id="8_akmep"]
+
+[resource]
+script = ExtResource("8_akmep")
+recipe = Array[ExtResource("2_ugkrt")]([ExtResource("5_d8r6h"), ExtResource("4_bwmt2"), ExtResource("5_n5tgf")])
+flaskA = ExtResource("1_ehrud")
+flaskB = ExtResource("1_hw7j0")
+flaskC = ExtResource("3_1yqlh")
+state = "Normal"
+icon = ExtResource("1_ehrud")
+name = "Strenght Potion"
+description = "A potion that makes you stronger"

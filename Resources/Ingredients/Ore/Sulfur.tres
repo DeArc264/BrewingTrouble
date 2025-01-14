@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://b0n0k3n11fg4w"]
+
+[ext_resource type="Texture2D" uid="uid://bmlh8e72qdwlf" path="res://Assets/Icons/Ingredients/Normal/Ores/ingredient_sulfur.png" id="1_a1oxv"]
+[ext_resource type="Script" path="res://Resources/ingredient.gd" id="2_en5hv"]
+
+[resource]
+script = ExtResource("2_en5hv")
+normal_icon = ExtResource("1_a1oxv")
+crushed_icon = ExtResource("1_a1oxv")
+type = "Ore"
+icon = ExtResource("1_a1oxv")
+name = "Sulfur"
+description = "Smells a lot."

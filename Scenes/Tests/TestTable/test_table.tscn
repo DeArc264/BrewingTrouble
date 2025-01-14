@@ -1,0 +1,147 @@
+[gd_scene load_steps=9 format=3 uid="uid://bqytb6lpdqoul"]
+
+[ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="1_2cjq4"]
+[ext_resource type="Script" path="res://Scenes/Tests/TestTable/test_table.gd" id="1_ge2vl"]
+[ext_resource type="Resource" uid="uid://qlwtsvivu18e" path="res://Resources/Ingredients/Plant/Belladona.tres" id="2_no3ld"]
+[ext_resource type="Resource" uid="uid://d3qr7snp5bw8y" path="res://Resources/Ingredients/Plant/Lavander.tres" id="4_1i61o"]
+[ext_resource type="PackedScene" uid="uid://cun7jmlf65cbq" path="res://Scenes/Game/Mortar/mortar.tscn" id="4_1uh7f"]
+[ext_resource type="Script" path="res://Scenes/Tests/TestScene/Inventory.gd" id="4_2ybou"]
+[ext_resource type="PackedScene" uid="uid://clb5bygcnejvp" path="res://Scenes/Game/Caldron/caldron.tscn" id="4_dqpki"]
+[ext_resource type="PackedScene" uid="uid://3g3erktv6bpf" path="res://Scenes/Game/Hands/hands.tscn" id="6_0b7mu"]
+
+[node name="TestTable" type="Node2D"]
+script = ExtResource("1_ge2vl")
+
+[node name="Shelf" type="HBoxContainer" parent="."]
+offset_left = 971.0
+offset_top = 177.0
+offset_right = 1221.0
+offset_bottom = 277.0
+theme_override_constants/separation = 50
+
+[node name="Slot" parent="Shelf" instance=ExtResource("1_2cjq4")]
+layout_mode = 2
+item = ExtResource("2_no3ld")
+
+[node name="Slot2" parent="Shelf" instance=ExtResource("1_2cjq4")]
+layout_mode = 2
+item = ExtResource("4_1i61o")
+
+[node name="Dryer" parent="." instance=ExtResource("1_2cjq4")]
+offset_left = 635.0
+offset_top = 49.0
+offset_right = 735.0
+offset_bottom = 149.0
+
+[node name="CaldronTexture" type="ColorRect" parent="."]
+offset_left = 537.0
+offset_top = 331.0
+offset_right = 864.0
+offset_bottom = 509.0
+color = Color(0.529067, 0.529067, 0.529067, 1)
+
+[node name="Label" type="Label" parent="CaldronTexture"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Caldron"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="CaldronInvetory" type="GridContainer" parent="CaldronTexture"]
+layout_mode = 2
+offset_left = 112.0
+offset_top = 32.0
+offset_right = 212.0
+offset_bottom = 132.0
+script = ExtResource("4_2ybou")
+
+[node name="CaldronSlot" parent="CaldronTexture/CaldronInvetory" instance=ExtResource("1_2cjq4")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CaldronTexture"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 12.0
+offset_right = 75.0
+offset_bottom = 48.0
+text = "Mix"
+
+[node name="Caldron" parent="." instance=ExtResource("4_dqpki")]
+visible = false
+
+[node name="Bellows" type="Button" parent="."]
+offset_left = 322.0
+offset_top = 528.0
+offset_right = 483.0
+offset_bottom = 604.0
+text = "Bellows"
+
+[node name="Mortar" parent="." instance=ExtResource("4_1uh7f")]
+visible = false
+
+[node name="MortarSlot" parent="." instance=ExtResource("1_2cjq4")]
+offset_left = 981.0
+offset_top = 480.0
+offset_right = 1081.0
+offset_bottom = 580.0
+
+[node name="BoilTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="DryTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="BoilLabel" type="Label" parent="."]
+visible = false
+offset_left = 369.0
+offset_top = 426.0
+offset_right = 427.0
+offset_bottom = 449.0
+text = "Boiling!"
+
+[node name="BoilLabelTime" type="Label" parent="."]
+offset_left = 383.0
+offset_top = 466.0
+offset_right = 406.0
+offset_bottom = 489.0
+text = "0.0"
+
+[node name="DryLabel" type="Label" parent="."]
+visible = false
+offset_left = 666.0
+offset_top = 162.0
+offset_right = 694.0
+offset_bottom = 192.0
+text = "Dry"
+
+[node name="DryLabelTime" type="Label" parent="."]
+offset_left = 777.0
+offset_top = 91.0
+offset_right = 800.0
+offset_bottom = 114.0
+text = "0.0"
+
+[node name="Hands" parent="." instance=ExtResource("6_0b7mu")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+offset_left = 531.0
+offset_top = 525.0
+offset_right = 871.0
+offset_bottom = 625.0
+grow_vertical = 0
+
+[connection signal="dropped" from="CaldronTexture/CaldronInvetory/CaldronSlot" to="." method="_on_caldron_slot_dropped"]
+[connection signal="pressed" from="CaldronTexture/Button" to="." method="_on_mix_pressed"]
+[connection signal="mixed" from="Caldron" to="." method="_on_caldron_mixed"]
+[connection signal="pressed" from="Bellows" to="." method="_on_bellows_pressed"]
+[connection signal="crushed_ingredient" from="Mortar" to="." method="_on_mortar_crushed_ingredient"]
+[connection signal="ruined_ingredient" from="Mortar" to="." method="_on_mortar_ruined_ingredient"]
+[connection signal="dropped" from="MortarSlot" to="." method="_on_mortar_slot_dropped"]
+[connection signal="timeout" from="BoilTimer" to="." method="_on_boil_timer_timeout"]
+[connection signal="timeout" from="DryTimer" to="." method="_on_dry_timer_timeout"]

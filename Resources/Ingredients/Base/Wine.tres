@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cyft3okg1sgdb"]
+
+[ext_resource type="Texture2D" uid="uid://bkjvwmofdu2br" path="res://Assets/Icons/Ingredients/Normal/Bases/ingredient_wine.png" id="1_2svif"]
+[ext_resource type="Script" path="res://Resources/ingredient.gd" id="2_anoqd"]
+
+[resource]
+script = ExtResource("2_anoqd")
+normal_icon = ExtResource("1_2svif")
+crushed_icon = ExtResource("1_2svif")
+type = "Base"
+icon = ExtResource("1_2svif")
+name = "Wine"
+description = "From the best grapes! Or so they say..."

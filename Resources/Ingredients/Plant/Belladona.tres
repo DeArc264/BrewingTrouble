@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=7 format=3 uid="uid://qlwtsvivu18e"]
+
+[ext_resource type="Texture2D" uid="uid://bsshqd4umump5" path="res://Assets/Icons/Ingredients/Normal/Plants/ingredient_belladona.png" id="1_5hhcl"]
+[ext_resource type="Texture2D" uid="uid://c0lw51ty1xwca" path="res://Assets/Icons/Ingredients/Crushed/crushed_belladona.png" id="1_rp3h7"]
+[ext_resource type="Texture2D" uid="uid://dmvsc67cl1lsk" path="res://Assets/Icons/Ingredients/Dry/Belladona/belladona_dry_1.png" id="2_rkvps"]
+[ext_resource type="Texture2D" uid="uid://djaa7xuirrlpn" path="res://Assets/Icons/Ingredients/Dry/Belladona/belladona_dry_2.png" id="3_6wsw5"]
+[ext_resource type="Script" path="res://Resources/ingredient.gd" id="3_e8smq"]
+[ext_resource type="Texture2D" uid="uid://dpjcu6ck7gww5" path="res://Assets/Icons/Ingredients/Dry/Belladona/belladona_dry_3.png" id="4_rc56p"]
+
+[resource]
+script = ExtResource("3_e8smq")
+normal_icon = ExtResource("1_5hhcl")
+crushed_icon = ExtResource("1_rp3h7")
+dry_icon = Array[Texture2D]([ExtResource("2_rkvps"), ExtResource("3_6wsw5"), ExtResource("4_rc56p")])
+type = "Plant"
+icon = ExtResource("1_5hhcl")
+name = "Belladona"
+description = "Ingredient used for potions."

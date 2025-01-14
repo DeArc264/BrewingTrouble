@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Potion" load_steps=9 format=3 uid="uid://b8dibpsfka1x8"]
+
+[ext_resource type="Texture2D" uid="uid://ckhim3nosbvhi" path="res://Assets/Icons/Potions/Flask_A/stamina_potion_flask_a.png" id="1_f3npv"]
+[ext_resource type="Texture2D" uid="uid://bdxfxcwsb2sc1" path="res://Assets/Icons/Potions/Flask_C/stamina_potion_flask_c.png" id="1_mv3ot"]
+[ext_resource type="Texture2D" uid="uid://ceqkwr6oc30bo" path="res://Assets/Icons/Potions/Flask_B/stamina_potion_flask_b.png" id="2_sm5uw"]
+[ext_resource type="Resource" uid="uid://d3qr7snp5bw8y" path="res://Resources/Ingredients/Plant/Lavander.tres" id="4_o1lpd"]
+[ext_resource type="Script" path="res://Resources/Item.gd" id="4_p1qoa"]
+[ext_resource type="Resource" uid="uid://bgwbmpbmclddb" path="res://Resources/Ingredients/Base/Milk.tres" id="5_ito3n"]
+[ext_resource type="Resource" uid="uid://dhts2fo8ey7tg" path="res://Resources/Ingredients/Plant/Myrrh.tres" id="5_j5efs"]
+[ext_resource type="Script" path="res://Resources/potion.gd" id="8_bvor0"]
+
+[resource]
+script = ExtResource("8_bvor0")
+recipe = Array[ExtResource("4_p1qoa")]([ExtResource("5_ito3n"), ExtResource("4_o1lpd"), ExtResource("5_j5efs")])
+flaskA = ExtResource("1_f3npv")
+flaskB = ExtResource("2_sm5uw")
+flaskC = ExtResource("1_mv3ot")
+state = "Normal"
+icon = ExtResource("1_f3npv")
+name = "Stamina Potion"
+description = "A potion that makes you run for longer"

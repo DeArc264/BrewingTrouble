@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bl5huh47l8d58"]
+
+[ext_resource type="Texture2D" uid="uid://bshs570jpwym2" path="res://Assets/Icons/missing.png" id="1_4fijy"]
+[ext_resource type="Script" path="res://Resources/Item.gd" id="1_mwyhh"]
+
+[resource]
+script = ExtResource("1_mwyhh")
+icon = ExtResource("1_4fijy")
+name = "Rag"
+recipe = Array[ExtResource("1_mwyhh")]([])
+type = "Other"
+description = "A rag I use for cleaning my stuff"

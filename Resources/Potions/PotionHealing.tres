@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Potion" load_steps=9 format=3 uid="uid://dyljjx5q3ilc1"]
+
+[ext_resource type="Texture2D" uid="uid://cfgxywu8maxk5" path="res://Assets/Icons/Potions/Flask_A/heal_potion_flask_a.png" id="1_xa6au"]
+[ext_resource type="Texture2D" uid="uid://b5hvvys2vophp" path="res://Assets/Icons/Potions/Flask_B/heal_potion_flask_b.png" id="2_2u1ik"]
+[ext_resource type="Script" path="res://Resources/Item.gd" id="2_h77x2"]
+[ext_resource type="Texture2D" uid="uid://cn5g0jmrqm80o" path="res://Assets/Icons/Potions/Flask_C/heal_potion_flask_c.png" id="3_g34e1"]
+[ext_resource type="Resource" uid="uid://qlwtsvivu18e" path="res://Resources/Ingredients/Plant/Belladona.tres" id="4_fsykw"]
+[ext_resource type="Resource" uid="uid://blob2sv1svnds" path="res://Resources/Ingredients/Base/Water.tres" id="5_b08n6"]
+[ext_resource type="Resource" uid="uid://dhts2fo8ey7tg" path="res://Resources/Ingredients/Plant/Myrrh.tres" id="5_c0uy1"]
+[ext_resource type="Script" path="res://Resources/potion.gd" id="8_aqd28"]
+
+[resource]
+script = ExtResource("8_aqd28")
+recipe = Array[ExtResource("2_h77x2")]([ExtResource("5_b08n6"), ExtResource("4_fsykw"), ExtResource("5_c0uy1")])
+flaskA = ExtResource("1_xa6au")
+flaskB = ExtResource("2_2u1ik")
+flaskC = ExtResource("3_g34e1")
+state = "Normal"
+icon = ExtResource("1_xa6au")
+name = "Healing Potion"
+description = ""

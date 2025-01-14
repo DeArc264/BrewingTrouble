@@ -1,0 +1,121 @@
+[gd_scene load_steps=7 format=3 uid="uid://7yffggslvelu"]
+
+[ext_resource type="Script" path="res://Scenes/Tests/Cutter/cutter.gd" id="1_oo7fm"]
+[ext_resource type="Texture2D" uid="uid://bdol1yidrh6tj" path="res://Assets/Background/PopUps/pop_up_bg.png" id="1_us68k"]
+[ext_resource type="Script" path="res://Scenes/Game/Mortar/click_and_drag.gd" id="3_8w233"]
+[ext_resource type="Texture2D" uid="uid://bshs570jpwym2" path="res://Assets/Icons/missing.png" id="3_b0kt8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tehx"]
+size = Vector2(109, 263)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8yv8l"]
+size = Vector2(30.25, 267)
+
+[node name="Cutter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oo7fm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+rotation = -2.28311e-05
+texture = ExtResource("1_us68k")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.712685, 0.456808, 0.227244, 1)
+
+[node name="Ingredient" type="TextureRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -130.0
+offset_right = 130.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+pivot_offset = Vector2(129, 131)
+
+[node name="Area2D" type="Area2D" parent="ColorRect/Ingredient"]
+position = Vector2(135, 135)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/Ingredient/Area2D"]
+position = Vector2(-6.5, -3.5)
+shape = SubResource("RectangleShape2D_4tehx")
+
+[node name="Knife" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -398.0
+offset_top = -175.0
+offset_right = -368.0
+offset_bottom = 175.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("3_b0kt8")
+expand_mode = 1
+script = ExtResource("3_8w233")
+
+[node name="KnifeArea" type="Area2D" parent="Knife"]
+position = Vector2(15, 134)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Knife/KnifeArea"]
+shape = SubResource("RectangleShape2D_8yv8l")
+
+[node name="Button" type="Button" parent="Knife"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="EndButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -105.0
+offset_top = -187.0
+offset_right = 105.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Done"
+
+[connection signal="area_exited" from="ColorRect/Ingredient/Area2D" to="." method="_cut"]
+[connection signal="area_exited" from="Knife/KnifeArea" to="." method="_cut"]
+[connection signal="button_down" from="Knife/Button" to="Knife" method="_on_button_button_down"]
+[connection signal="button_up" from="Knife/Button" to="Knife" method="_on_button_button_up"]
+[connection signal="pressed" from="EndButton" to="." method="_on_end_button_pressed"]

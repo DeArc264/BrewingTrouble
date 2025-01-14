@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=7 format=3 uid="uid://dhts2fo8ey7tg"]
+
+[ext_resource type="Texture2D" uid="uid://q42hlx8s5quu" path="res://Assets/Icons/Ingredients/Normal/Plants/ingredient_mirra.png" id="1_luw4q"]
+[ext_resource type="Texture2D" uid="uid://dvyagaktwp67r" path="res://Assets/Icons/Ingredients/Crushed/crushed_myrrth.png" id="1_vicdr"]
+[ext_resource type="Texture2D" uid="uid://dte2p8si08ryp" path="res://Assets/Icons/Ingredients/Dry/Myrrth/myrrth_dry_1.png" id="2_6u4lx"]
+[ext_resource type="Texture2D" uid="uid://cpypifsl8xlp1" path="res://Assets/Icons/Ingredients/Dry/Myrrth/myrrth_dry_2.png" id="3_eejx0"]
+[ext_resource type="Script" path="res://Resources/ingredient.gd" id="4_ag6c1"]
+[ext_resource type="Texture2D" uid="uid://d2qqyop27cvig" path="res://Assets/Icons/Ingredients/Dry/Myrrth/myrrth_dry_3.png" id="4_m8ghd"]
+
+[resource]
+script = ExtResource("4_ag6c1")
+normal_icon = ExtResource("1_luw4q")
+crushed_icon = ExtResource("1_vicdr")
+dry_icon = Array[Texture2D]([ExtResource("2_6u4lx"), ExtResource("3_eejx0"), ExtResource("4_m8ghd")])
+type = "Plant"
+icon = ExtResource("1_luw4q")
+name = "Myrrh"
+description = "Ingredient used for potions."

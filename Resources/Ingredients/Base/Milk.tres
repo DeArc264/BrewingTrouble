@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bgwbmpbmclddb"]
+
+[ext_resource type="Texture2D" uid="uid://d1huhn24maiu3" path="res://Assets/Icons/Ingredients/Normal/Bases/ingredient_milk.png" id="1_u52ml"]
+[ext_resource type="Script" path="res://Resources/ingredient.gd" id="2_jblfl"]
+
+[resource]
+script = ExtResource("2_jblfl")
+normal_icon = ExtResource("1_u52ml")
+crushed_icon = ExtResource("1_u52ml")
+type = "Base"
+icon = ExtResource("1_u52ml")
+name = "Milk"
+description = "The first nutrition for humans and some animals."
