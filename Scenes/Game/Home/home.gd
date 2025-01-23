@@ -1,5 +1,6 @@
 extends Control
 
+@export var steps : Array[AudioStreamWAV]
 
 func _ready():
 	$Events.show()
@@ -7,6 +8,7 @@ func _ready():
 	$Stock.hide()
 	$Table.show()
 	$HUD.show()
+	$BGMusic.play()
 
 
 func to_table():
@@ -29,6 +31,7 @@ func to_door():
 
 func change_room(room : String):
 	$AnimationPlayer.play("fade_in")
+	play_steps()
 	await $AnimationPlayer.animation_finished
 
 	match room:
@@ -44,3 +47,10 @@ func change_room(room : String):
 
 func _on_day_over() -> void:
 	to_stock()
+
+
+func play_steps():
+	var temp = steps.pick_random()
+
+	$Steps.stream = temp
+	$Steps.play()

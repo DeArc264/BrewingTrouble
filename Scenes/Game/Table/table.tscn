@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://gdr3cf0jg005"]
+[gd_scene load_steps=40 format=3 uid="uid://gdr3cf0jg005"]
 
 [ext_resource type="Script" path="res://Scenes/Game/Table/table.gd" id="1_rxm4g"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="2_gvcte"]
@@ -9,8 +9,438 @@
 [ext_resource type="Resource" uid="uid://dyljjx5q3ilc1" path="res://Resources/Potions/PotionHealing.tres" id="5_18i7f"]
 [ext_resource type="PackedScene" uid="uid://cun7jmlf65cbq" path="res://Scenes/Game/Mortar/mortar.tscn" id="5_wnxhj"]
 [ext_resource type="Texture2D" uid="uid://cm7slspxam6cu" path="res://Assets/Background/table_bg_placeholder.png" id="6_2fx7f"]
+[ext_resource type="AudioStream" uid="uid://bn2hrmon7hwnn" path="res://Assets/Audio/Table/drop_1.wav" id="6_rt48h"]
+[ext_resource type="AudioStream" uid="uid://chtcqt51npeql" path="res://Assets/Audio/Table/drop_2.wav" id="7_icovv"]
+[ext_resource type="AudioStream" uid="uid://omsk27ospr1y" path="res://Assets/Audio/Table/drop_3.wav" id="8_oxelg"]
+[ext_resource type="AudioStream" uid="uid://bact1m30ebpsn" path="res://Assets/Audio/Table/drop_4.wav" id="9_7qoq4"]
 [ext_resource type="PackedScene" uid="uid://dus7ooufchbdn" path="res://Scenes/Tests/Book/book.tscn" id="10_irqxx"]
 [ext_resource type="PackedScene" uid="uid://7yffggslvelu" path="res://Scenes/Tests/Cutter/cutter.tscn" id="11_60dht"]
+[ext_resource type="AudioStream" uid="uid://pwt1mjtlhbu2" path="res://Assets/Audio/Table/openingbook.wav" id="12_lr164"]
+[ext_resource type="AudioStream" uid="uid://0444dwy4yrmu" path="res://Assets/Audio/Table/firerisingblow.wav" id="13_xfy60"]
+[ext_resource type="AudioStream" uid="uid://djt1pif0dt7ra" path="res://Assets/Audio/Table/boil.wav" id="14_yas0g"]
+[ext_resource type="Texture2D" uid="uid://pojghji23m58" path="res://Assets/Other/Parchment.png" id="16_20r0y"]
+
+[sub_resource type="Animation" id="Animation_rn6sd"]
+resource_name = "dry_enter"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DryTut:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1214, -223), Vector2(1214, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_m420f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DryTut:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1214, -223)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaldTut:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(600, -223)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DistTut:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(240, -223)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HourTut:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(479, 1272)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BellowTut:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(791, 1272)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BookTut:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1127, 1272)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CrushTut:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1127, 1272)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TrashTut:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1711, 1272)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PotTut:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1751, -223)]
+}
+
+[sub_resource type="Animation" id="Animation_s3u66"]
+resource_name = "dry_exit"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DryTut:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1214, 35), Vector2(1214, -223)]
+}
+
+[sub_resource type="Animation" id="Animation_h2q4b"]
+resource_name = "caldron_enter"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaldTut:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(600, -223), Vector2(600, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_4lgy6"]
+resource_name = "caldron_exit"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaldTut:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(600, 35), Vector2(600, -223)]
+}
+
+[sub_resource type="Animation" id="Animation_e7ktd"]
+resource_name = "distill_enter"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DistTut:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(240, -223), Vector2(240, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_tar2m"]
+resource_name = "distill_exit"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DistTut:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(240, 35), Vector2(240, -223)]
+}
+
+[sub_resource type="Animation" id="Animation_4aglt"]
+resource_name = "hour_enter"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HourTut:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(479, 1272), Vector2(479, 1040)]
+}
+
+[sub_resource type="Animation" id="Animation_5vvdp"]
+resource_name = "hour_exit"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HourTut:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(479, 1040), Vector2(479, 1272)]
+}
+
+[sub_resource type="Animation" id="Animation_wtgpd"]
+resource_name = "bellow_enter"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BellowTut:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(791, 1272), Vector2(791, 1040)]
+}
+
+[sub_resource type="Animation" id="Animation_cmrk1"]
+resource_name = "bellow_exit"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BellowTut:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(791, 1040), Vector2(791, 1272)]
+}
+
+[sub_resource type="Animation" id="Animation_2p4y3"]
+resource_name = "book_enter"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BookTut:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1127, 1272), Vector2(1127, 1040)]
+}
+
+[sub_resource type="Animation" id="Animation_1wthc"]
+resource_name = "book_exit"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BookTut:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1127, 1040), Vector2(1127, 1272)]
+}
+
+[sub_resource type="Animation" id="Animation_3brpa"]
+resource_name = "crush_enter"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CrushTut:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1423, 1272), Vector2(1423, 1040)]
+}
+
+[sub_resource type="Animation" id="Animation_bq8gb"]
+resource_name = "crush_exit"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CrushTut:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1423, 1040), Vector2(1423, 1272)]
+}
+
+[sub_resource type="Animation" id="Animation_37oa0"]
+resource_name = "trash_enter"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TrashTut:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1711, 1272), Vector2(1711, 1040)]
+}
+
+[sub_resource type="Animation" id="Animation_8s61d"]
+resource_name = "trash_exit"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TrashTut:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1711, 1040), Vector2(1711, 1272)]
+}
+
+[sub_resource type="Animation" id="Animation_x2b8g"]
+resource_name = "pot_enter"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PotTut:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1751, -223), Vector2(1751, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_g4exc"]
+resource_name = "pot_exit"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PotTut:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1751, 35), Vector2(1751, -223)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oklqi"]
+_data = {
+"RESET": SubResource("Animation_m420f"),
+"bellow_enter": SubResource("Animation_wtgpd"),
+"bellow_exit": SubResource("Animation_cmrk1"),
+"book_enter": SubResource("Animation_2p4y3"),
+"book_exit": SubResource("Animation_1wthc"),
+"caldron_enter": SubResource("Animation_h2q4b"),
+"caldron_exit": SubResource("Animation_4lgy6"),
+"crush_enter": SubResource("Animation_3brpa"),
+"crush_exit": SubResource("Animation_bq8gb"),
+"distill_enter": SubResource("Animation_e7ktd"),
+"distill_exit": SubResource("Animation_tar2m"),
+"dry_enter": SubResource("Animation_rn6sd"),
+"dry_exit": SubResource("Animation_s3u66"),
+"hour_enter": SubResource("Animation_4aglt"),
+"hour_exit": SubResource("Animation_5vvdp"),
+"pot_enter": SubResource("Animation_x2b8g"),
+"pot_exit": SubResource("Animation_g4exc"),
+"trash_enter": SubResource("Animation_37oa0"),
+"trash_exit": SubResource("Animation_8s61d")
+}
 
 [node name="Table" type="Control"]
 layout_mode = 3
@@ -21,6 +451,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rxm4g")
 craftables = Array[ExtResource("2_wejl3")]([ExtResource("3_bmf7n"), ExtResource("4_emhfe"), ExtResource("5_18i7f")])
+drop_sounds = Array[AudioStreamWAV]([ExtResource("6_rt48h"), ExtResource("7_icovv"), ExtResource("8_oxelg"), ExtResource("9_7qoq4")])
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -205,6 +636,7 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="Book" parent="." instance=ExtResource("10_irqxx")]
+visible = false
 layout_mode = 1
 offset_left = 176.0
 offset_top = 88.0
@@ -276,15 +708,204 @@ offset_bottom = 131.0
 text = "Ing 1:
 Ing 2:"
 
+[node name="DryTut" type="Sprite2D" parent="."]
+position = Vector2(1214, -223)
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("16_20r0y")
+
+[node name="Label" type="Label" parent="DryTut"]
+offset_left = -229.0
+offset_top = -16.0
+offset_right = 226.0
+offset_bottom = 213.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Use to dry your plants.
+
+And pay attention to the current condition."
+autowrap_mode = 2
+
+[node name="CaldTut" type="Sprite2D" parent="."]
+position = Vector2(600, -223)
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("16_20r0y")
+
+[node name="Label" type="Label" parent="CaldTut"]
+offset_left = -229.0
+offset_top = -34.0
+offset_right = 226.0
+offset_bottom = 253.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Drop ingredients to add to the potion.
+
+Click \"Mix\" once all ingredients are added."
+autowrap_mode = 2
+
+[node name="DistTut" type="Sprite2D" parent="."]
+position = Vector2(240, -223)
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("16_20r0y")
+
+[node name="Label" type="Label" parent="DistTut"]
+offset_left = -229.0
+offset_top = -59.9999
+offset_right = 226.0
+offset_bottom = 227.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Drop ingredients to be distilled.
+
+NOTE: Ores can't be distilled."
+autowrap_mode = 2
+
+[node name="HourTut" type="Sprite2D" parent="."]
+position = Vector2(479, 1272)
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("16_20r0y")
+flip_v = true
+
+[node name="Label" type="Label" parent="HourTut"]
+offset_left = -229.0
+offset_top = -270.286
+offset_right = 226.0
+offset_bottom = 16.7142
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Click to turn.
+
+Each turn takes 5 seconds."
+autowrap_mode = 2
+
+[node name="BellowTut" type="Sprite2D" parent="."]
+position = Vector2(791, 1272)
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("16_20r0y")
+flip_v = true
+
+[node name="Label" type="Label" parent="BellowTut"]
+offset_left = -229.0
+offset_top = -270.286
+offset_right = 226.0
+offset_bottom = 16.7142
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Click to raise the fire.
+
+NOTE: Only works if there is liquid in the caldron."
+autowrap_mode = 2
+
+[node name="BookTut" type="Sprite2D" parent="."]
+position = Vector2(1127, 1272)
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("16_20r0y")
+flip_v = true
+
+[node name="Label" type="Label" parent="BookTut"]
+offset_left = -229.0
+offset_top = -270.286
+offset_right = 226.0
+offset_bottom = 16.7142
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "All your recipes are here."
+autowrap_mode = 2
+
+[node name="CrushTut" type="Sprite2D" parent="."]
+position = Vector2(1127, 1272)
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("16_20r0y")
+flip_v = true
+
+[node name="Label" type="Label" parent="CrushTut"]
+offset_left = -229.0
+offset_top = -270.286
+offset_right = 226.0
+offset_bottom = 16.7142
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Drop ingredients to crush them."
+autowrap_mode = 2
+
+[node name="TrashTut" type="Sprite2D" parent="."]
+position = Vector2(1711, 1272)
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("16_20r0y")
+flip_v = true
+
+[node name="Label" type="Label" parent="TrashTut"]
+offset_left = -229.0
+offset_top = -270.286
+offset_right = 226.0
+offset_bottom = 16.7142
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Discard any item."
+autowrap_mode = 2
+
+[node name="PotTut" type="Sprite2D" parent="."]
+position = Vector2(1751, -223)
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("16_20r0y")
+
+[node name="Label" type="Label" parent="PotTut"]
+offset_left = -229.0
+offset_top = -23.7143
+offset_right = 226.0
+offset_bottom = 147.286
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Pots for holding your items. In case your hands get full."
+autowrap_mode = 2
+
+[node name="BookOpen" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_lr164")
+
+[node name="Bellow" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_xfy60")
+
+[node name="Boiling" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_yas0g")
+
+[node name="Items" type="AudioStreamPlayer2D" parent="."]
+
+[node name="TableTuts" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_oklqi")
+}
+
+[node name="TableTuts2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_oklqi")
+}
+
 [connection signal="crush" from="." to="Mortar" method="_on_table_crush"]
+[connection signal="mouse_entered" from="Shelf" to="." method="show_tutorial" binds= ["pot"]]
+[connection signal="mouse_exited" from="Shelf" to="." method="hide_tutorial" binds= ["pot"]]
 [connection signal="dropped" from="Dryer" to="." method="_on_dryer_dropped"]
+[connection signal="mouse_entered" from="Dryer" to="." method="show_tutorial" binds= ["dry"]]
+[connection signal="mouse_exited" from="Dryer" to="." method="hide_tutorial" binds= ["dry"]]
 [connection signal="pressed" from="Mix" to="." method="_on_mix_pressed"]
 [connection signal="dropped" from="CaldronSlot" to="." method="_on_caldron_slot_dropped"]
+[connection signal="mouse_entered" from="CaldronSlot" to="." method="show_tutorial" binds= ["caldron"]]
+[connection signal="mouse_exited" from="CaldronSlot" to="." method="hide_tutorial" binds= ["caldron"]]
+[connection signal="mouse_entered" from="Bellows" to="." method="show_tutorial" binds= ["bellow"]]
+[connection signal="mouse_exited" from="Bellows" to="." method="hide_tutorial" binds= ["bellow"]]
 [connection signal="pressed" from="Bellows" to="." method="_on_bellows_pressed"]
+[connection signal="mouse_entered" from="BookButton" to="." method="show_tutorial" binds= ["book"]]
+[connection signal="mouse_exited" from="BookButton" to="." method="hide_tutorial" binds= ["book"]]
 [connection signal="pressed" from="BookButton" to="." method="_on_book_button_pressed"]
 [connection signal="dropped" from="MortarSlot" to="." method="_on_mortar_slot_dropped"]
+[connection signal="mouse_entered" from="MortarSlot" to="." method="show_tutorial" binds= ["crush"]]
+[connection signal="mouse_exited" from="MortarSlot" to="." method="hide_tutorial" binds= ["crush"]]
 [connection signal="dropped" from="DistillerySlot" to="." method="_on_distillery_slot_dropped"]
+[connection signal="mouse_entered" from="DistillerySlot" to="." method="show_tutorial" binds= ["distill"]]
+[connection signal="mouse_exited" from="DistillerySlot" to="." method="hide_tutorial" binds= ["distill"]]
 [connection signal="dropped" from="CutterSlot" to="." method="_on_cutter_slot_dropped"]
+[connection signal="mouse_entered" from="CutterSlot" to="." method="show_tutorial" binds= ["trash"]]
+[connection signal="mouse_exited" from="CutterSlot" to="." method="hide_tutorial" binds= ["trash"]]
+[connection signal="mouse_entered" from="TurnHourglass" to="." method="show_tutorial" binds= ["hour"]]
+[connection signal="mouse_exited" from="TurnHourglass" to="." method="hide_tutorial" binds= ["hour"]]
 [connection signal="pressed" from="TurnHourglass" to="." method="_on_turn_hourglass_pressed"]
 [connection signal="crushed" from="Mortar" to="." method="update_crush"]
 [connection signal="mixed" from="Caldron" to="." method="_on_caldron_mixed"]

@@ -1,11 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://dy28cq04q01tl"]
+[gd_scene load_steps=17 format=3 uid="uid://dy28cq04q01tl"]
 
 [ext_resource type="Script" path="res://Scenes/Game/Home/home.gd" id="1_aowhy"]
+[ext_resource type="AudioStream" uid="uid://dc6l0svcbo5bf" path="res://Assets/Audio/Misc/step_1.wav" id="2_6rcyo"]
 [ext_resource type="PackedScene" uid="uid://gdr3cf0jg005" path="res://Scenes/Game/Table/table.tscn" id="2_effv0"]
+[ext_resource type="AudioStream" uid="uid://bvjg6b3f6orlg" path="res://Assets/Audio/Misc/step_2.wav" id="3_1ri47"]
 [ext_resource type="PackedScene" uid="uid://v1uemubo3trk" path="res://Scenes/Game/Door/door.tscn" id="3_4ydmy"]
 [ext_resource type="PackedScene" uid="uid://c1p1lg8vh5nr8" path="res://Scenes/Game/Stock/stock.tscn" id="4_f762i"]
+[ext_resource type="AudioStream" uid="uid://d15dlp6rjxxe" path="res://Assets/Audio/Misc/step_3.wav" id="4_jv7r7"]
+[ext_resource type="AudioStream" uid="uid://coj5riq48cami" path="res://Assets/Audio/Misc/step_4.wav" id="5_d2pda"]
 [ext_resource type="PackedScene" uid="uid://cfvv7x84qgvlj" path="res://Scenes/Game/HUD/hud.tscn" id="5_f1pty"]
+[ext_resource type="AudioStream" uid="uid://cwkesush5jch6" path="res://Assets/Audio/Misc/step_5.wav" id="6_7ea4c"]
 [ext_resource type="PackedScene" uid="uid://cs8rj4npc0qop" path="res://Scenes/Game/Events/events.tscn" id="6_ibvh0"]
+[ext_resource type="AudioStream" uid="uid://byu4irk0cxywy" path="res://Assets/Audio/Misc/main.wav" id="12_trwoo"]
 
 [sub_resource type="Animation" id="Animation_f6da7"]
 length = 0.001
@@ -69,6 +75,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_aowhy")
+steps = Array[AudioStreamWAV]([ExtResource("2_6rcyo"), ExtResource("3_1ri47"), ExtResource("4_jv7r7"), ExtResource("5_d2pda"), ExtResource("6_7ea4c")])
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -110,6 +117,11 @@ color = Color(0, 0, 0, 1)
 libraries = {
 "": SubResource("AnimationLibrary_42486")
 }
+
+[node name="Steps" type="AudioStreamPlayer2D" parent="."]
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_trwoo")
 
 [connection signal="day_start" from="Door" to="HUD" method="start_day"]
 [connection signal="move_to_stock" from="Door" to="." method="change_room" binds= ["stock"]]

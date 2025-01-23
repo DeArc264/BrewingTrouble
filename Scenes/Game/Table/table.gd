@@ -11,7 +11,7 @@ signal move_to_door
 @onready var caldron_slot = $CaldronSlot # Slot for adding ingredients
 
 @export var craftables : Array[Item] # Array of possible crafts
-
+@export var drop_sounds : Array[AudioStreamWAV]
 
 var in_caldron = [null] # Current in the mixture(112-192)
 var boiling = false # Boiling(42-69) state
@@ -22,7 +22,6 @@ var ing_conditions = {
 		"Belladona" : ["crushed", "boiled"],
 		"Lavander" : ["fully dry"]
 	},
-	
 	"Stamina Potion" : {
 		"Lavander" : ["crushed", "distilled"],
 		"Myrrh" : ["crushed"]
@@ -42,10 +41,12 @@ func _process(_delta: float) -> void:
 		$ING1BoilTimer.paused = false
 		$ING2BoilTimer.paused = false
 		$DryTimer.paused = false
+		$Boiling.play()
 	else:
 		$ING1BoilTimer.paused = true
 		$ING2BoilTimer.paused = true
 		$DryTimer.paused = true
+		$Boiling.stop()
 
 # Updates texts. Remove later
 	$BoilLabel.text = "Boiling... " + str(int($BoilTimer.time_left))
@@ -58,6 +59,7 @@ func _process(_delta: float) -> void:
 # Function for bellows. If there is a base liquid, it boils. If it was already
 # boiling, it restarts the timer for boiling.
 func _on_bellows_pressed() -> void:
+	$Bellow.play()
 	if in_caldron[0] != null and in_caldron[0].type == "Base":
 		if boiling:
 			$BoilTimer.start(11)
@@ -146,6 +148,7 @@ func update_crush(new : Item):
 # Checks if the item dropped can be distilled based on it's type
 func _on_distillery_slot_dropped() -> void:
 	if $DistillerySlot.item.type == "Plant":
+		$Bellow.play()
 		$DistilTimer.start()
 
 # Timer for distilling
@@ -164,10 +167,13 @@ func _on_caldron_slot_dropped() -> void:
 	else:
 		if $CaldronSlot.item.get_script().get_global_name() == "Ingredient":
 			if caldron_slot.item.type == "Base":
+				caldron_sounds("liquid")
 				in_caldron[0] = caldron_slot.item
 			else:
+				caldron_sounds("solid")
 				in_caldron.append(caldron_slot.item)
 		else:
+			caldron_sounds("other")
 			in_caldron.append(caldron_slot.item)
 
 		if in_caldron.size() == 2 and in_caldron[1] != null:
@@ -279,4 +285,33 @@ func _on_move_right_table_pressed() -> void:
 
 
 func _on_book_button_pressed() -> void:
+	$BookOpen.play()
 	$Book.show()
+
+
+func caldron_sounds(sound : String):
+	if $Items.playing:
+		$Items.stop()
+
+	if sound == "liquid":
+		$Items.stream = load("res://Assets/Audio/Table/fill.wav")
+	else:
+		$Items.stream = drop_sounds.pick_random()
+
+	$Items.play()
+
+
+#region Tutorials
+func show_tutorial(which : String):
+	if $TableTuts.is_playing():
+		$TableTuts2.play(which + "_enter")
+	else:
+		$TableTuts.play(which + "_enter")
+
+
+func hide_tutorial(which : String):
+	if $TableTuts.is_playing():
+		$TableTuts2.play(which + "_exit")
+	else:
+		$TableTuts.play(which + "_exit")
+#endregion

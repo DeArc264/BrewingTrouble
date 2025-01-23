@@ -118,18 +118,6 @@ layout_mode = 2
 [node name="Slot3" parent="Hands" instance=ExtResource("3_j28ob")]
 layout_mode = 2
 
-[node name="EndButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -110.5
-offset_top = 16.0
-offset_right = 110.5
-offset_bottom = 87.0
-grow_horizontal = 2
-text = "End Day"
-
 [node name="Store" parent="." instance=ExtResource("4_7xrsr")]
 visible = false
 layout_mode = 1
@@ -205,7 +193,6 @@ libraries = {
 }
 
 [connection signal="new_day" from="." to="Store" method="set_prices"]
-[connection signal="pressed" from="EndButton" to="." method="_on_day_timer_timeout"]
 [connection signal="send" from="Store" to="." method="buy_stuff"]
 [connection signal="mouse_entered" from="OrderNote" to="." method="_show_note"]
 [connection signal="mouse_exited" from="OrderNote" to="." method="_hide_note"]

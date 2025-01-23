@@ -18,3 +18,4 @@ func _on_door_client_gone() -> void:
 
 func _on_back_pressed() -> void:
 	hide()
+	$WindowClose.play()

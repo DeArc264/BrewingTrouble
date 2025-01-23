@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1p1lg8vh5nr8"]
+[gd_scene load_steps=4 format=3 uid="uid://c1p1lg8vh5nr8"]
 
 [ext_resource type="Script" path="res://Scenes/Game/Stock/stock.gd" id="1_j4s0x"]
 [ext_resource type="Texture2D" uid="uid://bl57cocs385s5" path="res://Assets/Background/PopUps/stock_pop_up_placeholder.png" id="2_0vtdn"]
+[ext_resource type="AudioStream" uid="uid://cfahc2ay48r2q" path="res://Assets/Audio/Stock/grab.wav" id="3_7vlr8"]
 
 [node name="Stock" type="Control"]
 layout_mode = 3
@@ -169,6 +170,9 @@ offset_bottom = 97.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 50
 text = "My stock"
+
+[node name="PickUp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7vlr8")
 
 [connection signal="pressed" from="Base/WaterButton" to="." method="_pick_up" binds= ["Water"]]
 [connection signal="pressed" from="Base/MilkButton" to="." method="_pick_up" binds= ["Milk"]]

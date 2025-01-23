@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://drlwsjlocg23c"]
+[gd_scene load_steps=4 format=3 uid="uid://drlwsjlocg23c"]
 
 [ext_resource type="Script" path="res://Scenes/Game/DoorWindow/requests.gd" id="1_j8rig"]
 [ext_resource type="Texture2D" uid="uid://ca2qefukgxv2a" path="res://Assets/Background/PopUps/street_placeholder.png" id="1_trkwh"]
+[ext_resource type="AudioStream" uid="uid://cv8gk2m3aavhw" path="res://Assets/Audio/Door/closewindow.wav" id="3_rrn8a"]
 
 [node name="DoorWindow" type="TextureRect"]
 offset_right = 616.0
@@ -92,5 +93,8 @@ offset_right = -40.0
 offset_bottom = 103.0
 grow_horizontal = 0
 text = "X"
+
+[node name="WindowClose" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_rrn8a")
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

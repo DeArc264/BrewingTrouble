@@ -28,6 +28,7 @@ func _process(_delta: float) -> void:
 
 func new_request():
 	if not client_at_door:
+		$Knock.play()
 		client_at_door = true
 		$PatienceTimer.start(120)
 		curr_order = orders.pick_random().name
@@ -70,6 +71,7 @@ func _on_patience_timer_timeout() -> void:
 #region Buttons
 func _on_check_door_pressed() -> void:
 	$DoorWindow.show()
+	$Window.play()
 	$PatienceTimer.paused = true
 	if curr_order != "None":
 		order.emit(curr_order)

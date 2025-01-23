@@ -5,6 +5,8 @@ signal crushed(Item)
 @onready var progress = $Background/ProgressBar
 @onready var label = $Background/Label
 
+@export var crush_sounds : Array[AudioStreamWAV]
+
 var ing : Item
 var dirty = false
 
@@ -47,3 +49,11 @@ func _on_table_crush(item: Item) -> void:
 		#dirty = true
 	#else:
 		#dirty = false
+
+
+func play_audio():
+	if $Sounds.playing:
+		$Sounds.stop()
+
+	$Sounds.stream = crush_sounds.pick_random()
+	$Sounds.play()

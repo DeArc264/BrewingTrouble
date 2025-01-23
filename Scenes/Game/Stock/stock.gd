@@ -47,6 +47,7 @@ func _pick_up(ing : String):
 	if not hands_full:
 		if ing_dict[ing] > 0:
 			ing_dict[ing] -= 1
+			$PickUp.play()
 			get_ingredient.emit(load(inst_dict[ing]))
 		else:
 			$Flavor.text = "Oh... I don't have any " + ing
