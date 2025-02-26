@@ -53,12 +53,20 @@ func _on_day_timer_timeout() -> void:
 
 
 #region Note Tab
-func _show_note() -> void:
-	$AnimationPlayer.play("go_up")
+func _show_HUD_piece(animation : String) -> void:
+	match animation:
+		"hands":
+			$AnimationPlayer.play("hands_go_up")
+		"order":
+			$AnimationPlayer.play("order_go_up")
 
 
-func _hide_note() -> void:
-	$AnimationPlayer.play("go_down")
+func _hide_HUD_piece(animation : String) -> void:
+	match animation:
+		"hands":
+			$AnimationPlayer.play("hands_go_down")
+		"order":
+			$AnimationPlayer.play("order_go_down")
 
 
 func update_note(note : String):

@@ -57,7 +57,9 @@ func deliver():
 				$ClientLabel.text = dia.perfect_potion.pick_random()
 				pay.emit(10)
 				curr_order.erase($DeliverySlot.item.name)
+
 			$DeliverySlot.empty()
+			curr_order.erase($DeliverySlot.item.name)
 		else:
 			$ClientLabel.text = dia.reject_potion.pick_random()
 

@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://Scenes/Game/Home/Main/home.gd" id="1_aowhy"]
 [ext_resource type="AudioStream" uid="uid://dc6l0svcbo5bf" path="res://Assets/Audio/Misc/step_1.wav" id="2_6rcyo"]
-[ext_resource type="PackedScene" uid="uid://gdr3cf0jg005" path="res://Scenes/Game/Table/table.tscn" id="2_effv0"]
+[ext_resource type="PackedScene" uid="uid://gdr3cf0jg005" path="res://Scenes/Game/Home/Table/table.tscn" id="2_effv0"]
 [ext_resource type="AudioStream" uid="uid://bvjg6b3f6orlg" path="res://Assets/Audio/Misc/step_2.wav" id="3_1ri47"]
 [ext_resource type="PackedScene" uid="uid://v1uemubo3trk" path="res://Scenes/Game/Home/Door/door.tscn" id="3_4ydmy"]
-[ext_resource type="PackedScene" uid="uid://c1p1lg8vh5nr8" path="res://Scenes/Game/Stock/stock.tscn" id="4_f762i"]
+[ext_resource type="PackedScene" uid="uid://c1p1lg8vh5nr8" path="res://Scenes/Game/Home/Stock/stock.tscn" id="4_f762i"]
 [ext_resource type="AudioStream" uid="uid://d15dlp6rjxxe" path="res://Assets/Audio/Misc/step_3.wav" id="4_jv7r7"]
 [ext_resource type="AudioStream" uid="uid://coj5riq48cami" path="res://Assets/Audio/Misc/step_4.wav" id="5_d2pda"]
-[ext_resource type="PackedScene" uid="uid://cfvv7x84qgvlj" path="res://Scenes/Game/HUD/hud.tscn" id="5_f1pty"]
+[ext_resource type="PackedScene" uid="uid://cfvv7x84qgvlj" path="res://Scenes/Game/HUD/Main/hud.tscn" id="5_f1pty"]
 [ext_resource type="AudioStream" uid="uid://cwkesush5jch6" path="res://Assets/Audio/Misc/step_5.wav" id="6_7ea4c"]
 [ext_resource type="AudioStream" uid="uid://byu4irk0cxywy" path="res://Assets/Audio/Misc/main.wav" id="12_trwoo"]
 
@@ -133,6 +133,5 @@ stream = ExtResource("12_trwoo")
 [connection signal="move_to_table" from="Stock" to="." method="change_room" binds= ["table"]]
 [connection signal="buy_ingredient" from="HUD" to="Stock" method="add_stock_item"]
 [connection signal="day_over" from="HUD" to="." method="_on_day_over"]
-[connection signal="hands_full" from="HUD/Hands" to="Stock" method="add_stock_item"]
 
 [editable path="HUD"]

@@ -74,9 +74,9 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -1060.0
-offset_top = 115.0
+offset_top = 43.0
 offset_right = -380.0
-offset_bottom = 855.0
+offset_bottom = 783.0
 grow_horizontal = 0
 
 [node name="ClientLabel" type="Label" parent="."]
