@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Game/HUD/Main/hud.gd" id="1_kg5u5"]
 [ext_resource type="Script" path="res://Scenes/Tests/TestScene/Inventory.gd" id="2_s3pb2"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="3_j28ob"]
-[ext_resource type="PackedScene" uid="uid://b0x2emaaeusk" path="res://Scenes/Game/HUD/Store/store.tscn" id="4_7xrsr"]
+[ext_resource type="PackedScene" uid="uid://b0x2emaaeusk" path="res://Scenes/Tests/Store/store.tscn" id="4_7xrsr"]
 [ext_resource type="Texture2D" uid="uid://pojghji23m58" path="res://Assets/Other/Parchment.png" id="5_cqnup"]
 
 [sub_resource type="Animation" id="Animation_h7dlr"]

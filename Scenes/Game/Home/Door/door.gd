@@ -33,6 +33,7 @@ func new_request():
 	if not client_at_door:
 		$Knock.play()
 		client_at_door = true
+		$DoorWindow.new_client()
 		$PatienceTimer.start(120)
 		for i in temp:
 			curr_order.append((orders.pick_random()).name)
@@ -62,6 +63,7 @@ func deliver():
 
 	if curr_order.is_empty():
 		client_at_door = false
+		$DoorWindow.client_gone()
 
 	await get_tree().create_timer(3).timeout
 	$ClientLabel.text = ""
@@ -74,7 +76,7 @@ func _on_new_client_timer_timeout() -> void:
 
 func _on_patience_timer_timeout() -> void:
 	client_at_door = false
-	#client_gone.emit()
+	$DoorWindow.client_gone()
 	$ClientLabel.text = ""
 	$NewClientTimer.start(randf_range(40.0, 70.0))
 #endregion

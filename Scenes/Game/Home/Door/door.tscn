@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://d2qnj6b3mkl0d" path="res://Resources/Potions/PotionStrenght.tres" id="4_l0pgw"]
 [ext_resource type="Resource" uid="uid://dyljjx5q3ilc1" path="res://Resources/Potions/PotionHealing.tres" id="5_xkjpl"]
 [ext_resource type="Texture2D" uid="uid://dsku03yxw0it0" path="res://Assets/Background/door_bg_placeholder.png" id="6_1aqeh"]
-[ext_resource type="AudioStream" uid="uid://cuu0f85vb1xt6" path="res://Assets/Audio/Door/door-knock-47175.mp3" id="9_f0p8m"]
+[ext_resource type="AudioStream" uid="uid://cuu0f85vb1xt6" path="res://Assets/Audio/door-knock-47175.mp3" id="9_f0p8m"]
 [ext_resource type="AudioStream" uid="uid://c4x73b1lcv2ps" path="res://Assets/Audio/Door/openwindow.wav" id="10_d8bgn"]
 
 [node name="Door" type="Control"]

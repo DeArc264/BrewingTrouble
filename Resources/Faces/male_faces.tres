@@ -1,11 +1,46 @@
-[gd_resource type="Resource" script_class="Faces" load_steps=2 format=3 uid="uid://c7anjy5qg3gso"]
+[gd_resource type="Resource" script_class="Faces" load_steps=34 format=3 uid="uid://c7anjy5qg3gso"]
 
+[ext_resource type="Texture2D" uid="uid://b75xinoeu0auc" path="res://Assets/Faces/Ears/ears1.png" id="1_30p4n"]
+[ext_resource type="Texture2D" uid="uid://ccedp06nsum85" path="res://Assets/Faces/Mouth/lips1.png" id="1_lqh62"]
 [ext_resource type="Script" path="res://Resources/faces.gd" id="1_s6p1x"]
+[ext_resource type="Texture2D" uid="uid://byaymxgbre5vm" path="res://Assets/Faces/Mouth/lips2.png" id="2_3j3xx"]
+[ext_resource type="Texture2D" uid="uid://gk8qqdir6kah" path="res://Assets/Faces/Shape/body1.png" id="2_dwyqx"]
+[ext_resource type="Texture2D" uid="uid://bpg5711olkvog" path="res://Assets/Faces/Ears/ears2.png" id="2_oj8hk"]
+[ext_resource type="Texture2D" uid="uid://bkmfwbg6nrhmo" path="res://Assets/Faces/Shape/body2.png" id="3_bdatr"]
+[ext_resource type="Texture2D" uid="uid://dxrembdo17cuj" path="res://Assets/Faces/Ears/ears3.png" id="3_h4wfm"]
+[ext_resource type="Texture2D" uid="uid://4teeeh4p1sud" path="res://Assets/Faces/Mouth/lips3.png" id="3_u0u6s"]
+[ext_resource type="Texture2D" uid="uid://c6eawxm4q82yq" path="res://Assets/Faces/Mouth/lips4.png" id="4_3ghke"]
+[ext_resource type="Texture2D" uid="uid://plpt6ai17wue" path="res://Assets/Faces/Shape/body3.png" id="4_4yvqb"]
+[ext_resource type="Texture2D" uid="uid://cl782kg7taex4" path="res://Assets/Faces/Ears/ears4.png" id="4_hy6hr"]
+[ext_resource type="Texture2D" uid="uid://bif0j0o6tc5cv" path="res://Assets/Faces/Shape/body4.png" id="5_4fx1e"]
+[ext_resource type="Texture2D" uid="uid://ckbbd01gfjcsh" path="res://Assets/Faces/Eyebrows/eyebrows1.png" id="5_6qu32"]
+[ext_resource type="Texture2D" uid="uid://cl3yuchymr8re" path="res://Assets/Faces/Nose/nose1.png" id="5_agjxb"]
+[ext_resource type="Texture2D" uid="uid://bhpwjxi05nnc7" path="res://Assets/Faces/Eyebrows/eyebrows2.png" id="6_pwogj"]
+[ext_resource type="Texture2D" uid="uid://cso7hjkl3dxxf" path="res://Assets/Faces/Nose/nose2.png" id="6_targb"]
+[ext_resource type="Texture2D" uid="uid://52gdkv8eerbg" path="res://Assets/Faces/Nose/nose3.png" id="7_bx3ch"]
+[ext_resource type="Texture2D" uid="uid://c1hhi8bkp3qph" path="res://Assets/Faces/Eyebrows/eyebrows3.png" id="7_ufl0b"]
+[ext_resource type="Texture2D" uid="uid://cp1hp5wqvg5rx" path="res://Assets/Faces/Nose/nose4.png" id="8_2oswk"]
+[ext_resource type="Texture2D" uid="uid://bmrjlkb6wg2jd" path="res://Assets/Faces/Eyebrows/eyebrows4.png" id="8_s2tiv"]
+[ext_resource type="Texture2D" uid="uid://ukoan65euj6v" path="res://Assets/Faces/Eyes/eyes1.png" id="9_narjg"]
+[ext_resource type="Texture2D" uid="uid://c0e1y0l5bcv3w" path="res://Assets/Faces/Eyes/eyes2.png" id="10_01yp2"]
+[ext_resource type="Texture2D" uid="uid://lml04eqk6158" path="res://Assets/Faces/Eyes/eyes3.png" id="11_ckbky"]
+[ext_resource type="Texture2D" uid="uid://1x5gqtf4dpko" path="res://Assets/Faces/Eyes/eyes4.png" id="12_pk7l2"]
+[ext_resource type="Texture2D" uid="uid://dlgahswr1s8pt" path="res://Assets/Faces/FacialHair/f_hair1.png" id="13_gcdu4"]
+[ext_resource type="Texture2D" uid="uid://c5krie1x5k15w" path="res://Assets/Faces/FacialHair/f_hair2.png" id="14_od26a"]
+[ext_resource type="Texture2D" uid="uid://s6ov10irskqy" path="res://Assets/Faces/FacialHair/f_hair3.png" id="15_jh67w"]
+[ext_resource type="Texture2D" uid="uid://c7wkax68scvg7" path="res://Assets/Faces/FacialHair/f_hair4.png" id="16_3pyq0"]
+[ext_resource type="Texture2D" uid="uid://c54e6p74umf3g" path="res://Assets/Faces/Hair/hair1.png" id="17_qqy1a"]
+[ext_resource type="Texture2D" uid="uid://bbs8ql6y503gq" path="res://Assets/Faces/Hair/hair2.png" id="18_3dnfn"]
+[ext_resource type="Texture2D" uid="uid://dr3ohcmkv7qtx" path="res://Assets/Faces/Hair/hair3.png" id="19_lfpdq"]
+[ext_resource type="Texture2D" uid="uid://bxb6upev312ji" path="res://Assets/Faces/Hair/hair4.png" id="20_m3lim"]
 
 [resource]
 script = ExtResource("1_s6p1x")
-shape = Array[Texture2D]([])
-nose = Array[Texture2D]([])
-eyes = Array[Texture2D]([])
-mouth = Array[Texture2D]([])
-ears = Array[Texture2D]([])
+shape = Array[Texture2D]([ExtResource("2_dwyqx"), ExtResource("3_bdatr"), ExtResource("4_4yvqb"), ExtResource("5_4fx1e")])
+hair = Array[Texture2D]([ExtResource("17_qqy1a"), ExtResource("18_3dnfn"), ExtResource("19_lfpdq"), ExtResource("20_m3lim")])
+nose = Array[Texture2D]([ExtResource("5_agjxb"), ExtResource("6_targb"), ExtResource("7_bx3ch"), ExtResource("8_2oswk")])
+eyes = Array[Texture2D]([ExtResource("9_narjg"), ExtResource("10_01yp2"), ExtResource("11_ckbky"), ExtResource("12_pk7l2")])
+eyebrows = Array[Texture2D]([ExtResource("5_6qu32"), ExtResource("6_pwogj"), ExtResource("7_ufl0b"), ExtResource("8_s2tiv")])
+facial_hair = Array[Texture2D]([ExtResource("13_gcdu4"), ExtResource("14_od26a"), ExtResource("15_jh67w"), ExtResource("16_3pyq0")])
+mouth = Array[Texture2D]([ExtResource("1_lqh62"), ExtResource("2_3j3xx"), ExtResource("3_u0u6s"), ExtResource("4_3ghke")])
+ears = Array[Texture2D]([ExtResource("1_30p4n"), ExtResource("2_oj8hk"), ExtResource("3_h4wfm"), ExtResource("4_hy6hr")])

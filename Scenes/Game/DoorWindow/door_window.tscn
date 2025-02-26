@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://drlwsjlocg23c"]
 
-[ext_resource type="Script" path="res://Scenes/Game/DoorWindow/requests.gd" id="1_j8rig"]
+[ext_resource type="Script" path="res://Scenes/Game/DoorWindow/clients.gd" id="1_j8rig"]
 [ext_resource type="Texture2D" uid="uid://ca2qefukgxv2a" path="res://Assets/Background/PopUps/street_placeholder.png" id="1_trkwh"]
 [ext_resource type="AudioStream" uid="uid://cv8gk2m3aavhw" path="res://Assets/Audio/Door/closewindow.wav" id="3_rrn8a"]
 
