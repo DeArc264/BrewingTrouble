@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Tests/TestScene/Inventory.gd" id="1_p6on3"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="2_0xita"]
 [ext_resource type="Script" path="res://Scenes/Tests/TestScene/Recipes.gd" id="5_81xfs"]
-[ext_resource type="PackedScene" uid="uid://dxpt6kvmkayil" path="res://Scenes/Game/Mortar/recipe.tscn" id="5_h44ux"]
+[ext_resource type="PackedScene" uid="uid://dxpt6kvmkayil" path="res://Scenes/Game/Home/Table/Minigames/Mortar/recipe.tscn" id="5_h44ux"]
 [ext_resource type="Resource" uid="uid://d2qnj6b3mkl0d" path="res://Resources/Potions/PotionStrenght.tres" id="6_km67y"]
 
 [node name="TestScene" type="Node2D"]

@@ -1,0 +1,176 @@
+[gd_scene load_steps=13 format=3 uid="uid://cun7jmlf65cbq"]
+
+[ext_resource type="Script" path="res://Scenes/Game/Home/Table/Minigames/Mortar/mortar_and_bowl.gd" id="1_vrgvp"]
+[ext_resource type="Texture2D" uid="uid://c7lopkcouy417" path="res://Assets/Mortar/pebble.png" id="2_7qilo"]
+[ext_resource type="Texture2D" uid="uid://bdol1yidrh6tj" path="res://Assets/Background/PopUps/pop_up_bg.png" id="2_ptpve"]
+[ext_resource type="AudioStream" uid="uid://6misnq0bkvut" path="res://Assets/Audio/Minigames/crush_1.wav" id="2_r4y2d"]
+[ext_resource type="Texture2D" uid="uid://bsjtjhboxxron" path="res://Assets/Mortar/mortar_bowl_back.png" id="2_xfu6w"]
+[ext_resource type="AudioStream" uid="uid://c8bcx2t3d0c8g" path="res://Assets/Audio/Minigames/crush_2.wav" id="3_flq83"]
+[ext_resource type="Script" path="res://Scenes/Game/Home/Table/Minigames/Mortar/click_and_drag.gd" id="3_wte7q"]
+[ext_resource type="AudioStream" uid="uid://4l55tcj4st8e" path="res://Assets/Audio/Minigames/crush_3.wav" id="4_uorq4"]
+[ext_resource type="Texture2D" uid="uid://b7v5lb6jptjwn" path="res://Assets/Mortar/mortar_bowl_front.png" id="5_64ewl"]
+[ext_resource type="Texture2D" uid="uid://dgvhe2a4ms3y5" path="res://Assets/Icons/Button/button_base.png" id="7_6k4au"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrae2"]
+size = Vector2(91.7804, 137.639)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghesr"]
+size = Vector2(157, 40)
+
+[node name="Mortar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vrgvp")
+crush_sounds = Array[AudioStreamWAV]([ExtResource("2_r4y2d"), ExtResource("3_flq83"), ExtResource("4_uorq4")])
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ptpve")
+
+[node name="BowlBack" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -253.0
+offset_top = -154.5
+offset_right = 253.0
+offset_bottom = 206.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xfu6w")
+
+[node name="Pebble" type="TextureRect" parent="Background"]
+visible = false
+layout_mode = 0
+offset_left = 911.0
+offset_top = 181.0
+offset_right = 1011.0
+offset_bottom = 481.0
+scale = Vector2(0.73, 0.7665)
+texture = ExtResource("2_7qilo")
+stretch_mode = 2
+script = ExtResource("3_wte7q")
+
+[node name="PebbleArea" type="Area2D" parent="Background/Pebble"]
+position = Vector2(49.3155, 220.483)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Pebble/PebbleArea"]
+shape = SubResource("RectangleShape2D_jrae2")
+
+[node name="ActivatePebble" type="Button" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0208333
+anchor_top = -0.0351852
+anchor_right = -0.0208333
+anchor_bottom = -0.0351852
+offset_left = 691.0
+offset_top = 387.0
+offset_right = 799.0
+offset_bottom = 695.0
+rotation = 0.237365
+icon = ExtResource("2_7qilo")
+flat = true
+
+[node name="BowlFront" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.5
+offset_top = -150.0
+offset_right = 250.5
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_64ewl")
+
+[node name="Area2D" type="Area2D" parent="Background/BowlFront"]
+position = Vector2(242, 191)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/BowlFront/Area2D"]
+shape = SubResource("RectangleShape2D_ghesr")
+
+[node name="ProgressBar" type="ProgressBar" parent="Background"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -648.0
+offset_top = -139.0
+offset_right = -602.0
+offset_bottom = 116.0
+grow_horizontal = 0
+grow_vertical = 2
+max_value = 10.0
+step = 1.0
+allow_greater = true
+fill_mode = 3
+
+[node name="Label" type="Label" parent="Background"]
+visible = false
+layout_mode = 0
+offset_left = 613.0
+offset_top = 359.0
+offset_right = 682.0
+offset_bottom = 382.0
+text = "Crushed!"
+
+[node name="Button" type="Button" parent="Background"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -254.0
+offset_top = -268.0
+offset_right = 254.0
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 0
+icon = ExtResource("7_6k4au")
+flat = true
+
+[node name="Label" type="Label" parent="Background/Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Done"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sounds" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="gui_input" from="Background/Pebble" to="Background/Pebble" method="start_dragging"]
+[connection signal="pressed" from="Background/ActivatePebble" to="." method="_on_activate_pebble_pressed"]
+[connection signal="area_entered" from="Background/BowlFront/Area2D" to="." method="_on_bowl_crushing"]
+[connection signal="pressed" from="Background/Button" to="." method="_on_button_pressed"]

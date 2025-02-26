@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn1grrvxckqtw"]
+
+[ext_resource type="Texture2D" uid="uid://bshs570jpwym2" path="res://Assets/Icons/missing.png" id="1_1qpi0"]
+[ext_resource type="Script" path="res://Scenes/Game/Home/Door/Farm/WaterCan/watering_can.gd" id="2_2ikly"]
+[ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="3_cv0ta"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdl8v"]
+size = Vector2(100, 100)
+
+[node name="Can" type="TextureRect"]
+anchors_preset = -1
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+pivot_offset = Vector2(50, 50)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_1qpi0")
+script = ExtResource("2_2ikly")
+
+[node name="Slot" parent="." instance=ExtResource("3_cv0ta")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WateringCan" type="Area2D" parent="."]
+position = Vector2(50, 50)
+input_pickable = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WateringCan"]
+shape = SubResource("RectangleShape2D_mdl8v")
+
+[connection signal="gui_input" from="." to="." method="drag"]
+[connection signal="dropped" from="Slot" to="." method="fill_can"]

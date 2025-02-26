@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Seed" load_steps=3 format=3 uid="uid://4oi786ncj502"]
+
+[ext_resource type="Texture2D" uid="uid://bshs570jpwym2" path="res://Assets/Icons/missing.png" id="1_3kd1i"]
+[ext_resource type="Script" path="res://Resources/seed.gd" id="2_eic54"]
+
+[resource]
+script = ExtResource("2_eic54")
+grow_time = 2
+type = "Myrrth"
+icon = ExtResource("1_3kd1i")
+name = "Myrrth Seed"
+description = "A seed of myrrth... Ironic how poison can make a medicine."

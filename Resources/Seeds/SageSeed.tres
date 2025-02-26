@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Seed" load_steps=3 format=3 uid="uid://cgk6cb0wra5hk"]
+
+[ext_resource type="Texture2D" uid="uid://bshs570jpwym2" path="res://Assets/Icons/missing.png" id="1_04h8p"]
+[ext_resource type="Script" path="res://Resources/seed.gd" id="2_e8tt3"]
+
+[resource]
+script = ExtResource("2_e8tt3")
+grow_time = 2
+type = "Sage"
+icon = ExtResource("1_04h8p")
+name = "Sage Seed"
+description = "A seed of sage..."

@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvcsoqjraw7c4"]
+
+[ext_resource type="Texture2D" uid="uid://c7lopkcouy417" path="res://Assets/Mortar/pebble.png" id="1_4sexq"]
+[ext_resource type="Script" path="res://Scenes/Tests/TestScene/pilao.gd" id="1_yf6jk"]
+[ext_resource type="Texture2D" uid="uid://b7v5lb6jptjwn" path="res://Assets/Mortar/mortar_bowl_front.png" id="2_py4a2"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Pilao" type="CharacterBody2D" parent="."]
+position = Vector2(888, 192)
+script = ExtResource("1_yf6jk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pilao"]
+texture = ExtResource("1_4sexq")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pilao"]
+polygon = PackedVector2Array(33, -126, 48, 121, 43, 138, 31, 147, -29, 147, -39, 140, -47, 122, -32, -126)
+
+[node name="Button" type="Button" parent="Pilao"]
+offset_left = -36.0
+offset_top = -132.0
+offset_right = 36.0
+offset_bottom = 50.0
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(904, 648)
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("2_py4a2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
+polygon = PackedVector2Array(-237, -78, -210, -4, -139, 45, -16, 68, 102, 49, 184, -1, 220, -81, 233, -66, 196, 12, 107, 65, -14, 88, -147, 62, -223, 6, -256, -75)
+
+[connection signal="button_down" from="Pilao/Button" to="Pilao" method="_on_button_button_down"]
+[connection signal="button_up" from="Pilao/Button" to="Pilao" method="_on_button_button_up"]

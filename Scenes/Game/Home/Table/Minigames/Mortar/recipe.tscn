@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxpt6kvmkayil"]
+
+[ext_resource type="Script" path="res://Scenes/Tests/Recipes/recipe.gd" id="1_wf87y"]
+[ext_resource type="PackedScene" uid="uid://c7clf60l8gcjp" path="res://Scenes/Tests/RecipeSlot/recipe_slot.tscn" id="2_vmju3"]
+
+[node name="Recipe" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wf87y")
+
+[node name="RecipeSlot" parent="." instance=ExtResource("2_vmju3")]
+layout_mode = 2
+
+[node name="RecipeSlot2" parent="." instance=ExtResource("2_vmju3")]
+layout_mode = 2
+
+[node name="Craft" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+disabled = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="Craft"]
+layout_mode = 0
+offset_right = 99.0
+offset_bottom = 98.0
+text = "Craft"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Craft" to="." method="_on_craft_pressed"]

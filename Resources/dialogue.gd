@@ -25,14 +25,39 @@ var reject_potion = [
 #endregion
 
 var order_potion = [
-	"Quick! I need a ",
-	"Hello. I would like to order a ",
-	"Hey, I need you to make a ",
-	"Please, brew me a "
-]
+	"Quick! I need ",
+	"Hello. I would like to order ",
+	"Hey, I need you to make ",
+	"Please, brew me "
+		]
 
 var none_at_door = [
 	"Huh? Is he already gone?",
 	"Ugh... Guess I took too long...",
 	"Oh... He's gone already.."
 ]
+
+
+func phrase_constructor(order : Array):
+	var count_dict = {}
+
+	for i in order:
+		if i in count_dict:
+			count_dict[i] += 1
+		else:
+			count_dict[i] = 1
+
+	var order_parts = []
+	for potion in count_dict:
+		var count = count_dict[potion]
+		if count > 1:
+			order_parts.append(str(count) + " " + potion + "s")
+		else:
+			order_parts.append("a " + potion)
+	
+	if len(order_parts) == 1:
+		return order_potion.pick_random() + order_parts[0] + "."
+	if len(order_parts) == 2:
+		return order_potion.pick_random() + order_parts[0] + " and " + order_parts[1] + "."
+	else:
+		return order_potion.pick_random() + ", ".join(order_parts.slice(0, -1)) + ", and " + order_parts[-1] + "."

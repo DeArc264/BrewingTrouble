@@ -1,0 +1,338 @@
+[gd_scene load_steps=19 format=3 uid="uid://gdr3cf0jg005"]
+
+[ext_resource type="Script" path="res://Scenes/Game/Home/Table/table.gd" id="1_rxm4g"]
+[ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="2_gvcte"]
+[ext_resource type="Script" path="res://Resources/Item.gd" id="2_wejl3"]
+[ext_resource type="Resource" uid="uid://d2qnj6b3mkl0d" path="res://Resources/Potions/PotionStrenght.tres" id="3_bmf7n"]
+[ext_resource type="Resource" uid="uid://b8dibpsfka1x8" path="res://Resources/Potions/PotionStamina.tres" id="4_emhfe"]
+[ext_resource type="PackedScene" uid="uid://clb5bygcnejvp" path="res://Scenes/Game/Home/Table/Minigames/Caldron/caldron.tscn" id="4_lajix"]
+[ext_resource type="Resource" uid="uid://dyljjx5q3ilc1" path="res://Resources/Potions/PotionHealing.tres" id="5_18i7f"]
+[ext_resource type="PackedScene" uid="uid://cun7jmlf65cbq" path="res://Scenes/Game/Home/Table/Minigames/Mortar/mortar.tscn" id="5_wnxhj"]
+[ext_resource type="Texture2D" uid="uid://cm7slspxam6cu" path="res://Assets/Background/table_bg_placeholder.png" id="6_2fx7f"]
+[ext_resource type="AudioStream" uid="uid://bn2hrmon7hwnn" path="res://Assets/Audio/Table/drop_1.wav" id="6_rt48h"]
+[ext_resource type="AudioStream" uid="uid://chtcqt51npeql" path="res://Assets/Audio/Table/drop_2.wav" id="7_icovv"]
+[ext_resource type="AudioStream" uid="uid://omsk27ospr1y" path="res://Assets/Audio/Table/drop_3.wav" id="8_oxelg"]
+[ext_resource type="AudioStream" uid="uid://bact1m30ebpsn" path="res://Assets/Audio/Table/drop_4.wav" id="9_7qoq4"]
+[ext_resource type="PackedScene" uid="uid://dus7ooufchbdn" path="res://Scenes/Game/Home/Table/Minigames/Book/book.tscn" id="10_irqxx"]
+[ext_resource type="PackedScene" uid="uid://7yffggslvelu" path="res://Scenes/Game/Home/Table/Minigames/Cutter/cutter.tscn" id="11_60dht"]
+[ext_resource type="AudioStream" uid="uid://pwt1mjtlhbu2" path="res://Assets/Audio/Table/openingbook.wav" id="12_lr164"]
+[ext_resource type="AudioStream" uid="uid://0444dwy4yrmu" path="res://Assets/Audio/Table/firerisingblow.wav" id="13_xfy60"]
+[ext_resource type="AudioStream" uid="uid://djt1pif0dt7ra" path="res://Assets/Audio/Table/boil.wav" id="14_yas0g"]
+
+[node name="Table" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rxm4g")
+craftables = Array[ExtResource("2_wejl3")]([ExtResource("3_bmf7n"), ExtResource("4_emhfe"), ExtResource("5_18i7f")])
+drop_sounds = Array[AudioStreamWAV]([ExtResource("6_rt48h"), ExtResource("7_icovv"), ExtResource("8_oxelg"), ExtResource("9_7qoq4")])
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("6_2fx7f")
+
+[node name="Shelf" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -400.0
+offset_top = 390.0
+offset_right = -191.0
+offset_bottom = 490.0
+grow_horizontal = 0
+theme_override_constants/separation = 9
+
+[node name="Slot" parent="Shelf" instance=ExtResource("2_gvcte")]
+layout_mode = 2
+
+[node name="Slot2" parent="Shelf" instance=ExtResource("2_gvcte")]
+layout_mode = 2
+
+[node name="Dryer" parent="." instance=ExtResource("2_gvcte")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 112.0
+offset_right = 50.0
+offset_bottom = 212.0
+grow_horizontal = 2
+
+[node name="DryLabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 84.0
+offset_top = 151.0
+offset_right = 184.0
+offset_bottom = 174.0
+grow_horizontal = 2
+
+[node name="Mix" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 806.5
+offset_top = 463.0
+offset_right = 871.5
+offset_bottom = 499.0
+text = "Mix"
+
+[node name="CaldronSlot" parent="." instance=ExtResource("2_gvcte")]
+layout_mode = 2
+offset_left = 820.0
+offset_top = 341.0
+offset_right = 1108.0
+offset_bottom = 441.0
+
+[node name="Bellows" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -359.0
+offset_top = 50.0
+offset_right = -242.0
+offset_bottom = 138.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Bellows"
+flat = true
+
+[node name="BoilLabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 90.0
+offset_top = -26.0
+offset_right = 143.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Boiling"
+
+[node name="BookButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 239.0
+offset_top = 54.0
+offset_right = 440.0
+offset_bottom = 151.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="MortarSlot" parent="." instance=ExtResource("2_gvcte")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -465.0
+offset_top = 43.0
+offset_right = -365.0
+offset_bottom = 143.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="DistillerySlot" parent="." instance=ExtResource("2_gvcte")]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 410.0
+offset_right = 241.0
+offset_bottom = 510.0
+
+[node name="CutterSlot" parent="." instance=ExtResource("2_gvcte")]
+layout_mode = 0
+offset_left = 1720.0
+offset_top = 587.0
+offset_right = 1820.0
+offset_bottom = 687.0
+
+[node name="TurnHourglass" type="Button" parent="."]
+layout_mode = 0
+offset_left = 373.0
+offset_top = 447.0
+offset_right = 499.0
+offset_bottom = 664.0
+flat = true
+
+[node name="HourglassLabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -25.5
+offset_right = 52.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mortar" parent="." instance=ExtResource("5_wnxhj")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="Caldron" parent="." instance=ExtResource("4_lajix")]
+visible = false
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Book" parent="." instance=ExtResource("10_irqxx")]
+visible = false
+layout_mode = 1
+offset_left = 176.0
+offset_top = 88.0
+offset_right = 176.0
+offset_bottom = 88.0
+
+[node name="Cutter" parent="." instance=ExtResource("11_60dht")]
+visible = false
+layout_mode = 1
+
+[node name="MoveLeft_Table" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 32.0
+offset_top = -31.5
+offset_right = 63.0
+offset_bottom = 31.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "<"
+
+[node name="MoveRight_Table" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -31.5
+offset_right = -32.0
+offset_bottom = 31.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = ">"
+
+[node name="BoilTimer" type="Timer" parent="."]
+wait_time = 11.0
+one_shot = true
+
+[node name="DryTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="HourglassTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="ING1BoilTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="ING2BoilTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="DistilTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 232.0
+offset_top = 82.0
+offset_right = 274.0
+offset_bottom = 131.0
+text = "Ing 1:
+Ing 2:"
+
+[node name="BookOpen" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_lr164")
+
+[node name="Bellow" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_xfy60")
+
+[node name="Boiling" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_yas0g")
+
+[node name="Items" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="crush" from="." to="Mortar" method="_on_table_crush"]
+[connection signal="mouse_entered" from="Shelf" to="." method="show_help" binds= ["pots"]]
+[connection signal="mouse_exited" from="Shelf" to="." method="hide_help"]
+[connection signal="dropped" from="Dryer" to="." method="_on_dryer_dropped"]
+[connection signal="mouse_entered" from="Dryer" to="." method="show_help" binds= ["dry"]]
+[connection signal="mouse_exited" from="Dryer" to="." method="hide_help"]
+[connection signal="pressed" from="Mix" to="." method="_on_mix_pressed"]
+[connection signal="dropped" from="CaldronSlot" to="." method="_on_caldron_slot_dropped"]
+[connection signal="mouse_entered" from="CaldronSlot" to="." method="show_help" binds= ["caldron"]]
+[connection signal="mouse_exited" from="CaldronSlot" to="." method="hide_help"]
+[connection signal="mouse_entered" from="Bellows" to="." method="show_help" binds= ["bellow"]]
+[connection signal="mouse_exited" from="Bellows" to="." method="hide_help"]
+[connection signal="pressed" from="Bellows" to="." method="_on_bellows_pressed"]
+[connection signal="mouse_entered" from="BookButton" to="." method="show_help" binds= ["book"]]
+[connection signal="mouse_exited" from="BookButton" to="." method="hide_help"]
+[connection signal="pressed" from="BookButton" to="." method="_on_book_button_pressed"]
+[connection signal="dropped" from="MortarSlot" to="." method="_on_mortar_slot_dropped"]
+[connection signal="mouse_entered" from="MortarSlot" to="." method="show_help" binds= ["crush"]]
+[connection signal="mouse_exited" from="MortarSlot" to="." method="hide_help"]
+[connection signal="dropped" from="DistillerySlot" to="." method="_on_distillery_slot_dropped"]
+[connection signal="mouse_entered" from="DistillerySlot" to="." method="show_help" binds= ["distill"]]
+[connection signal="mouse_exited" from="DistillerySlot" to="." method="hide_help"]
+[connection signal="dropped" from="CutterSlot" to="." method="_on_cutter_slot_dropped"]
+[connection signal="mouse_entered" from="CutterSlot" to="." method="show_help" binds= ["trash"]]
+[connection signal="mouse_exited" from="CutterSlot" to="." method="hide_help"]
+[connection signal="mouse_entered" from="TurnHourglass" to="." method="show_help" binds= ["hour"]]
+[connection signal="mouse_exited" from="TurnHourglass" to="." method="hide_help"]
+[connection signal="pressed" from="TurnHourglass" to="." method="_on_turn_hourglass_pressed"]
+[connection signal="crushed" from="Mortar" to="." method="update_crush"]
+[connection signal="mixed" from="Caldron" to="." method="_on_caldron_mixed"]
+[connection signal="cutted" from="Cutter" to="." method="update_cut"]
+[connection signal="pressed" from="MoveLeft_Table" to="." method="_on_move_left_table_pressed"]
+[connection signal="pressed" from="MoveRight_Table" to="." method="_on_move_right_table_pressed"]
+[connection signal="timeout" from="BoilTimer" to="." method="_on_boil_timer_timeout"]
+[connection signal="timeout" from="DryTimer" to="." method="_on_dry_timer_timeout"]
+[connection signal="timeout" from="HourglassTimer" to="." method="_on_hourglass_timer_timeout"]
+[connection signal="timeout" from="ING1BoilTimer" to="." method="ing_1_boil_round"]
+[connection signal="timeout" from="ING2BoilTimer" to="." method="ing_2_boil_round"]
+[connection signal="timeout" from="DistilTimer" to="." method="_on_distil_timer_timeout"]

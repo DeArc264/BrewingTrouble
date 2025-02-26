@@ -122,3 +122,7 @@ func change_room(room : String):
 
 	$Dia_Box.show()
 	current_tut_dia()
+
+
+func _on_skip_pressed() -> void:
+	queue_free()

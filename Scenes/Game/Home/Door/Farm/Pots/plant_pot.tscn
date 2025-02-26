@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://em8omrx0bd2k"]
+
+[ext_resource type="Script" path="res://Scenes/Game/Home/Door/Farm/Pots/plant_pot.gd" id="1_7if6j"]
+[ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="1_ad301"]
+[ext_resource type="Texture2D" uid="uid://ct55sjtl0tw8e" path="res://Assets/Farm/pot_empty_dry.png" id="1_muwl3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2124"]
+
+[node name="PlantPot" type="TextureRect"]
+offset_left = -212.0
+offset_top = -347.0
+offset_right = 212.0
+texture = ExtResource("1_muwl3")
+script = ExtResource("1_7if6j")
+
+[node name="Slot" parent="." instance=ExtResource("1_ad301")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 7.0
+offset_right = 200.0
+offset_bottom = 121.0
+grow_horizontal = 2
+
+[node name="HarvestButton" type="TextureButton" parent="."]
+visible = false
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.521
+anchor_top = 0.289291
+anchor_right = 0.521
+anchor_bottom = 0.289291
+offset_left = -148.904
+offset_top = -420.384
+offset_right = 147.096
+offset_bottom = 88.616
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 7
+disabled = true
+stretch_mode = 0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(208, -592)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_n2124")
+
+[connection signal="dropped" from="Slot" to="." method="_on_slot_dropped"]
+[connection signal="pressed" from="HarvestButton" to="." method="_on_harvest_button_pressed"]
+[connection signal="area_entered" from="Area2D" to="." method="water_the_plant"]
+[connection signal="area_exited" from="Area2D" to="." method="stop_water_the_plant"]

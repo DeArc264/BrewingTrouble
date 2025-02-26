@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://Scenes/Tests/TestTable/test_table.gd" id="1_ge2vl"]
 [ext_resource type="Resource" uid="uid://qlwtsvivu18e" path="res://Resources/Ingredients/Plant/Belladona.tres" id="2_no3ld"]
 [ext_resource type="Resource" uid="uid://d3qr7snp5bw8y" path="res://Resources/Ingredients/Plant/Lavander.tres" id="4_1i61o"]
-[ext_resource type="PackedScene" uid="uid://cun7jmlf65cbq" path="res://Scenes/Game/Mortar/mortar.tscn" id="4_1uh7f"]
+[ext_resource type="PackedScene" uid="uid://cun7jmlf65cbq" path="res://Scenes/Game/Home/Table/Minigames/Mortar/mortar.tscn" id="4_1uh7f"]
 [ext_resource type="Script" path="res://Scenes/Tests/TestScene/Inventory.gd" id="4_2ybou"]
-[ext_resource type="PackedScene" uid="uid://clb5bygcnejvp" path="res://Scenes/Game/Caldron/caldron.tscn" id="4_dqpki"]
-[ext_resource type="PackedScene" uid="uid://3g3erktv6bpf" path="res://Scenes/Game/Hands/hands.tscn" id="6_0b7mu"]
+[ext_resource type="PackedScene" uid="uid://clb5bygcnejvp" path="res://Scenes/Game/Home/Table/Minigames/Caldron/caldron.tscn" id="4_dqpki"]
+[ext_resource type="PackedScene" uid="uid://3g3erktv6bpf" path="res://Scenes/Game/HUD/Hands/hands.tscn" id="6_0b7mu"]
 
 [node name="TestTable" type="Node2D"]
 script = ExtResource("1_ge2vl")

@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6m5pqu6bc23i"]
+
+[ext_resource type="Texture2D" uid="uid://cm7slspxam6cu" path="res://Assets/Background/table_bg_placeholder.png" id="1_f6u7h"]
+[ext_resource type="Script" path="res://Scenes/Game/Menu/menu.gd" id="2_mjqjh"]
+
+[node name="Menu" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_f6u7h")
+script = ExtResource("2_mjqjh")
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 124.0
+offset_right = 496.0
+offset_bottom = 187.0
+theme_override_font_sizes/font_size = 40
+text = "BREW"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -474.0
+offset_top = 112.0
+offset_right = -354.0
+offset_bottom = 175.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "QUIT"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

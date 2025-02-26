@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Alchemy"
-run/main_scene="res://Scenes/Game/Home/home.tscn"
+run/main_scene="res://Scenes/Game/Menu/menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://game_manager.gd"
+Itens="*res://game_manager.gd"
 
 [display]
 
@@ -25,7 +25,6 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 
 [dotnet]
 
