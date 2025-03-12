@@ -12,19 +12,26 @@ signal helper(which : String)
 @onready var dia = load("res://Resources/Dialogue/NPCDialogues.tres")
 
 var curr_order = []
+var drag_window = false
 var client_at_door = false
 var delivery : Array[Item]
 #endregion
 
+
 func _process(_delta: float) -> void:
 	if not $DoorWindow.visible:
 		$PatienceTimer.paused = false
-		$CheckDoor.disabled = false
 		$ClientLabel.hide()
 	else:
 		$PatienceTimer.paused = true
-		$CheckDoor.disabled = true
 		$ClientLabel.show()
+
+	if drag_window:
+		$Door_Window.position.x = clamp((get_global_mouse_position().x - 45), 18, 50)
+		if $Door_Window.position.x <= 25:
+			check_door()
+		else:
+			$DoorWindow.hide()
 
 
 func new_request():
@@ -39,6 +46,19 @@ func new_request():
 			curr_order.append((orders.pick_random()).name)
 
 		$ClientLabel.text = dia.phrase_constructor(curr_order)
+
+
+func check_door():
+	$DoorWindow.show()
+	$WindowOpen.play()
+	$PatienceTimer.paused = true
+	if curr_order != null:
+		order.emit(curr_order)
+
+
+func _on_door_window_clicked(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		drag_window = event.pressed
 
 
 func deliver():
@@ -85,14 +105,6 @@ func _on_patience_timer_timeout() -> void:
 
 
 #region Buttons
-func _on_check_door_pressed() -> void:
-	$DoorWindow.show()
-	$WindowOpen.play()
-	$PatienceTimer.paused = true
-	if curr_order != null:
-		order.emit(curr_order)
-
-
 func _on_open_store_pressed() -> void:
 	$NewClientTimer.start()
 	$OpenStore.hide()

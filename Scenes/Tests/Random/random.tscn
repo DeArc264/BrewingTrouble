@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvlckfof35qom"]
+[gd_scene load_steps=7 format=3 uid="uid://bvlckfof35qom"]
 
 [ext_resource type="Script" path="res://Scenes/Tests/Random/random.gd" id="1_iyjgw"]
+[ext_resource type="PackedScene" uid="uid://em8omrx0bd2k" path="res://Scenes/Game/Home/Door/Farm/Pots/plant_pot.tscn" id="2_6th4i"]
+[ext_resource type="PackedScene" uid="uid://bn1grrvxckqtw" path="res://Scenes/Game/Home/Door/Farm/WaterCan/watering_can.tscn" id="3_77j3l"]
+[ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="4_txxwx"]
+[ext_resource type="Resource" uid="uid://cgk6cb0wra5hk" path="res://Resources/Seeds/SageSeed.tres" id="5_ttkd5"]
+[ext_resource type="Resource" uid="uid://blob2sv1svnds" path="res://Resources/Ingredients/Base/Water.tres" id="6_u7cbb"]
 
 [node name="Random" type="Control"]
 layout_mode = 3
@@ -11,24 +16,44 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iyjgw")
 
-[node name="Label" type="Label" parent="."]
+[node name="PlantPot" parent="." instance=ExtResource("2_6th4i")]
 layout_mode = 0
-offset_left = 104.0
-offset_top = 50.0
-offset_right = 235.0
-offset_bottom = 73.0
-text = "Remaining time: "
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 36.0
+offset_bottom = 28.0
+
+[node name="Can" parent="." instance=ExtResource("3_77j3l")]
+layout_mode = 0
+offset_left = 1242.0
+offset_top = 320.0
+offset_right = 1342.0
+offset_bottom = 420.0
+
+[node name="Slot" parent="." instance=ExtResource("4_txxwx")]
+layout_mode = 0
+offset_left = 788.0
+offset_top = 842.0
+offset_right = 888.0
+offset_bottom = 942.0
+item = ExtResource("5_ttkd5")
+
+[node name="Slot2" parent="." instance=ExtResource("4_txxwx")]
+layout_mode = 0
+offset_left = 938.0
+offset_top = 842.0
+offset_right = 1038.0
+offset_bottom = 942.0
+item = ExtResource("6_u7cbb")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 145.0
-offset_top = 108.0
-offset_right = 192.0
-offset_bottom = 133.0
-text = "Pause"
+offset_left = 63.0
+offset_top = 591.0
+offset_right = 211.0
+offset_bottom = 672.0
+text = "Next day"
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 100.0
-autostart = true
-
+[connection signal="can_in_area" from="PlantPot" to="Can" method="watering_now"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="PlantPot" method="day_over"]

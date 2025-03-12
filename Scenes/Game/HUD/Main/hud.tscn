@@ -33,6 +33,38 @@ tracks/1/keys = {
 "values": [Vector2(785, 1026)]
 }
 
+[sub_resource type="Animation" id="Animation_n2bcw"]
+resource_name = "hands_go_down"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandsTab:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(785, 866), Vector2(785, 1026)]
+}
+
+[sub_resource type="Animation" id="Animation_iu2eh"]
+resource_name = "hands_go_up"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandsTab:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(785, 1026), Vector2(785, 866)]
+}
+
 [sub_resource type="Animation" id="Animation_b4r8f"]
 resource_name = "order_go_down"
 length = 0.3
@@ -63,38 +95,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(30, 1026), Vector2(30, 866)]
-}
-
-[sub_resource type="Animation" id="Animation_iu2eh"]
-resource_name = "hands_go_up"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("HandsTab:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(785, 1026), Vector2(785, 866)]
-}
-
-[sub_resource type="Animation" id="Animation_n2bcw"]
-resource_name = "hands_go_down"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("HandsTab:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(785, 866), Vector2(785, 1026)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vyxgj"]

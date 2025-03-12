@@ -69,7 +69,7 @@ func _hide_HUD_piece(animation : String) -> void:
 			$AnimationPlayer.play("order_go_down")
 
 
-func update_note(note : String):
+func update_note(note : Array[String]):
 	$OrderNote/OrderLabel.text = note
 #endregion
 

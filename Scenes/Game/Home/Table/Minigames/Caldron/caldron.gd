@@ -2,6 +2,7 @@ extends Control
 
 signal mixed
 
+
 @onready var c_progress = $Background/ProgressBar
 @onready var spoon = $Background/Spoon/SpoonArea
 
@@ -22,6 +23,7 @@ func _mixer(area: Area2D) -> void:
 			$Background/MixedLabel.show()
 			mixed.emit()
 			c_progress.value = 0
+			dirty = true
 			await get_tree().create_timer(1.5).timeout
 			spoon.set_deferred("monitorable",true)
 			hide()

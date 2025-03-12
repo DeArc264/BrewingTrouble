@@ -1,15 +1,24 @@
 extends TextureRect
 
+var starting_pos
 var dragging = false
 var watering = false
-var filled = false
+var filled = 0.0
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+
+func _ready() -> void:
+	starting_pos = global_position
+
+
+func _process(delta: float) -> void:
 	if dragging:
 		position = get_global_mouse_position() - Vector2(50, 50)
-	else:
-		pass
+
+	if watering:
+		if filled != 0.0:
+			filled -= 30 * delta
+
+	clamp(filled, 0.0, 100.0)
 
 
 func watering_now():
@@ -29,12 +38,6 @@ func drag(event: InputEvent) -> void:
 func fill_can():
 	if $Slot.item != null and $Slot.item.name == "Water":
 		$Slot.empty()
-		filled = true
+		filled = 100.0
 		$Slot.hide()
 		$WateringCan.monitorable = true
-
-
-func empty_can():
-	filled = false
-	$Slot.show()
-	$WateringCan.monitorable = false

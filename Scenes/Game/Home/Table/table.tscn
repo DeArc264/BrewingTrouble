@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://gdr3cf0jg005"]
+[gd_scene load_steps=20 format=3 uid="uid://gdr3cf0jg005"]
 
 [ext_resource type="Script" path="res://Scenes/Game/Home/Table/table.gd" id="1_rxm4g"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="2_gvcte"]
@@ -7,17 +7,18 @@
 [ext_resource type="Resource" uid="uid://b8dibpsfka1x8" path="res://Resources/Potions/PotionStamina.tres" id="4_emhfe"]
 [ext_resource type="PackedScene" uid="uid://clb5bygcnejvp" path="res://Scenes/Game/Home/Table/Minigames/Caldron/caldron.tscn" id="4_lajix"]
 [ext_resource type="Resource" uid="uid://dyljjx5q3ilc1" path="res://Resources/Potions/PotionHealing.tres" id="5_18i7f"]
-[ext_resource type="PackedScene" uid="uid://cun7jmlf65cbq" path="res://Scenes/Game/Home/Table/Minigames/Mortar/mortar.tscn" id="5_wnxhj"]
+[ext_resource type="PackedScene" uid="uid://cun7jmlf65cbq" path="res://Scenes/Game/Mortar/mortar.tscn" id="5_wnxhj"]
 [ext_resource type="Texture2D" uid="uid://cm7slspxam6cu" path="res://Assets/Background/table_bg_placeholder.png" id="6_2fx7f"]
 [ext_resource type="AudioStream" uid="uid://bn2hrmon7hwnn" path="res://Assets/Audio/Table/drop_1.wav" id="6_rt48h"]
 [ext_resource type="AudioStream" uid="uid://chtcqt51npeql" path="res://Assets/Audio/Table/drop_2.wav" id="7_icovv"]
 [ext_resource type="AudioStream" uid="uid://omsk27ospr1y" path="res://Assets/Audio/Table/drop_3.wav" id="8_oxelg"]
 [ext_resource type="AudioStream" uid="uid://bact1m30ebpsn" path="res://Assets/Audio/Table/drop_4.wav" id="9_7qoq4"]
-[ext_resource type="PackedScene" uid="uid://dus7ooufchbdn" path="res://Scenes/Game/Home/Table/Minigames/Book/book.tscn" id="10_irqxx"]
-[ext_resource type="PackedScene" uid="uid://7yffggslvelu" path="res://Scenes/Tests/Cutter/cutter.tscn" id="11_60dht"]
+[ext_resource type="PackedScene" uid="uid://dus7ooufchbdn" path="res://Scenes/Game/Home/Table/Book/book.tscn" id="10_irqxx"]
+[ext_resource type="PackedScene" uid="uid://7yffggslvelu" path="res://Scenes/Game/Home/Table/Minigames/Cutter/cutter.tscn" id="11_60dht"]
 [ext_resource type="AudioStream" uid="uid://pwt1mjtlhbu2" path="res://Assets/Audio/Table/openingbook.wav" id="12_lr164"]
 [ext_resource type="AudioStream" uid="uid://0444dwy4yrmu" path="res://Assets/Audio/Table/firerisingblow.wav" id="13_xfy60"]
 [ext_resource type="AudioStream" uid="uid://djt1pif0dt7ra" path="res://Assets/Audio/Table/boil.wav" id="14_yas0g"]
+[ext_resource type="PackedScene" uid="uid://ruyqta42jimp" path="res://Scenes/Tests/Clean/clean.tscn" id="16_6ulko"]
 
 [node name="Table" type="Control"]
 layout_mode = 3
@@ -50,9 +51,11 @@ theme_override_constants/separation = 9
 
 [node name="Slot" parent="Shelf" instance=ExtResource("2_gvcte")]
 layout_mode = 2
+mouse_filter = 1
 
 [node name="Slot2" parent="Shelf" instance=ExtResource("2_gvcte")]
 layout_mode = 2
+mouse_filter = 1
 
 [node name="Dryer" parent="." instance=ExtResource("2_gvcte")]
 layout_mode = 1
@@ -107,7 +110,6 @@ offset_bottom = 138.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Bellows"
 flat = true
 
 [node name="BoilLabel" type="Label" parent="."]
@@ -224,6 +226,15 @@ offset_bottom = 88.0
 [node name="Cutter" parent="." instance=ExtResource("11_60dht")]
 visible = false
 layout_mode = 1
+
+[node name="Clean" parent="." instance=ExtResource("16_6ulko")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="MoveLeft_Table" type="Button" parent="."]
 layout_mode = 1

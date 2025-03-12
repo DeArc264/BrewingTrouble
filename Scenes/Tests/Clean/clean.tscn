@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ruyqta42jimp"]
+
+[ext_resource type="Texture2D" uid="uid://bdol1yidrh6tj" path="res://Assets/Background/PopUps/pop_up_bg.png" id="1_ygdv1"]
+[ext_resource type="Script" path="res://Scenes/Tests/Clean/clean.gd" id="2_n41w4"]
+[ext_resource type="PackedScene" uid="uid://c5qggaa2n2pvw" path="res://Scenes/Tests/Dirty/dirt_spot.tscn" id="3_1b1jf"]
+
+[node name="Clean" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ygdv1")
+script = ExtResource("2_n41w4")
+dirt_spots = ExtResource("3_1b1jf")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 84.0
+offset_right = 223.0
+offset_bottom = 176.0
+text = "Start"
+
+[connection signal="pressed" from="Button" to="." method="start_cleaning"]

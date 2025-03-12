@@ -17,10 +17,10 @@ var added_bonus
 var wet_tween
 
 var textures_plants = {
-	"Lavander" : "res://Assets/Icons/missing.png",
+	"Lavander" : ["res://Assets/Icons/missing.png", "res://Assets/Icons/missing.png", "res://Assets/Icons/missing.png"],
 	"Belladona" : ["res://Assets/Farm/Belladona/bella_small.png", "res://Assets/Farm/Belladona/bella_big.png", "res://Assets/Farm/Belladona/bella_dead.png"],
-	"Ginger" : "res://Assets/Icons/missing.png",
-	"Myrrth" : "res://Assets/Icons/missing.png",
+	"Ginger" : ["res://Assets/Icons/missing.png", "res://Assets/Icons/missing.png", "res://Assets/Icons/missing.png"],
+	"Myrrth" : ["res://Assets/Icons/missing.png", "res://Assets/Icons/missing.png", "res://Assets/Icons/missing.png"],
 	"Sage" : ["res://Assets/Farm/Sage/sage_small.png", "res://Assets/Farm/Sage/sage_big.png", "res://Assets/Farm/Sage/sage_dead.png"]
 }
 
@@ -28,8 +28,9 @@ var textures_plants = {
 func _process(delta: float):
 	if watering:
 		how_wet += 30 * delta
-		if how_wet == 100:
+		if how_wet >= 100:
 			adjust_pot_texture()
+			how_wet = 0
 
 	clamp(how_wet, 0, 100)
 
@@ -56,7 +57,6 @@ func day_over():
 	if time_left >= 1:
 		time_left -= 1
 
-	$Slot3.item = load("res://Resources/Ingredients/Base/Water.tres")
 	adjust_pot_texture()
 	grow(curr_seed)
 

@@ -17,8 +17,3 @@ func new_client():
 
 func client_gone() -> void:
 	$Shape.hide()
-
-
-func _on_back_pressed() -> void:
-	hide()
-	$WindowClose.play()
