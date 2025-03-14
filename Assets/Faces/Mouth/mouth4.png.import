@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckbbd01gfjcsh"
-path="res://.godot/imported/eyebrows1.png-e568ea8b52d2001a078e35db0c702933.ctex"
+uid="uid://cc1exnx0pgf52"
+path="res://.godot/imported/mouth4.png-415cf7f6b915c071787bf9fa98b96c1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Faces/Eyebrows/eyebrows1.png"
-dest_files=["res://.godot/imported/eyebrows1.png-e568ea8b52d2001a078e35db0c702933.ctex"]
+source_file="res://Assets/Faces/Mouth/mouth4.png"
+dest_files=["res://.godot/imported/mouth4.png-415cf7f6b915c071787bf9fa98b96c1c.ctex"]
 
 [params]
 

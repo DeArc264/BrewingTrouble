@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq71ql3gvhtgk"
-path="res://.godot/imported/janelinhsa.png-c446b09a599fc4e34c4dd030f17713c7.ctex"
+uid="uid://btbaa2tmugsqt"
+path="res://.godot/imported/eyebrow3.png-24bd4257286aa0f17e712db3aaef5dff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ana 1/janelinhsa.png"
-dest_files=["res://.godot/imported/janelinhsa.png-c446b09a599fc4e34c4dd030f17713c7.ctex"]
+source_file="res://Assets/Faces/Eyebrows/eyebrow3.png"
+dest_files=["res://.godot/imported/eyebrow3.png-24bd4257286aa0f17e712db3aaef5dff.ctex"]
 
 [params]
 
