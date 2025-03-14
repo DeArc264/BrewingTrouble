@@ -120,12 +120,11 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -190.0
-offset_top = 32.0
-offset_right = -40.0
-offset_bottom = 92.0
+offset_left = -67.0
+offset_top = 4.0
+offset_right = -6.0
+offset_bottom = 27.0
 grow_horizontal = 0
-theme_override_font_sizes/font_size = 40
 text = "Coins: 0"
 vertical_alignment = 1
 
@@ -134,12 +133,11 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -192.0
-offset_top = 94.0
-offset_right = -42.0
-offset_bottom = 154.0
+offset_left = -67.0
+offset_top = 26.0
+offset_right = -24.0
+offset_bottom = 49.0
 grow_horizontal = 0
-theme_override_font_sizes/font_size = 40
 text = "Time:"
 vertical_alignment = 1
 
@@ -148,17 +146,17 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 785.0
-offset_top = -54.0
-offset_right = 1135.0
-offset_bottom = 162.0
+offset_left = 119.0
+offset_top = -20.0
+offset_right = 229.0
+offset_bottom = 50.0
 grow_vertical = 0
 color = Color(0.73303, 0.444622, 0.194185, 1)
 
 [node name="Detail" type="ColorRect" parent="HandsTab"]
 layout_mode = 0
-offset_right = 350.0
-offset_bottom = 55.0
+offset_right = 110.0
+offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.582191, 0.343159, 0.136624, 1)
 
@@ -175,35 +173,37 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
 text = "HOLDING"
 
 [node name="Hands" type="GridContainer" parent="HandsTab"]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -170.0
-offset_top = -130.0
-offset_right = 170.0
-offset_bottom = -30.0
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = -12.0
+offset_right = 53.0
+offset_bottom = 18.0
 grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/h_separation = 20
+grow_vertical = 2
+theme_override_constants/h_separation = 8
 columns = 3
 script = ExtResource("2_s3pb2")
 
 [node name="Slot" parent="HandsTab/Hands" instance=ExtResource("3_j28ob")]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 1
 
 [node name="Slot2" parent="HandsTab/Hands" instance=ExtResource("3_j28ob")]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 1
 
 [node name="Slot3" parent="HandsTab/Hands" instance=ExtResource("3_j28ob")]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 1
 
@@ -226,10 +226,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 30.0
-offset_top = -54.0
-offset_right = 380.0
-offset_bottom = 162.0
+offset_left = 4.0
+offset_top = -20.0
+offset_right = 114.0
+offset_bottom = 50.0
 grow_vertical = 0
 color = Color(0.73303, 0.444622, 0.194185, 1)
 
@@ -240,19 +240,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -39.0
-offset_top = 3.0
-offset_right = 39.0
-offset_bottom = 45.0
+offset_left = -21.0
+offset_top = -11.5
+offset_right = 21.0
+offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
 text = "None"
 
 [node name="Detail" type="ColorRect" parent="OrderNote"]
 layout_mode = 0
-offset_right = 350.0
-offset_bottom = 55.0
+offset_right = 110.0
+offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.582191, 0.343159, 0.136624, 1)
 
@@ -263,13 +262,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -22.0
+offset_top = -12.5
+offset_right = 22.0
+offset_bottom = 10.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
 text = "NOTE"
 
 [node name="DayTimer" type="Timer" parent="."]

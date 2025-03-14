@@ -11,6 +11,7 @@ signal order(String)
 @onready var dia = load("res://Resources/Dialogue/NPCDialogues.tres")
 
 var curr_order = "None"
+var slide = false
 var client_at_door = false
 var delivery : Array[Item]
 #endregion
@@ -18,12 +19,16 @@ var delivery : Array[Item]
 func _process(_delta: float) -> void:
 	if not $DoorWindow.visible:
 		$PatienceTimer.paused = false
-		$CheckDoor.disabled = false
 		$ClientLabel.hide()
 	else:
 		$PatienceTimer.paused = true
-		$CheckDoor.disabled = true
 		$ClientLabel.show()
+
+	if slide:
+		$Door_Window.position.x = clamp((get_global_mouse_position().x - 46), 15, 50)
+	if $Door_Window.position.x == 15:
+		check_door()
+		$Door_Window.position.x = 50
 
 
 func new_request():
@@ -69,12 +74,17 @@ func _on_patience_timer_timeout() -> void:
 
 
 #region Buttons
-func _on_check_door_pressed() -> void:
+func check_door():
 	$DoorWindow.show()
-	$Window.play()
+	$WindowOpen.play()
 	$PatienceTimer.paused = true
 	if curr_order != "None":
 		order.emit(curr_order)
+
+
+func _door_window_slide(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		slide = event.pressed
 
 
 func _on_open_store_pressed() -> void:

@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bvlckfof35qom"]
 
 [ext_resource type="Script" path="res://Scenes/Tests/Random/random.gd" id="1_iyjgw"]
-[ext_resource type="PackedScene" uid="uid://em8omrx0bd2k" path="res://Scenes/Game/Home/Door/Farm/Pots/plant_pot.tscn" id="2_6th4i"]
-[ext_resource type="PackedScene" uid="uid://bn1grrvxckqtw" path="res://Scenes/Game/Home/Door/Farm/WaterCan/watering_can.tscn" id="3_77j3l"]
+[ext_resource type="PackedScene" uid="uid://em8omrx0bd2k" path="res://Scenes/Game/Farm/Pots/plant_pot.tscn" id="2_6th4i"]
+[ext_resource type="PackedScene" uid="uid://bn1grrvxckqtw" path="res://Scenes/Game/Farm/WaterCan/watering_can.tscn" id="3_77j3l"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="4_txxwx"]
 [ext_resource type="Resource" uid="uid://cgk6cb0wra5hk" path="res://Resources/Seeds/SageSeed.tres" id="5_ttkd5"]
 [ext_resource type="Resource" uid="uid://blob2sv1svnds" path="res://Resources/Ingredients/Base/Water.tres" id="6_u7cbb"]
@@ -18,10 +18,10 @@ script = ExtResource("1_iyjgw")
 
 [node name="PlantPot" parent="." instance=ExtResource("2_6th4i")]
 layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 36.0
-offset_bottom = 28.0
+offset_left = 30.0
+offset_top = 67.0
+offset_right = 66.0
+offset_bottom = 95.0
 
 [node name="Can" parent="." instance=ExtResource("3_77j3l")]
 layout_mode = 0
