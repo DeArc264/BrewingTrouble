@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://v1uemubo3trk"]
+[gd_scene load_steps=10 format=3 uid="uid://v1uemubo3trk"]
 
 [ext_resource type="Script" path="res://Scenes/Game/Door/door.gd" id="1_01bfn"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="2_7tixl"]
@@ -8,9 +8,7 @@
 [ext_resource type="Resource" uid="uid://dyljjx5q3ilc1" path="res://Resources/Potions/PotionHealing.tres" id="5_xkjpl"]
 [ext_resource type="Texture2D" uid="uid://8j4mtr4slwcq" path="res://Assets/Door/door_window.png" id="6_a53ad"]
 [ext_resource type="PackedScene" uid="uid://chithbdsd0iql" path="res://Scenes/Game/Door/door_bg.tscn" id="6_ooqos"]
-[ext_resource type="AudioStream" uid="uid://cuu0f85vb1xt6" path="res://Assets/Audio/door-knock-47175.mp3" id="9_f0p8m"]
 [ext_resource type="PackedScene" uid="uid://drlwsjlocg23c" path="res://Scenes/Game/DoorWindow/door_window.tscn" id="9_gtvfe"]
-[ext_resource type="AudioStream" uid="uid://c4x73b1lcv2ps" path="res://Assets/Audio/Door/openwindow.wav" id="10_d8bgn"]
 
 [node name="Door" type="Control"]
 layout_mode = 3
@@ -114,11 +112,7 @@ one_shot = true
 [node name="PatienceTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Knock" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_f0p8m")
-
-[node name="WindowOpen" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("10_d8bgn")
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
 
 [connection signal="gui_input" from="Door_Window" to="." method="_door_window_slide"]
 [connection signal="pressed" from="OpenStore" to="." method="_on_open_store_pressed"]

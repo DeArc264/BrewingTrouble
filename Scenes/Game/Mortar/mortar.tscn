@@ -1,10 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cun7jmlf65cbq"]
+[gd_scene load_steps=5 format=3 uid="uid://cun7jmlf65cbq"]
 
 [ext_resource type="Script" path="res://Scenes/Game/Mortar/mortar_and_bowl.gd" id="1_vrgvp"]
-[ext_resource type="AudioStream" uid="uid://6misnq0bkvut" path="res://Assets/Audio/Minigames/crush_1.wav" id="2_r4y2d"]
-[ext_resource type="AudioStream" uid="uid://c8bcx2t3d0c8g" path="res://Assets/Audio/Minigames/crush_2.wav" id="3_flq83"]
 [ext_resource type="Script" path="res://Scenes/Game/Mortar/click_and_drag.gd" id="3_wte7q"]
-[ext_resource type="AudioStream" uid="uid://4l55tcj4st8e" path="res://Assets/Audio/Minigames/crush_3.wav" id="4_uorq4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrae2"]
 size = Vector2(91.7804, 137.639)
@@ -20,7 +17,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vrgvp")
-crush_sounds = Array[AudioStreamWAV]([ExtResource("2_r4y2d"), ExtResource("3_flq83"), ExtResource("4_uorq4")])
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -155,8 +151,6 @@ theme_override_font_sizes/font_size = 50
 text = "Done"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Sounds" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="button_down" from="Background/Mortar/Button" to="Background/Mortar" method="_on_button_button_down"]
 [connection signal="button_up" from="Background/Mortar/Button" to="Background/Mortar" method="_on_button_button_up"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://gdr3cf0jg005"]
+[gd_scene load_steps=21 format=3 uid="uid://gdr3cf0jg005"]
 
 [ext_resource type="Script" path="res://Scenes/Game/Table/table.gd" id="1_rxm4g"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="2_gvcte"]
@@ -8,20 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://clb5bygcnejvp" path="res://Scenes/Game/Table/Minigames/Caldron/caldron.tscn" id="4_lajix"]
 [ext_resource type="Resource" uid="uid://dyljjx5q3ilc1" path="res://Resources/Potions/PotionHealing.tres" id="5_18i7f"]
 [ext_resource type="PackedScene" uid="uid://cun7jmlf65cbq" path="res://Scenes/Game/Table/Minigames/Mortar/mortar.tscn" id="5_wnxhj"]
-[ext_resource type="AudioStream" uid="uid://bn2hrmon7hwnn" path="res://Assets/Audio/Table/drop_1.wav" id="6_rt48h"]
-[ext_resource type="AudioStream" uid="uid://chtcqt51npeql" path="res://Assets/Audio/Table/drop_2.wav" id="7_icovv"]
-[ext_resource type="AudioStream" uid="uid://omsk27ospr1y" path="res://Assets/Audio/Table/drop_3.wav" id="8_oxelg"]
-[ext_resource type="AudioStream" uid="uid://bact1m30ebpsn" path="res://Assets/Audio/Table/drop_4.wav" id="9_7qoq4"]
 [ext_resource type="Texture2D" uid="uid://frac08byunq2" path="res://Assets/Table/table_bg.png" id="10_4mva8"]
 [ext_resource type="PackedScene" uid="uid://dus7ooufchbdn" path="res://Scenes/Game/Table/Book/book.tscn" id="10_irqxx"]
 [ext_resource type="PackedScene" uid="uid://7yffggslvelu" path="res://Scenes/Game/Table/Minigames/Cutter/cutter.tscn" id="11_60dht"]
 [ext_resource type="Texture2D" uid="uid://cmn54cmvgdmp5" path="res://Assets/Table/drying_net_empty.png" id="11_mwhou"]
 [ext_resource type="Texture2D" uid="uid://bx6d4t8olghdv" path="res://Assets/Table/distillery.png" id="12_ckuv7"]
-[ext_resource type="AudioStream" uid="uid://pwt1mjtlhbu2" path="res://Assets/Audio/Table/openingbook.wav" id="12_lr164"]
 [ext_resource type="Texture2D" uid="uid://ckbw5sxle3koi" path="res://Assets/Table/hourglass.png" id="13_7xym8"]
-[ext_resource type="AudioStream" uid="uid://0444dwy4yrmu" path="res://Assets/Audio/Table/firerisingblow.wav" id="13_xfy60"]
 [ext_resource type="Texture2D" uid="uid://24svegbqq32b" path="res://Assets/Table/cut_board.png" id="14_xfd8c"]
-[ext_resource type="AudioStream" uid="uid://djt1pif0dt7ra" path="res://Assets/Audio/Table/boil.wav" id="14_yas0g"]
 [ext_resource type="Texture2D" uid="uid://dpf6wbq4jyjh8" path="res://Assets/Table/livro_receitas.png" id="15_7uukh"]
 [ext_resource type="PackedScene" uid="uid://ruyqta42jimp" path="res://Scenes/Tests/Clean/clean.tscn" id="16_6ulko"]
 [ext_resource type="Texture2D" uid="uid://syygt5ej8krj" path="res://Assets/Table/caldron_table.png" id="16_pia0k"]
@@ -37,7 +30,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rxm4g")
 craftables = Array[ExtResource("2_wejl3")]([ExtResource("3_bmf7n"), ExtResource("4_emhfe"), ExtResource("5_18i7f")])
-drop_sounds = Array[AudioStreamWAV]([ExtResource("6_rt48h"), ExtResource("7_icovv"), ExtResource("8_oxelg"), ExtResource("9_7qoq4")])
 
 [node name="Table" type="TextureRect" parent="."]
 layout_mode = 0
@@ -341,17 +333,6 @@ offset_right = 274.0
 offset_bottom = 131.0
 text = "Ing 1:
 Ing 2:"
-
-[node name="BookOpen" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("12_lr164")
-
-[node name="Bellow" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("13_xfy60")
-
-[node name="Boiling" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("14_yas0g")
-
-[node name="Items" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="crush" from="." to="Mortar" method="_on_table_crush"]
 [connection signal="dropped" from="Dryer" to="." method="_on_dryer_dropped"]
