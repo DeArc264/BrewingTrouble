@@ -28,7 +28,7 @@ func start_cleaning():
 		new_dirt.connect("cleaned", spot_cleaned)
 
 		add_child(new_dirt)
-		new_dirt.position = Vector2(randi_range(300, 1600), randi_range(210, 900))
+		new_dirt.position = Vector2(randi_range(20, 300), randi_range(20, 160))
 
 
 func spot_cleaned():

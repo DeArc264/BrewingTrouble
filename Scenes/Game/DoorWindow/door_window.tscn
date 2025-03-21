@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://drlwsjlocg23c"]
+[gd_scene load_steps=13 format=3 uid="uid://drlwsjlocg23c"]
 
 [ext_resource type="Script" path="res://Scenes/Game/DoorWindow/requests.gd" id="1_j8rig"]
+[ext_resource type="Texture2D" uid="uid://c3she56a6ntdk" path="res://Assets/Background/Door_Window/outside.png" id="1_xhp03"]
 [ext_resource type="Texture2D" uid="uid://hjflcutwjdne" path="res://Assets/Faces/Shape/body1.png" id="3_2wr2j"]
 [ext_resource type="Texture2D" uid="uid://cr8f2qdu1vdxk" path="res://Assets/Faces/Ears/ears1.png" id="4_84wl2"]
 [ext_resource type="Texture2D" uid="uid://b5qhrdn5mygo2" path="res://Assets/Faces/Eyes/eyes1.png" id="5_3qwrd"]
@@ -15,6 +16,7 @@
 [node name="DoorWindow" type="TextureRect"]
 offset_right = 320.0
 offset_bottom = 181.0
+texture = ExtResource("1_xhp03")
 expand_mode = 1
 script = ExtResource("1_j8rig")
 

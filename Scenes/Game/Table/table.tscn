@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Resources/Item.gd" id="2_wejl3"]
 [ext_resource type="Resource" uid="uid://d2qnj6b3mkl0d" path="res://Resources/Potions/PotionStrenght.tres" id="3_bmf7n"]
 [ext_resource type="Resource" uid="uid://b8dibpsfka1x8" path="res://Resources/Potions/PotionStamina.tres" id="4_emhfe"]
-[ext_resource type="PackedScene" uid="uid://clb5bygcnejvp" path="res://Scenes/Game/Caldron/caldron.tscn" id="4_lajix"]
+[ext_resource type="PackedScene" uid="uid://clb5bygcnejvp" path="res://Scenes/Game/Table/Minigames/Caldron/caldron.tscn" id="4_lajix"]
 [ext_resource type="Resource" uid="uid://dyljjx5q3ilc1" path="res://Resources/Potions/PotionHealing.tres" id="5_18i7f"]
 [ext_resource type="PackedScene" uid="uid://cun7jmlf65cbq" path="res://Scenes/Game/Table/Minigames/Mortar/mortar.tscn" id="5_wnxhj"]
 [ext_resource type="AudioStream" uid="uid://bn2hrmon7hwnn" path="res://Assets/Audio/Table/drop_1.wav" id="6_rt48h"]
