@@ -113,6 +113,11 @@ one_shot = true
 one_shot = true
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://Assets/Audio/fmodbanks/Desktop/Master.bank", "res://Assets/Audio/fmodbanks/Desktop/Master.strings.bank"]
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/knocking"
+event_guid = "{cbf639a2-cbd0-4690-9444-f96b18379fa1}"
 
 [connection signal="gui_input" from="Door_Window" to="." method="_door_window_slide"]
 [connection signal="pressed" from="OpenStore" to="." method="_on_open_store_pressed"]

@@ -1,13 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cun7jmlf65cbq"]
+[gd_scene load_steps=4 format=3 uid="uid://cun7jmlf65cbq"]
 
 [ext_resource type="Script" path="res://Scenes/Game/Table/Minigames/Mortar/mortar_and_bowl.gd" id="1_vrgvp"]
 [ext_resource type="Script" path="res://Scenes/Game/Table/Minigames/Mortar/click_and_drag.gd" id="3_wte7q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrae2"]
-size = Vector2(91.7804, 137.639)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghesr"]
-size = Vector2(157, 40)
+size = Vector2(46.5753, 52.1853)
 
 [node name="Mortar" type="Control"]
 layout_mode = 3
@@ -17,6 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vrgvp")
+metadata/_edit_vertical_guides_ = [0.0]
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -26,38 +24,39 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BowlBack" type="TextureRect" parent="Background"]
+[node name="BowlBack" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -253.0
-offset_top = -154.5
-offset_right = 253.0
-offset_bottom = 206.5
+offset_left = -71.0
+offset_top = -33.0
+offset_right = 71.0
+offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Pebble" type="TextureRect" parent="Background"]
-visible = false
+[node name="Pebble" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 911.0
-offset_top = 181.0
-offset_right = 1011.0
-offset_bottom = 481.0
+offset_left = 160.0
+offset_top = 31.0
+offset_right = 200.0
+offset_bottom = 131.0
 scale = Vector2(0.73, 0.7665)
 stretch_mode = 2
 script = ExtResource("3_wte7q")
 
-[node name="PebbleArea" type="Area2D" parent="Background/Pebble"]
-position = Vector2(49.3155, 220.483)
+[node name="PebbleArea" type="Area2D" parent="Pebble"]
+position = Vector2(23.2877, 66.5362)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Pebble/PebbleArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pebble/PebbleArea"]
+position = Vector2(-1.52588e-05, -1.52588e-05)
+scale = Vector2(1, 0.999999)
 shape = SubResource("RectangleShape2D_jrae2")
 
-[node name="ActivatePebble" type="Button" parent="Background"]
+[node name="ActivatePebble" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.0208333
@@ -71,38 +70,17 @@ offset_bottom = 695.0
 rotation = 0.237365
 flat = true
 
-[node name="BowlFront" type="TextureRect" parent="Background"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.5
-offset_top = -150.0
-offset_right = 250.5
-offset_bottom = 150.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Area2D" type="Area2D" parent="Background/BowlFront"]
-position = Vector2(242, 191)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/BowlFront/Area2D"]
-shape = SubResource("RectangleShape2D_ghesr")
-
-[node name="ProgressBar" type="ProgressBar" parent="Background"]
+[node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -648.0
-offset_top = -139.0
-offset_right = -602.0
-offset_bottom = 116.0
+offset_left = -302.0
+offset_top = -37.0
+offset_right = -280.0
+offset_bottom = 63.0
 grow_horizontal = 0
 grow_vertical = 2
 max_value = 10.0
@@ -110,7 +88,7 @@ step = 1.0
 allow_greater = true
 fill_mode = 3
 
-[node name="Label" type="Label" parent="Background"]
+[node name="Label" type="Label" parent="."]
 visible = false
 layout_mode = 0
 offset_left = 613.0
@@ -119,41 +97,30 @@ offset_right = 682.0
 offset_bottom = 382.0
 text = "Crushed!"
 
-[node name="Button" type="Button" parent="Background"]
+[node name="Button" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -254.0
-offset_top = -268.0
-offset_right = 254.0
-offset_bottom = -160.0
+offset_left = -25.0
+offset_right = 25.0
+offset_bottom = 20.0
 grow_horizontal = 2
-grow_vertical = 0
 flat = true
 
-[node name="Label" type="Label" parent="Background/Button"]
+[node name="Label" type="Label" parent="Button"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
 text = "Done"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="gui_input" from="Background/Pebble" to="Background/Pebble" method="start_dragging"]
-[connection signal="pressed" from="Background/ActivatePebble" to="." method="_on_activate_pebble_pressed"]
-[connection signal="area_entered" from="Background/BowlFront/Area2D" to="." method="_on_bowl_crushing"]
-[connection signal="pressed" from="Background/Button" to="." method="_on_button_pressed"]
+[connection signal="gui_input" from="Pebble" to="Pebble" method="start_dragging"]
+[connection signal="pressed" from="ActivatePebble" to="." method="_on_activate_pebble_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

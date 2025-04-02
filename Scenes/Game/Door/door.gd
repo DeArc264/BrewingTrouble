@@ -33,7 +33,7 @@ func _process(_delta: float) -> void:
 
 func new_request():
 	if not client_at_door:
-		$Knock.play()
+		$FmodEventEmitter2D.play()
 		client_at_door = true
 		$PatienceTimer.start(120)
 		curr_order = orders.pick_random().name
