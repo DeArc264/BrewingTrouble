@@ -18,4 +18,5 @@ flaskC = ExtResource("3_1yqlh")
 state = "Normal"
 icon = ExtResource("1_ehrud")
 name = "Strenght Potion"
+id = "potion_2"
 description = "A potion that makes you stronger"

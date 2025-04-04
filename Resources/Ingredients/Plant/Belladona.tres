@@ -15,4 +15,5 @@ dry_icon = Array[Texture2D]([ExtResource("2_rkvps"), ExtResource("3_6wsw5"), Ext
 type = "Plant"
 icon = ExtResource("1_5hhcl")
 name = "Belladona"
+id = "plant_0"
 description = "Ingredient used for potions."

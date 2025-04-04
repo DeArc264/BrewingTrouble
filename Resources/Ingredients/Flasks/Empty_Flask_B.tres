@@ -7,6 +7,5 @@
 script = ExtResource("2_cfrga")
 icon = ExtResource("1_0yrdc")
 name = "Empty B"
-recipe = Array[ExtResource("2_cfrga")]([])
-type = "Flask"
+id = "flask_1"
 description = ""

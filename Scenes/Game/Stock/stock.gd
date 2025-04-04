@@ -6,20 +6,21 @@ signal move_to_door
 
 var ing_dict = {
 # Bases
-	"Water" : 3,
-	"Milk" : 3,
-	"Wine" : 3,
+	"base_0" : 3,
+	"base_1" : 3,
+	"base_2" : 3,
 # Plants
-	"Belladona" : 5,
-	"Lavender" : 5,
-	"Myrrh" : 5,
+	"plant_0" : 5,
+	"plant_1" : 5,
+	"plant_2" : 5,
+	"plant_3" : 5,
 # Ores
-	"Gold" : 5,
-	"Sulfur" : 0,
+	"ore_0" : 5,
+	"ore_1" : 0,
 # Flasks
-	"A" : 3,
-	"B" : 3,
-	"C" : 3
+	"flask_0" : 3,
+	"flask_1" : 3,
+	"flask_2" : 3
 }
 
 

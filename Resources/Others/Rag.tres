@@ -7,6 +7,5 @@
 script = ExtResource("1_mwyhh")
 icon = ExtResource("1_4fijy")
 name = "Rag"
-recipe = Array[ExtResource("1_mwyhh")]([])
-type = "Other"
+id = "tool_0"
 description = "A rag I use for cleaning my stuff"

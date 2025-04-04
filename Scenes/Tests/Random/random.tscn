@@ -1,9 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvlckfof35qom"]
+[gd_scene load_steps=4 format=3 uid="uid://bvlckfof35qom"]
 
 [ext_resource type="Script" path="res://Scenes/Tests/Random/random.gd" id="1_iyjgw"]
 [ext_resource type="Texture2D" uid="uid://bshs570jpwym2" path="res://Assets/Icons/missing.png" id="2_2qcv5"]
-[ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="3_7vsgq"]
-[ext_resource type="Resource" uid="uid://qlwtsvivu18e" path="res://Resources/Ingredients/Plant/Belladona.tres" id="4_75uxj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jgbdt"]
 size = Vector2(50, 50)
@@ -12,7 +10,7 @@ size = Vector2(50, 50)
 script = ExtResource("1_iyjgw")
 
 [node name="TestThing" type="RigidBody2D" parent="."]
-position = Vector2(160, 104)
+position = Vector2(56, 136)
 
 [node name="Sprite2D" type="Sprite2D" parent="TestThing"]
 scale = Vector2(0.5, 0.5)
@@ -20,10 +18,3 @@ texture = ExtResource("2_2qcv5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TestThing"]
 shape = SubResource("RectangleShape2D_jgbdt")
-
-[node name="Slot" parent="." instance=ExtResource("3_7vsgq")]
-offset_left = 36.0
-offset_top = 61.0
-offset_right = 76.0
-offset_bottom = 101.0
-item = ExtResource("4_75uxj")

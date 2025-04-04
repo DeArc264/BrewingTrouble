@@ -7,13 +7,13 @@ signal day_start
 signal pay (int)
 signal order(String)
 
-@export var orders : Array[Item]
+@export var possible_orders : Array[Item]
 @onready var dia = load("res://Resources/Dialogue/NPCDialogues.tres")
 
-var curr_order = "None"
+var curr_order: Array[Item]
+var delivery_box: Array[Item]
 var slide = false
 var client_at_door = false
-var delivery : Array[Item]
 #endregion
 
 func _process(_delta: float) -> void:
@@ -32,32 +32,45 @@ func _process(_delta: float) -> void:
 
 
 func new_request():
-	if not client_at_door:
-		$FmodEventEmitter2D.play()
-		client_at_door = true
-		$PatienceTimer.start(120)
-		curr_order = orders.pick_random().name
-		$ClientLabel.text = dia.order_potion.pick_random() + curr_order
+	if client_at_door: return
+
+	var temp_rand = randi_range(1,3)
+	$FmodEventEmitter2D.play()
+	client_at_door = true
+
+	for i in range(temp_rand):
+		curr_order.append(possible_orders.pick_random())
+
+	$PatienceTimer.start(120 * temp_rand)
+	$ClientLabel.text = dia.phrase_constructor(curr_order)
 
 
 func deliver():
-	if client_at_door:
-		if $DeliverySlot.item.state == "Wasted":
-			$ClientLabel.text = dia.reject_potion.pick_random()
-		else:
-			if $DeliverySlot.item.state == "Normal":
-				$ClientLabel.text = dia.accept_potion.pick_random()
-				pay.emit(6)
-			else:
-				$ClientLabel.text = dia.perfect_potion.pick_random()
-				pay.emit(10)
-			$DeliverySlot.empty()
-			client_at_door = false
-	else:
+	if not client_at_door:
 		$ClientLabel.text = dia.none_at_door.pick_random()
+		await get_tree().create_timer(3).timeout
+		$ClientLabel.text = ""
+		return
 
-	await get_tree().create_timer(3).timeout
-	$ClientLabel.text = ""
+	for slot in $DeliveryBox.get_children():
+		if slot.item.state == "Wasted":
+			$ClientLabel.text = dia.reject_potion.pick_random()
+			await get_tree().create_timer(3).timeout
+			$ClientLabel.text = ""
+			return
+		else:
+			for item in curr_order:
+				if item.id == slot.item.id:
+					curr_order.erase(item)
+					sell_potion(slot.item.state)
+					break
+
+
+func sell_potion(potion_state : String):
+	if potion_state == "Normal":
+		pay.emit(5)
+	elif potion_state == "Perfect":
+		pay.emit(5 * 1.25)
 
 
 #region Timers
@@ -76,10 +89,14 @@ func _on_patience_timer_timeout() -> void:
 #region Buttons
 func check_door():
 	$DoorWindow.show()
-	$WindowOpen.play()
+	#$WindowOpen.play()
 	$PatienceTimer.paused = true
-	if curr_order != "None":
-		order.emit(curr_order)
+
+	if not curr_order.is_empty():
+		var noted_order : Array[String]
+		for item in curr_order:
+			noted_order.append(item.name)
+		order.emit(noted_order)
 
 
 func _door_window_slide(event: InputEvent) -> void:
@@ -101,4 +118,11 @@ func _on_move_left_door_pressed() -> void:
 func _on_move_right_door_pressed() -> void:
 	move_to_stock.emit()
 	$DoorWindow.hide()
+
+
+func _on_delivery_button_pressed() -> void:
+	$DeliveryBox.visible = !$DeliveryBox.visible
+
+	if $DeliveryBox.hidden:
+		deliver()
 #endregion

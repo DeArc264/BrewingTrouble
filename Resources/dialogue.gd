@@ -17,7 +17,7 @@ var perfect_potion = [
 ]
 
 var reject_potion = [
-	"That's... Not what I ordered.",
+	"Hey! Something is wrong with this one!",
 	"What is this? I'm not paying for that!",
 	"Ugh... I should have looked for a better store...",
 	"Huh? That's not what I wanted!"
