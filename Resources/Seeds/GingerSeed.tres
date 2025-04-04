@@ -9,4 +9,5 @@ grow_time = 3
 type = "Ginger"
 icon = ExtResource("1_kpyte")
 name = "Ginger Seed"
+id = "seed_1"
 description = "A seed of ginger... Can it grow a person?"

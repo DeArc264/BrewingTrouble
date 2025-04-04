@@ -8,6 +8,24 @@
 
 config_version=5
 
+[Fmod]
+
+General/auto_initialize=true
+General/channel_count=1024
+General/is_live_update_enabled=true
+General/is_memory_tracking_enabled=false
+"Software Format/sample_rate"=48000
+"Software Format/speaker_mode"=3
+"Software Format/raw_speaker_count"=0
+General/default_listener_count=1
+General/banks_path="res://Assets/Audio/fmodbanks/Desktop"
+General/should_load_by_name=false
+DSP/dsp_buffer_size=512
+DSP/dsp_buffer_count=4
+"3D Settings/doppler_scale"=1.0
+"3D Settings/distance_factor"=1.0
+"3D Settings/rolloff_scale"=1.0
+
 [application]
 
 config/name="Alchemy"
@@ -18,12 +36,14 @@ config/icon="res://icon.svg"
 [autoload]
 
 Itens="*res://game_manager.gd"
+FmodManager="*res://addons/fmod/FmodManager.gd"
 
 [display]
 
 window/size/viewport_width=320
 window/size/viewport_height=180
 window/size/mode=3
+window/size/resizable=false
 window/stretch/mode="viewport"
 
 [dotnet]
@@ -33,6 +53,10 @@ project/assembly_name="Alchemy"
 [editor]
 
 movie_writer/movie_file="C:/Users/João Ricardo/Downloads/Desenvolvimento de Games/Para meus projetos/Alquimia/video/recording.png"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
 
 [rendering]
 

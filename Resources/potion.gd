@@ -12,9 +12,9 @@ var state = "Normal"
 
 func fill_potion(flask : String):
 	match flask:
-		"Empty A":
+		"flask_0":
 			icon = flaskA
-		"Empty B":
+		"flask_1":
 			icon = flaskB
-		"Empty C":
+		"flask_2":
 			icon = flaskC

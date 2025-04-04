@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://ruyqta42jimp"]
+
+[ext_resource type="Script" path="res://Scenes/Tests/Clean/clean.gd" id="2_n41w4"]
+[ext_resource type="PackedScene" uid="uid://c5qggaa2n2pvw" path="res://Scenes/Tests/Dirty/dirt_spot.tscn" id="2_ona33"]
+
+[node name="Clean" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_n41w4")
+dirt_spots = ExtResource("2_ona33")
+metadata/_edit_vertical_guides_ = [20.0, 300.0]
+metadata/_edit_horizontal_guides_ = [21.0, 160.0]
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 18.0
+offset_bottom = 19.0
+
+[connection signal="pressed" from="Button" to="." method="start_cleaning"]

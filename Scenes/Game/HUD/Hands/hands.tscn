@@ -4,20 +4,20 @@
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="1_607gc"]
 
 [node name="Hands" type="GridContainer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/h_separation = 20
+offset_right = 70.0
+offset_bottom = 10.0
+theme_override_constants/h_separation = 8
 columns = 3
 script = ExtResource("1_7mmu5")
 
 [node name="Slot" parent="." instance=ExtResource("1_607gc")]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Slot2" parent="." instance=ExtResource("1_607gc")]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Slot3" parent="." instance=ExtResource("1_607gc")]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2

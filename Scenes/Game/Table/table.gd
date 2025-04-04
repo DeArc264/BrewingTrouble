@@ -2,6 +2,8 @@ extends Control
 
 signal new_item(item : Item) # Signal to add a new item to player hand
 signal crush(item : Item)
+signal helper(which : String)
+
 # Mobility(206-213) signals
 signal move_to_stock
 signal move_to_door
@@ -183,10 +185,14 @@ func _on_caldron_slot_dropped() -> void:
 
 		caldron_slot.empty()
 
+		if in_caldron.size() >= 3:
+			$Mix.show()
+
 # When the button is pressed, checks if there are enough ingredients and shows
 # the caldron minigame.
 func _on_mix_pressed() -> void:
 	if in_caldron.size() >= 3 and in_caldron[0] != null:
+		$Mix.hide()
 		$ING1BoilTimer.stop()
 		$ING2BoilTimer.stop()
 		$Caldron.show()
@@ -197,7 +203,7 @@ func check_recipe():
 		return 9
 
 	for i in in_caldron:
-		if i.conditions.has("useless"):
+		if i == Potion or i.conditions.has("useless") and i != null:
 			return 9
 
 	for j in craftables.size():
@@ -301,17 +307,11 @@ func caldron_sounds(sound : String):
 	$Items.play()
 
 
-#region Tutorials
-func show_tutorial(which : String):
-	if $TableTuts.is_playing():
-		$TableTuts2.play(which + "_enter")
-	else:
-		$TableTuts.play(which + "_enter")
+#region Helpers
+func show_help(which : String):
+	helper.emit(which)
 
 
-func hide_tutorial(which : String):
-	if $TableTuts.is_playing():
-		$TableTuts2.play(which + "_exit")
-	else:
-		$TableTuts.play(which + "_exit")
+func hide_help():
+	helper.emit("close")
 #endregion

@@ -1,446 +1,25 @@
-[gd_scene load_steps=40 format=3 uid="uid://gdr3cf0jg005"]
+[gd_scene load_steps=21 format=3 uid="uid://gdr3cf0jg005"]
 
 [ext_resource type="Script" path="res://Scenes/Game/Table/table.gd" id="1_rxm4g"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="2_gvcte"]
 [ext_resource type="Script" path="res://Resources/Item.gd" id="2_wejl3"]
 [ext_resource type="Resource" uid="uid://d2qnj6b3mkl0d" path="res://Resources/Potions/PotionStrenght.tres" id="3_bmf7n"]
 [ext_resource type="Resource" uid="uid://b8dibpsfka1x8" path="res://Resources/Potions/PotionStamina.tres" id="4_emhfe"]
-[ext_resource type="PackedScene" uid="uid://clb5bygcnejvp" path="res://Scenes/Game/Caldron/caldron.tscn" id="4_lajix"]
 [ext_resource type="Resource" uid="uid://dyljjx5q3ilc1" path="res://Resources/Potions/PotionHealing.tres" id="5_18i7f"]
-[ext_resource type="PackedScene" uid="uid://cun7jmlf65cbq" path="res://Scenes/Game/Mortar/mortar.tscn" id="5_wnxhj"]
-[ext_resource type="Texture2D" uid="uid://cm7slspxam6cu" path="res://Assets/Background/table_bg_placeholder.png" id="6_2fx7f"]
-[ext_resource type="AudioStream" uid="uid://bn2hrmon7hwnn" path="res://Assets/Audio/Table/drop_1.wav" id="6_rt48h"]
-[ext_resource type="AudioStream" uid="uid://chtcqt51npeql" path="res://Assets/Audio/Table/drop_2.wav" id="7_icovv"]
-[ext_resource type="AudioStream" uid="uid://omsk27ospr1y" path="res://Assets/Audio/Table/drop_3.wav" id="8_oxelg"]
-[ext_resource type="AudioStream" uid="uid://bact1m30ebpsn" path="res://Assets/Audio/Table/drop_4.wav" id="9_7qoq4"]
-[ext_resource type="PackedScene" uid="uid://dus7ooufchbdn" path="res://Scenes/Tests/Book/book.tscn" id="10_irqxx"]
-[ext_resource type="PackedScene" uid="uid://7yffggslvelu" path="res://Scenes/Tests/Cutter/cutter.tscn" id="11_60dht"]
-[ext_resource type="AudioStream" uid="uid://pwt1mjtlhbu2" path="res://Assets/Audio/Table/openingbook.wav" id="12_lr164"]
-[ext_resource type="AudioStream" uid="uid://0444dwy4yrmu" path="res://Assets/Audio/Table/firerisingblow.wav" id="13_xfy60"]
-[ext_resource type="AudioStream" uid="uid://djt1pif0dt7ra" path="res://Assets/Audio/Table/boil.wav" id="14_yas0g"]
-[ext_resource type="Texture2D" uid="uid://pojghji23m58" path="res://Assets/Other/Parchment.png" id="16_20r0y"]
-
-[sub_resource type="Animation" id="Animation_rn6sd"]
-resource_name = "dry_enter"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DryTut:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1214, -223), Vector2(1214, 35)]
-}
-
-[sub_resource type="Animation" id="Animation_m420f"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DryTut:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1214, -223)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CaldTut:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(600, -223)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("DistTut:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(240, -223)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("HourTut:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(479, 1272)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("BellowTut:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(791, 1272)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("BookTut:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1127, 1272)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("CrushTut:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1127, 1272)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("TrashTut:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1711, 1272)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("PotTut:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1751, -223)]
-}
-
-[sub_resource type="Animation" id="Animation_s3u66"]
-resource_name = "dry_exit"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DryTut:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1214, 35), Vector2(1214, -223)]
-}
-
-[sub_resource type="Animation" id="Animation_h2q4b"]
-resource_name = "caldron_enter"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CaldTut:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(600, -223), Vector2(600, 35)]
-}
-
-[sub_resource type="Animation" id="Animation_4lgy6"]
-resource_name = "caldron_exit"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CaldTut:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(600, 35), Vector2(600, -223)]
-}
-
-[sub_resource type="Animation" id="Animation_e7ktd"]
-resource_name = "distill_enter"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DistTut:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(240, -223), Vector2(240, 35)]
-}
-
-[sub_resource type="Animation" id="Animation_tar2m"]
-resource_name = "distill_exit"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DistTut:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(240, 35), Vector2(240, -223)]
-}
-
-[sub_resource type="Animation" id="Animation_4aglt"]
-resource_name = "hour_enter"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("HourTut:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(479, 1272), Vector2(479, 1040)]
-}
-
-[sub_resource type="Animation" id="Animation_5vvdp"]
-resource_name = "hour_exit"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("HourTut:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(479, 1040), Vector2(479, 1272)]
-}
-
-[sub_resource type="Animation" id="Animation_wtgpd"]
-resource_name = "bellow_enter"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BellowTut:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(791, 1272), Vector2(791, 1040)]
-}
-
-[sub_resource type="Animation" id="Animation_cmrk1"]
-resource_name = "bellow_exit"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BellowTut:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(791, 1040), Vector2(791, 1272)]
-}
-
-[sub_resource type="Animation" id="Animation_2p4y3"]
-resource_name = "book_enter"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BookTut:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1127, 1272), Vector2(1127, 1040)]
-}
-
-[sub_resource type="Animation" id="Animation_1wthc"]
-resource_name = "book_exit"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BookTut:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1127, 1040), Vector2(1127, 1272)]
-}
-
-[sub_resource type="Animation" id="Animation_3brpa"]
-resource_name = "crush_enter"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CrushTut:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1423, 1272), Vector2(1423, 1040)]
-}
-
-[sub_resource type="Animation" id="Animation_bq8gb"]
-resource_name = "crush_exit"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CrushTut:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1423, 1040), Vector2(1423, 1272)]
-}
-
-[sub_resource type="Animation" id="Animation_37oa0"]
-resource_name = "trash_enter"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TrashTut:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1711, 1272), Vector2(1711, 1040)]
-}
-
-[sub_resource type="Animation" id="Animation_8s61d"]
-resource_name = "trash_exit"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TrashTut:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1711, 1040), Vector2(1711, 1272)]
-}
-
-[sub_resource type="Animation" id="Animation_x2b8g"]
-resource_name = "pot_enter"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PotTut:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1751, -223), Vector2(1751, 35)]
-}
-
-[sub_resource type="Animation" id="Animation_g4exc"]
-resource_name = "pot_exit"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PotTut:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1751, 35), Vector2(1751, -223)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_oklqi"]
-_data = {
-"RESET": SubResource("Animation_m420f"),
-"bellow_enter": SubResource("Animation_wtgpd"),
-"bellow_exit": SubResource("Animation_cmrk1"),
-"book_enter": SubResource("Animation_2p4y3"),
-"book_exit": SubResource("Animation_1wthc"),
-"caldron_enter": SubResource("Animation_h2q4b"),
-"caldron_exit": SubResource("Animation_4lgy6"),
-"crush_enter": SubResource("Animation_3brpa"),
-"crush_exit": SubResource("Animation_bq8gb"),
-"distill_enter": SubResource("Animation_e7ktd"),
-"distill_exit": SubResource("Animation_tar2m"),
-"dry_enter": SubResource("Animation_rn6sd"),
-"dry_exit": SubResource("Animation_s3u66"),
-"hour_enter": SubResource("Animation_4aglt"),
-"hour_exit": SubResource("Animation_5vvdp"),
-"pot_enter": SubResource("Animation_x2b8g"),
-"pot_exit": SubResource("Animation_g4exc"),
-"trash_enter": SubResource("Animation_37oa0"),
-"trash_exit": SubResource("Animation_8s61d")
-}
+[ext_resource type="PackedScene" uid="uid://cun7jmlf65cbq" path="res://Scenes/Game/Table/Minigames/Mortar/mortar.tscn" id="5_wnxhj"]
+[ext_resource type="Texture2D" uid="uid://frac08byunq2" path="res://Assets/Table/table_bg.png" id="10_4mva8"]
+[ext_resource type="PackedScene" uid="uid://dus7ooufchbdn" path="res://Scenes/Game/Table/Book/book.tscn" id="10_irqxx"]
+[ext_resource type="PackedScene" uid="uid://7yffggslvelu" path="res://Scenes/Game/Table/Minigames/Cutter/cutter.tscn" id="11_60dht"]
+[ext_resource type="Texture2D" uid="uid://cmn54cmvgdmp5" path="res://Assets/Table/drying_net_empty.png" id="11_mwhou"]
+[ext_resource type="Texture2D" uid="uid://bx6d4t8olghdv" path="res://Assets/Table/distillery.png" id="12_ckuv7"]
+[ext_resource type="Texture2D" uid="uid://ckbw5sxle3koi" path="res://Assets/Table/hourglass.png" id="13_7xym8"]
+[ext_resource type="Texture2D" uid="uid://24svegbqq32b" path="res://Assets/Table/cut_board.png" id="14_xfd8c"]
+[ext_resource type="Texture2D" uid="uid://dpf6wbq4jyjh8" path="res://Assets/Table/livro_receitas.png" id="15_7uukh"]
+[ext_resource type="PackedScene" uid="uid://ruyqta42jimp" path="res://Scenes/Tests/Clean/clean.tscn" id="16_6ulko"]
+[ext_resource type="Texture2D" uid="uid://syygt5ej8krj" path="res://Assets/Table/caldron_table.png" id="16_pia0k"]
+[ext_resource type="Texture2D" uid="uid://bsrk1x1uxpv2v" path="res://Assets/Table/mortar.png" id="17_med01"]
+[ext_resource type="Texture2D" uid="uid://dx823xr468ygu" path="res://Assets/Table/fireplace.png" id="18_dwnnc"]
+[ext_resource type="PackedScene" uid="uid://clb5bygcnejvp" path="res://Scenes/Game/Caldron/caldron.tscn" id="19_hqp1p"]
 
 [node name="Table" type="Control"]
 layout_mode = 3
@@ -451,42 +30,91 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rxm4g")
 craftables = Array[ExtResource("2_wejl3")]([ExtResource("3_bmf7n"), ExtResource("4_emhfe"), ExtResource("5_18i7f")])
-drop_sounds = Array[AudioStreamWAV]([ExtResource("6_rt48h"), ExtResource("7_icovv"), ExtResource("8_oxelg"), ExtResource("9_7qoq4")])
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Table" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("6_2fx7f")
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("10_4mva8")
 
-[node name="Shelf" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -400.0
-offset_top = 390.0
-offset_right = -191.0
-offset_bottom = 490.0
-grow_horizontal = 0
-theme_override_constants/separation = 9
+[node name="DryNet" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("11_mwhou")
 
-[node name="Slot" parent="Shelf" instance=ExtResource("2_gvcte")]
-layout_mode = 2
+[node name="DistilleryImg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 16.0
+offset_right = 304.0
+offset_bottom = 108.0
+texture = ExtResource("12_ckuv7")
 
-[node name="Slot2" parent="Shelf" instance=ExtResource("2_gvcte")]
-layout_mode = 2
+[node name="Hourglass" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 32.0
+offset_right = 210.0
+offset_bottom = 100.0
+texture = ExtResource("13_7xym8")
+
+[node name="CuttingBoardImg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 112.0
+offset_right = 317.0
+offset_bottom = 154.0
+texture = ExtResource("14_xfd8c")
+
+[node name="BookImg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 56.0
+offset_right = 140.0
+offset_bottom = 128.0
+texture = ExtResource("15_7uukh")
+
+[node name="CaldronImg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 81.0
+offset_right = 198.0
+offset_bottom = 134.0
+texture = ExtResource("16_pia0k")
+
+[node name="MortarImg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 129.0
+offset_right = 95.0
+offset_bottom = 156.0
+texture = ExtResource("17_med01")
+
+[node name="Fireplace" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("18_dwnnc")
 
 [node name="Dryer" parent="." instance=ExtResource("2_gvcte")]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -50.0
-offset_top = 112.0
-offset_right = 50.0
-offset_bottom = 212.0
+offset_left = -14.0
+offset_top = 24.0
+offset_right = 14.0
+offset_bottom = 52.0
 grow_horizontal = 2
+
+[node name="CaldronSlot" parent="." instance=ExtResource("2_gvcte")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_left = 131.0
+offset_top = 85.0
+offset_right = 187.0
+offset_bottom = 100.0
 
 [node name="DryLabel" type="Label" parent="."]
 visible = false
@@ -494,26 +122,21 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 84.0
-offset_top = 151.0
-offset_right = 184.0
-offset_bottom = 174.0
+offset_left = 21.0
+offset_top = 9.0
+offset_right = 72.0
+offset_bottom = 32.0
 grow_horizontal = 2
+text = "Drying"
 
 [node name="Mix" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 806.5
 offset_top = 463.0
 offset_right = 871.5
 offset_bottom = 499.0
 text = "Mix"
-
-[node name="CaldronSlot" parent="." instance=ExtResource("2_gvcte")]
-layout_mode = 2
-offset_left = 820.0
-offset_top = 341.0
-offset_right = 1108.0
-offset_bottom = 441.0
 
 [node name="Bellows" type="Button" parent="."]
 layout_mode = 1
@@ -522,14 +145,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -348.0
-offset_top = 81.0
-offset_right = -248.0
-offset_bottom = 121.0
+offset_left = -359.0
+offset_top = 50.0
+offset_right = -242.0
+offset_bottom = 138.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Bellows"
 flat = true
 
 [node name="BoilLabel" type="Label" parent="."]
@@ -558,62 +180,59 @@ anchor_bottom = 0.5
 offset_left = 239.0
 offset_top = 54.0
 offset_right = 440.0
-offset_bottom = 126.0
+offset_bottom = 151.0
 grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
 [node name="MortarSlot" parent="." instance=ExtResource("2_gvcte")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -465.0
-offset_top = 43.0
-offset_right = -365.0
-offset_bottom = 143.0
-grow_horizontal = 0
-grow_vertical = 2
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 53.0
+offset_top = -48.0
+offset_right = 88.0
+offset_bottom = -31.0
+grow_vertical = 0
 
 [node name="DistillerySlot" parent="." instance=ExtResource("2_gvcte")]
 layout_mode = 0
-offset_left = 141.0
-offset_top = 410.0
-offset_right = 241.0
-offset_bottom = 510.0
+offset_left = 228.0
+offset_top = 71.0
+offset_right = 254.0
+offset_bottom = 97.0
 
 [node name="CutterSlot" parent="." instance=ExtResource("2_gvcte")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 1720.0
-offset_top = 587.0
-offset_right = 1820.0
-offset_bottom = 687.0
+offset_left = 227.0
+offset_top = 114.0
+offset_right = 278.0
+offset_bottom = 149.0
 
 [node name="TurnHourglass" type="Button" parent="."]
 layout_mode = 0
-offset_left = 373.0
-offset_top = 447.0
-offset_right = 499.0
-offset_bottom = 664.0
+offset_left = 182.0
+offset_top = 37.0
+offset_right = 204.0
+offset_bottom = 82.0
 flat = true
 
 [node name="HourglassLabel" type="Label" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -52.0
-offset_top = -25.5
-offset_right = 52.0
-offset_bottom = 25.5
+offset_left = 53.0
+offset_top = -54.0
+offset_right = 89.0
+offset_bottom = -31.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -625,15 +244,6 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-
-[node name="Caldron" parent="." instance=ExtResource("4_lajix")]
-visible = false
-layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
 
 [node name="Book" parent="." instance=ExtResource("10_irqxx")]
 visible = false
@@ -647,17 +257,28 @@ offset_bottom = 88.0
 visible = false
 layout_mode = 1
 
+[node name="Caldron" parent="." instance=ExtResource("19_hqp1p")]
+layout_mode = 1
+
+[node name="Clean" parent="." instance=ExtResource("16_6ulko")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="MoveLeft_Table" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 32.0
-offset_top = -31.5
-offset_right = 63.0
-offset_bottom = 31.5
+offset_left = 8.0
+offset_top = -71.5
+offset_right = 26.0
+offset_bottom = -40.5
 grow_vertical = 2
-theme_override_font_sizes/font_size = 40
 text = "<"
 
 [node name="MoveRight_Table" type="Button" parent="."]
@@ -667,13 +288,12 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -63.0
-offset_top = -31.5
-offset_right = -32.0
-offset_bottom = 31.5
+offset_left = -26.0
+offset_top = -71.5
+offset_right = -8.0
+offset_bottom = -40.5
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_font_sizes/font_size = 40
 text = ">"
 
 [node name="BoilTimer" type="Timer" parent="."]
@@ -708,208 +328,35 @@ offset_bottom = 131.0
 text = "Ing 1:
 Ing 2:"
 
-[node name="DryTut" type="Sprite2D" parent="."]
-position = Vector2(1214, -223)
-scale = Vector2(0.4375, 0.4375)
-texture = ExtResource("16_20r0y")
-
-[node name="Label" type="Label" parent="DryTut"]
-offset_left = -229.0
-offset_top = -16.0
-offset_right = 226.0
-offset_bottom = 213.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "Use to dry your plants.
-
-And pay attention to the current condition."
-autowrap_mode = 2
-
-[node name="CaldTut" type="Sprite2D" parent="."]
-position = Vector2(600, -223)
-scale = Vector2(0.4375, 0.4375)
-texture = ExtResource("16_20r0y")
-
-[node name="Label" type="Label" parent="CaldTut"]
-offset_left = -229.0
-offset_top = -34.0
-offset_right = 226.0
-offset_bottom = 253.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "Drop ingredients to add to the potion.
-
-Click \"Mix\" once all ingredients are added."
-autowrap_mode = 2
-
-[node name="DistTut" type="Sprite2D" parent="."]
-position = Vector2(240, -223)
-scale = Vector2(0.4375, 0.4375)
-texture = ExtResource("16_20r0y")
-
-[node name="Label" type="Label" parent="DistTut"]
-offset_left = -229.0
-offset_top = -59.9999
-offset_right = 226.0
-offset_bottom = 227.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "Drop ingredients to be distilled.
-
-NOTE: Ores can't be distilled."
-autowrap_mode = 2
-
-[node name="HourTut" type="Sprite2D" parent="."]
-position = Vector2(479, 1272)
-scale = Vector2(0.4375, 0.4375)
-texture = ExtResource("16_20r0y")
-flip_v = true
-
-[node name="Label" type="Label" parent="HourTut"]
-offset_left = -229.0
-offset_top = -270.286
-offset_right = 226.0
-offset_bottom = 16.7142
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "Click to turn.
-
-Each turn takes 5 seconds."
-autowrap_mode = 2
-
-[node name="BellowTut" type="Sprite2D" parent="."]
-position = Vector2(791, 1272)
-scale = Vector2(0.4375, 0.4375)
-texture = ExtResource("16_20r0y")
-flip_v = true
-
-[node name="Label" type="Label" parent="BellowTut"]
-offset_left = -229.0
-offset_top = -270.286
-offset_right = 226.0
-offset_bottom = 16.7142
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "Click to raise the fire.
-
-NOTE: Only works if there is liquid in the caldron."
-autowrap_mode = 2
-
-[node name="BookTut" type="Sprite2D" parent="."]
-position = Vector2(1127, 1272)
-scale = Vector2(0.4375, 0.4375)
-texture = ExtResource("16_20r0y")
-flip_v = true
-
-[node name="Label" type="Label" parent="BookTut"]
-offset_left = -229.0
-offset_top = -270.286
-offset_right = 226.0
-offset_bottom = 16.7142
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "All your recipes are here."
-autowrap_mode = 2
-
-[node name="CrushTut" type="Sprite2D" parent="."]
-position = Vector2(1127, 1272)
-scale = Vector2(0.4375, 0.4375)
-texture = ExtResource("16_20r0y")
-flip_v = true
-
-[node name="Label" type="Label" parent="CrushTut"]
-offset_left = -229.0
-offset_top = -270.286
-offset_right = 226.0
-offset_bottom = 16.7142
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "Drop ingredients to crush them."
-autowrap_mode = 2
-
-[node name="TrashTut" type="Sprite2D" parent="."]
-position = Vector2(1711, 1272)
-scale = Vector2(0.4375, 0.4375)
-texture = ExtResource("16_20r0y")
-flip_v = true
-
-[node name="Label" type="Label" parent="TrashTut"]
-offset_left = -229.0
-offset_top = -270.286
-offset_right = 226.0
-offset_bottom = 16.7142
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "Discard any item."
-autowrap_mode = 2
-
-[node name="PotTut" type="Sprite2D" parent="."]
-position = Vector2(1751, -223)
-scale = Vector2(0.4375, 0.4375)
-texture = ExtResource("16_20r0y")
-
-[node name="Label" type="Label" parent="PotTut"]
-offset_left = -229.0
-offset_top = -23.7143
-offset_right = 226.0
-offset_bottom = 147.286
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "Pots for holding your items. In case your hands get full."
-autowrap_mode = 2
-
-[node name="BookOpen" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("12_lr164")
-
-[node name="Bellow" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("13_xfy60")
-
-[node name="Boiling" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("14_yas0g")
-
-[node name="Items" type="AudioStreamPlayer2D" parent="."]
-
-[node name="TableTuts" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_oklqi")
-}
-
-[node name="TableTuts2" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_oklqi")
-}
-
 [connection signal="crush" from="." to="Mortar" method="_on_table_crush"]
-[connection signal="mouse_entered" from="Shelf" to="." method="show_tutorial" binds= ["pot"]]
-[connection signal="mouse_exited" from="Shelf" to="." method="hide_tutorial" binds= ["pot"]]
 [connection signal="dropped" from="Dryer" to="." method="_on_dryer_dropped"]
-[connection signal="mouse_entered" from="Dryer" to="." method="show_tutorial" binds= ["dry"]]
-[connection signal="mouse_exited" from="Dryer" to="." method="hide_tutorial" binds= ["dry"]]
-[connection signal="pressed" from="Mix" to="." method="_on_mix_pressed"]
+[connection signal="mouse_entered" from="Dryer" to="." method="show_help" binds= ["dry"]]
+[connection signal="mouse_exited" from="Dryer" to="." method="hide_help"]
 [connection signal="dropped" from="CaldronSlot" to="." method="_on_caldron_slot_dropped"]
-[connection signal="mouse_entered" from="CaldronSlot" to="." method="show_tutorial" binds= ["caldron"]]
-[connection signal="mouse_exited" from="CaldronSlot" to="." method="hide_tutorial" binds= ["caldron"]]
-[connection signal="mouse_entered" from="Bellows" to="." method="show_tutorial" binds= ["bellow"]]
-[connection signal="mouse_exited" from="Bellows" to="." method="hide_tutorial" binds= ["bellow"]]
+[connection signal="mouse_entered" from="CaldronSlot" to="." method="show_help" binds= ["caldron"]]
+[connection signal="mouse_exited" from="CaldronSlot" to="." method="hide_help"]
+[connection signal="pressed" from="Mix" to="." method="_on_mix_pressed"]
+[connection signal="mouse_entered" from="Bellows" to="." method="show_help" binds= ["bellow"]]
+[connection signal="mouse_exited" from="Bellows" to="." method="hide_help"]
 [connection signal="pressed" from="Bellows" to="." method="_on_bellows_pressed"]
-[connection signal="mouse_entered" from="BookButton" to="." method="show_tutorial" binds= ["book"]]
-[connection signal="mouse_exited" from="BookButton" to="." method="hide_tutorial" binds= ["book"]]
+[connection signal="mouse_entered" from="BookButton" to="." method="show_help" binds= ["book"]]
+[connection signal="mouse_exited" from="BookButton" to="." method="hide_help"]
 [connection signal="pressed" from="BookButton" to="." method="_on_book_button_pressed"]
 [connection signal="dropped" from="MortarSlot" to="." method="_on_mortar_slot_dropped"]
-[connection signal="mouse_entered" from="MortarSlot" to="." method="show_tutorial" binds= ["crush"]]
-[connection signal="mouse_exited" from="MortarSlot" to="." method="hide_tutorial" binds= ["crush"]]
+[connection signal="mouse_entered" from="MortarSlot" to="." method="show_help" binds= ["crush"]]
+[connection signal="mouse_exited" from="MortarSlot" to="." method="hide_help"]
 [connection signal="dropped" from="DistillerySlot" to="." method="_on_distillery_slot_dropped"]
-[connection signal="mouse_entered" from="DistillerySlot" to="." method="show_tutorial" binds= ["distill"]]
-[connection signal="mouse_exited" from="DistillerySlot" to="." method="hide_tutorial" binds= ["distill"]]
+[connection signal="mouse_entered" from="DistillerySlot" to="." method="show_help" binds= ["distill"]]
+[connection signal="mouse_exited" from="DistillerySlot" to="." method="hide_help"]
 [connection signal="dropped" from="CutterSlot" to="." method="_on_cutter_slot_dropped"]
-[connection signal="mouse_entered" from="CutterSlot" to="." method="show_tutorial" binds= ["trash"]]
-[connection signal="mouse_exited" from="CutterSlot" to="." method="hide_tutorial" binds= ["trash"]]
-[connection signal="mouse_entered" from="TurnHourglass" to="." method="show_tutorial" binds= ["hour"]]
-[connection signal="mouse_exited" from="TurnHourglass" to="." method="hide_tutorial" binds= ["hour"]]
+[connection signal="mouse_entered" from="CutterSlot" to="." method="show_help" binds= ["trash"]]
+[connection signal="mouse_exited" from="CutterSlot" to="." method="hide_help"]
+[connection signal="mouse_entered" from="TurnHourglass" to="." method="show_help" binds= ["hour"]]
+[connection signal="mouse_exited" from="TurnHourglass" to="." method="hide_help"]
 [connection signal="pressed" from="TurnHourglass" to="." method="_on_turn_hourglass_pressed"]
 [connection signal="crushed" from="Mortar" to="." method="update_crush"]
-[connection signal="mixed" from="Caldron" to="." method="_on_caldron_mixed"]
 [connection signal="cutted" from="Cutter" to="." method="update_cut"]
+[connection signal="mixed" from="Caldron" to="." method="_on_caldron_mixed"]
 [connection signal="pressed" from="MoveLeft_Table" to="." method="_on_move_left_table_pressed"]
 [connection signal="pressed" from="MoveRight_Table" to="." method="_on_move_right_table_pressed"]
 [connection signal="timeout" from="BoilTimer" to="." method="_on_boil_timer_timeout"]

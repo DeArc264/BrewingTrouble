@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5qggaa2n2pvw"]
+
+[ext_resource type="Script" path="res://Scenes/Tests/Dirty/dirt_spot.gd" id="2_hftxy"]
+
+[node name="DirtSpot" type="TextureRect"]
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_hftxy")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

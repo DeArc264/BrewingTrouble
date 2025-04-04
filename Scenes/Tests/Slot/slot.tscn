@@ -8,6 +8,26 @@ offset_bottom = 40.0
 script = ExtResource("1_07yqn")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect"]
+visible = false
+layout_mode = 0
+offset_left = 44.0
+offset_top = 4.0
+offset_right = 122.0
+offset_bottom = 27.0
+color = Color(0.70996, 0.454062, 0.290422, 1)
+
+[node name="Label" type="Label" parent="TextureRect/ColorRect"]
+layout_mode = 0
+offset_right = 56.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

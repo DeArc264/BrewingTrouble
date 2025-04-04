@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cfvv7x84qgvlj"]
+[gd_scene load_steps=12 format=3 uid="uid://cfvv7x84qgvlj"]
 
 [ext_resource type="Script" path="res://Scenes/Game/HUD/Main/hud.gd" id="1_kg5u5"]
 [ext_resource type="Script" path="res://Scenes/Tests/TestScene/Inventory.gd" id="2_s3pb2"]
@@ -20,9 +20,53 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(30, 1026)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HandsTab:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(785, 1026)]
+}
+
+[sub_resource type="Animation" id="Animation_n2bcw"]
+resource_name = "hands_go_down"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandsTab:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(785, 866), Vector2(785, 1026)]
+}
+
+[sub_resource type="Animation" id="Animation_iu2eh"]
+resource_name = "hands_go_up"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandsTab:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(785, 1026), Vector2(785, 866)]
+}
 
 [sub_resource type="Animation" id="Animation_b4r8f"]
-resource_name = "go_down"
+resource_name = "order_go_down"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -38,7 +82,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_umhoq"]
-resource_name = "go_up"
+resource_name = "order_go_up"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -56,8 +100,10 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vyxgj"]
 _data = {
 "RESET": SubResource("Animation_h7dlr"),
-"go_down": SubResource("Animation_b4r8f"),
-"go_up": SubResource("Animation_umhoq")
+"hands_go_down": SubResource("Animation_n2bcw"),
+"hands_go_up": SubResource("Animation_iu2eh"),
+"order_go_down": SubResource("Animation_b4r8f"),
+"order_go_up": SubResource("Animation_umhoq")
 }
 
 [node name="HUD" type="Control"]
@@ -74,12 +120,11 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -190.0
-offset_top = 32.0
-offset_right = -40.0
-offset_bottom = 92.0
+offset_left = -67.0
+offset_top = 4.0
+offset_right = -6.0
+offset_bottom = 27.0
 grow_horizontal = 0
-theme_override_font_sizes/font_size = 40
 text = "Coins: 0"
 vertical_alignment = 1
 
@@ -88,40 +133,79 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -192.0
-offset_top = 94.0
-offset_right = -42.0
-offset_bottom = 154.0
+offset_left = -67.0
+offset_top = 26.0
+offset_right = -24.0
+offset_bottom = 49.0
 grow_horizontal = 0
-theme_override_font_sizes/font_size = 40
 text = "Time:"
 vertical_alignment = 1
 
-[node name="Hands" type="GridContainer" parent="."]
+[node name="HandsTab" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -170.0
-offset_top = -112.0
-offset_right = 170.0
-offset_bottom = -12.0
-grow_horizontal = 2
+offset_left = 119.0
+offset_top = -20.0
+offset_right = 229.0
+offset_bottom = 50.0
 grow_vertical = 0
-theme_override_constants/h_separation = 20
+color = Color(0.73303, 0.444622, 0.194185, 1)
+
+[node name="Detail" type="ColorRect" parent="HandsTab"]
+layout_mode = 0
+offset_right = 110.0
+offset_bottom = 20.0
+mouse_filter = 2
+color = Color(0.582191, 0.343159, 0.136624, 1)
+
+[node name="Label" type="Label" parent="HandsTab/Detail"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "HOLDING"
+
+[node name="Hands" type="GridContainer" parent="HandsTab"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = -12.0
+offset_right = 53.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 8
 columns = 3
 script = ExtResource("2_s3pb2")
 
-[node name="Slot" parent="Hands" instance=ExtResource("3_j28ob")]
+[node name="Slot" parent="HandsTab/Hands" instance=ExtResource("3_j28ob")]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
+mouse_filter = 1
 
-[node name="Slot2" parent="Hands" instance=ExtResource("3_j28ob")]
+[node name="Slot2" parent="HandsTab/Hands" instance=ExtResource("3_j28ob")]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
+mouse_filter = 1
 
-[node name="Slot3" parent="Hands" instance=ExtResource("3_j28ob")]
+[node name="Slot3" parent="HandsTab/Hands" instance=ExtResource("3_j28ob")]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
+mouse_filter = 1
 
 [node name="Store" parent="." instance=ExtResource("4_7xrsr")]
 visible = false
@@ -142,10 +226,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 30.0
-offset_top = -54.0
-offset_right = 380.0
-offset_bottom = 162.0
+offset_left = 4.0
+offset_top = -20.0
+offset_right = 114.0
+offset_bottom = 50.0
 grow_vertical = 0
 color = Color(0.73303, 0.444622, 0.194185, 1)
 
@@ -156,19 +240,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -39.0
-offset_top = 3.0
-offset_right = 39.0
-offset_bottom = 45.0
+offset_left = -21.0
+offset_top = -11.5
+offset_right = 21.0
+offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
 text = "None"
 
 [node name="Detail" type="ColorRect" parent="OrderNote"]
 layout_mode = 0
-offset_right = 350.0
-offset_bottom = 55.0
+offset_right = 110.0
+offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.582191, 0.343159, 0.136624, 1)
 
@@ -179,14 +262,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -22.0
+offset_top = -12.5
+offset_right = 22.0
+offset_bottom = 10.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "NOTE	"
+text = "NOTE"
 
 [node name="DayTimer" type="Timer" parent="."]
 wait_time = 300.0
@@ -217,7 +299,9 @@ libraries = {
 }
 
 [connection signal="new_day" from="." to="Store" method="set_prices"]
+[connection signal="mouse_entered" from="HandsTab" to="." method="_show_HUD_piece" binds= ["hands"]]
+[connection signal="mouse_exited" from="HandsTab" to="." method="_hide_HUD_piece" binds= ["hands"]]
 [connection signal="send" from="Store" to="." method="buy_stuff"]
-[connection signal="mouse_entered" from="OrderNote" to="." method="_show_note"]
-[connection signal="mouse_exited" from="OrderNote" to="." method="_hide_note"]
+[connection signal="mouse_entered" from="OrderNote" to="." method="_show_HUD_piece" binds= ["order"]]
+[connection signal="mouse_exited" from="OrderNote" to="." method="_hide_HUD_piece" binds= ["order"]]
 [connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]

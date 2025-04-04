@@ -18,4 +18,5 @@ flaskC = ExtResource("3_g34e1")
 state = "Normal"
 icon = ExtResource("1_xa6au")
 name = "Healing Potion"
+id = "potion_0"
 description = ""

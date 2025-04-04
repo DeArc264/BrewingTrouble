@@ -4,23 +4,23 @@ var hands_full = false
 
 var ingredients = {
 	# Bases
-	"Water" : "res://Resources/Ingredients/Base/Water.tres",
-	"Milk" : "res://Resources/Ingredients/Base/Milk.tres",
-	"Wine" : "res://Resources/Ingredients/Base/Wine.tres",
+	"base_0" : "res://Resources/Ingredients/Base/Milk.tres",
+	"base_1" : "res://Resources/Ingredients/Base/Water.tres",
+	"base_2" : "res://Resources/Ingredients/Base/Wine.tres",
 # Plants
-	"Belladona" : "res://Resources/Ingredients/Plant/Belladona.tres",
-	"Lavender" : "res://Resources/Ingredients/Plant/Lavander.tres",
-	"Myrrh" : "res://Resources/Ingredients/Plant/Myrrh.tres",
-	"Ginger" : "res://Resources/Ingredients/Plant/Ginger.tres",
+	"plant_0" : "res://Resources/Ingredients/Plant/Belladona.tres",
+	"plant_1" : "res://Resources/Ingredients/Plant/Ginger.tres",
+	"plant_2" : "res://Resources/Ingredients/Plant/Lavander.tres",
+	"plant_3" : "res://Resources/Ingredients/Plant/Myrrh.tres",
 # Ores
-	"Gold" : "res://Resources/Ingredients/Ore/Gold.tres",
-	"Sulfur" : "res://Resources/Ingredients/Ore/Sulfur.tres",
+	"ore_0" : "res://Resources/Ingredients/Ore/Gold.tres",
+	"ore_1" : "res://Resources/Ingredients/Ore/Sulfur.tres",
 # Flasks
-	"A" : "res://Resources/Ingredients/Flasks/Empty_Flask_A.tres",
-	"B" : "res://Resources/Ingredients/Flasks/Empty_Flask_B.tres",
-	"C" : "res://Resources/Ingredients/Flasks/Empty_Flask_C.tres"
+	"flask_0" : "res://Resources/Ingredients/Flasks/Empty_Flask_A.tres",
+	"flask_1" : "res://Resources/Ingredients/Flasks/Empty_Flask_B.tres",
+	"flask_2" : "res://Resources/Ingredients/Flasks/Empty_Flask_C.tres"
 }
 
 var tools = {
-	"Rag" : "res://Resources/Others/Rag.tres"
+	"tool_0" : "res://Resources/Others/Rag.tres"
 }

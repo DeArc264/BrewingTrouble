@@ -18,4 +18,5 @@ flaskC = ExtResource("1_mv3ot")
 state = "Normal"
 icon = ExtResource("1_f3npv")
 name = "Stamina Potion"
+id = "potion_1"
 description = "A potion that makes you run for longer"

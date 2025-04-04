@@ -15,4 +15,5 @@ dry_icon = Array[Texture2D]([ExtResource("2_lxi0n"), ExtResource("3_nonlq"), Ext
 type = "Plant"
 icon = ExtResource("1_4i1ct")
 name = "Lavander"
+id = "plant_2"
 description = "Ingredient used for potions."

@@ -9,4 +9,5 @@ grow_time = 2
 type = "Sage"
 icon = ExtResource("1_04h8p")
 name = "Sage Seed"
+id = "seed_4"
 description = "A seed of sage..."
