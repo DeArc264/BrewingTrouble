@@ -26,35 +26,37 @@ texture = ExtResource("2_6kx2f")
 
 [node name="Fence_Back" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 320.0
+offset_left = 9.0
+offset_right = 329.0
 offset_bottom = 180.0
 mouse_filter = 2
 texture = ExtResource("3_yjoex")
 
 [node name="PlantPot" parent="." instance=ExtResource("4_fd8bi")]
 layout_mode = 0
-offset_left = 163.0
+offset_left = 164.0
 offset_top = 148.0
-offset_right = 199.0
+offset_right = 200.0
 offset_bottom = 176.0
 
 [node name="PlantPot2" parent="." instance=ExtResource("4_fd8bi")]
 layout_mode = 0
-offset_left = 211.0
+offset_left = 209.0
 offset_top = 148.0
-offset_right = 247.0
+offset_right = 245.0
 offset_bottom = 176.0
 
 [node name="PlantPot3" parent="." instance=ExtResource("4_fd8bi")]
 layout_mode = 0
-offset_left = 260.0
+offset_left = 253.0
 offset_top = 148.0
-offset_right = 296.0
+offset_right = 289.0
 offset_bottom = 176.0
 
 [node name="Fence_Front" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 9.0
+offset_right = 329.0
+offset_bottom = 180.0
 mouse_filter = 2
 texture = ExtResource("5_popqq")

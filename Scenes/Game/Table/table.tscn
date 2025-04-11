@@ -5,7 +5,6 @@
 [ext_resource type="Script" path="res://Resources/Item.gd" id="2_wejl3"]
 [ext_resource type="Resource" uid="uid://d2qnj6b3mkl0d" path="res://Resources/Potions/PotionStrenght.tres" id="3_bmf7n"]
 [ext_resource type="Resource" uid="uid://b8dibpsfka1x8" path="res://Resources/Potions/PotionStamina.tres" id="4_emhfe"]
-[ext_resource type="PackedScene" uid="uid://clb5bygcnejvp" path="res://Scenes/Game/Table/Minigames/Caldron/caldron.tscn" id="4_lajix"]
 [ext_resource type="Resource" uid="uid://dyljjx5q3ilc1" path="res://Resources/Potions/PotionHealing.tres" id="5_18i7f"]
 [ext_resource type="PackedScene" uid="uid://cun7jmlf65cbq" path="res://Scenes/Game/Table/Minigames/Mortar/mortar.tscn" id="5_wnxhj"]
 [ext_resource type="Texture2D" uid="uid://frac08byunq2" path="res://Assets/Table/table_bg.png" id="10_4mva8"]
@@ -20,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://syygt5ej8krj" path="res://Assets/Table/caldron_table.png" id="16_pia0k"]
 [ext_resource type="Texture2D" uid="uid://bsrk1x1uxpv2v" path="res://Assets/Table/mortar.png" id="17_med01"]
 [ext_resource type="Texture2D" uid="uid://dx823xr468ygu" path="res://Assets/Table/fireplace.png" id="18_dwnnc"]
+[ext_resource type="PackedScene" uid="uid://clb5bygcnejvp" path="res://Scenes/Game/Caldron/caldron.tscn" id="19_hqp1p"]
 
 [node name="Table" type="Control"]
 layout_mode = 3
@@ -245,15 +245,6 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 
-[node name="Caldron" parent="." instance=ExtResource("4_lajix")]
-visible = false
-layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
-
 [node name="Book" parent="." instance=ExtResource("10_irqxx")]
 visible = false
 layout_mode = 1
@@ -264,6 +255,9 @@ offset_bottom = 88.0
 
 [node name="Cutter" parent="." instance=ExtResource("11_60dht")]
 visible = false
+layout_mode = 1
+
+[node name="Caldron" parent="." instance=ExtResource("19_hqp1p")]
 layout_mode = 1
 
 [node name="Clean" parent="." instance=ExtResource("16_6ulko")]
@@ -361,8 +355,8 @@ Ing 2:"
 [connection signal="mouse_exited" from="TurnHourglass" to="." method="hide_help"]
 [connection signal="pressed" from="TurnHourglass" to="." method="_on_turn_hourglass_pressed"]
 [connection signal="crushed" from="Mortar" to="." method="update_crush"]
-[connection signal="mixed" from="Caldron" to="." method="_on_caldron_mixed"]
 [connection signal="cutted" from="Cutter" to="." method="update_cut"]
+[connection signal="mixed" from="Caldron" to="." method="_on_caldron_mixed"]
 [connection signal="pressed" from="MoveLeft_Table" to="." method="_on_move_left_table_pressed"]
 [connection signal="pressed" from="MoveRight_Table" to="." method="_on_move_right_table_pressed"]
 [connection signal="timeout" from="BoilTimer" to="." method="_on_boil_timer_timeout"]

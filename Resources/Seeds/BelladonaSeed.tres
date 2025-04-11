@@ -9,4 +9,5 @@ grow_time = 2
 type = "Belladona"
 icon = ExtResource("1_qgtv4")
 name = "Belladona Seed"
+id = "seed_0"
 description = "A seed of belladona... I could grow it."

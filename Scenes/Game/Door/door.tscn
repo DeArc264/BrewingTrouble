@@ -1,16 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://v1uemubo3trk"]
+[gd_scene load_steps=6 format=3 uid="uid://v1uemubo3trk"]
 
 [ext_resource type="Script" path="res://Scenes/Game/Door/door.gd" id="1_01bfn"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="2_7tixl"]
-[ext_resource type="Script" path="res://Resources/Item.gd" id="2_g5jxj"]
-[ext_resource type="Resource" uid="uid://b8dibpsfka1x8" path="res://Resources/Potions/PotionStamina.tres" id="3_p5u8g"]
-[ext_resource type="Resource" uid="uid://d2qnj6b3mkl0d" path="res://Resources/Potions/PotionStrenght.tres" id="4_l0pgw"]
-[ext_resource type="Resource" uid="uid://dyljjx5q3ilc1" path="res://Resources/Potions/PotionHealing.tres" id="5_xkjpl"]
 [ext_resource type="Texture2D" uid="uid://8j4mtr4slwcq" path="res://Assets/Door/door_window.png" id="6_a53ad"]
 [ext_resource type="PackedScene" uid="uid://chithbdsd0iql" path="res://Scenes/Game/Door/door_bg.tscn" id="6_ooqos"]
 [ext_resource type="PackedScene" uid="uid://drlwsjlocg23c" path="res://Scenes/Game/DoorWindow/door_window.tscn" id="9_gtvfe"]
 
 [node name="Door" type="Control"]
+layout_direction = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,7 +15,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_01bfn")
-orders = Array[ExtResource("2_g5jxj")]([ExtResource("3_p5u8g"), ExtResource("4_l0pgw"), ExtResource("5_xkjpl")])
 
 [node name="Door_Window" type="TextureRect" parent="."]
 layout_mode = 0
@@ -40,20 +36,44 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -58.0
-offset_top = -81.0
-offset_right = 22.0
-offset_bottom = -50.0
+offset_left = -98.0
+offset_top = 42.0
+offset_right = -67.0
+offset_bottom = 58.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 5
 text = "Start Day"
 
-[node name="DeliverySlot" parent="." instance=ExtResource("2_7tixl")]
+[node name="DeliveryButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 60.0
+offset_top = 82.0
+offset_right = 96.0
+offset_bottom = 95.0
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="DeliveryBox" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 45.0
+offset_top = 101.0
+offset_right = 113.0
+offset_bottom = 121.0
+
+[node name="Slot" parent="DeliveryBox" instance=ExtResource("2_7tixl")]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
-offset_left = 59.0
-offset_top = 81.0
-offset_right = 97.0
-offset_bottom = 96.0
+
+[node name="Slot2" parent="DeliveryBox" instance=ExtResource("2_7tixl")]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="Slot3" parent="DeliveryBox" instance=ExtResource("2_7tixl")]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
 
 [node name="MoveRight_Door" type="Button" parent="."]
 layout_mode = 1
@@ -83,7 +103,6 @@ grow_vertical = 2
 text = "<"
 
 [node name="ClientLabel" type="Label" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -113,10 +132,15 @@ one_shot = true
 one_shot = true
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://Assets/Audio/fmodbanks/Desktop/Master.bank", "res://Assets/Audio/fmodbanks/Desktop/Master.strings.bank"]
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/knocking"
+event_guid = "{cbf639a2-cbd0-4690-9444-f96b18379fa1}"
 
 [connection signal="gui_input" from="Door_Window" to="." method="_door_window_slide"]
 [connection signal="pressed" from="OpenStore" to="." method="_on_open_store_pressed"]
-[connection signal="dropped" from="DeliverySlot" to="." method="deliver"]
+[connection signal="pressed" from="DeliveryButton" to="." method="_on_delivery_button_pressed"]
 [connection signal="pressed" from="MoveRight_Door" to="." method="_on_move_right_door_pressed"]
 [connection signal="pressed" from="MoveLeft_Door" to="." method="_on_move_left_door_pressed"]
 [connection signal="timeout" from="NewClientTimer" to="." method="_on_new_client_timer_timeout"]

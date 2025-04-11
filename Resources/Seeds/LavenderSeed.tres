@@ -9,4 +9,5 @@ grow_time = 2
 type = "Lavander"
 icon = ExtResource("1_vwp3t")
 name = "Lavander Seed"
+id = "seed_2"
 description = "A seed of lavander... I could grow it."

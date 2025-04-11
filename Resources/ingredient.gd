@@ -6,7 +6,7 @@ class_name Ingredient
 @export var dry_icon : Array[Texture2D]
 
 @export_enum("Ore", "Plant", "Base")
-var type = "Potion"
+var type = "Base"
 
 var conditions = []
 
