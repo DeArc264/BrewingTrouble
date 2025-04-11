@@ -1,0 +1,261 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0x2emaaeusk"]
+
+[ext_resource type="Script" path="res://Scripts/store.gd" id="1_due8k"]
+
+[node name="Store" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_due8k")
+
+[node name="StorePage" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -90.0
+offset_right = 160.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.772581, 0.654919, 0.236233, 1)
+
+[node name="Bases" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="BuyWater" type="HBoxContainer" parent="Bases"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 56.0
+offset_right = 219.0
+offset_bottom = 87.0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Button" type="Button" parent="Bases/BuyWater"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Buy"
+
+[node name="Water" type="Label" parent="Bases/BuyWater"]
+layout_mode = 2
+text = "Water - 3£"
+
+[node name="BuyMilk" type="HBoxContainer" parent="Bases"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 91.0
+offset_right = 205.0
+offset_bottom = 122.0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Button" type="Button" parent="Bases/BuyMilk"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Buy"
+
+[node name="Milk" type="Label" parent="Bases/BuyMilk"]
+layout_mode = 2
+text = "Milk - 3£"
+
+[node name="BuyWine" type="HBoxContainer" parent="Bases"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 128.0
+offset_right = 211.0
+offset_bottom = 159.0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Button" type="Button" parent="Bases/BuyWine"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Buy"
+
+[node name="Wine" type="Label" parent="Bases/BuyWine"]
+layout_mode = 2
+text = "Wine - 3£"
+
+[node name="BaseLabel" type="Label" parent="Bases"]
+layout_mode = 1
+offset_left = 140.0
+offset_top = 7.0
+offset_right = 177.0
+offset_bottom = 30.0
+text = "Base"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ToPlants" type="Button" parent="Bases"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 296.0
+offset_top = 88.0
+offset_right = 314.0
+offset_bottom = 119.0
+grow_horizontal = 0
+grow_vertical = 2
+text = ">"
+
+[node name="Plants" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+
+[node name="BuyBelladona" type="HBoxContainer" parent="Plants"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 56.0
+offset_right = 219.0
+offset_bottom = 87.0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Button" type="Button" parent="Plants/BuyBelladona"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Buy"
+
+[node name="Belladona" type="Label" parent="Plants/BuyBelladona"]
+layout_mode = 2
+text = "Beans - 3£"
+
+[node name="BuyLavender" type="HBoxContainer" parent="Plants"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 91.0
+offset_right = 244.0
+offset_bottom = 122.0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Button" type="Button" parent="Plants/BuyLavender"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Buy"
+
+[node name="Lavender" type="Label" parent="Plants/BuyLavender"]
+layout_mode = 2
+text = "Lavander - 3£"
+
+[node name="BuyMyrrh" type="HBoxContainer" parent="Plants"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 128.0
+offset_right = 201.0
+offset_bottom = 159.0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Button" type="Button" parent="Plants/BuyMyrrh"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Buy"
+
+[node name="Myrrh" type="Label" parent="Plants/BuyMyrrh"]
+layout_mode = 2
+text = "Nut - 3£"
+
+[node name="PlantsLabel" type="Label" parent="Plants"]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 7.0
+offset_right = 182.0
+offset_bottom = 30.0
+text = "Plants"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ToOres" type="Button" parent="Plants"]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 88.0
+offset_right = 314.0
+offset_bottom = 119.0
+text = ">"
+
+[node name="ToBases" type="Button" parent="Plants"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 88.0
+offset_right = 26.0
+offset_bottom = 119.0
+text = "<"
+
+[node name="Ores" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+
+[node name="BuyGold" type="HBoxContainer" parent="Ores"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 56.0
+offset_right = 208.0
+offset_bottom = 87.0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Button" type="Button" parent="Ores/BuyGold"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Buy"
+
+[node name="Gold" type="Label" parent="Ores/BuyGold"]
+layout_mode = 2
+text = "Gold - 3£"
+
+[node name="OresLabel" type="Label" parent="Ores"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 7.0
+offset_right = 173.0
+offset_bottom = 30.0
+text = "Ore"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ToPlants" type="Button" parent="Ores"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 88.0
+offset_right = 26.0
+offset_bottom = 119.0
+text = "<"
+
+[node name="CloseButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 57.0
+offset_bottom = 39.0
+text = "Done"
+
+[connection signal="pressed" from="Bases/BuyWater/Button" to="." method="what_to_buy" binds= ["Water"]]
+[connection signal="pressed" from="Bases/BuyMilk/Button" to="." method="what_to_buy" binds= ["Milk"]]
+[connection signal="pressed" from="Bases/BuyWine/Button" to="." method="what_to_buy" binds= ["Wine"]]
+[connection signal="pressed" from="Bases/ToPlants" to="." method="change_page" binds= ["ToPlants"]]
+[connection signal="pressed" from="Plants/BuyBelladona/Button" to="." method="what_to_buy" binds= ["Belladona"]]
+[connection signal="pressed" from="Plants/BuyLavender/Button" to="." method="what_to_buy" binds= ["Lavender"]]
+[connection signal="pressed" from="Plants/BuyMyrrh/Button" to="." method="what_to_buy" binds= ["Myrrh"]]
+[connection signal="pressed" from="Plants/ToOres" to="." method="change_page" binds= ["ToOres"]]
+[connection signal="pressed" from="Plants/ToBases" to="." method="change_page" binds= ["ToBases"]]
+[connection signal="pressed" from="Ores/BuyGold/Button" to="." method="what_to_buy" binds= ["Gold"]]
+[connection signal="pressed" from="Ores/ToPlants" to="." method="change_page" binds= ["ToPlants"]]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

@@ -1,4 +1,4 @@
-extends GridContainer
+extends HBoxContainer
 
 signal hands_full(item : String)
 

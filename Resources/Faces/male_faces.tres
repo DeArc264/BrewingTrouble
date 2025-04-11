@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Faces" load_steps=32 format=3 uid="uid://c7anjy5qg3gso"]
 
 [ext_resource type="Texture2D" uid="uid://cr8f2qdu1vdxk" path="res://Assets/Faces/Ears/ears1.png" id="1_30p4n"]
-[ext_resource type="Script" path="res://Resources/faces.gd" id="1_s6p1x"]
+[ext_resource type="Script" path="res://Scripts/NPC/faces.gd" id="1_s6p1x"]
 [ext_resource type="Texture2D" uid="uid://hjflcutwjdne" path="res://Assets/Faces/Shape/body1.png" id="2_dwyqx"]
 [ext_resource type="Texture2D" uid="uid://dhulbtcgtl1rc" path="res://Assets/Faces/Ears/ears2.png" id="2_oj8hk"]
 [ext_resource type="Texture2D" uid="uid://hsl4algsiu4q" path="res://Assets/Faces/Shape/body2.png" id="3_bdatr"]

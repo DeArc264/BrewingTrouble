@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d1hguf1grtb4i" path="res://Assets/Door/door.png" id="1_eljy0"]
 [ext_resource type="Texture2D" uid="uid://cryl5v0qsmxq" path="res://Assets/Door/door_candles.png" id="2_6kx2f"]
 [ext_resource type="Texture2D" uid="uid://7wbihvjnfu2b" path="res://Assets/Door/fence_back.png" id="3_yjoex"]
-[ext_resource type="PackedScene" uid="uid://em8omrx0bd2k" path="res://Scenes/Game/Farm/Pots/plant_pot.tscn" id="4_fd8bi"]
+[ext_resource type="PackedScene" uid="uid://em8omrx0bd2k" path="res://Scenes/Game/Farm/plant_pot.tscn" id="4_fd8bi"]
 [ext_resource type="Texture2D" uid="uid://dx758xoaod2gn" path="res://Assets/Door/fence_front.png" id="5_popqq"]
 
 [node name="Door_BG" type="TextureRect"]

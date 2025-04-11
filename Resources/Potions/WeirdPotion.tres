@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://dvg0e4sa6yhbx" path="res://Assets/Icons/Potions/Flask_A/weird_potion_flask_a.png" id="1_185q4"]
 [ext_resource type="Texture2D" uid="uid://c4itx2dumtnnu" path="res://Assets/Icons/Potions/Flask_B/weird_potion_flask_b.png" id="1_vpj8b"]
-[ext_resource type="Script" path="res://Resources/Item.gd" id="2_5kmq7"]
+[ext_resource type="Script" path="res://Scripts/Items/item.gd" id="2_5kmq7"]
 [ext_resource type="Texture2D" uid="uid://ktuwjit3fob3" path="res://Assets/Icons/Potions/Flask_C/weird_potion_flask_c.png" id="3_6mop7"]
-[ext_resource type="Script" path="res://Resources/potion.gd" id="5_l0c36"]
+[ext_resource type="Script" path="res://Scripts/Items/potion.gd" id="5_l0c36"]
 
 [resource]
 script = ExtResource("5_l0c36")

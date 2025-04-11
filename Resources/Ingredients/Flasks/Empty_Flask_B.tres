@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b16s43oermhxs"]
 
 [ext_resource type="Texture2D" uid="uid://cmw5pcjo6m0yq" path="res://Assets/Icons/Potions/Flask_B/flask_b_empty.png" id="1_0yrdc"]
-[ext_resource type="Script" path="res://Resources/Item.gd" id="2_cfrga"]
+[ext_resource type="Script" path="res://Scripts/Items/item.gd" id="2_cfrga"]
 
 [resource]
 script = ExtResource("2_cfrga")

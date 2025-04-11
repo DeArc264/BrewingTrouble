@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bnswqocoenujg" path="res://Assets/Icons/Ingredients/Crushed/crushed_ginger.png" id="1_ywya5"]
 [ext_resource type="Texture2D" uid="uid://bhvoh8m5lfky2" path="res://Assets/Icons/Ingredients/Dry/Ginger/ginger_dry_1.png" id="2_l4s7e"]
 [ext_resource type="Texture2D" uid="uid://c0dl53peo2b3t" path="res://Assets/Icons/Ingredients/Dry/Ginger/ginger_dry_2.png" id="3_r8nnc"]
-[ext_resource type="Script" path="res://Resources/ingredient.gd" id="3_tyqfc"]
+[ext_resource type="Script" path="res://Scripts/Items/ingredient.gd" id="3_tyqfc"]
 [ext_resource type="Texture2D" uid="uid://v7vvrcdcjsrs" path="res://Assets/Icons/Ingredients/Dry/Ginger/ginger_dry_3.png" id="4_04iht"]
 
 [resource]

@@ -1,15 +1,15 @@
 [gd_scene load_steps=21 format=3 uid="uid://gdr3cf0jg005"]
 
-[ext_resource type="Script" path="res://Scenes/Game/Table/table.gd" id="1_rxm4g"]
+[ext_resource type="Script" path="res://Scripts/Scenes/table.gd" id="1_rxm4g"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="2_gvcte"]
-[ext_resource type="Script" path="res://Resources/Item.gd" id="2_wejl3"]
+[ext_resource type="Script" path="res://Scripts/Items/item.gd" id="2_wejl3"]
 [ext_resource type="Resource" uid="uid://d2qnj6b3mkl0d" path="res://Resources/Potions/PotionStrenght.tres" id="3_bmf7n"]
 [ext_resource type="Resource" uid="uid://b8dibpsfka1x8" path="res://Resources/Potions/PotionStamina.tres" id="4_emhfe"]
 [ext_resource type="Resource" uid="uid://dyljjx5q3ilc1" path="res://Resources/Potions/PotionHealing.tres" id="5_18i7f"]
-[ext_resource type="PackedScene" uid="uid://cun7jmlf65cbq" path="res://Scenes/Game/Table/Minigames/Mortar/mortar.tscn" id="5_wnxhj"]
+[ext_resource type="PackedScene" uid="uid://cun7jmlf65cbq" path="res://Scenes/Game/Table/mortar.tscn" id="5_wnxhj"]
 [ext_resource type="Texture2D" uid="uid://frac08byunq2" path="res://Assets/Table/table_bg.png" id="10_4mva8"]
-[ext_resource type="PackedScene" uid="uid://dus7ooufchbdn" path="res://Scenes/Game/Table/Book/book.tscn" id="10_irqxx"]
-[ext_resource type="PackedScene" uid="uid://7yffggslvelu" path="res://Scenes/Game/Table/Minigames/Cutter/cutter.tscn" id="11_60dht"]
+[ext_resource type="PackedScene" uid="uid://dus7ooufchbdn" path="res://Scenes/Game/Table/book.tscn" id="10_irqxx"]
+[ext_resource type="PackedScene" uid="uid://7yffggslvelu" path="res://Scenes/Game/Table/cutter.tscn" id="11_60dht"]
 [ext_resource type="Texture2D" uid="uid://cmn54cmvgdmp5" path="res://Assets/Table/drying_net_empty.png" id="11_mwhou"]
 [ext_resource type="Texture2D" uid="uid://bx6d4t8olghdv" path="res://Assets/Table/distillery.png" id="12_ckuv7"]
 [ext_resource type="Texture2D" uid="uid://ckbw5sxle3koi" path="res://Assets/Table/hourglass.png" id="13_7xym8"]
@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://syygt5ej8krj" path="res://Assets/Table/caldron_table.png" id="16_pia0k"]
 [ext_resource type="Texture2D" uid="uid://bsrk1x1uxpv2v" path="res://Assets/Table/mortar.png" id="17_med01"]
 [ext_resource type="Texture2D" uid="uid://dx823xr468ygu" path="res://Assets/Table/fireplace.png" id="18_dwnnc"]
-[ext_resource type="PackedScene" uid="uid://clb5bygcnejvp" path="res://Scenes/Game/Caldron/caldron.tscn" id="19_hqp1p"]
+[ext_resource type="PackedScene" uid="uid://clb5bygcnejvp" path="res://Scenes/Game/Table/caldron.tscn" id="19_hqp1p"]
 
 [node name="Table" type="Control"]
 layout_mode = 3
@@ -140,17 +140,17 @@ text = "Mix"
 
 [node name="Bellows" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -359.0
-offset_top = 50.0
-offset_right = -242.0
-offset_bottom = 138.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -42.0
+offset_right = 25.0
+offset_bottom = -20.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 flat = true
 
@@ -162,28 +162,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 90.0
-offset_top = -26.0
-offset_right = 143.0
-offset_bottom = 4.0
+offset_left = -89.0
+offset_top = -77.0
+offset_right = -36.0
+offset_bottom = -47.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Boiling"
-
-[node name="BookButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 239.0
-offset_top = 54.0
-offset_right = 440.0
-offset_bottom = 151.0
-grow_horizontal = 2
-grow_vertical = 2
-flat = true
 
 [node name="MortarSlot" parent="." instance=ExtResource("2_gvcte")]
 modulate = Color(1, 1, 1, 0)
@@ -244,6 +229,7 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+metadata/_edit_vertical_guides_ = [0.0]
 
 [node name="Book" parent="." instance=ExtResource("10_irqxx")]
 visible = false
@@ -258,6 +244,7 @@ visible = false
 layout_mode = 1
 
 [node name="Caldron" parent="." instance=ExtResource("19_hqp1p")]
+visible = false
 layout_mode = 1
 
 [node name="Clean" parent="." instance=ExtResource("16_6ulko")]
@@ -318,15 +305,16 @@ wait_time = 10.0
 wait_time = 5.0
 one_shot = true
 
-[node name="Label" type="Label" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 232.0
-offset_top = 82.0
-offset_right = 274.0
-offset_bottom = 131.0
-text = "Ing 1:
-Ing 2:"
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://Assets/Audio/fmodbanks/Desktop/Master.bank"]
+
+[node name="Fire" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/amb/fireplace"
+event_guid = "{408b6bb6-ef8b-4de5-9491-f545841b8418}"
+
+[node name="Bubbling" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/games/bubbling_cauldron"
+event_guid = "{a0f38773-673d-4cd3-ae12-228b7501cc84}"
 
 [connection signal="crush" from="." to="Mortar" method="_on_table_crush"]
 [connection signal="dropped" from="Dryer" to="." method="_on_dryer_dropped"]
@@ -339,9 +327,6 @@ Ing 2:"
 [connection signal="mouse_entered" from="Bellows" to="." method="show_help" binds= ["bellow"]]
 [connection signal="mouse_exited" from="Bellows" to="." method="hide_help"]
 [connection signal="pressed" from="Bellows" to="." method="_on_bellows_pressed"]
-[connection signal="mouse_entered" from="BookButton" to="." method="show_help" binds= ["book"]]
-[connection signal="mouse_exited" from="BookButton" to="." method="hide_help"]
-[connection signal="pressed" from="BookButton" to="." method="_on_book_button_pressed"]
 [connection signal="dropped" from="MortarSlot" to="." method="_on_mortar_slot_dropped"]
 [connection signal="mouse_entered" from="MortarSlot" to="." method="show_help" binds= ["crush"]]
 [connection signal="mouse_exited" from="MortarSlot" to="." method="hide_help"]

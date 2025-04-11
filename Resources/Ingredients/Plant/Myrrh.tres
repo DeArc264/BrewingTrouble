@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dvyagaktwp67r" path="res://Assets/Icons/Ingredients/Crushed/crushed_myrrth.png" id="1_vicdr"]
 [ext_resource type="Texture2D" uid="uid://dte2p8si08ryp" path="res://Assets/Icons/Ingredients/Dry/Myrrth/myrrth_dry_1.png" id="2_6u4lx"]
 [ext_resource type="Texture2D" uid="uid://cpypifsl8xlp1" path="res://Assets/Icons/Ingredients/Dry/Myrrth/myrrth_dry_2.png" id="3_eejx0"]
-[ext_resource type="Script" path="res://Resources/ingredient.gd" id="4_ag6c1"]
+[ext_resource type="Script" path="res://Scripts/Items/ingredient.gd" id="4_ag6c1"]
 [ext_resource type="Texture2D" uid="uid://d2qqyop27cvig" path="res://Assets/Icons/Ingredients/Dry/Myrrth/myrrth_dry_3.png" id="4_m8ghd"]
 
 [resource]

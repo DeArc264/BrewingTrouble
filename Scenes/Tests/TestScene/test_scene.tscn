@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bu6j7iqecns3g"]
 
-[ext_resource type="Script" path="res://Scenes/Tests/TestScene/Inventory.gd" id="1_p6on3"]
+[ext_resource type="Script" path="res://Scenes/Tests/TestScene/inventory.gd" id="1_p6on3"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="2_0xita"]
 [ext_resource type="Script" path="res://Scenes/Tests/TestScene/Recipes.gd" id="5_81xfs"]
 [ext_resource type="PackedScene" uid="uid://dxpt6kvmkayil" path="res://Scenes/Tests/Recipes/recipe.tscn" id="5_h44ux"]
@@ -10,12 +10,11 @@
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Inventory" type="GridContainer" parent="UI"]
+[node name="Inventory" type="HBoxContainer" parent="UI"]
 offset_left = 656.0
 offset_top = 447.0
 offset_right = 1068.0
 offset_bottom = 560.0
-columns = 4
 script = ExtResource("1_p6on3")
 
 [node name="Slot" parent="UI/Inventory" instance=ExtResource("2_0xita")]
@@ -41,5 +40,3 @@ script = ExtResource("5_81xfs")
 [node name="Recipe" parent="UI/Recipes" instance=ExtResource("5_h44ux")]
 layout_mode = 2
 item = ExtResource("6_km67y")
-
-[connection signal="item_changed" from="UI/Inventory" to="UI/Recipes" method="_on_inventory_item_changed"]

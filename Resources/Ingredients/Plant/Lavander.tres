@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dmc7jrjffqm3s" path="res://Assets/Icons/Ingredients/Normal/Plants/ingredient_lavender.png" id="1_4i1ct"]
 [ext_resource type="Texture2D" uid="uid://du01qgveamcy0" path="res://Assets/Icons/Ingredients/Crushed/crushed_lavender.png" id="1_st2ld"]
 [ext_resource type="Texture2D" uid="uid://chkg3ti040ngn" path="res://Assets/Icons/Ingredients/Dry/Lavander/lavander_dry_1.png" id="2_lxi0n"]
-[ext_resource type="Script" path="res://Resources/ingredient.gd" id="3_bqydv"]
+[ext_resource type="Script" path="res://Scripts/Items/ingredient.gd" id="3_bqydv"]
 [ext_resource type="Texture2D" uid="uid://ce4lbij4lphwv" path="res://Assets/Icons/Ingredients/Dry/Lavander/lavander_dry_2.png" id="3_nonlq"]
 [ext_resource type="Texture2D" uid="uid://fupe83qx748t" path="res://Assets/Icons/Ingredients/Dry/Lavander/lavander_dry_3.png" id="4_fh233"]
 

@@ -29,7 +29,7 @@ DSP/dsp_buffer_count=4
 [application]
 
 config/name="Alchemy"
-run/main_scene="res://Scenes/Game/Menu/menu.tscn"
+run/main_scene="res://Scenes/Game/menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
