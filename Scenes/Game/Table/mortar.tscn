@@ -9,7 +9,7 @@
 radius = 30.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrae2"]
-size = Vector2(14.837, 24.0675)
+size = Vector2(22, 26)
 
 [node name="Mortar" type="Control"]
 layout_mode = 3
@@ -23,6 +23,7 @@ metadata/_edit_vertical_guides_ = [200.0, 270.0]
 metadata/_edit_horizontal_guides_ = [10.0, 60.0]
 
 [node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,20 +39,18 @@ position = Vector2(160, 90)
 shape = SubResource("CircleShape2D_nplx0")
 
 [node name="Pebble" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_left = 240.0
 offset_top = 10.0
-offset_right = 280.0
-offset_bottom = 110.0
-rotation = 0.436332
-scale = Vector2(0.73, 0.7665)
+offset_right = 262.0
+offset_bottom = 103.0
 texture = ExtResource("3_o0n0t")
-expand_mode = 1
+stretch_mode = 2
 script = ExtResource("3_xh525")
 
 [node name="PebbleArea" type="Area2D" parent="Pebble"]
-position = Vector2(9.92657, 76.4258)
-rotation = 0.436332
+position = Vector2(11, 80)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pebble/PebbleArea"]
 scale = Vector2(1, 0.999999)
