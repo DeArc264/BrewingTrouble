@@ -10,6 +10,7 @@ var coins = 10.0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$TimeLabel.hide()
+	$Scroll.play("default")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -52,13 +53,19 @@ func _on_day_timer_timeout() -> void:
 #endregion
 
 
-#region Note Tab
-func _show_HUD_piece(animation : String) -> void:
-	match animation:
-		"hands":
-			$AnimationPlayer.play("hands_go_up")
-		"order":
-			$AnimationPlayer.play("order_go_up")
+func show_hands():
+	$HandButton.hide()
+
+	if $Scroll.frame == 6:
+		$Scroll.play_backwards("open")
+		$Scroll/Hands.hide()
+		await $Scroll.animation_finished
+	elif $Scroll.frame == 0:
+		$Scroll.play("open")
+		await $Scroll.animation_finished
+		$Scroll/Hands.show()
+	
+	$HandButton.show()
 
 
 func _hide_HUD_piece(animation : String) -> void:
@@ -69,6 +76,7 @@ func _hide_HUD_piece(animation : String) -> void:
 			$AnimationPlayer.play("order_go_down")
 
 
+#region Note Tab
 func update_note(note : Array[String]):
 	$OrderNote/OrderLabel.text = note
 #endregion

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qxrl3qejel8t"
-path="res://.godot/imported/strip_4.png-a0c0526f6b98edf08718f21c2a9a2a23.ctex"
+uid="uid://ct23iia7c4660"
+path="res://.godot/imported/scroll_0.png-347f61443158eb8931552fad3ba53581.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/Scroll/strip_4.png"
-dest_files=["res://.godot/imported/strip_4.png-a0c0526f6b98edf08718f21c2a9a2a23.ctex"]
+source_file="res://Assets/Animation/Scroll/scroll_0.png"
+dest_files=["res://.godot/imported/scroll_0.png-347f61443158eb8931552fad3ba53581.ctex"]
 
 [params]
 

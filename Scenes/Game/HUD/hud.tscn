@@ -1,10 +1,54 @@
-[gd_scene load_steps=12 format=3 uid="uid://cfvv7x84qgvlj"]
+[gd_scene load_steps=18 format=3 uid="uid://cfvv7x84qgvlj"]
 
 [ext_resource type="Script" path="res://Scripts/Scenes/hud.gd" id="1_kg5u5"]
-[ext_resource type="Script" path="res://Scenes/Tests/TestScene/inventory.gd" id="2_s3pb2"]
+[ext_resource type="Script" path="res://Scenes/Tests/TestScene/Inventory.gd" id="2_wgqd0"]
+[ext_resource type="Texture2D" uid="uid://ct23iia7c4660" path="res://Assets/Animation/Scroll/scroll_0.png" id="2_xqdvs"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="3_j28ob"]
 [ext_resource type="PackedScene" uid="uid://b0x2emaaeusk" path="res://Scenes/Game/HUD/store.tscn" id="4_7xrsr"]
 [ext_resource type="Texture2D" uid="uid://pojghji23m58" path="res://Assets/Other/Parchment.png" id="5_cqnup"]
+[ext_resource type="Texture2D" uid="uid://bu76864p0a585" path="res://Assets/Animation/Scroll/scroll_5.png" id="7_66ur4"]
+[ext_resource type="Texture2D" uid="uid://cye7u8kwrdak4" path="res://Assets/Animation/Scroll/scroll_6.png" id="8_8sv4h"]
+[ext_resource type="Texture2D" uid="uid://cf5eofm0agcpn" path="res://Assets/Animation/Scroll/scroll_1.png" id="10_qntnh"]
+[ext_resource type="Texture2D" uid="uid://kohn1dyjsut0" path="res://Assets/Animation/Scroll/scroll_2.png" id="11_s7w1n"]
+[ext_resource type="Texture2D" uid="uid://d31odhymcdcdi" path="res://Assets/Animation/Scroll/scroll_3.png" id="12_572ou"]
+[ext_resource type="Texture2D" uid="uid://c36w1sg33okdb" path="res://Assets/Animation/Scroll/scroll_4.png" id="13_itdvl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7udqd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xqdvs")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xqdvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qntnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_s7w1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_572ou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_itdvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_66ur4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8sv4h")
+}],
+"loop": false,
+"name": &"open",
+"speed": 6.0
+}]
 
 [sub_resource type="Animation" id="Animation_h7dlr"]
 length = 0.001
@@ -19,50 +63,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(30, 1026)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("HandsTab:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(785, 1026)]
-}
-
-[sub_resource type="Animation" id="Animation_n2bcw"]
-resource_name = "hands_go_down"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("HandsTab:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(785, 866), Vector2(785, 1026)]
-}
-
-[sub_resource type="Animation" id="Animation_iu2eh"]
-resource_name = "hands_go_up"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("HandsTab:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(785, 1026), Vector2(785, 866)]
 }
 
 [sub_resource type="Animation" id="Animation_b4r8f"]
@@ -100,8 +100,6 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vyxgj"]
 _data = {
 "RESET": SubResource("Animation_h7dlr"),
-"hands_go_down": SubResource("Animation_n2bcw"),
-"hands_go_up": SubResource("Animation_iu2eh"),
 "order_go_down": SubResource("Animation_b4r8f"),
 "order_go_up": SubResource("Animation_umhoq")
 }
@@ -116,6 +114,7 @@ grow_vertical = 2
 script = ExtResource("1_kg5u5")
 
 [node name="CoinLabel" type="Label" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -129,6 +128,7 @@ text = "Coins: 0"
 vertical_alignment = 1
 
 [node name="TimeLabel" type="Label" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -141,72 +141,43 @@ grow_horizontal = 0
 text = "Time:"
 vertical_alignment = 1
 
-[node name="HandsTab" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 625.0
-offset_top = 846.0
-offset_right = 735.0
-offset_bottom = 916.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.73303, 0.444622, 0.194185, 1)
+[node name="Scroll" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(72, 24)
+sprite_frames = SubResource("SpriteFrames_7udqd")
+animation = &"open"
+speed_scale = 4.0
 
-[node name="Detail" type="ColorRect" parent="HandsTab"]
-layout_mode = 0
-offset_right = 110.0
-offset_bottom = 20.0
-mouse_filter = 2
-color = Color(0.582191, 0.343159, 0.136624, 1)
-
-[node name="Label" type="Label" parent="HandsTab/Detail"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "HOLDING"
-
-[node name="Hands" type="HBoxContainer" parent="HandsTab"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+[node name="Hands" type="HBoxContainer" parent="Scroll"]
+visible = false
 offset_left = -49.0
-offset_top = -10.0
+offset_top = -14.0
 offset_right = 49.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("2_s3pb2")
+offset_bottom = 16.0
+script = ExtResource("2_wgqd0")
 
-[node name="Slot" parent="HandsTab/Hands" instance=ExtResource("3_j28ob")]
+[node name="Slot" parent="Scroll/Hands" instance=ExtResource("3_j28ob")]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 1
 
-[node name="Slot2" parent="HandsTab/Hands" instance=ExtResource("3_j28ob")]
+[node name="Slot2" parent="Scroll/Hands" instance=ExtResource("3_j28ob")]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 1
 
-[node name="Slot3" parent="HandsTab/Hands" instance=ExtResource("3_j28ob")]
+[node name="Slot3" parent="Scroll/Hands" instance=ExtResource("3_j28ob")]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 1
+
+[node name="HandButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 15.0
+offset_bottom = 46.0
+flat = true
 
 [node name="Store" parent="." instance=ExtResource("4_7xrsr")]
 visible = false
@@ -215,10 +186,10 @@ layout_mode = 1
 [node name="PayLabel" type="Label" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 347.0
-offset_top = 795.0
-offset_right = 610.0
-offset_bottom = 837.0
+offset_left = 20.0
+offset_top = 17.0
+offset_right = 283.0
+offset_bottom = 59.0
 theme_override_font_sizes/font_size = 30
 text = "I can´t afford that"
 
@@ -229,7 +200,7 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 30.0
 offset_top = 846.0
-offset_right = 140.0
+offset_right = 132.0
 offset_bottom = 916.0
 grow_vertical = 0
 color = Color(0.73303, 0.444622, 0.194185, 1)
@@ -251,7 +222,7 @@ text = "None"
 
 [node name="Detail" type="ColorRect" parent="OrderNote"]
 layout_mode = 0
-offset_right = 110.0
+offset_right = 102.0
 offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.582191, 0.343159, 0.136624, 1)
@@ -300,9 +271,7 @@ libraries = {
 }
 
 [connection signal="new_day" from="." to="Store" method="set_prices"]
-[connection signal="mouse_entered" from="HandsTab" to="." method="_show_HUD_piece" binds= ["hands"]]
-[connection signal="mouse_exited" from="HandsTab" to="." method="_hide_HUD_piece" binds= ["hands"]]
+[connection signal="pressed" from="HandButton" to="." method="show_hands"]
 [connection signal="send" from="Store" to="." method="buy_stuff"]
-[connection signal="mouse_entered" from="OrderNote" to="." method="_show_HUD_piece" binds= ["order"]]
 [connection signal="mouse_exited" from="OrderNote" to="." method="_hide_HUD_piece" binds= ["order"]]
 [connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]
