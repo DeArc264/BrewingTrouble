@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dx758xoaod2gn" path="res://Assets/Door/fence_front.png" id="5_popqq"]
 
 [node name="Door_BG" type="TextureRect"]
+texture_filter = 1
 offset_right = 320.0
 offset_bottom = 180.0
 

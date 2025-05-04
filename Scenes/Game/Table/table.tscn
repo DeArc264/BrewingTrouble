@@ -339,7 +339,6 @@ event_guid = "{a0f38773-673d-4cd3-ae12-228b7501cc84}"
 [connection signal="mouse_entered" from="TurnHourglass" to="." method="show_help" binds= ["hour"]]
 [connection signal="mouse_exited" from="TurnHourglass" to="." method="hide_help"]
 [connection signal="pressed" from="TurnHourglass" to="." method="_on_turn_hourglass_pressed"]
-[connection signal="crushed" from="Mortar" to="." method="update_crush"]
 [connection signal="cutted" from="Cutter" to="." method="update_cut"]
 [connection signal="mixed" from="Caldron" to="." method="_on_caldron_mixed"]
 [connection signal="pressed" from="MoveLeft_Table" to="." method="_on_move_left_table_pressed"]
