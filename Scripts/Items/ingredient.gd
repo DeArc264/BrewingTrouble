@@ -2,7 +2,8 @@ extends Item
 class_name Ingredient
 
 @export var normal_icon : Texture2D
-@export var crushed_icon : Texture2D
+@export var crush_icon : Array[Texture2D]
+@export var cut_icon : Array[Texture2D]
 @export var dry_icon : Array[Texture2D]
 
 @export_enum("Ore", "Plant", "Base")
@@ -11,11 +12,13 @@ var type = "Base"
 var conditions = []
 
 var states = {
-	"cut" : ["uncut", "thick", "medium", "thin"],
+	"crush" : ["uncrushed", "thick powder", "medium powder", "thin powder"],
+	"cut" : ["uncut", "thick slice", "medium slice", "thin slice"],
 	"boil" : ["boiled", "hard boiled"],
 	"dry" : ["half dry", "fully dry", "dehydrated"]
 }
 
+var crush_state = states["crush"][0]
 var cut_state = states["cut"][0]
 var boil_state = states["boil"][0]
 var dry_state = states["dry"][0]
@@ -23,18 +26,23 @@ var rank = 0
 
 
 func change_icon(cond : String):
-	var temp
+	var temp_arr
+	var temp_index
 
 	match cond:
-		"crushed":
-			icon = crushed_icon
+		"crush":
+			temp_arr = crush_icon
+		"cut":
+			temp_arr = cut_icon
 		"dry":
-			if dry_icon.has(icon):
-				temp = dry_icon.find(icon) + 1
-				if temp < dry_icon.size():
-					icon = dry_icon[temp]
-			else:
-				icon = dry_icon[0]
+			temp_arr = dry_icon
+
+	if temp_arr.has(icon):
+		temp_index = temp_arr.find(icon) + 1
+		if temp_index < temp_arr.size():
+			icon = temp_arr[temp_index]
+	else:
+		icon = temp_arr[0]
 
 
 func change_x_state(x : String):
@@ -43,6 +51,8 @@ func change_x_state(x : String):
 	var used_var
 
 	match x:
+		"crush":
+			used_var = crush_state
 		"cut":
 			used_var = cut_state
 		"boil":

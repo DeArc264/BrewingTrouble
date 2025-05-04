@@ -2,9 +2,9 @@ extends Control
 class_name ClickAndDrag
 
 var clicked = false
-var min_limit : Vector2
-var max_limit : Vector2
-var offset : Vector2
+var min_limit = Vector2.ZERO
+var max_limit = Vector2.ZERO
+var offset = Vector2.ZERO
 
 func _ready() -> void:
 	connect("gui_input", _on_gui_input)

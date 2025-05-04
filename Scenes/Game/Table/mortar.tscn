@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://cun7jmlf65cbq"]
+[gd_scene load_steps=9 format=3 uid="uid://cun7jmlf65cbq"]
 
 [ext_resource type="Script" path="res://Scripts/Mingames/crusher.gd" id="1_kqu4g"]
 [ext_resource type="Texture2D" uid="uid://b0qhamgydfxej" path="res://Assets/Minigames/Mortar/bowl.png" id="2_bnppa"]
+[ext_resource type="Texture2D" uid="uid://dtr7xemb00t62" path="res://Assets/Clean/bowl  sujeira.png" id="3_70r74"]
 [ext_resource type="Texture2D" uid="uid://dx2e1ty3gbiu2" path="res://Assets/Minigames/Mortar/pebble.png" id="3_o0n0t"]
 [ext_resource type="Script" path="res://Scenes/Game/Table/pebble.gd" id="3_xh525"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m8mwc"]
+radius = 73.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nplx0"]
 radius = 30.0
@@ -11,7 +15,7 @@ radius = 30.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrae2"]
 size = Vector2(22, 26)
 
-[node name="Mortar" type="Control"]
+[node name="Mortar" type="Control" node_paths=PackedStringArray("dirt", "element")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,8 +23,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kqu4g")
-metadata/_edit_vertical_guides_ = [200.0, 270.0]
-metadata/_edit_horizontal_guides_ = [10.0, 60.0]
+dirt = NodePath("Dirt")
+element = NodePath("Herb")
 
 [node name="Background" type="TextureRect" parent="."]
 texture_filter = 1
@@ -32,19 +36,57 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_bnppa")
 
-[node name="Herbs" type="Area2D" parent="."]
-position = Vector2(160, 90)
+[node name="Dirt" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -90.0
+offset_right = 160.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_70r74")
+stretch_mode = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Herbs"]
+[node name="DirtSpot" type="Area2D" parent="Dirt"]
+position = Vector2(160, 90)
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dirt/DirtSpot"]
+shape = SubResource("CircleShape2D_m8mwc")
+
+[node name="Herb" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 2
+
+[node name="HerbArea" type="Area2D" parent="Herb"]
+position = Vector2(160, 90)
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Herb/HerbArea"]
 shape = SubResource("CircleShape2D_nplx0")
 
 [node name="Pebble" type="TextureRect" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_left = 240.0
-offset_top = 10.0
-offset_right = 262.0
-offset_bottom = 103.0
+offset_left = 293.0
+offset_top = 12.0
+offset_right = 315.0
+offset_bottom = 105.0
+rotation = 0.785398
 texture = ExtResource("3_o0n0t")
 stretch_mode = 2
 script = ExtResource("3_xh525")
@@ -56,25 +98,9 @@ position = Vector2(11, 80)
 scale = Vector2(1, 0.999999)
 shape = SubResource("RectangleShape2D_jrae2")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -302.0
-offset_top = -37.0
-offset_right = -280.0
-offset_bottom = 63.0
-grow_horizontal = 0
-grow_vertical = 2
-max_value = 10.0
-step = 1.0
-allow_greater = true
-fill_mode = 3
-
 [node name="Label" type="Label" parent="."]
+visible = false
+texture_filter = 1
 layout_mode = 0
 offset_left = 11.0
 offset_top = 7.0
@@ -98,6 +124,7 @@ grow_vertical = 0
 flat = true
 
 [node name="Label" type="Label" parent="Button"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -110,6 +137,7 @@ text = "Done"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="area_entered" from="Herbs" to="." method="_on_bowl_crushing"]
+[connection signal="mouse_entered" from="Herb" to="." method="_on_herb_mouse_entered"]
+[connection signal="area_entered" from="Herb/HerbArea" to="." method="_on_bowl_crushing"]
 [connection signal="gui_input" from="Pebble" to="Pebble" method="start_dragging"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
