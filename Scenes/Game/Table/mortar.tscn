@@ -16,7 +16,7 @@ radius = 30.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrae2"]
 size = Vector2(22, 26)
 
-[node name="Mortar" type="Control" node_paths=PackedStringArray("dirt", "element", "slot")]
+[node name="Mortar" type="Control" node_paths=PackedStringArray("dirt", "element", "slot", "end_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,8 +27,7 @@ script = ExtResource("1_kqu4g")
 dirt = NodePath("Dirt/DirtSpot")
 element = NodePath("Herb/HerbArea")
 slot = NodePath("Slot")
-metadata/_edit_vertical_guides_ = [290.0]
-metadata/_edit_horizontal_guides_ = [25.0]
+end_button = NodePath("EndButton")
 
 [node name="Background" type="TextureRect" parent="."]
 texture_filter = 1
@@ -112,36 +111,22 @@ offset_right = 80.0
 offset_bottom = 30.0
 text = "Crushed!"
 
-[node name="Button" type="Button" parent="."]
+[node name="Slot" parent="." instance=ExtResource("6_joicf")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -67.0
-offset_top = -28.0
-offset_right = -17.0
-offset_bottom = -8.0
-grow_horizontal = 0
-grow_vertical = 0
-flat = true
-
-[node name="Label" type="Label" parent="Button"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = 2.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Done"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Slot" parent="." instance=ExtResource("6_joicf")]
+[node name="EndButton" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -159,5 +144,5 @@ grow_vertical = 2
 [connection signal="mouse_entered" from="Herb" to="." method="_on_herb_mouse_entered"]
 [connection signal="area_entered" from="Herb/HerbArea" to="." method="_on_bowl_crushing"]
 [connection signal="gui_input" from="Pebble" to="Pebble" method="start_dragging"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="dropped" from="Slot" to="." method="start_minigame"]
+[connection signal="pressed" from="EndButton" to="." method="_on_button_pressed"]

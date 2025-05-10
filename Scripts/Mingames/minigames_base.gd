@@ -6,6 +6,7 @@ signal modified_ing(Item)
 @export var dirt : Area2D
 @export var element : Area2D
 @export var slot : Slot
+@export var end_button : Button
 
 var dirty = false
 var progress = 0.0
@@ -27,6 +28,7 @@ func start_minigame():
 		current_ing = slot.item
 		element.get_parent().texture = current_ing.icon
 		element.monitoring = true
+		end_button.show()
 
 	elif slot.item.id == "tool_0":
 		dirt.monitoring = true
@@ -50,6 +52,7 @@ func end_minigame():
 	hide()
 	element.monitoring = false
 	dirt.monitoring = false
+	end_button.hide()
 
 	if current_ing:
 		modified_ing.emit(current_ing)

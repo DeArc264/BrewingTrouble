@@ -1,7 +1,6 @@
 extends Control
 
 signal new_item(item : Item) # Signal to add a new item to player hand
-signal crush(item : Item)
 signal helper(which : String)
 
 # Mobility(206-213) signals
@@ -135,13 +134,12 @@ func update_cut(new : Item):
 # Crushing control
 #region Mortar
 # Checks if an item was dropped, if it is not already crushed and if it can be crushed
-func _on_mortar_slot_dropped() -> void:
-	crush.emit($MortarSlot.item)
+func _on_mortar_clicked() -> void:
+	$Mortar.show_on_screen()
 
 
 func update_crush(new : Item):
-	$MortarSlot.empty()
-	$MortarSlot.item = new
+	new_item.emit(new)
 #endregion
 
 # Distill control
