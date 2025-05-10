@@ -1,18 +1,22 @@
-[gd_resource type="Resource" script_class="Ingredient" load_steps=9 format=3 uid="uid://qlwtsvivu18e"]
+[gd_resource type="Resource" script_class="Ingredient" load_steps=12 format=3 uid="uid://qlwtsvivu18e"]
 
+[ext_resource type="Texture2D" uid="uid://djum33me44blr" path="res://Assets/Minigames/Mortar/Belladona/belladona_1.png" id="1_7wwxt"]
 [ext_resource type="Texture2D" uid="uid://docts8h2pxqt1" path="res://Assets/Minigames/Cut/Belladona/belladona_1.png" id="1_x4mx6"]
 [ext_resource type="Texture2D" uid="uid://dmvsc67cl1lsk" path="res://Assets/Icons/Ingredients/Dry/Belladona/belladona_dry_1.png" id="2_rkvps"]
+[ext_resource type="Texture2D" uid="uid://dy7ryghkxyung" path="res://Assets/Minigames/Mortar/Belladona/belladona_2.png" id="2_v8x7t"]
 [ext_resource type="Texture2D" uid="uid://lwp2f370lj50" path="res://Assets/Minigames/Cut/Belladona/belladona_2.png" id="2_y8fhy"]
 [ext_resource type="Texture2D" uid="uid://b6bdelegbxf06" path="res://Assets/Minigames/Cut/Belladona/belladona_3.png" id="3_4taae"]
 [ext_resource type="Texture2D" uid="uid://djaa7xuirrlpn" path="res://Assets/Icons/Ingredients/Dry/Belladona/belladona_dry_2.png" id="3_6wsw5"]
 [ext_resource type="Script" path="res://Scripts/Items/ingredient.gd" id="3_e8smq"]
+[ext_resource type="Texture2D" uid="uid://hsolmb5r61hb" path="res://Assets/Minigames/Mortar/Belladona/belladona_3.png" id="3_shtk3"]
 [ext_resource type="Texture2D" uid="uid://dpjcu6ck7gww5" path="res://Assets/Icons/Ingredients/Dry/Belladona/belladona_dry_3.png" id="4_rc56p"]
 [ext_resource type="Texture2D" uid="uid://c1jcw224ne21x" path="res://Assets/Minigames/Mortar/Belladona/belladona_0.png" id="7_50g4b"]
 
 [resource]
 script = ExtResource("3_e8smq")
 normal_icon = ExtResource("7_50g4b")
-crushed_icon = Array[Texture2D]([ExtResource("1_x4mx6"), ExtResource("2_y8fhy"), ExtResource("3_4taae")])
+crush_icon = Array[Texture2D]([ExtResource("1_7wwxt"), ExtResource("2_v8x7t"), ExtResource("3_shtk3")])
+cut_icon = Array[Texture2D]([ExtResource("1_x4mx6"), ExtResource("2_y8fhy"), ExtResource("3_4taae")])
 dry_icon = Array[Texture2D]([ExtResource("2_rkvps"), ExtResource("3_6wsw5"), ExtResource("4_rc56p")])
 type = "Plant"
 icon = ExtResource("7_50g4b")

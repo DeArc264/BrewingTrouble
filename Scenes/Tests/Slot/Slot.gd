@@ -18,7 +18,7 @@ signal dropped
 func get_preview():
 	var preview_texture = TextureRect.new()
 	preview_texture.texture = texture_rect.texture
-	preview_texture.position = -Vector2(50, 50)
+	preview_texture.position = -Vector2(160, 90)
 
 	var preview = Control.new()
 	preview.mouse_filter = Control.MOUSE_FILTER_IGNORE
