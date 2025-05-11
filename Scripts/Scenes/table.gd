@@ -40,12 +40,10 @@ func _process(_delta: float) -> void:
 	if boiling:
 		$ING1BoilTimer.paused = false
 		$ING2BoilTimer.paused = false
-		$DryTimer.paused = false
 		$Bubbling.play()
 	else:
 		$ING1BoilTimer.paused = true
 		$ING2BoilTimer.paused = true
-		$DryTimer.paused = true
 		$Boiling.stop()
 
 # Updates texts. Remove later
@@ -69,7 +67,7 @@ func _on_bellows_pressed() -> void:
 			$BoilTimer.start(11)
 
 		$BoilLabel.show()
-		$DryTimer.paused = false
+		$DryNet.can_dry = true
 		$ING1BoilTimer.paused = false
 		$ING2BoilTimer.paused = false
 
@@ -77,7 +75,7 @@ func _on_bellows_pressed() -> void:
 func _on_boil_timer_timeout() -> void:
 	boiling = false
 	$BoilLabel.hide()
-	$DryTimer.paused = true
+	$DryNet.can_dry = false
 	$ING1BoilTimer.paused = true
 	$ING2BoilTimer.paused = true
 
@@ -94,26 +92,6 @@ func ing_2_boil_round():
 		in_caldron[2].change_x_state("boil")
 	else:
 		$ING2BoilTimer.stop()
-#endregion
-
-# Drying control
-#region Drying
-func _on_dryer_dropped() -> void:
-	$DryTimer.start()
-	$DryLabel.show()
-
-
-# When the timer runs out, the item in the slot is considered "dry"
-func _on_dry_timer_timeout() -> void:
-	if $Dryer.item != null:
-		if not $Dryer.item.conditions.has("useless"):
-			$Dryer.item.change_x_state("dry")
-			$Dryer.item.change_icon("dry")
-			$Dryer.item = $Dryer.item
-			$DryTimer.start()
-		else:
-			await get_tree().create_timer(2.0).timeout
-			$DryLabel.hide()
 #endregion
 
 

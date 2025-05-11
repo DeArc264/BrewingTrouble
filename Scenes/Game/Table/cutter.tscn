@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b4qdut1p0m3d7" path="res://Assets/Minigames/Cut/board.png" id="3_sulvu"]
 [ext_resource type="Texture2D" uid="uid://ctrqfhu27tuop" path="res://Assets/Clean/dirty_board.png" id="4_3um1l"]
 [ext_resource type="Texture2D" uid="uid://bx2lwni41htfm" path="res://Assets/Minigames/Cut/knife.png" id="4_khgx1"]
-[ext_resource type="Script" path="res://Scenes/Game/Table/knife.gd" id="5_e213k"]
+[ext_resource type="Script" path="res://Scripts/Mingames/knife.gd" id="5_e213k"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="6_k4qiw"]
 [ext_resource type="Resource" uid="uid://qlwtsvivu18e" path="res://Resources/Ingredients/Plant/Belladona.tres" id="8_1t64s"]
 
