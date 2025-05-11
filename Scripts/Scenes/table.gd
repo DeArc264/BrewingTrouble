@@ -116,31 +116,13 @@ func _on_dry_timer_timeout() -> void:
 			$DryLabel.hide()
 #endregion
 
-# Cutting control
-#region Cut
-func _on_cutter_slot_dropped():
-	$CutterSlot.empty()
-	#if $CutterSlot.item.type == "Plant":
-		#$Cutter.start_cutting($CutterSlot.item)
-	#else:
-		#$Cutter.dirty = true
+
+func _on_board_clicked():
+	$Cutter.show_on_screen()
 
 
-func update_cut(new : Item):
-	$CutterSlot.empty()
-	$CutterSlot.item = new
-#endregion
-
-# Crushing control
-#region Mortar
-# Checks if an item was dropped, if it is not already crushed and if it can be crushed
 func _on_mortar_clicked() -> void:
 	$Mortar.show_on_screen()
-
-
-func update_crush(new : Item):
-	new_item.emit(new)
-#endregion
 
 # Distill control
 #region Distillary
@@ -155,6 +137,9 @@ func _on_distil_timer_timeout() -> void:
 	if $DistillerySlot.item != null:
 		$DistillerySlot.item.conditions.append("distilled")
 #endregion
+
+func update_item(new : Item):
+	new_item.emit(new)
 
 # Mixing and crafting control
 #region Mixing

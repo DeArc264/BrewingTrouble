@@ -140,6 +140,7 @@ offset_right = 50.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 
 [connection signal="mouse_entered" from="Herb" to="." method="_on_herb_mouse_entered"]
 [connection signal="area_entered" from="Herb/HerbArea" to="." method="_on_bowl_crushing"]

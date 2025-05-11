@@ -1,27 +1,38 @@
-extends Control
-
-signal cutted(Item)
-
-var ing : Item
-var cuts : int
-var dirty = false
-
-func start_cutting(item : Item):
-	show()
-	ing = item
-	$ColorRect/Ingredient.set_texture(item.icon)
-	cuts = 0
-
+extends Minigame
 
 func _cut(area: Area2D) -> void:
 	if area.name == "KnifeArea":
 		$Cut.play()
-		cuts += 1
-		if cuts >= 10:
-			ing.change_x_state("cut")
-			cuts = 0
+		progress += 0.1
+		if progress >= 1.0:
+			current_ing.change_icon("cut")
+			element.get_parent().texture = current_ing.icon
+			level += 1
+			progress = 0
 
-#["Uncut", "Thick", "Medium", "Thin"]
+#["uncut", "thick slice", "medium slice", "thin slice"]
 func _on_end_button_pressed() -> void:
-	cutted.emit(ing)
-	hide()
+	if dirty:
+		current_ing.conditions.append("useless")
+		end_minigame()
+		return
+
+	else:
+		match level:
+			0:
+				current_ing.conditions.append("uncut")
+			1:
+				current_ing.conditions.append("thick slice")
+			2:
+				current_ing.conditions.append("medium slice")
+			3:
+				current_ing.conditions.append("thin slice")
+			_:
+				current_ing.conditions.append("useless")
+
+		reset()
+		end_minigame()
+
+
+func reset():
+	$Knife.position = Vector2(130, 10)
