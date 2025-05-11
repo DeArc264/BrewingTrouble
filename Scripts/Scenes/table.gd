@@ -1,7 +1,6 @@
 extends Control
 
 signal new_item(item : Item) # Signal to add a new item to player hand
-signal crush(item : Item)
 signal helper(which : String)
 
 # Mobility(206-213) signals
@@ -41,12 +40,10 @@ func _process(_delta: float) -> void:
 	if boiling:
 		$ING1BoilTimer.paused = false
 		$ING2BoilTimer.paused = false
-		$DryTimer.paused = false
 		$Bubbling.play()
 	else:
 		$ING1BoilTimer.paused = true
 		$ING2BoilTimer.paused = true
-		$DryTimer.paused = true
 		$Boiling.stop()
 
 # Updates texts. Remove later
@@ -70,7 +67,7 @@ func _on_bellows_pressed() -> void:
 			$BoilTimer.start(11)
 
 		$BoilLabel.show()
-		$DryTimer.paused = false
+		$DryNet.can_dry = true
 		$ING1BoilTimer.paused = false
 		$ING2BoilTimer.paused = false
 
@@ -78,7 +75,7 @@ func _on_bellows_pressed() -> void:
 func _on_boil_timer_timeout() -> void:
 	boiling = false
 	$BoilLabel.hide()
-	$DryTimer.paused = true
+	$DryNet.can_dry = false
 	$ING1BoilTimer.paused = true
 	$ING2BoilTimer.paused = true
 
@@ -97,52 +94,13 @@ func ing_2_boil_round():
 		$ING2BoilTimer.stop()
 #endregion
 
-# Drying control
-#region Drying
-func _on_dryer_dropped() -> void:
-	$DryTimer.start()
-	$DryLabel.show()
+
+func _on_board_clicked():
+	$Cutter.show_on_screen()
 
 
-# When the timer runs out, the item in the slot is considered "dry"
-func _on_dry_timer_timeout() -> void:
-	if $Dryer.item != null:
-		if not $Dryer.item.conditions.has("useless"):
-			$Dryer.item.change_x_state("dry")
-			$Dryer.item.change_icon("dry")
-			$Dryer.item = $Dryer.item
-			$DryTimer.start()
-		else:
-			await get_tree().create_timer(2.0).timeout
-			$DryLabel.hide()
-#endregion
-
-# Cutting control
-#region Cut
-func _on_cutter_slot_dropped():
-	$CutterSlot.empty()
-	#if $CutterSlot.item.type == "Plant":
-		#$Cutter.start_cutting($CutterSlot.item)
-	#else:
-		#$Cutter.dirty = true
-
-
-func update_cut(new : Item):
-	$CutterSlot.empty()
-	$CutterSlot.item = new
-#endregion
-
-# Crushing control
-#region Mortar
-# Checks if an item was dropped, if it is not already crushed and if it can be crushed
-func _on_mortar_slot_dropped() -> void:
-	crush.emit($MortarSlot.item)
-
-
-func update_crush(new : Item):
-	$MortarSlot.empty()
-	$MortarSlot.item = new
-#endregion
+func _on_mortar_clicked() -> void:
+	$Mortar.show_on_screen()
 
 # Distill control
 #region Distillary
@@ -157,6 +115,9 @@ func _on_distil_timer_timeout() -> void:
 	if $DistillerySlot.item != null:
 		$DistillerySlot.item.conditions.append("distilled")
 #endregion
+
+func update_item(new : Item):
+	new_item.emit(new)
 
 # Mixing and crafting control
 #region Mixing

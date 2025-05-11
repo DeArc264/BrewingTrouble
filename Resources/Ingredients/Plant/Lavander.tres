@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Ingredient" load_steps=9 format=3 uid="uid://d3qr7snp5bw8y"]
+[gd_resource type="Resource" script_class="Ingredient" load_steps=12 format=3 uid="uid://d3qr7snp5bw8y"]
 
 [ext_resource type="Texture2D" uid="uid://dolnovj8g5lba" path="res://Assets/Minigames/Mortar/Lavander/lavander_1.png" id="1_njhfo"]
 [ext_resource type="Texture2D" uid="uid://chkg3ti040ngn" path="res://Assets/Icons/Ingredients/Dry/Lavander/lavander_dry_1.png" id="2_lxi0n"]
@@ -7,12 +7,16 @@
 [ext_resource type="Texture2D" uid="uid://ctrcx0nb4wcgd" path="res://Assets/Minigames/Mortar/Lavander/lavander_3.png" id="3_l6xsk"]
 [ext_resource type="Texture2D" uid="uid://ce4lbij4lphwv" path="res://Assets/Icons/Ingredients/Dry/Lavander/lavander_dry_2.png" id="3_nonlq"]
 [ext_resource type="Texture2D" uid="uid://fupe83qx748t" path="res://Assets/Icons/Ingredients/Dry/Lavander/lavander_dry_3.png" id="4_fh233"]
+[ext_resource type="Texture2D" uid="uid://cw65h3q2bjp4a" path="res://Assets/Minigames/Cut/Lavander/lavander_1.png" id="4_fx67b"]
+[ext_resource type="Texture2D" uid="uid://bqwxiya0a4bb7" path="res://Assets/Minigames/Cut/Lavander/lavander_2.png" id="5_wptch"]
+[ext_resource type="Texture2D" uid="uid://dtfl7mjahec18" path="res://Assets/Minigames/Cut/Lavander/lavander_3.png" id="6_1jxnw"]
 [ext_resource type="Texture2D" uid="uid://bfpeupj588ta7" path="res://Assets/Minigames/Mortar/Lavander/lavander_0.png" id="7_vybea"]
 
 [resource]
 script = ExtResource("3_bqydv")
 normal_icon = ExtResource("7_vybea")
-crushed_icon = Array[Texture2D]([ExtResource("1_njhfo"), ExtResource("2_puc67"), ExtResource("3_l6xsk")])
+crush_icon = Array[Texture2D]([ExtResource("1_njhfo"), ExtResource("2_puc67"), ExtResource("3_l6xsk")])
+cut_icon = Array[Texture2D]([ExtResource("4_fx67b"), ExtResource("5_wptch"), ExtResource("6_1jxnw")])
 dry_icon = Array[Texture2D]([ExtResource("2_lxi0n"), ExtResource("3_nonlq"), ExtResource("4_fh233")])
 type = "Plant"
 icon = ExtResource("7_vybea")

@@ -1,18 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://7yffggslvelu"]
+[gd_scene load_steps=12 format=3 uid="uid://7yffggslvelu"]
 
 [ext_resource type="Script" path="res://Scripts/Mingames/cutter.gd" id="1_oo7fm"]
 [ext_resource type="Texture2D" uid="uid://c6ly734dfj6pr" path="res://Assets/Minigames/Cut/table.png" id="2_gdvk3"]
 [ext_resource type="Texture2D" uid="uid://b4qdut1p0m3d7" path="res://Assets/Minigames/Cut/board.png" id="3_sulvu"]
+[ext_resource type="Texture2D" uid="uid://ctrqfhu27tuop" path="res://Assets/Clean/dirty_board.png" id="4_3um1l"]
 [ext_resource type="Texture2D" uid="uid://bx2lwni41htfm" path="res://Assets/Minigames/Cut/knife.png" id="4_khgx1"]
-[ext_resource type="Script" path="res://Scenes/Game/Table/knife.gd" id="5_e213k"]
+[ext_resource type="Script" path="res://Scripts/Mingames/knife.gd" id="5_e213k"]
+[ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="6_k4qiw"]
+[ext_resource type="Resource" uid="uid://qlwtsvivu18e" path="res://Resources/Ingredients/Plant/Belladona.tres" id="8_1t64s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffpoi"]
+size = Vector2(274, 168)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4tehx"]
-size = Vector2(33, 263)
+size = Vector2(254, 49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8yv8l"]
 size = Vector2(11.1666, 121.082)
 
-[node name="Cutter" type="Control"]
+[node name="Cutter" type="Control" node_paths=PackedStringArray("dirt", "element", "slot", "end_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,6 +26,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oo7fm")
+dirt = NodePath("Dirt/DirtArea")
+element = NodePath("Ingredient/IngredientArea")
+slot = NodePath("Slot")
+end_button = NodePath("EndButton")
 metadata/_edit_horizontal_guides_ = [5.0, 175.0]
 metadata/_edit_vertical_guides_ = [25.0, 295.0]
 
@@ -30,7 +40,7 @@ offset_bottom = 180.0
 rotation = -2.28311e-05
 texture = ExtResource("2_gdvk3")
 
-[node name="Board" type="TextureRect" parent="."]
+[node name="Board" type="TextureRect" parent="Table"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -46,26 +56,48 @@ grow_vertical = 2
 pivot_offset = Vector2(160, 90)
 texture = ExtResource("3_sulvu")
 
-[node name="Ingredient" type="TextureRect" parent="Board"]
+[node name="Dirt" type="TextureRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.666667)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 130.0
-offset_top = 7.0
-offset_right = 188.0
-offset_bottom = 267.0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 1.5708
+texture = ExtResource("4_3um1l")
+
+[node name="DirtArea" type="Area2D" parent="Dirt"]
+position = Vector2(160, 90)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dirt/DirtArea"]
+shape = SubResource("RectangleShape2D_ffpoi")
+
+[node name="Ingredient" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -90.0
+offset_right = 160.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
 stretch_mode = 2
 
-[node name="Area2D" type="Area2D" parent="Board/Ingredient"]
-position = Vector2(30.0005, 130)
+[node name="IngredientArea" type="Area2D" parent="Ingredient"]
+position = Vector2(160, 130)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Board/Ingredient/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ingredient/IngredientArea"]
 shape = SubResource("RectangleShape2D_4tehx")
 
 [node name="Knife" type="TextureRect" parent="."]
@@ -75,10 +107,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -193.0
-offset_top = -81.0
-offset_right = -11.0
-offset_bottom = 42.0
+offset_left = -190.0
+offset_top = -80.0
+offset_right = -8.0
+offset_bottom = 43.0
 grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("4_khgx1")
@@ -93,21 +125,38 @@ position = Vector2(0.163643, 2.10919)
 rotation = 0.0349066
 shape = SubResource("RectangleShape2D_8yv8l")
 
-[node name="EndButton" type="Button" parent="."]
+[node name="Slot" parent="." instance=ExtResource("6_k4qiw")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 221.0
-offset_top = -186.0
-offset_right = 431.0
-offset_bottom = -87.0
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="EndButton" type="Button" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 50
-text = "Done"
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
 bank_paths = ["res://Assets/Audio/fmodbanks/Desktop/Master.strings.bank", "res://Assets/Audio/fmodbanks/Desktop/Master.bank"]
@@ -116,5 +165,10 @@ bank_paths = ["res://Assets/Audio/fmodbanks/Desktop/Master.strings.bank", "res:/
 event_name = "event:/games/knife_slicing"
 event_guid = "{4ac1f52d-9782-403c-ba1d-4fc7590b0ef4}"
 
-[connection signal="area_entered" from="Board/Ingredient/Area2D" to="." method="_cut"]
+[node name="Slot2" parent="." instance=ExtResource("6_k4qiw")]
+layout_mode = 0
+item = ExtResource("8_1t64s")
+
+[connection signal="area_entered" from="Ingredient/IngredientArea" to="." method="_cut"]
+[connection signal="dropped" from="Slot" to="." method="start_minigame"]
 [connection signal="pressed" from="EndButton" to="." method="_on_end_button_pressed"]

@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scenes/Tests/Slot/Slot.gd" id="1_07yqn"]
 
 [node name="Slot" type="PanelContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 10.0
+offset_bottom = 10.0
 script = ExtResource("1_07yqn")
 
 [node name="TextureRect" type="TextureRect" parent="."]

@@ -8,6 +8,7 @@ func _on_bowl_crushing(area: Area2D) -> void:
 
 	if progress >= 1.0:
 		current_ing.change_icon("crush")
+		element.get_parent().texture = current_ing.icon
 		level += 1
 		progress = 0.0
 
@@ -36,4 +37,4 @@ func _on_button_pressed() -> void:
 
 
 func reset():
-	$Pebble.position = Vector2(270, 10)
+	$Pebble.position = Vector2(290, 10)
