@@ -1,14 +1,273 @@
-[gd_scene load_steps=6 format=3 uid="uid://clb5bygcnejvp"]
+[gd_scene load_steps=60 format=3 uid="uid://clb5bygcnejvp"]
 
 [ext_resource type="Script" path="res://Scripts/Mingames/caldron.gd" id="1_d12dr"]
-[ext_resource type="Texture2D" uid="uid://ospxglsy6aax" path="res://Assets/Table/caldron_back.png" id="2_pd2mx"]
-[ext_resource type="Texture2D" uid="uid://dhi8hxi6lb0bi" path="res://Assets/Table/caldron_front.png" id="4_o4450"]
+[ext_resource type="Texture2D" uid="uid://c6ly734dfj6pr" path="res://Assets/Minigames/Cut/table.png" id="2_eua51"]
+[ext_resource type="Texture2D" uid="uid://c7y5hqq31nlwm" path="res://Assets/Minigames/Caldron/caldron.png" id="3_84wje"]
+[ext_resource type="Texture2D" uid="uid://d1s53jjo8jmfy" path="res://Assets/Minigames/Caldron/animation/still/milk/milk_still1.png" id="4_2r77t"]
+[ext_resource type="Texture2D" uid="uid://ckxlanm5a64hd" path="res://Assets/Minigames/Caldron/animation/mix/milk/milk_mix1.png" id="4_j15bc"]
+[ext_resource type="Texture2D" uid="uid://b88r4tk60tkpk" path="res://Assets/Minigames/Caldron/animation/still/water/water_still1.png" id="4_smyjf"]
+[ext_resource type="Texture2D" uid="uid://dx3hb62tr6iu0" path="res://Assets/Minigames/Caldron/animation/bubble/milk/milk_bubble1.png" id="4_y2k7v"]
+[ext_resource type="Texture2D" uid="uid://dafnitqlvakck" path="res://Assets/Minigames/Caldron/animation/still/water/water_still2.png" id="5_ebjyr"]
+[ext_resource type="Texture2D" uid="uid://csukc5wvytjfd" path="res://Assets/Minigames/Caldron/animation/bubble/milk/milk_bubble2.png" id="5_mejl4"]
+[ext_resource type="Texture2D" uid="uid://dockau4eelxmp" path="res://Assets/Minigames/Caldron/animation/still/milk/milk_still2.png" id="5_woain"]
+[ext_resource type="Texture2D" uid="uid://xuhpansgogit" path="res://Assets/Minigames/Caldron/animation/mix/milk/milk_mix2.png" id="5_yuvcj"]
+[ext_resource type="Texture2D" uid="uid://du4x761oo5x6e" path="res://Assets/Minigames/Caldron/animation/mix/milk/milk_mix3.png" id="6_451jk"]
+[ext_resource type="Texture2D" uid="uid://cw7uqiqfe42gn" path="res://Assets/Minigames/Caldron/animation/still/water/water_still3.png" id="6_hd8m8"]
+[ext_resource type="Texture2D" uid="uid://d0xlqgdicioma" path="res://Assets/Minigames/Caldron/animation/still/milk/milk_still3.png" id="6_j04ry"]
+[ext_resource type="Texture2D" uid="uid://k82iwreg1o7r" path="res://Assets/Minigames/Caldron/animation/bubble/milk/milk_bubble3.png" id="6_qdbtw"]
+[ext_resource type="Texture2D" uid="uid://dnu68g3r0h27u" path="res://Assets/Minigames/Caldron/animation/mix/milk/milk_mix4.png" id="7_4mvtc"]
+[ext_resource type="Texture2D" uid="uid://bg87ciohlnwau" path="res://Assets/Minigames/Caldron/animation/bubble/milk/milk_bubble4.png" id="7_hfhvv"]
+[ext_resource type="Texture2D" uid="uid://d0wra6fv3lmmr" path="res://Assets/Minigames/Caldron/animation/mix/milk/milk_mix5.png" id="8_4nylr"]
+[ext_resource type="Texture2D" uid="uid://cgw2loevn5h8p" path="res://Assets/Minigames/Caldron/animation/bubble/milk/milk_bubble5.png" id="8_5ca16"]
+[ext_resource type="Texture2D" uid="uid://eo6q4yen5glf" path="res://Assets/Minigames/Caldron/animation/mix/milk/milk_mix6.png" id="9_78gy5"]
+[ext_resource type="Texture2D" uid="uid://b3bqd2tpaujql" path="res://Assets/Minigames/Caldron/animation/bubble/milk/milk_bubble6.png" id="9_yvs4s"]
+[ext_resource type="Texture2D" uid="uid://djfabbtsui44f" path="res://Assets/Minigames/Caldron/animation/bubble/milk/milk_bubble7.png" id="10_h64d2"]
+[ext_resource type="Texture2D" uid="uid://hwhjdh4i6q6u" path="res://Assets/Minigames/Caldron/animation/mix/milk/milk_mix7.png" id="10_y35hw"]
+[ext_resource type="Texture2D" uid="uid://bhirpnjj127se" path="res://Assets/Minigames/Caldron/animation/mix/water/water_mix1.png" id="14_n1mtu"]
+[ext_resource type="Texture2D" uid="uid://qyghr4105k72" path="res://Assets/Minigames/Caldron/animation/mix/water/water_mix2.png" id="15_vfwoa"]
+[ext_resource type="Texture2D" uid="uid://bqvnd424bhjw" path="res://Assets/Minigames/Caldron/animation/mix/water/water_mix3.png" id="16_5h0da"]
+[ext_resource type="Texture2D" uid="uid://ck4doauccib8w" path="res://Assets/Minigames/Caldron/animation/mix/water/water_mix4.png" id="17_2r8p6"]
+[ext_resource type="Texture2D" uid="uid://din468b8w03gk" path="res://Assets/Minigames/Caldron/animation/mix/water/water_mix5.png" id="18_dr7lc"]
+[ext_resource type="Texture2D" uid="uid://cbjdynhrfj7kk" path="res://Assets/Minigames/Caldron/animation/mix/water/water_mix6.png" id="19_4tr1o"]
+[ext_resource type="Texture2D" uid="uid://bdv2bsrm0gtr3" path="res://Assets/Minigames/Caldron/animation/mix/water/water_mix7.png" id="20_efi12"]
+[ext_resource type="Texture2D" uid="uid://dmrr36dnfetxd" path="res://Assets/Minigames/Caldron/animation/bubble/water/water_bubble1.png" id="21_e7awe"]
+[ext_resource type="Texture2D" uid="uid://n1m6uvgh0hi6" path="res://Assets/Minigames/Caldron/animation/mix/water/water_mix8.png" id="21_wy1sf"]
+[ext_resource type="Texture2D" uid="uid://b3wub2lpw56da" path="res://Assets/Minigames/Caldron/animation/bubble/water/water_bubble2.png" id="22_o7m1d"]
+[ext_resource type="Texture2D" uid="uid://cibfqf6paeds0" path="res://Assets/Minigames/Caldron/animation/bubble/water/water_bubble3.png" id="23_m1rat"]
+[ext_resource type="Texture2D" uid="uid://dprb781hqpslm" path="res://Assets/Minigames/Caldron/animation/bubble/water/water_bubble4.png" id="24_7ue6e"]
+[ext_resource type="Texture2D" uid="uid://brwq5jsmkne1l" path="res://Assets/Minigames/Caldron/animation/bubble/water/water_bubble5.png" id="25_ivnwx"]
+[ext_resource type="Texture2D" uid="uid://dmf36q7bsq6o0" path="res://Assets/Minigames/Caldron/animation/mix/wine/wine_mix1.png.png" id="25_ks5bm"]
+[ext_resource type="Texture2D" uid="uid://b27oka6vf64es" path="res://Assets/Minigames/Caldron/animation/mix/wine/wine_mix2.png.png" id="26_3l08v"]
+[ext_resource type="Texture2D" uid="uid://dktd55u7uck2v" path="res://Assets/Minigames/Caldron/animation/bubble/water/water_bubble6.png" id="26_sqe3y"]
+[ext_resource type="Texture2D" uid="uid://booxkcgq2clhj" path="res://Assets/Minigames/Caldron/animation/bubble/water/water_bubble7.png" id="27_i13ca"]
+[ext_resource type="Texture2D" uid="uid://bbj31k5s6wi6t" path="res://Assets/Minigames/Caldron/animation/mix/wine/wine_mix3.png.png" id="27_nvn25"]
+[ext_resource type="Texture2D" uid="uid://bkm2j8c3a421q" path="res://Assets/Minigames/Caldron/animation/mix/wine/wine_mix4.png" id="28_3ph78"]
+[ext_resource type="Texture2D" uid="uid://b8wh68e6wp4qm" path="res://Assets/Minigames/Caldron/animation/mix/wine/wine_mix5.png" id="29_eifjl"]
+[ext_resource type="Texture2D" uid="uid://cuut8n6tpb7dr" path="res://Assets/Minigames/Caldron/animation/mix/wine/wine_mix6.png" id="30_s2icf"]
+[ext_resource type="Texture2D" uid="uid://dq46krmnhcuag" path="res://Assets/Minigames/Caldron/animation/mix/wine/wine_mix7.png" id="31_mgt5p"]
+[ext_resource type="Texture2D" uid="uid://ckskkkova8yky" path="res://Assets/Minigames/Caldron/animation/mix/wine/wine_mix8.png" id="32_4twmp"]
+[ext_resource type="Texture2D" uid="uid://dwgdmdwjrsise" path="res://Assets/Minigames/Caldron/animation/bubble/wine/wine_bubble1.png" id="39_mg5nc"]
+[ext_resource type="Texture2D" uid="uid://bq107g6fgfebn" path="res://Assets/Minigames/Caldron/animation/bubble/wine/wine_bubble2.png" id="40_3whil"]
+[ext_resource type="Texture2D" uid="uid://c8jm70w6jwine" path="res://Assets/Minigames/Caldron/animation/bubble/wine/wine_bubble3.png" id="41_kn4sc"]
+[ext_resource type="Texture2D" uid="uid://cs185v1chtsgm" path="res://Assets/Minigames/Caldron/animation/bubble/wine/wine_bubble4.png" id="42_dj2sx"]
+[ext_resource type="Texture2D" uid="uid://dux4mky2n1ef" path="res://Assets/Minigames/Caldron/animation/bubble/wine/wine_bubble5.png" id="43_uomks"]
+[ext_resource type="Texture2D" uid="uid://cx7apofk3w57o" path="res://Assets/Minigames/Caldron/animation/bubble/wine/wine_bubble6.png" id="44_qmpme"]
+[ext_resource type="Texture2D" uid="uid://lvidb0npxsp8" path="res://Assets/Minigames/Caldron/animation/bubble/wine/wine_bubble7.png" id="45_ajdmu"]
+[ext_resource type="Texture2D" uid="uid://dswycsh205mjj" path="res://Assets/Minigames/Caldron/spoon.png" id="54_ka451"]
+[ext_resource type="Script" path="res://Scripts/Mingames/spoon.gd" id="55_1480i"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0x4ru"]
-size = Vector2(20.6565, 27)
+[sub_resource type="SpriteFrames" id="SpriteFrames_pud3u"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_y2k7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mejl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qdbtw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hfhvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5ca16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yvs4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_h64d2")
+}],
+"loop": true,
+"name": &"milk_bubble",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_j15bc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yuvcj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_451jk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4mvtc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4nylr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_78gy5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_y35hw")
+}],
+"loop": true,
+"name": &"milk_mix",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_2r77t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_woain")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_j04ry")
+}],
+"loop": true,
+"name": &"milk_still",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_e7awe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_o7m1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_m1rat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_7ue6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ivnwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_sqe3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_i13ca")
+}],
+"loop": true,
+"name": &"water_bubble",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_n1mtu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_vfwoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5h0da")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_2r8p6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_dr7lc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_4tr1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_efi12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wy1sf")
+}],
+"loop": true,
+"name": &"water_mix",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_smyjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ebjyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hd8m8")
+}],
+"loop": true,
+"name": &"water_still",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_mg5nc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_3whil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_kn4sc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_dj2sx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_uomks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_qmpme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_ajdmu")
+}],
+"loop": true,
+"name": &"wine_bubble",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_ks5bm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_3l08v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_nvn25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_3ph78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_eifjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_s2icf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_mgt5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_4twmp")
+}],
+"loop": true,
+"name": &"wine_mix",
+"speed": 7.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"wine_still",
+"speed": 3.0
+}]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_svg6b"]
-size = Vector2(84, 126)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xv1r"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltudq"]
+size = Vector2(40, 40)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dusxg"]
+radius = 17.9904
+height = 57.0812
 
 [node name="Caldron" type="Control"]
 layout_mode = 3
@@ -20,34 +279,14 @@ grow_vertical = 2
 script = ExtResource("1_d12dr")
 
 [node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 1
 offset_right = 320.0
 offset_bottom = 180.0
+texture = ExtResource("2_eua51")
 
-[node name="MixedLabel" type="Label" parent="Background"]
-visible = false
-layout_mode = 1
-offset_left = 113.0
-offset_top = 212.0
-offset_right = 165.0
-offset_bottom = 235.0
-text = "Mixed!"
-
-[node name="ProgressBar" type="ProgressBar" parent="Background"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -77.5
-offset_right = 25.0
-offset_bottom = 77.5
-grow_vertical = 2
-max_value = 10.0
-step = 1.0
-allow_greater = true
-fill_mode = 3
-
-[node name="CaldronBack" type="TextureRect" parent="."]
+[node name="Caldron" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -60,60 +299,77 @@ offset_right = 160.0
 offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_pd2mx")
+texture = ExtResource("3_84wje")
 
-[node name="Area2D" type="Area2D" parent="CaldronBack"]
-position = Vector2(133, 116)
+[node name="Liquid" type="AnimatedSprite2D" parent="."]
+position = Vector2(160, 90)
+sprite_frames = SubResource("SpriteFrames_pud3u")
+animation = &"wine_still"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CaldronBack/Area2D"]
-shape = SubResource("RectangleShape2D_0x4ru")
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(160, 90)
 
-[node name="Area2D2" type="Area2D" parent="CaldronBack"]
-position = Vector2(187, 116)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-60, 0)
+shape = SubResource("RectangleShape2D_8xv1r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CaldronBack/Area2D2"]
-shape = SubResource("RectangleShape2D_0x4ru")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(60, 0)
+shape = SubResource("RectangleShape2D_ltudq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 50)
+shape = SubResource("RectangleShape2D_ltudq")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -50)
+shape = SubResource("RectangleShape2D_ltudq")
+
+[node name="MixTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="Spoon" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -23.0
+offset_right = 16.0
+offset_bottom = 155.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = 0.523599
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("54_ka451")
+script = ExtResource("55_1480i")
+
+[node name="SpoonArea" type="Area2D" parent="Spoon"]
+position = Vector2(20.0919, 148.134)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spoon/SpoonArea"]
+shape = SubResource("CapsuleShape2D_dusxg")
+
+[node name="EndButton" type="Button" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 6.0
-offset_top = -71.0
-offset_right = 45.0
-offset_bottom = 40.0
+offset_left = -53.0
+offset_top = -56.0
+offset_right = 56.0
+offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SpoonArea" type="Area2D" parent="Spoon"]
-position = Vector2(47, 336)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spoon/SpoonArea"]
-shape = SubResource("RectangleShape2D_svg6b")
-
-[node name="Button" type="Button" parent="Spoon"]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 9.0
-offset_top = 1.0
-offset_right = -60.0
-offset_bottom = -199.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CaldronFront" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 320.0
-offset_bottom = 180.0
-texture = ExtResource("4_o4450")
-
-[connection signal="area_entered" from="CaldronBack/Area2D" to="." method="_mixer"]
-[connection signal="area_entered" from="CaldronBack/Area2D2" to="." method="_mixer"]
-[connection signal="button_down" from="Spoon/Button" to="Spoon" method="_on_button_button_down"]
-[connection signal="button_up" from="Spoon/Button" to="Spoon" method="_on_button_button_up"]
+[connection signal="animation_looped" from="Liquid" to="." method="_on_liquid_animation_looped"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="MixTimer" to="." method="_on_mix_timer_timeout"]
+[connection signal="pressed" from="EndButton" to="." method="_on_end_button_pressed"]
