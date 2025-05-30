@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bqyblwuvhmwfr"
+path="res://.godot/imported/table_mortar.bmp-fbd1b9bfb3f5c488125b291e78d52c8a.res"
+
+[deps]
+
+source_file="res://Assets/Bitmaps/table_mortar.bmp"
+dest_files=["res://.godot/imported/table_mortar.bmp-fbd1b9bfb3f5c488125b291e78d52c8a.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

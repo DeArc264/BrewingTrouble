@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="Ingredient" load_steps=6 format=3 uid="uid://qlwtsvivu18e"]
+[gd_resource type="Resource" script_class="Ingredient" load_steps=5 format=3 uid="uid://qlwtsvivu18e"]
 
 [ext_resource type="Texture2D" uid="uid://451uow4uk76k" path="res://Assets/Icons/Ingredients/Crushed/icon_crush_belladona.png" id="1_nt50k"]
 [ext_resource type="Texture2D" uid="uid://cfwa6djqrkgxm" path="res://Assets/Icons/Ingredients/Normal/Plants/icon_belladona.png" id="2_4jehc"]
 [ext_resource type="Texture2D" uid="uid://blhlx6qs4iy2j" path="res://Assets/Icons/Ingredients/Cut/icon_cut_belladona.png" id="2_57d2e"]
 [ext_resource type="Script" path="res://Scripts/Items/ingredient.gd" id="3_e8smq"]
-[ext_resource type="Texture2D" uid="uid://c1jcw224ne21x" path="res://Assets/Minigames/Mortar/Belladona/belladona_0.png" id="7_50g4b"]
 
 [resource]
 script = ExtResource("3_e8smq")
@@ -12,7 +11,7 @@ normal_icon = ExtResource("2_4jehc")
 crush_icon = ExtResource("1_nt50k")
 cut_icon = ExtResource("2_57d2e")
 type = "Plant"
-icon = ExtResource("7_50g4b")
+icon = ExtResource("2_4jehc")
 name = "Belladona"
 id = "plant_0"
 description = "Ingredient used for potions."

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1jcw224ne21x"
-path="res://.godot/imported/belladona_0.png-18667cd37ad7af712dd4897330b826c4.ctex"
+uid="uid://b5lodmjv555nj"
+path="res://.godot/imported/berries_3.png-a7517875ac0322c1ef0d710aaa5a7a54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Minigames/Mortar/Belladona/belladona_0.png"
-dest_files=["res://.godot/imported/belladona_0.png-18667cd37ad7af712dd4897330b826c4.ctex"]
+source_file="res://Assets/Minigames/Mortar/Berries/berries_3.png"
+dest_files=["res://.godot/imported/berries_3.png-a7517875ac0322c1ef0d710aaa5a7a54.ctex"]
 
 [params]
 

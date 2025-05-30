@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://7yffggslvelu"]
+[gd_scene load_steps=11 format=3 uid="uid://7yffggslvelu"]
 
 [ext_resource type="Script" path="res://Scripts/Mingames/cutter.gd" id="1_oo7fm"]
 [ext_resource type="Texture2D" uid="uid://c6ly734dfj6pr" path="res://Assets/Minigames/Cut/table.png" id="2_gdvk3"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bx2lwni41htfm" path="res://Assets/Minigames/Cut/knife.png" id="4_khgx1"]
 [ext_resource type="Script" path="res://Scripts/Mingames/knife.gd" id="5_e213k"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="6_k4qiw"]
-[ext_resource type="Resource" uid="uid://qlwtsvivu18e" path="res://Resources/Ingredients/Plant/Belladona.tres" id="8_1t64s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffpoi"]
 size = Vector2(274, 168)
@@ -164,10 +163,6 @@ bank_paths = ["res://Assets/Audio/fmodbanks/Desktop/Master.strings.bank", "res:/
 [node name="Cut" type="FmodEventEmitter2D" parent="."]
 event_name = "event:/games/knife_slicing"
 event_guid = "{4ac1f52d-9782-403c-ba1d-4fc7590b0ef4}"
-
-[node name="Slot2" parent="." instance=ExtResource("6_k4qiw")]
-layout_mode = 0
-item = ExtResource("8_1t64s")
 
 [connection signal="area_entered" from="Ingredient/IngredientArea" to="." method="_cut"]
 [connection signal="dropped" from="Slot" to="." method="start_minigame"]

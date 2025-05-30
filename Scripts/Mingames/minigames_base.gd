@@ -8,6 +8,13 @@ signal modified_ing(Item)
 @export var slot : Slot
 @export var end_button : Button
 
+var start_dict = {
+	"plant_0" : load("res://Assets/Minigames/belladona_0.png"),
+	"plant_1" : load("res://Assets/Minigames/ginger_0.png"),
+	"plant_2" : load("res://Assets/Minigames/lavander_0.png"),
+	"plant_3" : load("res://Assets/Minigames/berries_0.png")
+}
+
 var dirty = false
 var progress = 0.0
 var progress_speed
@@ -24,9 +31,11 @@ func show_on_screen():
 
 
 func start_minigame():
+	if slot.item == null: return
+
 	if slot.item is Ingredient:
 		current_ing = slot.item
-		element.get_parent().texture = current_ing.icon
+		element.get_parent().texture = start_dict[current_ing.id]
 		element.monitoring = true
 		end_button.show()
 
@@ -46,6 +55,16 @@ func rub_rag(event : InputEvent):
 			if $Dirt.modulate == 1.0:
 				dirty = false
 				end_minigame()
+
+
+func change_icon(arr : Array):
+	var current_texture = element.get_parent().texture
+
+	if arr.has(current_texture):
+		var next_index = arr.find(current_texture) + 1
+		element.get_parent().texture = arr[next_index]
+	else:
+		element.get_parent().texture = arr[0]
 
 
 func end_minigame():

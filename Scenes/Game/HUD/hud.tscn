@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cfvv7x84qgvlj"]
+[gd_scene load_steps=21 format=3 uid="uid://cfvv7x84qgvlj"]
 
 [ext_resource type="Script" path="res://Scripts/Scenes/hud.gd" id="1_kg5u5"]
 [ext_resource type="Script" path="res://Scripts/inventory.gd" id="2_wgqd0"]
@@ -9,9 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://bu76864p0a585" path="res://Assets/Animation/Scroll/scroll_5.png" id="7_66ur4"]
 [ext_resource type="Texture2D" uid="uid://cye7u8kwrdak4" path="res://Assets/Animation/Scroll/scroll_6.png" id="8_8sv4h"]
 [ext_resource type="Texture2D" uid="uid://cf5eofm0agcpn" path="res://Assets/Animation/Scroll/scroll_1.png" id="10_qntnh"]
+[ext_resource type="Resource" uid="uid://blob2sv1svnds" path="res://Resources/Ingredients/Base/Water.tres" id="11_mhika"]
 [ext_resource type="Texture2D" uid="uid://kohn1dyjsut0" path="res://Assets/Animation/Scroll/scroll_2.png" id="11_s7w1n"]
 [ext_resource type="Texture2D" uid="uid://d31odhymcdcdi" path="res://Assets/Animation/Scroll/scroll_3.png" id="12_572ou"]
+[ext_resource type="Resource" uid="uid://qlwtsvivu18e" path="res://Resources/Ingredients/Plant/Belladona.tres" id="12_od5qw"]
 [ext_resource type="Texture2D" uid="uid://c36w1sg33okdb" path="res://Assets/Animation/Scroll/scroll_4.png" id="13_itdvl"]
+[ext_resource type="Resource" uid="uid://dhts2fo8ey7tg" path="res://Resources/Ingredients/Plant/Berries.tres" id="13_qaqot"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7udqd"]
 animations = [{
@@ -111,9 +114,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_kg5u5")
 
 [node name="CoinLabel" type="Label" parent="."]
+visible = false
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 1
@@ -128,6 +133,7 @@ text = "Coins: 0"
 vertical_alignment = 1
 
 [node name="TimeLabel" type="Label" parent="."]
+visible = false
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 1
@@ -160,16 +166,19 @@ script = ExtResource("2_wgqd0")
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 1
+item = ExtResource("11_mhika")
 
 [node name="Slot2" parent="Scroll/Hands" instance=ExtResource("3_j28ob")]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 1
+item = ExtResource("12_od5qw")
 
 [node name="Slot3" parent="Scroll/Hands" instance=ExtResource("3_j28ob")]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 1
+item = ExtResource("13_qaqot")
 
 [node name="HandButton" type="Button" parent="."]
 layout_mode = 0

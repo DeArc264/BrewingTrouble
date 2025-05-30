@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://gdr3cf0jg005"]
+[gd_scene load_steps=26 format=3 uid="uid://gdr3cf0jg005"]
 
 [ext_resource type="Script" path="res://Scripts/Scenes/table.gd" id="1_rxm4g"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="2_gvcte"]
@@ -10,16 +10,31 @@
 [ext_resource type="PackedScene" uid="uid://be2637d2iq581" path="res://Scenes/Game/Table/dry_net.tscn" id="7_ggnvj"]
 [ext_resource type="Texture2D" uid="uid://frac08byunq2" path="res://Assets/Table/table_bg.png" id="10_4mva8"]
 [ext_resource type="PackedScene" uid="uid://dus7ooufchbdn" path="res://Scenes/Game/Table/book.tscn" id="10_irqxx"]
+[ext_resource type="BitMap" uid="uid://0epapv3e2a31" path="res://Assets/Bitmaps/table_hourglass.bmp" id="10_kifp5"]
 [ext_resource type="PackedScene" uid="uid://7yffggslvelu" path="res://Scenes/Game/Table/cutter.tscn" id="11_60dht"]
 [ext_resource type="Texture2D" uid="uid://bx6d4t8olghdv" path="res://Assets/Table/distillery.png" id="12_ckuv7"]
 [ext_resource type="Texture2D" uid="uid://ckbw5sxle3koi" path="res://Assets/Table/hourglass.png" id="13_7xym8"]
 [ext_resource type="Texture2D" uid="uid://24svegbqq32b" path="res://Assets/Table/cut_board.png" id="14_xfd8c"]
+[ext_resource type="BitMap" uid="uid://i0o8xm773ctn" path="res://Assets/Bitmaps/table_board.bmp" id="15_1n0en"]
 [ext_resource type="Texture2D" uid="uid://dpf6wbq4jyjh8" path="res://Assets/Table/livro_receitas.png" id="15_7uukh"]
 [ext_resource type="PackedScene" uid="uid://ruyqta42jimp" path="res://Scenes/Tests/Clean/clean.tscn" id="16_6ulko"]
 [ext_resource type="Texture2D" uid="uid://syygt5ej8krj" path="res://Assets/Table/caldron_table.png" id="16_pia0k"]
+[ext_resource type="BitMap" uid="uid://bqyblwuvhmwfr" path="res://Assets/Bitmaps/table_mortar.bmp" id="17_41n66"]
 [ext_resource type="Texture2D" uid="uid://bsrk1x1uxpv2v" path="res://Assets/Table/mortar.png" id="17_med01"]
-[ext_resource type="Texture2D" uid="uid://dx823xr468ygu" path="res://Assets/Table/fireplace.png" id="18_dwnnc"]
 [ext_resource type="PackedScene" uid="uid://clb5bygcnejvp" path="res://Scenes/Game/Table/caldron.tscn" id="19_hqp1p"]
+[ext_resource type="PackedScene" uid="uid://cfvv7x84qgvlj" path="res://Scenes/Game/HUD/hud.tscn" id="24_esyk5"]
+[ext_resource type="Resource" uid="uid://dqfq5vk43r08" path="res://Resources/Ingredients/Flasks/Empty_Flask_A.tres" id="24_lcj71"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_spoof"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_7xym8")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
 
 [node name="Table" type="Control"]
 layout_mode = 3
@@ -32,6 +47,7 @@ script = ExtResource("1_rxm4g")
 craftables = Array[ExtResource("2_wejl3")]([ExtResource("3_bmf7n"), ExtResource("4_emhfe"), ExtResource("5_18i7f")])
 
 [node name="Table" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 180.0
@@ -43,6 +59,7 @@ offset_right = 320.0
 offset_bottom = 180.0
 
 [node name="DistilleryImg" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_left = 216.0
 offset_top = 16.0
@@ -50,38 +67,25 @@ offset_right = 304.0
 offset_bottom = 108.0
 texture = ExtResource("12_ckuv7")
 
-[node name="Hourglass" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 176.0
-offset_top = 32.0
-offset_right = 210.0
-offset_bottom = 100.0
-texture = ExtResource("13_7xym8")
+[node name="Hourglass" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(197, 73)
+sprite_frames = SubResource("SpriteFrames_spoof")
 
-[node name="CuttingBoardImg" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 207.0
-offset_top = 112.0
-offset_right = 317.0
-offset_bottom = 154.0
-texture = ExtResource("14_xfd8c")
-
-[node name="CutButton" type="Button" parent="CuttingBoardImg"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
+[node name="HourglassButton" type="TextureButton" parent="Hourglass"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -39.0
-offset_top = -18.0
-offset_right = 36.0
-offset_bottom = 15.0
+offset_left = -34.0
+offset_top = -68.0
 grow_horizontal = 2
 grow_vertical = 2
+texture_click_mask = ExtResource("10_kifp5")
 
 [node name="BookImg" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_left = 16.0
 offset_top = 56.0
@@ -90,61 +94,51 @@ offset_bottom = 128.0
 texture = ExtResource("15_7uukh")
 
 [node name="CaldronImg" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_left = 120.0
 offset_top = 81.0
-offset_right = 198.0
-offset_bottom = 134.0
+offset_right = 211.0
+offset_bottom = 158.0
+mouse_filter = 2
 texture = ExtResource("16_pia0k")
 
-[node name="MortarImg" type="TextureRect" parent="."]
+[node name="BoardButton" type="TextureButton" parent="."]
+texture_filter = 1
 layout_mode = 0
-offset_left = 48.0
+offset_left = 207.0
+offset_top = 112.0
+offset_right = 317.0
+offset_bottom = 154.0
+texture_normal = ExtResource("14_xfd8c")
+texture_click_mask = ExtResource("15_1n0en")
+
+[node name="MortarButton" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 20.0
 offset_top = 129.0
-offset_right = 95.0
+offset_right = 67.0
 offset_bottom = 156.0
-texture = ExtResource("17_med01")
-
-[node name="CrushButton" type="Button" parent="MortarImg"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_right = 47.0
-offset_bottom = 27.0
-
-[node name="Fireplace" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 320.0
-offset_bottom = 180.0
-mouse_filter = 2
-texture = ExtResource("18_dwnnc")
+texture_normal = ExtResource("17_med01")
+texture_click_mask = ExtResource("17_41n66")
 
 [node name="CaldronSlot" parent="." instance=ExtResource("2_gvcte")]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-offset_left = 131.0
+offset_left = 141.0
 offset_top = 85.0
-offset_right = 187.0
+offset_right = 194.0
 offset_bottom = 100.0
 
-[node name="DryLabel" type="Label" parent="."]
+[node name="FlaskSlot" parent="." instance=ExtResource("2_gvcte")]
 visible = false
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 21.0
-offset_top = 9.0
-offset_right = 72.0
-offset_bottom = 32.0
-grow_horizontal = 2
-text = "Drying"
-
-[node name="Mix" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 65.0
-offset_bottom = 36.0
-text = "Mix"
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_left = 141.0
+offset_top = 85.0
+offset_right = 194.0
+offset_bottom = 100.0
 
 [node name="Bellows" type="Button" parent="."]
 layout_mode = 1
@@ -153,30 +147,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -24.0
-offset_top = -42.0
-offset_right = 25.0
-offset_bottom = -20.0
+offset_left = -77.0
+offset_top = -47.0
+offset_right = -28.0
+offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 flat = true
-
-[node name="BoilLabel" type="Label" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -89.0
-offset_top = -77.0
-offset_right = -36.0
-offset_bottom = -47.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Boiling"
 
 [node name="DistillerySlot" parent="." instance=ExtResource("2_gvcte")]
 layout_mode = 0
@@ -212,11 +190,6 @@ vertical_alignment = 1
 [node name="Mortar" parent="." instance=ExtResource("5_wnxhj")]
 visible = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
 metadata/_edit_vertical_guides_ = [0.0]
 metadata/_edit_horizontal_guides_ = [25.0]
 
@@ -246,6 +219,7 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="MoveLeft_Table" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -258,6 +232,7 @@ grow_vertical = 2
 text = "<"
 
 [node name="MoveRight_Table" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -301,13 +276,29 @@ event_guid = "{408b6bb6-ef8b-4de5-9491-f545841b8418}"
 event_name = "event:/games/bubbling_cauldron"
 event_guid = "{a0f38773-673d-4cd3-ae12-228b7501cc84}"
 
+[node name="HUD" parent="." instance=ExtResource("24_esyk5")]
+layout_mode = 1
+
+[node name="Slot" parent="." instance=ExtResource("2_gvcte")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -10.0
+offset_bottom = 0.0
+grow_vertical = 0
+item = ExtResource("24_lcj71")
+
+[connection signal="new_item" from="." to="HUD" method="_get_item"]
 [connection signal="new_ing" from="DryNet" to="." method="update_item"]
-[connection signal="pressed" from="CuttingBoardImg/CutButton" to="." method="_on_board_clicked"]
-[connection signal="pressed" from="MortarImg/CrushButton" to="." method="_on_mortar_clicked"]
+[connection signal="pressed" from="Hourglass/HourglassButton" to="." method="_on_turn_hourglass_pressed"]
+[connection signal="pressed" from="BoardButton" to="." method="_on_board_clicked"]
+[connection signal="pressed" from="MortarButton" to="." method="_on_mortar_clicked"]
 [connection signal="dropped" from="CaldronSlot" to="." method="_on_caldron_slot_dropped"]
 [connection signal="mouse_entered" from="CaldronSlot" to="." method="show_help" binds= ["caldron"]]
 [connection signal="mouse_exited" from="CaldronSlot" to="." method="hide_help"]
-[connection signal="pressed" from="Mix" to="." method="_on_mix_pressed"]
+[connection signal="mouse_entered" from="FlaskSlot" to="." method="show_help" binds= ["caldron"]]
+[connection signal="mouse_exited" from="FlaskSlot" to="." method="hide_help"]
 [connection signal="mouse_entered" from="Bellows" to="." method="show_help" binds= ["bellow"]]
 [connection signal="mouse_exited" from="Bellows" to="." method="hide_help"]
 [connection signal="pressed" from="Bellows" to="." method="_on_bellows_pressed"]

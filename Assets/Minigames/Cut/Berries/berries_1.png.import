@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5lodmjv555nj"
-path="res://.godot/imported/myrrth_3.png-ee2094a3904922890f0ec0eafc9de84f.ctex"
+uid="uid://dp2vtamot1cgb"
+path="res://.godot/imported/berries_1.png-9f8fd5e637dc1ead1ddaeeea3727d8b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Minigames/Mortar/Myrrth/myrrth_3.png"
-dest_files=["res://.godot/imported/myrrth_3.png-ee2094a3904922890f0ec0eafc9de84f.ctex"]
+source_file="res://Assets/Minigames/Cut/Berries/berries_1.png"
+dest_files=["res://.godot/imported/berries_1.png-9f8fd5e637dc1ead1ddaeeea3727d8b7.ctex"]
 
 [params]
 

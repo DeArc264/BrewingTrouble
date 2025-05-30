@@ -22,7 +22,7 @@ func _process(_delta):
 
 
 func _get_item(item: Item) -> void:
-	$Hands.add_item(item)
+	$Scroll/Hands.add_item(item)
 
 
 func _on_door_pay(ammount : int) -> void:

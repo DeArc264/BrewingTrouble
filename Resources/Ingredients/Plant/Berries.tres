@@ -2,16 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://b17onayrcf0nr" path="res://Assets/Icons/Ingredients/Crushed/icon_crush_berries.png" id="1_3dulm"]
 [ext_resource type="Texture2D" uid="uid://b67mnotkfp04u" path="res://Assets/Icons/Ingredients/Cut/icon_cut_berries.png" id="2_i6obq"]
-[ext_resource type="Texture2D" uid="uid://kob3nylagyje" path="res://Assets/Minigames/Mortar/Myrrth/myrrth_0.png" id="10_uax82"]
+[ext_resource type="Texture2D" uid="uid://dlvx0ul7b4ski" path="res://Assets/Icons/Ingredients/Normal/Plants/icon_berries.png" id="3_q5et6"]
 [ext_resource type="Script" path="res://Scripts/Items/ingredient.gd" id="11_3gwf0"]
 
 [resource]
 script = ExtResource("11_3gwf0")
-normal_icon = ExtResource("10_uax82")
+normal_icon = ExtResource("3_q5et6")
 crush_icon = ExtResource("1_3dulm")
 cut_icon = ExtResource("2_i6obq")
 type = "Plant"
-icon = ExtResource("10_uax82")
+icon = ExtResource("3_q5et6")
 name = "Juniper Berries"
 id = "plant_3"
 description = "Ingredient used for potions."

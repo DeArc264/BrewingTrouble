@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://i0o8xm773ctn"
+path="res://.godot/imported/table_board.bmp-66b473f2ce3a283815d0fc5191d3e238.res"
+
+[deps]
+
+source_file="res://Assets/Bitmaps/table_board.bmp"
+dest_files=["res://.godot/imported/table_board.bmp-66b473f2ce3a283815d0fc5191d3e238.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

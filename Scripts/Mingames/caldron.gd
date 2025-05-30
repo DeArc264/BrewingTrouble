@@ -1,13 +1,16 @@
 extends Control
 
-signal mixed
+signal mixed(potion_id : String)
 
 var mixing = false
 var progress = 0.0
 var liquid_base
 var potion_color
+var to_send
 var tween
 
+#func _ready() -> void:
+	#start_minigame("base_1", "potion_1")
 
 func start_minigame(base : String, brewed : String):
 	match base:
@@ -29,6 +32,7 @@ func start_minigame(base : String, brewed : String):
 			potion_color = Color.RED
 		_:
 			potion_color = Color.BLACK
+	to_send = brewed
 
 	$Liquid.play(liquid_base + "bubble")
 	$EndButton.hide()
@@ -58,7 +62,6 @@ func _on_liquid_animation_looped() -> void:
 
 
 func change_color():
-	var current_color : Color = $Liquid.modulate
 	tween = get_tree().create_tween()
 
 	tween.tween_property($Liquid, "modulate", potion_color, 5)
@@ -67,5 +70,5 @@ func change_color():
 
 
 func _on_end_button_pressed() -> void:
-	mixed.emit()
+	mixed.emit(to_send)
 	hide()

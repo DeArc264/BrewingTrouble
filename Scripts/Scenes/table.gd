@@ -18,17 +18,17 @@ var boiling = false # Boiling(42-69) state
 var holder
 
 var ing_conditions = {
-	"Strenght Potion" : {
-		"Belladona" : ["crushed", "boiled"],
-		"Lavander" : ["fully dry"]
+	"potion_1" : {
+		"plant_0" : [],
+		"plant_3" : []
 	},
-	"Stamina Potion" : {
-		"Lavander" : ["crushed", "distilled"],
-		"Myrrh" : ["crushed"]
+	"potion_2" : {
+		"plant_2" : ["crushed"],
+		"plant_3" : ["crushed"]
 	},
-	"Healing Potion" : {
-		"Belladona" : [],
-		"Myrrh" : []
+	"potion_3" : {
+		"plant_0" : ["crushed"],
+		"plant_2" : ["fully dry"]
 	}
 }
 #endregion
@@ -44,13 +44,6 @@ func _process(_delta: float) -> void:
 	else:
 		$ING1BoilTimer.paused = true
 		$ING2BoilTimer.paused = true
-		$Boiling.stop()
-
-# Updates texts. Remove later
-	$BoilLabel.text = "Boiling... " + str(int($BoilTimer.time_left))
-	$DryLabel.text = "Drying..." + str(int($DryTimer.time_left))
-	$HourglassLabel.text = str(int($HourglassTimer.time_left))
-	$Label.text = "Ing 1: " + str($ING1BoilTimer.time_left) + "\nIng2: " + str($ING2BoilTimer.time_left)
 
 # Boiling control
 #region Boil
@@ -143,32 +136,32 @@ func _on_caldron_slot_dropped() -> void:
 		caldron_slot.empty()
 
 		if in_caldron.size() >= 3:
-			$Mix.show()
+			mix()
 
-# When the button is pressed, checks if there are enough ingredients and shows
-# the caldron minigame.
-func _on_mix_pressed() -> void:
+
+func mix() -> void:
 	if in_caldron.size() >= 3 and in_caldron[0] != null:
-		$Mix.hide()
+		$CaldronSlot.hide()
+		$FlaskSlot.show()
 		$ING1BoilTimer.stop()
 		$ING2BoilTimer.stop()
-		$Caldron.show()
+		$Caldron.start_minigame(in_caldron[0].id, check_recipe())
 
 # Uses the elements inside "in_caldron" to see which recipe is being followed
 func check_recipe():
 	if in_caldron.size() > 3:
-		return 9
+		return "potion_0"
 
 	for i in in_caldron:
-		if i == Potion or i.conditions.has("useless") and i != null:
-			return 9
+		if i == Potion or i.conditions.has("useless") or i == null:
+			return "potion_0"
 
-	for j in craftables.size():
-		if is_in_recipe(j):
-			if recipe_conditions(craftables[j].name):
-				return j
+	for p in craftables.size():
+		if is_in_recipe(p):
+			if recipe_conditions(craftables[p].id):
+				return craftables[p].id
 			else:
-				return 9
+				return "potion_0"
 
 
 # Get's every item in "in_caldron", then compares to every element of a specific
@@ -190,39 +183,27 @@ func is_in_recipe(recipe : int):
 # Checks the variables of the items in "in_caldron". If they match all the
 # conditions, the potion is correctly crafted
 func recipe_conditions(recipe : String):
-	if in_caldron[1].conditions == ing_conditions[recipe][in_caldron[1].name]:
-		if in_caldron[2].conditions == ing_conditions[recipe][in_caldron[2].name]:
+	if in_caldron[1].conditions == ing_conditions[recipe][in_caldron[1].id]:
+		if in_caldron[2].conditions == ing_conditions[recipe][in_caldron[2].id]:
 			return true
 
 	return false
 
-
 # Once mixed, uses "check_recipe" function to decide which potion was crafted
-func _on_caldron_mixed() -> void:
-	var potion
-
-	match check_recipe():
-		0:
-			potion = craftables[0]
-		1:
-			potion = craftables[1]
-		2:
-			potion = craftables[2]
-		_:
-			potion = load("res://Resources/Potions/WeirdPotion.tres")
+func _on_caldron_mixed(potion_id : String) -> void:
+	var potion = load(Itens.potions[potion_id])
 
 	if in_caldron[0].rank + in_caldron[1].rank + in_caldron[2].rank > 3:
 		potion.state = "Perfect"
 	
-	await $CaldronSlot.dropped
-	potion.fill_potion(in_caldron.back().name)
+	await $FlaskSlot.dropped
+	potion.fill_potion(in_caldron.back().id)
 	new_item.emit(potion)
-
-	in_caldron[1].return_to_normal()
-	in_caldron[2].return_to_normal()
 
 	in_caldron.clear()
 	in_caldron = [null]
+	$CaldronSlot.show()
+	$FlaskSlot.hide()
 #endregion
 
 # Table hourglass control

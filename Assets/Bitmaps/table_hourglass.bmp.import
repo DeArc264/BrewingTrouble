@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://0epapv3e2a31"
+path="res://.godot/imported/table_hourglass.bmp-7c7643bc0827e1bcd7dc9a85e9acafac.res"
+
+[deps]
+
+source_file="res://Assets/Bitmaps/table_hourglass.bmp"
+dest_files=["res://.godot/imported/table_hourglass.bmp-7c7643bc0827e1bcd7dc9a85e9acafac.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

@@ -1,12 +1,39 @@
 extends Minigame
 
+var img_dict = {
+#Belladona
+	"plant_0" : [
+		load("res://Assets/Minigames/Cut/Belladona/belladona_1.png"),
+		load("res://Assets/Minigames/Cut/Belladona/belladona_2.png"),
+		load("res://Assets/Minigames/Cut/Belladona/belladona_3.png")
+	],
+#Ginger
+	"plant_1" : [
+		load("res://Assets/Minigames/Cut/Ginger/ginger_1.png"),
+		load("res://Assets/Minigames/Cut/Ginger/ginger_2.png"),
+		load("res://Assets/Minigames/Cut/Ginger/ginger_3.png")
+	],
+#Lavander
+	"plant_2" : [
+		load("res://Assets/Minigames/Cut/Lavander/lavander_1.png"),
+		load("res://Assets/Minigames/Cut/Lavander/lavander_2.png"),
+		load("res://Assets/Minigames/Cut/Lavander/lavander_3.png")
+	],
+#Berries
+	"plant_3" : [
+		load("res://Assets/Minigames/Cut/Berries/berries_1.png"),
+		load("res://Assets/Minigames/Cut/Berries/berries_2.png"),
+		load("res://Assets/Minigames/Cut/Berries/berries_3.png")
+	]
+}
+
 func _cut(area: Area2D) -> void:
 	if area.name == "KnifeArea":
 		$Cut.play()
-		progress += 0.1
+		increase_progress()
+
 		if progress >= 1.0:
-			current_ing.change_icon("cut")
-			element.get_parent().texture = current_ing.icon
+			change_icon(img_dict[current_ing.id])
 			level += 1
 			progress = 0
 
@@ -31,6 +58,7 @@ func _on_end_button_pressed() -> void:
 				current_ing.conditions.append("useless")
 
 		reset()
+		current_ing.icon = current_ing.cut_icon
 		end_minigame()
 
 
