@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bokpodtl3xa5l"
+path="res://.godot/imported/stock_elderberry.bmp-3ea306a733796a1449353a4bb57799b4.res"
+
+[deps]
+
+source_file="res://Assets/Bitmaps/stock_elderberry.bmp"
+dest_files=["res://.godot/imported/stock_elderberry.bmp-3ea306a733796a1449353a4bb57799b4.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

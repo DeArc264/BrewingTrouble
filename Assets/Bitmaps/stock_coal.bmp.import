@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bdcgd7ufauh7v"
+path="res://.godot/imported/stock_coal.bmp-3ec2a0b712869c1ac2e3d71f66b81cf5.res"
+
+[deps]
+
+source_file="res://Assets/Bitmaps/stock_coal.bmp"
+dest_files=["res://.godot/imported/stock_coal.bmp-3ec2a0b712869c1ac2e3d71f66b81cf5.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

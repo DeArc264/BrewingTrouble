@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://5ife56qsbvi8"
+path="res://.godot/imported/stock_water.bmp-df6ac22d10958af11be88a23b4a2bf7b.res"
+
+[deps]
+
+source_file="res://Assets/Bitmaps/stock_water.bmp"
+dest_files=["res://.godot/imported/stock_water.bmp-df6ac22d10958af11be88a23b4a2bf7b.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dsev6pn5mqo0"
+path="res://.godot/imported/stock_wine.png-3223c9fb188483ed6c78df4ecc1564d4.res"
+
+[deps]
+
+source_file="res://Assets/Bitmaps/stock_wine.png"
+dest_files=["res://.godot/imported/stock_wine.png-3223c9fb188483ed6c78df4ecc1564d4.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

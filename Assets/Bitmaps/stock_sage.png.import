@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dyhn3a5alvw0u"
+path="res://.godot/imported/stock_sage.png-c5302f6c54487e46e24674bd6b370e67.res"
+
+[deps]
+
+source_file="res://Assets/Bitmaps/stock_sage.png"
+dest_files=["res://.godot/imported/stock_sage.png-c5302f6c54487e46e24674bd6b370e67.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

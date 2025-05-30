@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rswba7hdgcq0"
-path="res://.godot/imported/armario.png-4fcca350617d9074bfb6030cdb34d96c.ctex"
+uid="uid://be8jcpkxqq3ht"
+path="res://.godot/imported/hanger.png-9da4caabd3e1851343eb19993afe1132.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Stock/armario.png"
-dest_files=["res://.godot/imported/armario.png-4fcca350617d9074bfb6030cdb34d96c.ctex"]
+source_file="res://Assets/Stock/hanger.png"
+dest_files=["res://.godot/imported/hanger.png-9da4caabd3e1851343eb19993afe1132.ctex"]
 
 [params]
 

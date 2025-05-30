@@ -9,7 +9,7 @@ func add_item(item):
 				i.item = item
 				return
 	else:
-		hands_full.emit(item.name)
+		hands_full.emit(item.id)
 
 func remove_item(item):
 	for i in get_children():

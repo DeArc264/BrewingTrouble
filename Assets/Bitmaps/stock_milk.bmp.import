@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dmdutbsip7ibu"
+path="res://.godot/imported/stock_milk.bmp-2dc641125c5a4a5ef2bf497d84026f06.res"
+
+[deps]
+
+source_file="res://Assets/Bitmaps/stock_milk.bmp"
+dest_files=["res://.godot/imported/stock_milk.bmp-2dc641125c5a4a5ef2bf497d84026f06.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

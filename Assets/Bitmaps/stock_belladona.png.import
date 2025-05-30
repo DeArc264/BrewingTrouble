@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dpfpu4fdywvgx"
+path="res://.godot/imported/stock_belladona.png-47337ced44c45827d4bbc871843a7185.res"
+
+[deps]
+
+source_file="res://Assets/Bitmaps/stock_belladona.png"
+dest_files=["res://.godot/imported/stock_belladona.png-47337ced44c45827d4bbc871843a7185.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dkuafblrprqk0"
+path="res://.godot/imported/stock_lavander.bmp-9be78a6c78497ea52f616d102810ef40.res"
+
+[deps]
+
+source_file="res://Assets/Bitmaps/stock_lavander.bmp"
+dest_files=["res://.godot/imported/stock_lavander.bmp-9be78a6c78497ea52f616d102810ef40.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

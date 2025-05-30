@@ -24,3 +24,10 @@ var ingredients = {
 var tools = {
 	"tool_0" : "res://Resources/Others/Rag.tres"
 }
+
+var potions = {
+	"potion_0" : "res://Resources/Potions/WeirdPotion.tres",
+	"potion_1" : "res://Resources/Potions/PotionHealing.tres",
+	"potion_2" : "res://Resources/Potions/PotionStamina.tres",
+	"potion_3" : "res://Resources/Potions/PotionStrenght.tres"
+}

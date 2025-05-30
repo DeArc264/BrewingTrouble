@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dr6iengikpkqs"
+path="res://.godot/imported/stock_mandrake.png-13f685d5193871f9b57c5b355b0fa537.res"
+
+[deps]
+
+source_file="res://Assets/Bitmaps/stock_mandrake.png"
+dest_files=["res://.godot/imported/stock_mandrake.png-13f685d5193871f9b57c5b355b0fa537.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

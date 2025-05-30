@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://gmsiaek62xk7"
+path="res://.godot/imported/stock_flask.bmp-298809c548fc7f6f1ab8669e91c4115e.res"
+
+[deps]
+
+source_file="res://Assets/Bitmaps/stock_flask.bmp"
+dest_files=["res://.godot/imported/stock_flask.bmp-298809c548fc7f6f1ab8669e91c4115e.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

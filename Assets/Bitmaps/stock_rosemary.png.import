@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://g7nae77shctr"
+path="res://.godot/imported/stock_rosemary.png-5a2300525605e890c0c6db41d71a5409.res"
+
+[deps]
+
+source_file="res://Assets/Bitmaps/stock_rosemary.png"
+dest_files=["res://.godot/imported/stock_rosemary.png-5a2300525605e890c0c6db41d71a5409.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

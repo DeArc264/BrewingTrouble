@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cr5u43062bf5i"
+path="res://.godot/imported/stock_ginger.bmp-a4ab5faf1376a9d127fbd989939b81de.res"
+
+[deps]
+
+source_file="res://Assets/Bitmaps/stock_ginger.bmp"
+dest_files=["res://.godot/imported/stock_ginger.bmp-a4ab5faf1376a9d127fbd989939b81de.res"]
+
+[params]
+
+create_from=0
+threshold=0.5
