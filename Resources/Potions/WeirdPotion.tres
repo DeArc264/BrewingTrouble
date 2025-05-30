@@ -1,19 +1,19 @@
 [gd_resource type="Resource" script_class="Potion" load_steps=6 format=3 uid="uid://b4wbr3wkgysgy"]
 
-[ext_resource type="Texture2D" uid="uid://dvg0e4sa6yhbx" path="res://Assets/Icons/Potions/Flask_A/weird_potion_flask_a.png" id="1_185q4"]
-[ext_resource type="Texture2D" uid="uid://c4itx2dumtnnu" path="res://Assets/Icons/Potions/Flask_B/weird_potion_flask_b.png" id="1_vpj8b"]
+[ext_resource type="Texture2D" uid="uid://ctx2vh713qwi1" path="res://Assets/Icons/Potions/Flask_A/flask_a_weird.png" id="1_jcwc1"]
 [ext_resource type="Script" path="res://Scripts/Items/item.gd" id="2_5kmq7"]
-[ext_resource type="Texture2D" uid="uid://ktuwjit3fob3" path="res://Assets/Icons/Potions/Flask_C/weird_potion_flask_c.png" id="3_6mop7"]
+[ext_resource type="Texture2D" uid="uid://c3u18prohds4x" path="res://Assets/Icons/Potions/Flask_B/flask_b_weird.png" id="2_aohdd"]
+[ext_resource type="Texture2D" uid="uid://c00lcx0x147h6" path="res://Assets/Icons/Potions/Flask_C/flask_c_weird.png" id="3_8b2qu"]
 [ext_resource type="Script" path="res://Scripts/Items/potion.gd" id="5_l0c36"]
 
 [resource]
 script = ExtResource("5_l0c36")
 recipe = Array[ExtResource("2_5kmq7")]([])
-flaskA = ExtResource("1_185q4")
-flaskB = ExtResource("1_vpj8b")
-flaskC = ExtResource("3_6mop7")
+flaskA = ExtResource("1_jcwc1")
+flaskB = ExtResource("2_aohdd")
+flaskC = ExtResource("3_8b2qu")
 state = "Wasted"
-icon = ExtResource("1_vpj8b")
+icon = ExtResource("1_jcwc1")
 name = "Weird Potion"
 id = "potion_0"
 description = "A useless potion with unknown effect. Only someone insane would try to sell it."
