@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="Potion" load_steps=9 format=3 uid="uid://d2qnj6b3mkl0d"]
 
-[ext_resource type="Texture2D" uid="uid://c2mlcniow4wtq" path="res://Assets/Icons/Potions/Flask_A/flask_a_strenght.png" id="1_djdfg"]
+[ext_resource type="Texture2D" uid="uid://dg4avd16y2nkq" path="res://Assets/Icons/Potions/Flask_A/flask_a_strenght.png" id="1_djdfg"]
 [ext_resource type="Script" path="res://Scripts/Items/item.gd" id="2_ugkrt"]
-[ext_resource type="Texture2D" uid="uid://bab4kvyi88hge" path="res://Assets/Icons/Potions/Flask_B/flask_b_strenght.png" id="2_xkpw3"]
-[ext_resource type="Texture2D" uid="uid://csu508pi3g5c2" path="res://Assets/Icons/Potions/Flask_C/flask_c_strenght.png" id="3_8fb81"]
+[ext_resource type="Texture2D" uid="uid://c6ee5vkchodfl" path="res://Assets/Icons/Potions/Flask_B/flask_b_strenght.png" id="2_xkpw3"]
+[ext_resource type="Texture2D" uid="uid://vjgupwnf1c4u" path="res://Assets/Icons/Potions/Flask_C/flask_c_strenght.png" id="3_8fb81"]
 [ext_resource type="Resource" uid="uid://qlwtsvivu18e" path="res://Resources/Ingredients/Plant/Belladona.tres" id="4_bwmt2"]
 [ext_resource type="Resource" uid="uid://cyft3okg1sgdb" path="res://Resources/Ingredients/Base/Wine.tres" id="5_d8r6h"]
 [ext_resource type="Resource" uid="uid://d3qr7snp5bw8y" path="res://Resources/Ingredients/Plant/Lavander.tres" id="5_n5tgf"]

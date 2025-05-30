@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="Potion" load_steps=9 format=3 uid="uid://dyljjx5q3ilc1"]
 
-[ext_resource type="Texture2D" uid="uid://bffokvcciddbq" path="res://Assets/Icons/Potions/Flask_A/flask_a_heal.png" id="1_6p5kt"]
+[ext_resource type="Texture2D" uid="uid://b8osgmm13c6ou" path="res://Assets/Icons/Potions/Flask_A/flask_a_heal.png" id="1_6p5kt"]
 [ext_resource type="Script" path="res://Scripts/Items/item.gd" id="2_h77x2"]
-[ext_resource type="Texture2D" uid="uid://2ekse3dkn1pl" path="res://Assets/Icons/Potions/Flask_B/flask_b_heal.png" id="2_o7ja5"]
-[ext_resource type="Texture2D" uid="uid://labhsljmc1gk" path="res://Assets/Icons/Potions/Flask_C/flask_c_heal.png" id="3_fpe53"]
+[ext_resource type="Texture2D" uid="uid://blp7t0vvpx132" path="res://Assets/Icons/Potions/Flask_B/flask_b_heal.png" id="2_o7ja5"]
+[ext_resource type="Texture2D" uid="uid://dmbe6bw14ibgg" path="res://Assets/Icons/Potions/Flask_C/flask_c_heal.png" id="3_fpe53"]
 [ext_resource type="Resource" uid="uid://qlwtsvivu18e" path="res://Resources/Ingredients/Plant/Belladona.tres" id="4_fsykw"]
 [ext_resource type="Resource" uid="uid://blob2sv1svnds" path="res://Resources/Ingredients/Base/Water.tres" id="5_b08n6"]
 [ext_resource type="Resource" uid="uid://dhts2fo8ey7tg" path="res://Resources/Ingredients/Plant/Berries.tres" id="7_h7jac"]
