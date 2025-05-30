@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://cfvv7x84qgvlj"]
 
 [ext_resource type="Script" path="res://Scripts/Scenes/hud.gd" id="1_kg5u5"]
-[ext_resource type="Script" path="res://Scenes/Tests/TestScene/Inventory.gd" id="2_wgqd0"]
+[ext_resource type="Script" path="res://Scripts/inventory.gd" id="2_wgqd0"]
 [ext_resource type="Texture2D" uid="uid://ct23iia7c4660" path="res://Assets/Animation/Scroll/scroll_0.png" id="2_xqdvs"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="3_j28ob"]
 [ext_resource type="PackedScene" uid="uid://b0x2emaaeusk" path="res://Scenes/Game/HUD/store.tscn" id="4_7xrsr"]
