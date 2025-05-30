@@ -15,5 +15,5 @@ flaskC = ExtResource("3_6mop7")
 state = "Wasted"
 icon = ExtResource("1_vpj8b")
 name = "Weird Potion"
-id = "potion_9"
+id = "potion_0"
 description = "A useless potion with unknown effect. Only someone insane would try to sell it."

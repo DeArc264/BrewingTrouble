@@ -1,15 +1,13 @@
 [gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://blob2sv1svnds"]
 
-[ext_resource type="Texture2D" uid="uid://cl5500v5wlmht" path="res://Assets/Icons/Ingredients/Normal/Bases/ingredient_water.png" id="1_4c88e"]
+[ext_resource type="Texture2D" uid="uid://cku7hnkkp1xl0" path="res://Assets/Icons/Ingredients/Normal/Bases/icon_water.png" id="1_d5upq"]
 [ext_resource type="Script" path="res://Scripts/Items/ingredient.gd" id="2_504gl"]
 
 [resource]
 script = ExtResource("2_504gl")
-normal_icon = ExtResource("1_4c88e")
-crushed_icon = ExtResource("1_4c88e")
-dry_icon = Array[Texture2D]([])
+normal_icon = ExtResource("1_d5upq")
 type = "Base"
-icon = ExtResource("1_4c88e")
+icon = ExtResource("1_d5upq")
 name = "Water"
 id = "base_1"
 description = "The source of life... I guess"

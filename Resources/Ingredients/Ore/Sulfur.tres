@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://b0n0k3n11fg4w"]
 
-[ext_resource type="Texture2D" uid="uid://bmlh8e72qdwlf" path="res://Assets/Icons/Ingredients/Normal/Ores/ingredient_sulfur.png" id="1_a1oxv"]
+[ext_resource type="Texture2D" uid="uid://n03y3lgmgmp5" path="res://Assets/Icons/Ingredients/Normal/Ores/icon_sulfur.png" id="1_a1oxv"]
 [ext_resource type="Script" path="res://Scripts/Items/ingredient.gd" id="2_en5hv"]
 
 [resource]
