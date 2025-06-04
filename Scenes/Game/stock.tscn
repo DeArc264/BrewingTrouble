@@ -1,20 +1,25 @@
-[gd_scene load_steps=34 format=3 uid="uid://c1p1lg8vh5nr8"]
+[gd_scene load_steps=48 format=3 uid="uid://c1p1lg8vh5nr8"]
 
 [ext_resource type="Script" path="res://Scripts/Scenes/stock.gd" id="1_p2uxu"]
 [ext_resource type="Texture2D" uid="uid://c8oe86ik5v73f" path="res://Assets/Stock/stock_bg.png" id="2_d4nrd"]
 [ext_resource type="Texture2D" uid="uid://dxlgw7fc35xto" path="res://Assets/Stock/water_full.png" id="3_3286q"]
 [ext_resource type="BitMap" uid="uid://r8mpuv68l6yo" path="res://Assets/Bitmaps/stock_water.png" id="4_8xq2y"]
 [ext_resource type="Texture2D" uid="uid://dhyctbths2vkb" path="res://Assets/Stock/milk_full.png" id="5_6fia7"]
+[ext_resource type="Script" path="res://Scripts/stock_button.gd" id="5_1042u"]
+[ext_resource type="Texture2D" uid="uid://510lnj5rwwj6" path="res://Assets/Stock/water_half.png" id="6_2d53h"]
 [ext_resource type="BitMap" uid="uid://dmdutbsip7ibu" path="res://Assets/Bitmaps/stock_milk.bmp" id="6_vnnfn"]
 [ext_resource type="Texture2D" uid="uid://be8jcpkxqq3ht" path="res://Assets/Stock/hanger.png" id="7_et1kc"]
 [ext_resource type="Texture2D" uid="uid://bl2sigdq30ejh" path="res://Assets/Stock/wine_full.png" id="7_u2p7o"]
 [ext_resource type="BitMap" uid="uid://dsev6pn5mqo0" path="res://Assets/Bitmaps/stock_wine.png" id="8_gnif4"]
 [ext_resource type="Texture2D" uid="uid://d3ptw668jg42x" path="res://Assets/Stock/flasks_full.png" id="9_l3udd"]
+[ext_resource type="Texture2D" uid="uid://6as5chn47j3e" path="res://Assets/Stock/milk_half.png" id="9_lhpva"]
 [ext_resource type="BitMap" uid="uid://gmsiaek62xk7" path="res://Assets/Bitmaps/stock_flask.bmp" id="10_14jeq"]
 [ext_resource type="Texture2D" uid="uid://ds07kfbcu0plr" path="res://Assets/Stock/elderberry_full.png" id="11_h468f"]
 [ext_resource type="BitMap" uid="uid://bokpodtl3xa5l" path="res://Assets/Bitmaps/stock_elderberry.bmp" id="12_hsr7d"]
+[ext_resource type="Texture2D" uid="uid://bfyil1nrhy7up" path="res://Assets/Stock/wine_half.png" id="12_oeo8n"]
 [ext_resource type="Texture2D" uid="uid://ltd85laluyfm" path="res://Assets/Stock/coal_empty.png" id="13_dh8fe"]
 [ext_resource type="BitMap" uid="uid://bdcgd7ufauh7v" path="res://Assets/Bitmaps/stock_coal.bmp" id="14_niunu"]
+[ext_resource type="Texture2D" uid="uid://lw3gmwpuw8ca" path="res://Assets/Stock/flasks_half.png" id="15_fh51l"]
 [ext_resource type="Texture2D" uid="uid://d2noy0ck4la1q" path="res://Assets/Stock/berries_full.png" id="15_hsv27"]
 [ext_resource type="BitMap" uid="uid://bbw5ws11bimqo" path="res://Assets/Bitmaps/stock_berries.bmp" id="16_tefl1"]
 [ext_resource type="Texture2D" uid="uid://bo70b8w0dmy4w" path="res://Assets/Stock/salt_empty.png" id="17_ik3de"]
@@ -23,16 +28,25 @@
 [ext_resource type="Texture2D" uid="uid://b5vasbw1rpy13" path="res://Assets/Stock/gold_empty.png" id="20_4dywt"]
 [ext_resource type="Texture2D" uid="uid://ktbcpincms1y" path="res://Assets/Stock/sage_full.png" id="21_j6f18"]
 [ext_resource type="BitMap" uid="uid://dyhn3a5alvw0u" path="res://Assets/Bitmaps/stock_sage.png" id="22_t3mvy"]
+[ext_resource type="Texture2D" uid="uid://cyctq7e34phd4" path="res://Assets/Stock/berries_half.png" id="22_w7i6b"]
 [ext_resource type="Texture2D" uid="uid://cdntg0vkmen2n" path="res://Assets/Stock/ginger_full.png" id="23_eaxq3"]
+[ext_resource type="Texture2D" uid="uid://c4lyn03tnc0aj" path="res://Assets/Stock/berries_empty.png" id="23_eylip"]
 [ext_resource type="BitMap" uid="uid://cr5u43062bf5i" path="res://Assets/Bitmaps/stock_ginger.bmp" id="24_7o2tn"]
 [ext_resource type="Texture2D" uid="uid://dtdvmffj0ojpt" path="res://Assets/Stock/mandrake_full.png" id="25_l0i7c"]
 [ext_resource type="BitMap" uid="uid://dr6iengikpkqs" path="res://Assets/Bitmaps/stock_mandrake.png" id="26_p0tvj"]
+[ext_resource type="Texture2D" uid="uid://cwcaf5ynihlda" path="res://Assets/Stock/sulfur_full.png" id="27_ly7da"]
 [ext_resource type="Texture2D" uid="uid://ddp6huhtdlwpo" path="res://Assets/Stock/rosemary_full.png" id="27_o8umy"]
 [ext_resource type="BitMap" uid="uid://g7nae77shctr" path="res://Assets/Bitmaps/stock_rosemary.png" id="28_6fjq0"]
+[ext_resource type="Texture2D" uid="uid://b1kunsrma0mxx" path="res://Assets/Stock/sulfur_half.png" id="28_mcl2r"]
 [ext_resource type="Texture2D" uid="uid://bbso5d7pxmvpx" path="res://Assets/Stock/lavander_full.png" id="29_s2qb6"]
+[ext_resource type="Texture2D" uid="uid://cp6njn1o2bh7c" path="res://Assets/Stock/gold_full.png" id="30_tucr5"]
 [ext_resource type="BitMap" uid="uid://dkuafblrprqk0" path="res://Assets/Bitmaps/stock_lavander.bmp" id="30_y33hc"]
+[ext_resource type="Texture2D" uid="uid://dcfljesaehlgk" path="res://Assets/Stock/gold_half.png" id="31_y1a27"]
 [ext_resource type="Texture2D" uid="uid://npi06h2t7bnl" path="res://Assets/Stock/belladona_full.png" id="32_htiv4"]
 [ext_resource type="BitMap" uid="uid://dpfpu4fdywvgx" path="res://Assets/Bitmaps/stock_belladona.png" id="33_a7l3g"]
+[ext_resource type="Texture2D" uid="uid://cyge8gbt1psp3" path="res://Assets/Stock/ginger_half.png" id="36_0xhi1"]
+[ext_resource type="Texture2D" uid="uid://cnph0u2nm5vk2" path="res://Assets/Stock/lavander_half.png" id="43_a84fx"]
+[ext_resource type="Texture2D" uid="uid://b6gnded2e2r4u" path="res://Assets/Stock/belladona_half.png" id="47_02rir"]
 
 [node name="Stock" type="Control"]
 texture_filter = 1
@@ -101,20 +115,7 @@ theme_override_font_sizes/font_size = 10
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Water" type="TextureButton" parent="."]
-texture_filter = 1
-layout_mode = 0
-offset_left = 133.0
-offset_top = 112.0
-offset_right = 163.0
-offset_bottom = 179.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("3_3286q")
-texture_click_mask = ExtResource("4_8xq2y")
-metadata/full_icon = "res://Assets/Stock/water_full.png"
-metadata/half_icon = "res://Assets/Stock/water_half.png"
-
-[node name="Milk" type="TextureButton" parent="."]
+[node name="base_0" type="TextureButton" parent="."]
 texture_filter = 1
 layout_mode = 0
 offset_left = 96.0
@@ -125,9 +126,28 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_6fia7")
 texture_click_mask = ExtResource("6_vnnfn")
 flip_h = true
+script = ExtResource("5_1042u")
+normal_icon = ExtResource("5_6fia7")
+half_icon = ExtResource("9_lhpva")
 metadata/full_icon = "res://Assets/Stock/milk_full.png"
 
-[node name="Wine" type="TextureButton" parent="."]
+[node name="base_1" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 133.0
+offset_top = 112.0
+offset_right = 163.0
+offset_bottom = 179.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_3286q")
+texture_click_mask = ExtResource("4_8xq2y")
+script = ExtResource("5_1042u")
+normal_icon = ExtResource("3_3286q")
+half_icon = ExtResource("6_2d53h")
+metadata/full_icon = "res://Assets/Stock/water_full.png"
+metadata/half_icon = "res://Assets/Stock/water_half.png"
+
+[node name="base_2" type="TextureButton" parent="."]
 texture_filter = 1
 layout_mode = 0
 offset_left = 114.0
@@ -137,11 +157,14 @@ offset_bottom = 186.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("7_u2p7o")
 texture_click_mask = ExtResource("8_gnif4")
+script = ExtResource("5_1042u")
+normal_icon = ExtResource("7_u2p7o")
+half_icon = ExtResource("12_oeo8n")
 metadata/full_icon = "res://Assets/Stock/leite1.png"
 metadata/half_icon = "res://Assets/Stock/leite2.png"
 metadata/empty_icon = ""
 
-[node name="Flasks" type="TextureButton" parent="."]
+[node name="flask_0" type="TextureButton" parent="."]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 7
@@ -157,6 +180,9 @@ grow_vertical = 0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("9_l3udd")
 texture_click_mask = ExtResource("10_14jeq")
+script = ExtResource("5_1042u")
+normal_icon = ExtResource("9_l3udd")
+half_icon = ExtResource("15_fh51l")
 
 [node name="Elderberry" type="TextureButton" parent="."]
 visible = false
@@ -196,7 +222,7 @@ mouse_default_cursor_shape = 8
 texture_normal = ExtResource("13_dh8fe")
 texture_click_mask = ExtResource("14_niunu")
 
-[node name="Berries" type="TextureButton" parent="."]
+[node name="plant_3" type="TextureButton" parent="."]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 5
@@ -210,6 +236,10 @@ grow_horizontal = 2
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("15_hsv27")
 texture_click_mask = ExtResource("16_tefl1")
+script = ExtResource("5_1042u")
+normal_icon = ExtResource("15_hsv27")
+half_icon = ExtResource("22_w7i6b")
+empty_icon = ExtResource("23_eylip")
 
 [node name="Salt" type="TextureButton" parent="."]
 texture_filter = 1
@@ -227,25 +257,7 @@ mouse_default_cursor_shape = 8
 texture_normal = ExtResource("17_ik3de")
 texture_click_mask = ExtResource("18_oy3nh")
 
-[node name="Sulfur" type="TextureButton" parent="."]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -65.5
-offset_top = -22.5
-offset_right = -20.5
-offset_bottom = 16.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-mouse_default_cursor_shape = 8
-texture_normal = ExtResource("19_shme7")
-
-[node name="Gold" type="TextureButton" parent="."]
+[node name="ore_0" type="TextureButton" parent="."]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
@@ -259,9 +271,33 @@ offset_right = 4.0
 offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-mouse_default_cursor_shape = 8
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("20_4dywt")
+script = ExtResource("5_1042u")
+normal_icon = ExtResource("30_tucr5")
+half_icon = ExtResource("31_y1a27")
+empty_icon = ExtResource("20_4dywt")
+
+[node name="ore_1" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.5
+offset_top = -22.5
+offset_right = -20.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("19_shme7")
+script = ExtResource("5_1042u")
+normal_icon = ExtResource("27_ly7da")
+half_icon = ExtResource("28_mcl2r")
+empty_icon = ExtResource("19_shme7")
 
 [node name="Sage" type="TextureButton" parent="."]
 visible = false
@@ -279,7 +315,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("21_j6f18")
 texture_click_mask = ExtResource("22_t3mvy")
 
-[node name="Ginger" type="TextureButton" parent="."]
+[node name="plant_1" type="TextureButton" parent="."]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 5
@@ -293,6 +329,9 @@ grow_horizontal = 2
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("23_eaxq3")
 texture_click_mask = ExtResource("24_7o2tn")
+script = ExtResource("5_1042u")
+normal_icon = ExtResource("23_eaxq3")
+half_icon = ExtResource("36_0xhi1")
 
 [node name="Mandrake" type="TextureButton" parent="."]
 visible = false
@@ -327,7 +366,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("27_o8umy")
 texture_click_mask = ExtResource("28_6fjq0")
 
-[node name="Lavander" type="TextureButton" parent="."]
+[node name="plant_2" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -340,6 +379,9 @@ grow_vertical = 2
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("29_s2qb6")
 texture_click_mask = ExtResource("30_y33hc")
+script = ExtResource("5_1042u")
+normal_icon = ExtResource("29_s2qb6")
+half_icon = ExtResource("43_a84fx")
 
 [node name="Hanger" type="TextureRect" parent="."]
 texture_filter = 1
@@ -349,7 +391,7 @@ offset_bottom = 180.0
 mouse_filter = 2
 texture = ExtResource("7_et1kc")
 
-[node name="Belladona" type="TextureButton" parent="."]
+[node name="plant_0" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -365,13 +407,19 @@ grow_vertical = 2
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("32_htiv4")
 texture_click_mask = ExtResource("33_a7l3g")
+script = ExtResource("5_1042u")
+normal_icon = ExtResource("32_htiv4")
+half_icon = ExtResource("47_02rir")
 
 [connection signal="pressed" from="MoveLeft_Stock" to="." method="_on_move_left_stock_pressed"]
 [connection signal="pressed" from="MoveRight_Stock" to="." method="_on_move_right_stock_pressed"]
-[connection signal="pressed" from="Water" to="." method="_pick_up" binds= ["base_1"]]
-[connection signal="pressed" from="Milk" to="." method="_pick_up" binds= ["base_0"]]
-[connection signal="pressed" from="Wine" to="." method="_pick_up" binds= ["base_3"]]
-[connection signal="pressed" from="Flasks" to="." method="_pick_up" binds= ["flask_0"]]
-[connection signal="pressed" from="Ginger" to="." method="_pick_up" binds= ["plant_1"]]
-[connection signal="pressed" from="Lavander" to="." method="_pick_up" binds= ["plant_2"]]
-[connection signal="pressed" from="Belladona" to="." method="_pick_up" binds= ["plant_0"]]
+[connection signal="pressed" from="base_0" to="." method="_pick_up" binds= ["base_0"]]
+[connection signal="pressed" from="base_1" to="." method="_pick_up" binds= ["base_1"]]
+[connection signal="pressed" from="base_2" to="." method="_pick_up" binds= ["base_2"]]
+[connection signal="pressed" from="flask_0" to="." method="_pick_up" binds= ["flask_0"]]
+[connection signal="pressed" from="plant_3" to="." method="_pick_up" binds= ["plant_3"]]
+[connection signal="pressed" from="ore_0" to="." method="_pick_up" binds= ["ore_0"]]
+[connection signal="pressed" from="ore_1" to="." method="_pick_up" binds= ["ore_1"]]
+[connection signal="pressed" from="plant_1" to="." method="_pick_up" binds= ["plant_1"]]
+[connection signal="pressed" from="plant_2" to="." method="_pick_up" binds= ["plant_2"]]
+[connection signal="pressed" from="plant_0" to="." method="_pick_up" binds= ["plant_0"]]

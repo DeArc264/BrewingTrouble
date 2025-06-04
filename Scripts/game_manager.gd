@@ -11,7 +11,7 @@ var ingredients = {
 	"plant_0" : "res://Resources/Ingredients/Plant/Belladona.tres",
 	"plant_1" : "res://Resources/Ingredients/Plant/Ginger.tres",
 	"plant_2" : "res://Resources/Ingredients/Plant/Lavander.tres",
-	"plant_3" : "res://Resources/Ingredients/Plant/Myrrh.tres",
+	"plant_3" : "res://Resources/Ingredients/Plant/Berries.tres",
 # Ores
 	"ore_0" : "res://Resources/Ingredients/Ore/Gold.tres",
 	"ore_1" : "res://Resources/Ingredients/Ore/Sulfur.tres",
