@@ -10,6 +10,7 @@ signal move_to_door
 
 #region Variables
 @onready var caldron_slot = $CaldronSlot # Slot for adding ingredients
+@onready var embers = $CaldronImg/Embers
 
 @export var craftables : Array[Item] # Array of possible crafts
 
@@ -50,16 +51,28 @@ func _process(_delta: float) -> void:
 # Function for bellows. If there is a base liquid, it boils. If it was already
 # boiling, it restarts the timer for boiling.
 func _on_bellows_pressed() -> void:
+	$Bellows.play("default")
 	$Fire.play()
+	embers.play("lit_up")
+
+	await embers.animation_finished
+
 	if in_caldron[0] != null and in_caldron[0].type == "Base":
+		embers.play("loop")
 		if boiling:
 			$BoilTimer.start(11)
 		else:
 			await get_tree().create_timer(2).timeout
 			boiling = true
 			$BoilTimer.start(11)
+		$Smoke.play("start")
+		await $Smoke.animation_finished
+		$Smoke.play("loop")
+	else:
+		embers.play("dying")
+		await embers.animation_finished
+		embers.play("default")
 
-		$BoilLabel.show()
 		$DryNet.can_dry = true
 		$ING1BoilTimer.paused = false
 		$ING2BoilTimer.paused = false
@@ -209,12 +222,10 @@ func _on_caldron_mixed(potion_id : String) -> void:
 # Table hourglass control
 #region Hourglass
 func _on_turn_hourglass_pressed() -> void:
+	$Hourglass.play("turn")
+	await $Hourglass.animation_finished
 	$HourglassTimer.start()
-	$HourglassLabel.show()
-
-
-func _on_hourglass_timer_timeout() -> void:
-	$HourglassLabel.hide()
+	$Hourglass.play("run")
 #endregion
 
 # Mobility

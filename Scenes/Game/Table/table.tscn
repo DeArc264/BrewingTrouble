@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://gdr3cf0jg005"]
+[gd_scene load_steps=70 format=3 uid="uid://gdr3cf0jg005"]
 
 [ext_resource type="Script" path="res://Scripts/Scenes/table.gd" id="1_rxm4g"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="2_gvcte"]
@@ -8,32 +8,306 @@
 [ext_resource type="Resource" uid="uid://dyljjx5q3ilc1" path="res://Resources/Potions/PotionHealing.tres" id="5_18i7f"]
 [ext_resource type="PackedScene" uid="uid://cun7jmlf65cbq" path="res://Scenes/Game/Table/mortar.tscn" id="5_wnxhj"]
 [ext_resource type="PackedScene" uid="uid://be2637d2iq581" path="res://Scenes/Game/Table/dry_net.tscn" id="7_ggnvj"]
+[ext_resource type="Texture2D" uid="uid://cefyu6652qw1f" path="res://Assets/Animation/Hourglass/hourglass9.png" id="9_d0oxx"]
 [ext_resource type="Texture2D" uid="uid://frac08byunq2" path="res://Assets/Table/table_bg.png" id="10_4mva8"]
 [ext_resource type="PackedScene" uid="uid://dus7ooufchbdn" path="res://Scenes/Game/Table/book.tscn" id="10_irqxx"]
-[ext_resource type="BitMap" uid="uid://0epapv3e2a31" path="res://Assets/Bitmaps/table_hourglass.bmp" id="10_kifp5"]
+[ext_resource type="Texture2D" uid="uid://bc8fy68pjw0k8" path="res://Assets/Animation/Hourglass/hourglass0.png" id="10_t1iw2"]
 [ext_resource type="PackedScene" uid="uid://7yffggslvelu" path="res://Scenes/Game/Table/cutter.tscn" id="11_60dht"]
+[ext_resource type="Texture2D" uid="uid://dqcshkassdb3j" path="res://Assets/Animation/Hourglass/hourglass1.png" id="11_pqb7h"]
 [ext_resource type="Texture2D" uid="uid://bx6d4t8olghdv" path="res://Assets/Table/distillery.png" id="12_ckuv7"]
-[ext_resource type="Texture2D" uid="uid://ckbw5sxle3koi" path="res://Assets/Table/hourglass.png" id="13_7xym8"]
+[ext_resource type="Texture2D" uid="uid://dfadhb4hius33" path="res://Assets/Animation/Hourglass/hourglass2.png" id="12_kk74g"]
+[ext_resource type="Texture2D" uid="uid://dlstyymcngb00" path="res://Assets/Animation/Hourglass/hourglass3.png" id="13_1gapk"]
+[ext_resource type="Texture2D" uid="uid://5o4w61sy0npf" path="res://Assets/Animation/Hourglass/hourglass4.png" id="14_bv28p"]
 [ext_resource type="Texture2D" uid="uid://24svegbqq32b" path="res://Assets/Table/cut_board.png" id="14_xfd8c"]
 [ext_resource type="BitMap" uid="uid://i0o8xm773ctn" path="res://Assets/Bitmaps/table_board.bmp" id="15_1n0en"]
 [ext_resource type="Texture2D" uid="uid://dpf6wbq4jyjh8" path="res://Assets/Table/livro_receitas.png" id="15_7uukh"]
+[ext_resource type="Texture2D" uid="uid://dmv3dsmoj6j7h" path="res://Assets/Animation/Hourglass/hourglass5.png" id="15_vjl47"]
 [ext_resource type="PackedScene" uid="uid://ruyqta42jimp" path="res://Scenes/Tests/Clean/clean.tscn" id="16_6ulko"]
+[ext_resource type="Texture2D" uid="uid://cleu2shekp7vf" path="res://Assets/Animation/Hourglass/hourglass6.png" id="16_e6tkr"]
 [ext_resource type="Texture2D" uid="uid://syygt5ej8krj" path="res://Assets/Table/caldron_table.png" id="16_pia0k"]
+[ext_resource type="Texture2D" uid="uid://bqfhsg5qslxmb" path="res://Assets/Animation/Hourglass/hourglass7.png" id="17_13y5f"]
 [ext_resource type="BitMap" uid="uid://bqyblwuvhmwfr" path="res://Assets/Bitmaps/table_mortar.bmp" id="17_41n66"]
 [ext_resource type="Texture2D" uid="uid://bsrk1x1uxpv2v" path="res://Assets/Table/mortar.png" id="17_med01"]
+[ext_resource type="Texture2D" uid="uid://b525322hq5nmd" path="res://Assets/Animation/Hourglass/hourglass8.png" id="18_3qcva"]
 [ext_resource type="PackedScene" uid="uid://clb5bygcnejvp" path="res://Scenes/Game/Table/caldron.tscn" id="19_hqp1p"]
+[ext_resource type="Texture2D" uid="uid://ilmdem8c3i8d" path="res://Assets/Animation/Hourglass/hourglass_turn0.png" id="19_ntofm"]
+[ext_resource type="Texture2D" uid="uid://be4wj3c2dxqvl" path="res://Assets/Animation/Hourglass/hourglass_turn1.png" id="20_mhacd"]
+[ext_resource type="Texture2D" uid="uid://cujosn85kbcix" path="res://Assets/Animation/Hourglass/hourglass_turn2.png" id="21_ro1gc"]
+[ext_resource type="Texture2D" uid="uid://c6prxirhl4s1n" path="res://Assets/Animation/Hourglass/hourglass_turn3.png" id="22_yrswd"]
 [ext_resource type="PackedScene" uid="uid://cfvv7x84qgvlj" path="res://Scenes/Game/HUD/hud.tscn" id="24_esyk5"]
 [ext_resource type="Resource" uid="uid://dqfq5vk43r08" path="res://Resources/Ingredients/Flasks/Empty_Flask_A.tres" id="24_lcj71"]
+[ext_resource type="Texture2D" uid="uid://cm6gwhkgxohvh" path="res://Assets/Animation/Smoke/boil_smoke1.png" id="24_vcu5j"]
+[ext_resource type="Texture2D" uid="uid://c3et3r3dhgy0y" path="res://Assets/Animation/Embers/ember0.png" id="25_q6agj"]
+[ext_resource type="Texture2D" uid="uid://k5cy1gnj45uh" path="res://Assets/Animation/Smoke/boil_smoke2.png" id="25_vlo8v"]
+[ext_resource type="Texture2D" uid="uid://wfv1le0mjj48" path="res://Assets/Animation/Embers/fire_dying0.png" id="26_1c6rm"]
+[ext_resource type="Texture2D" uid="uid://bphka2tghmwrl" path="res://Assets/Animation/Smoke/boil_smoke3.png" id="26_2mag1"]
+[ext_resource type="Texture2D" uid="uid://b3lhwwqf5vft6" path="res://Assets/Animation/Embers/ember1.png" id="26_8hid1"]
+[ext_resource type="Texture2D" uid="uid://dkssor4jvswtp" path="res://Assets/Animation/Embers/ember2.png" id="27_1lxd0"]
+[ext_resource type="Texture2D" uid="uid://wokd5gsdpx0s" path="res://Assets/Animation/Embers/fire_litup0.png" id="27_jrkse"]
+[ext_resource type="Texture2D" uid="uid://1ekvwx67fs0a" path="res://Assets/Animation/Smoke/boil_smoke4.png" id="27_mqa8n"]
+[ext_resource type="Texture2D" uid="uid://cu74m4lmcmi6d" path="res://Assets/Animation/Embers/fire_dying1.png" id="27_rxohj"]
+[ext_resource type="Texture2D" uid="uid://bphfh4cyedq7p" path="res://Assets/Animation/Embers/ember3.png" id="28_0kr5n"]
+[ext_resource type="Texture2D" uid="uid://emwdunk5yn27" path="res://Assets/Animation/Embers/fire_dying2.png" id="28_j3n4q"]
+[ext_resource type="Texture2D" uid="uid://4vj1fg33ck1d" path="res://Assets/Animation/Embers/fire_litup1.png" id="28_uytrf"]
+[ext_resource type="Texture2D" uid="uid://ue0cswxu6j2h" path="res://Assets/Animation/Smoke/boil_smoke5.png" id="28_vbo75"]
+[ext_resource type="Texture2D" uid="uid://w52q8njjpxho" path="res://Assets/Animation/Smoke/boil_smoke6.png" id="29_4y6ta"]
+[ext_resource type="Texture2D" uid="uid://blcrhynmmxdnb" path="res://Assets/Animation/Embers/fire_litup2.png" id="29_d814u"]
+[ext_resource type="Texture2D" uid="uid://ddds7qte6bvb1" path="res://Assets/Animation/Embers/fire_dying3.png" id="29_tdfkq"]
+[ext_resource type="Texture2D" uid="uid://dcpw1dbk3xpnj" path="res://Assets/Animation/Smoke/boil_smoke7.png" id="30_j3w2y"]
+[ext_resource type="Texture2D" uid="uid://bmw1rkxpn7v0p" path="res://Assets/Animation/Embers/fire_litup3.png" id="30_mk3qi"]
+[ext_resource type="Texture2D" uid="uid://c3e62oj5k5a0k" path="res://Assets/Animation/Smoke/boil_smoke8.png" id="31_qjyvu"]
+[ext_resource type="Texture2D" uid="uid://cyno26n1wfasm" path="res://Assets/Animation/Smoke/boil_smoke9.png" id="32_r3q75"]
+[ext_resource type="Texture2D" uid="uid://biymn11v7c0p2" path="res://Assets/Animation/Smoke/boil_smoke0.png" id="33_8ptx3"]
+[ext_resource type="Texture2D" uid="uid://dppxlkiq036sh" path="res://Assets/Animation/Embers/fire_loop0.png" id="34_luiwu"]
+[ext_resource type="Texture2D" uid="uid://bdr12t5asg48b" path="res://Assets/Animation/Embers/fire_loop1.png" id="35_racqp"]
+[ext_resource type="Texture2D" uid="uid://nj7y4frmpv8u" path="res://Assets/Animation/Embers/fire_loop2.png" id="36_1lcvu"]
+[ext_resource type="Texture2D" uid="uid://drotiio0fs6fn" path="res://Assets/Animation/Embers/fire_loop3.png" id="37_gah1i"]
+[ext_resource type="Texture2D" uid="uid://k5wu1gilq65f" path="res://Assets/Animation/Bellows/bellows0.png" id="56_7eaft"]
+[ext_resource type="Texture2D" uid="uid://cr38l0ibtxqvp" path="res://Assets/Animation/Bellows/bellows1.png" id="57_4fook"]
+[ext_resource type="Texture2D" uid="uid://cqtt2cuhg7lfp" path="res://Assets/Animation/Bellows/bellows2.png" id="58_q2l7m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_spoof"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("13_7xym8")
+"texture": ExtResource("9_d0oxx")
 }],
 "loop": false,
 "name": &"default",
 "speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_t1iw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pqb7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_kk74g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1gapk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_bv28p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_vjl47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_e6tkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_13y5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_3qcva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_d0oxx")
+}],
+"loop": false,
+"name": &"run",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_d0oxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ntofm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_mhacd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ro1gc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_yrswd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_t1iw2")
+}],
+"loop": false,
+"name": &"turn",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g2mcq"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_vcu5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_vlo8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_2mag1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_mqa8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_vbo75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_4y6ta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_j3w2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_qjyvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_r3q75")
+}],
+"loop": true,
+"name": &"loop",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_8ptx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_vcu5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_vlo8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_vbo75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_2mag1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_mqa8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_4y6ta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_qjyvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_j3w2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_r3q75")
+}],
+"loop": false,
+"name": &"start",
+"speed": 8.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ljrd2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_q6agj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_8hid1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_1lxd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_0kr5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_1lxd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_8hid1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_1c6rm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_rxohj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_j3n4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_tdfkq")
+}],
+"loop": false,
+"name": &"dying",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_jrkse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_uytrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_d814u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_mk3qi")
+}],
+"loop": false,
+"name": &"lit_up",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_luiwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_racqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_1lcvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_gah1i")
+}],
+"loop": true,
+"name": &"loop",
+"speed": 8.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3tm56"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_7eaft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_4fook")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_q2l7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_4fook")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_7eaft")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
 }]
 
 [node name="Table" type="Control"]
@@ -47,7 +321,6 @@ script = ExtResource("1_rxm4g")
 craftables = Array[ExtResource("2_wejl3")]([ExtResource("3_bmf7n"), ExtResource("4_emhfe"), ExtResource("5_18i7f")])
 
 [node name="Table" type="TextureRect" parent="."]
-texture_filter = 1
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 180.0
@@ -71,18 +344,19 @@ texture = ExtResource("12_ckuv7")
 texture_filter = 1
 position = Vector2(197, 73)
 sprite_frames = SubResource("SpriteFrames_spoof")
+animation = &"run"
 
-[node name="HourglassButton" type="TextureButton" parent="Hourglass"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -34.0
-offset_top = -68.0
+[node name="TurnHourglass" type="Button" parent="Hourglass"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -34.0
+offset_right = -19.0
+offset_bottom = -34.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_click_mask = ExtResource("10_kifp5")
+flat = true
 
 [node name="BookImg" type="TextureRect" parent="."]
 texture_filter = 1
@@ -93,6 +367,11 @@ offset_right = 140.0
 offset_bottom = 128.0
 texture = ExtResource("15_7uukh")
 
+[node name="Smoke" type="AnimatedSprite2D" parent="."]
+position = Vector2(160, 74)
+sprite_frames = SubResource("SpriteFrames_g2mcq")
+autoplay = "default"
+
 [node name="CaldronImg" type="TextureRect" parent="."]
 texture_filter = 1
 layout_mode = 0
@@ -102,6 +381,12 @@ offset_right = 211.0
 offset_bottom = 158.0
 mouse_filter = 2
 texture = ExtResource("16_pia0k")
+
+[node name="Embers" type="AnimatedSprite2D" parent="CaldronImg"]
+position = Vector2(47, 56)
+sprite_frames = SubResource("SpriteFrames_ljrd2")
+autoplay = "default"
+frame_progress = 0.773564
 
 [node name="BoardButton" type="TextureButton" parent="."]
 texture_filter = 1
@@ -140,52 +425,34 @@ offset_top = 85.0
 offset_right = 194.0
 offset_bottom = 100.0
 
-[node name="Bellows" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+[node name="Bellows" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(106.098, 133.25)
+scale = Vector2(0.719512, 0.719512)
+sprite_frames = SubResource("SpriteFrames_3tm56")
+flip_h = true
+
+[node name="BellowsButton" type="Button" parent="Bellows"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -77.0
-offset_top = -47.0
-offset_right = -28.0
-offset_bottom = -25.0
+offset_left = -46.0
+offset_top = -20.5
+offset_right = -46.0
+offset_bottom = -20.5
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 flat = true
 
 [node name="DistillerySlot" parent="." instance=ExtResource("2_gvcte")]
+visible = false
 layout_mode = 0
 offset_left = 228.0
 offset_top = 71.0
 offset_right = 254.0
 offset_bottom = 97.0
-
-[node name="TurnHourglass" type="Button" parent="."]
-layout_mode = 0
-offset_left = 182.0
-offset_top = 37.0
-offset_right = 204.0
-offset_bottom = 82.0
-flat = true
-
-[node name="HourglassLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 53.0
-offset_top = -54.0
-offset_right = 89.0
-offset_bottom = -31.0
-grow_horizontal = 2
-grow_vertical = 2
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Mortar" parent="." instance=ExtResource("5_wnxhj")]
 visible = false
@@ -277,6 +544,7 @@ event_name = "event:/games/bubbling_cauldron"
 event_guid = "{a0f38773-673d-4cd3-ae12-228b7501cc84}"
 
 [node name="HUD" parent="." instance=ExtResource("24_esyk5")]
+visible = false
 layout_mode = 1
 
 [node name="Slot" parent="." instance=ExtResource("2_gvcte")]
@@ -291,7 +559,9 @@ item = ExtResource("24_lcj71")
 
 [connection signal="new_item" from="." to="HUD" method="_get_item"]
 [connection signal="new_ing" from="DryNet" to="." method="update_item"]
-[connection signal="pressed" from="Hourglass/HourglassButton" to="." method="_on_turn_hourglass_pressed"]
+[connection signal="mouse_entered" from="Hourglass/TurnHourglass" to="." method="show_help" binds= ["hour"]]
+[connection signal="mouse_exited" from="Hourglass/TurnHourglass" to="." method="hide_help"]
+[connection signal="pressed" from="Hourglass/TurnHourglass" to="." method="_on_turn_hourglass_pressed"]
 [connection signal="pressed" from="BoardButton" to="." method="_on_board_clicked"]
 [connection signal="pressed" from="MortarButton" to="." method="_on_mortar_clicked"]
 [connection signal="dropped" from="CaldronSlot" to="." method="_on_caldron_slot_dropped"]
@@ -299,15 +569,12 @@ item = ExtResource("24_lcj71")
 [connection signal="mouse_exited" from="CaldronSlot" to="." method="hide_help"]
 [connection signal="mouse_entered" from="FlaskSlot" to="." method="show_help" binds= ["caldron"]]
 [connection signal="mouse_exited" from="FlaskSlot" to="." method="hide_help"]
-[connection signal="mouse_entered" from="Bellows" to="." method="show_help" binds= ["bellow"]]
-[connection signal="mouse_exited" from="Bellows" to="." method="hide_help"]
-[connection signal="pressed" from="Bellows" to="." method="_on_bellows_pressed"]
+[connection signal="mouse_entered" from="Bellows/BellowsButton" to="." method="show_help" binds= ["bellow"]]
+[connection signal="mouse_exited" from="Bellows/BellowsButton" to="." method="hide_help"]
+[connection signal="pressed" from="Bellows/BellowsButton" to="." method="_on_bellows_pressed"]
 [connection signal="dropped" from="DistillerySlot" to="." method="_on_distillery_slot_dropped"]
 [connection signal="mouse_entered" from="DistillerySlot" to="." method="show_help" binds= ["distill"]]
 [connection signal="mouse_exited" from="DistillerySlot" to="." method="hide_help"]
-[connection signal="mouse_entered" from="TurnHourglass" to="." method="show_help" binds= ["hour"]]
-[connection signal="mouse_exited" from="TurnHourglass" to="." method="hide_help"]
-[connection signal="pressed" from="TurnHourglass" to="." method="_on_turn_hourglass_pressed"]
 [connection signal="modified_ing" from="Mortar" to="." method="update_item"]
 [connection signal="modified_ing" from="Cutter" to="." method="update_item"]
 [connection signal="mixed" from="Caldron" to="." method="_on_caldron_mixed"]

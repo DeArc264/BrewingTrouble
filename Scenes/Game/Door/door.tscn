@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://drlwsjlocg23c" path="res://Scenes/Game/Door/door_window.tscn" id="9_gtvfe"]
 
 [node name="Door" type="Control"]
+texture_filter = 1
 layout_direction = 2
 layout_mode = 3
 anchors_preset = 15
@@ -83,6 +84,7 @@ custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 
 [node name="MoveRight_Door" type="Button" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -90,22 +92,23 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -26.0
-offset_top = -15.5
+offset_top = 40.5
 offset_right = -8.0
-offset_bottom = 15.5
+offset_bottom = 71.5
 grow_horizontal = 0
 grow_vertical = 2
 text = ">"
 
 [node name="MoveLeft_Door" type="Button" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 8.0
-offset_top = -15.5
+offset_top = 40.5
 offset_right = 26.0
-offset_bottom = 15.5
+offset_bottom = 71.5
 grow_vertical = 2
 text = "<"
 
@@ -144,7 +147,7 @@ one_shot = true
 bank_paths = ["res://Assets/Audio/fmodbanks/Desktop/Master.bank", "res://Assets/Audio/fmodbanks/Desktop/Master.strings.bank"]
 
 [node name="Knocking" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/knocking"
+event_name = "event:/interactive sounds/knocking"
 event_guid = "{cbf639a2-cbd0-4690-9444-f96b18379fa1}"
 
 [node name="MaleReject" type="FmodEventEmitter2D" parent="."]
@@ -156,6 +159,7 @@ event_name = "event:/voices/male_normal"
 event_guid = "{10f13deb-9230-41f9-ab19-101e50d4b5d6}"
 
 [connection signal="client_signal" from="." to="DoorWindow" method="is_client_there"]
+[connection signal="day_start" from="." to="DoorWindow" method="_on_door_day_start"]
 [connection signal="gui_input" from="Door_Window" to="." method="_door_window_slide"]
 [connection signal="pressed" from="OpenStore" to="." method="_on_open_store_pressed"]
 [connection signal="pressed" from="DeliveryButton" to="." method="_on_delivery_button_pressed"]
