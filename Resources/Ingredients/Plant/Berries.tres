@@ -12,6 +12,6 @@ crush_icon = ExtResource("1_3dulm")
 cut_icon = ExtResource("2_i6obq")
 type = "Plant"
 icon = ExtResource("3_q5et6")
-name = "Juniper Berries"
+name = "Berries"
 id = "plant_3"
 description = "Ingredient used for potions."

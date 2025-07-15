@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://v1uemubo3trk"]
+[gd_scene load_steps=13 format=3 uid="uid://v1uemubo3trk"]
 
 [ext_resource type="Script" path="res://Scripts/Scenes/door.gd" id="1_01bfn"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="2_7tixl"]
@@ -8,7 +8,10 @@
 [ext_resource type="Resource" uid="uid://d2qnj6b3mkl0d" path="res://Resources/Potions/PotionStrenght.tres" id="5_8y4ri"]
 [ext_resource type="Texture2D" uid="uid://8j4mtr4slwcq" path="res://Assets/Door/door_window.png" id="6_a53ad"]
 [ext_resource type="PackedScene" uid="uid://chithbdsd0iql" path="res://Scenes/Game/Door/door_bg.tscn" id="6_ooqos"]
+[ext_resource type="VideoStream" path="res://Assets/Animation/outside_bg.ogv" id="6_v5exn"]
+[ext_resource type="Texture2D" uid="uid://brtyuhbctsdp5" path="res://Assets/HUD/Buttons/button_icon1.png" id="9_4uw27"]
 [ext_resource type="PackedScene" uid="uid://drlwsjlocg23c" path="res://Scenes/Game/Door/door_window.tscn" id="9_gtvfe"]
+[ext_resource type="Texture2D" uid="uid://cskhejvlykdot" path="res://Assets/HUD/Buttons/button_icon2.png" id="11_ex7y6"]
 
 [node name="Door" type="Control"]
 texture_filter = 1
@@ -21,6 +24,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_01bfn")
 possible_orders = Array[ExtResource("2_45b74")]([ExtResource("3_t57ee"), ExtResource("4_pxeh3"), ExtResource("5_8y4ri")])
+metadata/_edit_horizontal_guides_ = [150.0]
+
+[node name="OutsideVideo" type="VideoStreamPlayer" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("6_v5exn")
+autoplay = true
+paused = true
 
 [node name="Door_Window" type="TextureRect" parent="."]
 texture_filter = 1
@@ -36,22 +54,27 @@ texture = ExtResource("6_a53ad")
 layout_mode = 0
 mouse_filter = 2
 
-[node name="OpenStore" type="Button" parent="."]
+[node name="OpenTexture" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 30.0
+offset_right = 110.0
+offset_bottom = 57.0
+texture = ExtResource("9_4uw27")
+expand_mode = 1
+
+[node name="OpenStore" type="Button" parent="OpenTexture"]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -98.0
-offset_top = 42.0
-offset_right = -67.0
-offset_bottom = 58.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
 text = "Start Day"
+flat = true
 
 [node name="DeliveryButton" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -63,74 +86,114 @@ offset_bottom = 95.0
 mouse_default_cursor_shape = 2
 flat = true
 
-[node name="DeliveryBox" type="HBoxContainer" parent="."]
+[node name="DeliveryBoxBG" type="TextureRect" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 45.0
-offset_top = 101.0
-offset_right = 113.0
-offset_bottom = 121.0
+offset_left = 43.0
+offset_top = 99.0
+offset_right = 115.0
+offset_bottom = 126.0
+texture = ExtResource("9_4uw27")
+expand_mode = 1
 
-[node name="Slot" parent="DeliveryBox" instance=ExtResource("2_7tixl")]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 2
-
-[node name="Slot2" parent="DeliveryBox" instance=ExtResource("2_7tixl")]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 2
-
-[node name="Slot3" parent="DeliveryBox" instance=ExtResource("2_7tixl")]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 2
-
-[node name="MoveRight_Door" type="Button" parent="."]
-texture_filter = 1
+[node name="DeliveryBox" type="HBoxContainer" parent="DeliveryBoxBG"]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -26.0
-offset_top = 40.5
-offset_right = -8.0
-offset_bottom = 71.5
-grow_horizontal = 0
+anchor_bottom = 1.0
+grow_horizontal = 2
 grow_vertical = 2
-text = ">"
 
-[node name="MoveLeft_Door" type="Button" parent="."]
+[node name="Slot" parent="DeliveryBoxBG/DeliveryBox" instance=ExtResource("2_7tixl")]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="Slot2" parent="DeliveryBoxBG/DeliveryBox" instance=ExtResource("2_7tixl")]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="Slot3" parent="DeliveryBoxBG/DeliveryBox" instance=ExtResource("2_7tixl")]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = -8.0
+offset_bottom = -9.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("11_ex7y6")
+expand_mode = 1
+
+[node name="MoveRight_Door" type="Button" parent="TextureRect"]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 8.0
-offset_top = 40.5
-offset_right = 26.0
-offset_bottom = 71.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = ">"
+flat = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -30.0
+offset_right = 32.0
+offset_bottom = -9.0
+grow_vertical = 0
+texture = ExtResource("11_ex7y6")
+expand_mode = 1
+
+[node name="MoveLeft_Door" type="Button" parent="TextureRect2"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "<"
+flat = true
 
 [node name="DoorWindow" parent="." instance=ExtResource("9_gtvfe")]
 visible = false
 layout_mode = 0
 mouse_filter = 2
 
-[node name="ClientLabel" type="Label" parent="."]
-visible = false
+[node name="SpeachTexture" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -156.0
-offset_top = 71.0
-offset_right = 156.0
-offset_bottom = 88.0
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -25.0
+offset_bottom = 27.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+texture = ExtResource("9_4uw27")
+
+[node name="ClientLabel" type="Label" parent="SpeachTexture"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 6.0
+offset_bottom = 20.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 10
 text = "Teste"
 horizontal_alignment = 1
@@ -142,9 +205,6 @@ one_shot = true
 
 [node name="PatienceTimer" type="Timer" parent="."]
 one_shot = true
-
-[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-bank_paths = ["res://Assets/Audio/fmodbanks/Desktop/Master.bank", "res://Assets/Audio/fmodbanks/Desktop/Master.strings.bank"]
 
 [node name="Knocking" type="FmodEventEmitter2D" parent="."]
 event_name = "event:/interactive sounds/knocking"
@@ -161,9 +221,9 @@ event_guid = "{10f13deb-9230-41f9-ab19-101e50d4b5d6}"
 [connection signal="client_signal" from="." to="DoorWindow" method="is_client_there"]
 [connection signal="day_start" from="." to="DoorWindow" method="_on_door_day_start"]
 [connection signal="gui_input" from="Door_Window" to="." method="_door_window_slide"]
-[connection signal="pressed" from="OpenStore" to="." method="_on_open_store_pressed"]
+[connection signal="pressed" from="OpenTexture/OpenStore" to="." method="_on_open_store_pressed"]
 [connection signal="pressed" from="DeliveryButton" to="." method="_on_delivery_button_pressed"]
-[connection signal="pressed" from="MoveRight_Door" to="." method="_on_move_right_door_pressed"]
-[connection signal="pressed" from="MoveLeft_Door" to="." method="_on_move_left_door_pressed"]
+[connection signal="pressed" from="TextureRect/MoveRight_Door" to="." method="_on_move_right_door_pressed"]
+[connection signal="pressed" from="TextureRect2/MoveLeft_Door" to="." method="_on_move_left_door_pressed"]
 [connection signal="timeout" from="NewClientTimer" to="." method="_on_new_client_timer_timeout"]
 [connection signal="timeout" from="PatienceTimer" to="." method="_on_patience_timer_timeout"]

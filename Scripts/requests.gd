@@ -21,15 +21,21 @@ func is_client_there():
 
 
 func new_client():
-	$Shape.texture = faces_m.shape.pick_random()
-	$Shape/Hair.texture = faces_m.hair.pick_random()
-	$Shape/Ears.texture = faces_m.ears.pick_random()
-	$Shape/Eyes.texture = faces_m.eyes.pick_random()
-	$Shape/Eyebrows.texture = faces_m.eyebrows.pick_random()
-	$Shape/Nose.texture = faces_m.nose.pick_random()
-	$Shape/Mouth.texture = faces_m.mouth.pick_random()
-	$Shape/Facial_Hair.texture = faces_m.facial_hair.pick_random()
-
+	var randomizer = randi_range(0, 3)
+	$Shape.play(str(randomizer))
+	
+	randomizer = randi_range(0, 3)
+	$Shape/Nose.play(str(randomizer))
+	
+	randomizer = randi_range(0, 3)
+	$Shape/Mouth.play(str(randomizer))
+	
+	randomizer = randi_range(0, 3)
+	$Shape/Hair.play(str(randomizer))
+	
+	randomizer = randi_range(0, 3)
+	$Shape/Eyes.play(str(randomizer))
+	
 	$Shape.show()
 
 
@@ -40,3 +46,7 @@ func client_gone() -> void:
 func _drag_board(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		slide = event.pressed
+
+
+func _on_door_day_start() -> void:
+	$OutsideVideo.play()

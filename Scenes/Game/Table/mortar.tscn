@@ -1,17 +1,63 @@
-[gd_scene load_steps=10 format=3 uid="uid://cun7jmlf65cbq"]
+[gd_scene load_steps=19 format=3 uid="uid://cun7jmlf65cbq"]
 
 [ext_resource type="Script" path="res://Scripts/Mingames/crusher.gd" id="1_kqu4g"]
 [ext_resource type="Texture2D" uid="uid://b0qhamgydfxej" path="res://Assets/Minigames/Mortar/bowl.png" id="2_bnppa"]
 [ext_resource type="Texture2D" uid="uid://dtr7xemb00t62" path="res://Assets/Clean/bowl  sujeira.png" id="3_70r74"]
 [ext_resource type="Texture2D" uid="uid://dx2e1ty3gbiu2" path="res://Assets/Minigames/Mortar/pebble.png" id="3_o0n0t"]
 [ext_resource type="Script" path="res://Scripts/Mingames/pebble.gd" id="3_xh525"]
+[ext_resource type="Texture2D" uid="uid://x3rrrreawq8x" path="res://Assets/Animation/Patricles/particles0.png" id="4_lsfcy"]
+[ext_resource type="Texture2D" uid="uid://cqo1cqe2hmbf1" path="res://Assets/Animation/Patricles/particles1.png" id="5_knkkl"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="6_joicf"]
+[ext_resource type="Texture2D" uid="uid://dswpp27fxxfet" path="res://Assets/Animation/Patricles/particles2.png" id="6_vopp5"]
+[ext_resource type="Texture2D" uid="uid://2yn6fqa82g0g" path="res://Assets/Animation/Patricles/particles3.png" id="7_v1w78"]
+[ext_resource type="Texture2D" uid="uid://cibhyf2qppaiu" path="res://Assets/Animation/Patricles/particles4.png" id="8_l6n6k"]
+[ext_resource type="Texture2D" uid="uid://chqy3aabwwgfl" path="res://Assets/Animation/Patricles/particles5.png" id="9_o5nwi"]
+[ext_resource type="Texture2D" uid="uid://bxedl6ms2umnq" path="res://Assets/Animation/Patricles/particles6.png" id="10_aj656"]
+[ext_resource type="Texture2D" uid="uid://dopf2nptmarmn" path="res://Assets/Animation/Patricles/particles7.png" id="11_idki4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m8mwc"]
 radius = 73.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nplx0"]
 radius = 30.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gbqof"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lsfcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_knkkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vopp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_v1w78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_l6n6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_o5nwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_aj656")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_idki4")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 24.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrae2"]
 size = Vector2(22, 26)
@@ -82,6 +128,12 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Herb/HerbArea"]
 shape = SubResource("CircleShape2D_nplx0")
 
+[node name="Particles" type="AnimatedSprite2D" parent="."]
+position = Vector2(160, 90)
+sprite_frames = SubResource("SpriteFrames_gbqof")
+frame = 9
+frame_progress = 1.0
+
 [node name="Pebble" type="TextureRect" parent="."]
 texture_filter = 1
 layout_mode = 1
@@ -146,6 +198,10 @@ offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
+
+[node name="Crush" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/games/almofariz(crunch)"
+event_guid = "{3a40c933-bb6b-4965-901a-bd47f67f2a65}"
 
 [connection signal="mouse_entered" from="Herb" to="." method="_on_herb_mouse_entered"]
 [connection signal="area_entered" from="Herb/HerbArea" to="." method="_on_bowl_crushing"]

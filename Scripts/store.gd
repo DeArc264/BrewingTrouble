@@ -4,17 +4,18 @@ signal send(String, float)
 
 
 var market_price = {
-		# Bases
+# Bases
 	"Water" : 2.0,
 	"Milk" : 3.4,
 	"Wine" : 6,
 # Plants
 	"Belladona" : 8.4,
 	"Lavender" : 5.2,
-	"Myrrh" : 7.8,
+	"Berries" : 7.8,
 # Ores
 	"Gold" : 1.0,
-	"Sulfur" : 4.0
+	"Sulfur" : 4.0,
+	"Coal" : 0.6
 }
 
 var current_price = {
@@ -25,10 +26,11 @@ var current_price = {
 # Plants
 	"Belladona" : 8.4,
 	"Lavender" : 5.2,
-	"Myrrh" : 7.8,
+	"Berries" : 7.8,
 # Ores
 	"Gold" : 1.0,
-	"Sulfur" : 4.0
+	"Sulfur" : 4.0,
+	"Coal" : 0.6
 }
 
 var sale = " !!! SALE !!!"
@@ -38,7 +40,7 @@ func _ready() -> void:
 	set_prices()
 	write_labels($Bases)
 	write_labels($Plants)
-	write_labels($Ores)
+	#write_labels($Ores)
 	change_page("ToBases")
 
 
@@ -54,6 +56,7 @@ func set_prices():
 
 func write_labels(node : Node):
 	for child in node.get_children():
+		if child is not HBoxContainer : break
 		for children in child.get_children():
 			if children is Label:
 				if current_price[children.name] < market_price[children.name]:
@@ -65,15 +68,15 @@ func write_labels(node : Node):
 
 func change_page(button : String):
 	match button:
-		"ToBases":
+		"Bases":
 			$Bases.show()
 			$Plants.hide()
 			$Ores.hide()
-		"ToPlants":
+		"Plants":
 			$Bases.hide()
 			$Plants.show()
 			$Ores.hide()
-		"ToOres":
+		"Ores":
 			$Bases.hide()
 			$Plants.hide()
 			$Ores.show()

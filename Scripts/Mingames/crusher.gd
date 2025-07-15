@@ -31,6 +31,8 @@ var img_dict = {
 
 func _on_bowl_crushing(area: Area2D) -> void:
 	if area.name == "PebbleArea":
+		$Crush.play()
+		$Particles.play("default")
 		increase_progress()
 
 	if progress >= 1.0:

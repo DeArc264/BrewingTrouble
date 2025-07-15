@@ -240,7 +240,6 @@ func _on_move_right_table_pressed() -> void:
 
 
 func _on_book_button_pressed() -> void:
-	#$BookOpen.play()
 	$Book.show()
 
 

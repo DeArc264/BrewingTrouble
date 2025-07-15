@@ -2,6 +2,9 @@ extends Control
 
 signal mixed(potion_id : String)
 
+var texture_out = "res://Assets/Minigames/Caldron/spoon.png"
+var texture_in = "res://Assets/Minigames/Caldron/spoon_in.png"
+
 var mixing = false
 var progress = 0.0
 var liquid_base

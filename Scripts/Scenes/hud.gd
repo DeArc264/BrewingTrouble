@@ -5,39 +5,47 @@ signal new_day
 signal buy_ingredient(String)
 
 var coins = 10.0
+var visible_notes = false
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$TimeLabel.hide()
+	$Scroll/Hands.hide()
+	$Coin/GoldLabel.text = str(coins)
 	$Scroll.play("default")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	$CoinLabel.text = "Coins: " + str(coins)
-	$TimeLabel.text = "Time: " + str(int($DayTimer.time_left))
-
-	$Helper.position = get_global_mouse_position()
-
-
 func _get_item(item: Item) -> void:
+	if $Scroll.frame == 0:
+		$Scroll.play("open")
 	$Scroll/Hands.add_item(item)
+
+	await $Scroll.animation_finished
+	$Scroll/Hands.show()
 
 
 func _on_door_pay(ammount : int) -> void:
+	$AnimationPlayer.play("coin")
+	await $AnimationPlayer.animation_finished
+
+	$CoinPaper/Coin.play("add")
+	$CoinPaper/CoinLabel.text = "+ " + str(ammount)
 	coins += ammount
+
+	await $CoinPaper/Coin.animation_finished
+	$AnimationPlayer.play_backwards("coin")
 
 
 func buy_stuff(ing : String, price : float):
 	if coins >= price:
 		coins -= price
+		$Coin/GoldLabel.text = str(coins)
 		buy_ingredient.emit(ing)
 	else:
 		$PayLabel.show()
 		await get_tree().create_timer(2).timeout
 		$PayLabel.hide()
-
 
 #region Day
 func start_day():
@@ -50,6 +58,7 @@ func _on_day_timer_timeout() -> void:
 	$DayTimer.stop()
 	day_over.emit()
 	$Store.show()
+	$Coin.show()
 #endregion
 
 
@@ -67,18 +76,19 @@ func show_hands():
 	
 	$HandButton.show()
 
-
-func _hide_HUD_piece(animation : String) -> void:
-	match animation:
-		"hands":
-			$AnimationPlayer.play("hands_go_down")
-		"order":
-			$AnimationPlayer.play("order_go_down")
-
-
 #region Note Tab
+func show_notes():
+	if visible_notes:
+		$AnimationPlayer.play_backwards("note")
+	else:
+		$AnimationPlayer.play("note")
+
+	visible_notes = !visible_notes
+
+
 func update_note(note : Array[String]):
-	$OrderNote/OrderLabel.text = note
+	#$OrderNote/OrderLabel.text = note
+	pass
 #endregion
 
 
@@ -90,25 +100,25 @@ func helper_control(which : String):
 
 	match which:
 		"distill":
-			new_text = "Drop an ingredient to distill\n\nNOTE: Ores can't be distilled"
+			new_text = "Still"
 		"hour":
-			new_text = "Click to turn\n\nEach turn counts 10 seconds"
+			new_text = "Timer"
 		"bellow":
-			new_text = "Click to raise fire and boil liquid\n\nNOTE: The fire goes out with time"
+			new_text = "Bellow"
 		"caldron":
-			new_text = "Drop ingredients here to make your potion"
+			new_text = "Caldron"
 		"dry":
-			new_text = "Drop a Plant to dry it\n\nNOTE: Pay attentention to how it looks"
+			new_text = "Dryer"
 		"book":
-			new_text = "All your recipes are here"
+			new_text = "Book"
 		"crush":
-			new_text = "Drop an ingredient to start crushing"
+			new_text = "Mortar"
 		"pots":
-			new_text = "Keep items for later"
+			new_text = "Pots"
 		"trash":
-			new_text = "Discart items you don't need"
+			new_text = "Trash"
 		"door":
-			new_text = "Drop a potion to deliver it"
+			new_text = "Deliver"
 		"close":
 			$Helper.hide()
 

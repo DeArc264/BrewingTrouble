@@ -10,6 +10,7 @@ signal client_signal
 
 @export var possible_orders : Array[Item]
 @onready var dia = load("res://Resources/Dialogue/NPCDialogues.tres")
+@onready var delivery_node = $DeliveryBoxBG/DeliveryBox
 
 var curr_order: Array[Item]
 var delivery_box: Array[Item]
@@ -20,10 +21,10 @@ var client_at_door = false
 func _process(_delta: float) -> void:
 	if not $DoorWindow.visible:
 		$PatienceTimer.paused = false
-		$ClientLabel.hide()
+		$SpeachTexture.hide()
 	else:
 		$PatienceTimer.paused = true
-		$ClientLabel.show()
+		$SpeachTexture.show()
 
 	if slide:
 		$Door_Window.position.x = clamp((get_global_mouse_position().x - 46), 15, 50)
@@ -44,22 +45,23 @@ func new_request():
 		curr_order.append(possible_orders.pick_random())
 
 	$PatienceTimer.start(120 * temp_rand)
-	$ClientLabel.text = dia.phrase_constructor(curr_order)
+	$SpeachTexture/ClientLabel.text = dia.phrase_constructor(curr_order)
 
 
 func deliver():
 	if not client_at_door:
-		$ClientLabel.text = dia.none_at_door.pick_random()
+		$SpeachTexture/ClientLabel.text = dia.none_at_door.pick_random()
 		await get_tree().create_timer(3).timeout
-		$ClientLabel.text = ""
+		$SpeachTexture/ClientLabel.text = ""
 		return
 
-	for slot in $DeliveryBox.get_children():
+	for slot in delivery_node.get_children():
+		if slot.item == null : break
 		if slot.item.state == "Wasted":
-			$ClientLabel.text = dia.reject_potion.pick_random()
+			$SpeachTexture/ClientLabel.text = dia.reject_potion.pick_random()
 			$MaleReject.play()
 			await get_tree().create_timer(3).timeout
-			$ClientLabel.text = ""
+			$SpeachTexture/ClientLabel.text = ""
 			return
 		else:
 			for item in curr_order:
@@ -85,7 +87,7 @@ func _on_new_client_timer_timeout() -> void:
 func _on_patience_timer_timeout() -> void:
 	client_at_door = false
 	client_signal.emit()
-	$ClientLabel.text = ""
+	$SpeachTexture/ClientLabel.text = ""
 	$NewClientTimer.start(randf_range(60.0, 90.0))
 #endregion
 
@@ -112,7 +114,8 @@ func _door_window_slide(event: InputEvent) -> void:
 
 func _on_open_store_pressed() -> void:
 	$NewClientTimer.start()
-	$OpenStore.hide()
+	$OpenTexture.hide()
+	$OutsideVideo.paused = false
 	day_start.emit()
 
 
@@ -127,8 +130,8 @@ func _on_move_right_door_pressed() -> void:
 
 
 func _on_delivery_button_pressed() -> void:
-	$DeliveryBox.visible = !$DeliveryBox.visible
+	$DeliveryBoxBG.visible = !$DeliveryBoxBG.visible
 
-	if $DeliveryBox.hidden:
+	if $DeliveryBoxBG.hidden:
 		deliver()
 #endregion

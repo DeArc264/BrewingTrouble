@@ -1,10 +1,72 @@
-[gd_scene load_steps=4 format=3 uid="uid://dus7ooufchbdn"]
+[gd_scene load_steps=32 format=3 uid="uid://dus7ooufchbdn"]
 
 [ext_resource type="Script" path="res://Scripts/Mingames/book.gd" id="1_32dp3"]
-[ext_resource type="Texture2D" uid="uid://cbqkqfthivov1" path="res://Assets/Book/page_1.png" id="4_d5mcg"]
-[ext_resource type="Texture2D" uid="uid://b6f426ihj2pvk" path="res://Assets/Book/page_2.png" id="5_8pjvq"]
+[ext_resource type="Texture2D" uid="uid://c6ly734dfj6pr" path="res://Assets/Minigames/table.png" id="2_sv8u4"]
+[ext_resource type="Texture2D" uid="uid://fopc8lfhaqlx" path="res://Assets/Book/Book.png" id="3_x6d5r"]
+[ext_resource type="Texture2D" uid="uid://bsrk1x1uxpv2v" path="res://Assets/Table/mortar.png" id="4_fl336"]
+[ext_resource type="Texture2D" uid="uid://dub3pd2l1vr3g" path="res://Assets/Animation/Book/book_anim0.png" id="4_kxuc1"]
+[ext_resource type="Texture2D" uid="uid://24svegbqq32b" path="res://Assets/Table/cut_board.png" id="5_05emd"]
+[ext_resource type="Texture2D" uid="uid://bxpqas0bqkxe3" path="res://Assets/Animation/Book/book_anim1.png" id="5_7j1wp"]
+[ext_resource type="Texture2D" uid="uid://ckbw5sxle3koi" path="res://Assets/Table/hourglass.png" id="6_kqtmr"]
+[ext_resource type="Texture2D" uid="uid://osum0kqm0jqv" path="res://Assets/Animation/Book/book_anim2.png" id="6_v08q0"]
+[ext_resource type="Texture2D" uid="uid://k5wu1gilq65f" path="res://Assets/Animation/Bellows/bellows0.png" id="7_i11dw"]
+[ext_resource type="Texture2D" uid="uid://bwep6p57uo2vi" path="res://Assets/Animation/Book/book_anim3.png" id="7_jo7wj"]
+[ext_resource type="Texture2D" uid="uid://cmn54cmvgdmp5" path="res://Assets/Table/drying_net_empty.png" id="8_1l1lx"]
+[ext_resource type="Texture2D" uid="uid://3blo1qaknaev" path="res://Assets/Animation/Book/book_anim4.png" id="8_mimmt"]
+[ext_resource type="Texture2D" uid="uid://b8osgmm13c6ou" path="res://Assets/Icons/Potions/Flask_A/flask_a_heal.png" id="9_go053"]
+[ext_resource type="Texture2D" uid="uid://cku7hnkkp1xl0" path="res://Assets/Icons/Ingredients/Normal/Bases/icon_water.png" id="10_evorg"]
+[ext_resource type="Texture2D" uid="uid://cfwa6djqrkgxm" path="res://Assets/Icons/Ingredients/Normal/Plants/icon_belladona.png" id="11_rypsa"]
+[ext_resource type="Texture2D" uid="uid://dlvx0ul7b4ski" path="res://Assets/Icons/Ingredients/Normal/Plants/icon_berries.png" id="12_0dani"]
+[ext_resource type="Texture2D" uid="uid://syygt5ej8krj" path="res://Assets/Table/caldron_table.png" id="13_jfxn6"]
+[ext_resource type="Texture2D" uid="uid://ctqo4nekowlo3" path="res://Assets/Icons/Potions/Flask_A/flask_a_empty.png" id="14_iim05"]
+[ext_resource type="Texture2D" uid="uid://dw6l42km7ua05" path="res://Assets/Icons/Potions/Flask_B/flask_b_empty.png" id="15_i1qoi"]
+[ext_resource type="Texture2D" uid="uid://b7grbnau3edmo" path="res://Assets/Icons/Potions/Flask_C/flask_c_empty.png" id="16_2gjte"]
+[ext_resource type="Texture2D" uid="uid://cm58rq5n700yc" path="res://Assets/Icons/Potions/Flask_C/flask_c_stamina.png" id="17_mqmuh"]
+[ext_resource type="Texture2D" uid="uid://bsm4qeqn0oo0g" path="res://Assets/Icons/Ingredients/Normal/Bases/icon_milk.png" id="18_sk0yj"]
+[ext_resource type="Texture2D" uid="uid://dxy0fd0bocqn0" path="res://Assets/Icons/Ingredients/Normal/Plants/icon_lavander.png" id="19_wjnlw"]
+[ext_resource type="Texture2D" uid="uid://c15q2053564ny" path="res://Assets/Icons/Ingredients/Crushed/icon_crush_lavander.png" id="20_qm400"]
+[ext_resource type="Texture2D" uid="uid://b17onayrcf0nr" path="res://Assets/Icons/Ingredients/Crushed/icon_crush_berries.png" id="21_hbmls"]
+[ext_resource type="Texture2D" uid="uid://451uow4uk76k" path="res://Assets/Icons/Ingredients/Crushed/icon_crush_belladona.png" id="22_8r16s"]
+[ext_resource type="Texture2D" uid="uid://c6ee5vkchodfl" path="res://Assets/Icons/Potions/Flask_B/flask_b_strenght.png" id="23_dtgpr"]
+[ext_resource type="Texture2D" uid="uid://cu2amskq6vfvg" path="res://Assets/Icons/Ingredients/Normal/Bases/icon_wine.png" id="24_p20sw"]
+[ext_resource type="Texture2D" uid="uid://cskhejvlykdot" path="res://Assets/HUD/Buttons/button_icon2.png" id="30_eo3lq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j1hwp"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kxuc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7j1wp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v08q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jo7wj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mimmt")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"turn",
+"speed": 12.0
+}]
 
 [node name="Book" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,54 +76,824 @@ grow_vertical = 2
 script = ExtResource("1_32dp3")
 
 [node name="PopUpBg" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 180.0
+texture = ExtResource("2_sv8u4")
+stretch_mode = 2
 
 [node name="BookBG" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_right = 318.0
+offset_bottom = 186.0
+texture = ExtResource("3_x6d5r")
+stretch_mode = 2
 
-[node name="Page1" type="TextureRect" parent="."]
+[node name="Tools" type="Control" parent="." groups=["ToolsP1"]]
+texture_filter = 1
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -477.0
-offset_top = -342.0
-offset_right = 417.0
-offset_bottom = 207.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_d5mcg")
+anchors_preset = 0
 
-[node name="Page2" type="TextureRect" parent="."]
+[node name="Title" type="Label" parent="Tools"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 19.0
+offset_right = 98.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Tools"
+
+[node name="Mortar" type="TextureRect" parent="Tools"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 54.0
+offset_right = 46.0
+offset_bottom = 70.0
+texture = ExtResource("4_fl336")
+expand_mode = 1
+
+[node name="MortarLabel" type="Label" parent="Tools/Mortar"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 2.0
+offset_right = 103.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "- Crushes plants"
+
+[node name="Cutter" type="TextureRect" parent="Tools"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 90.0
+offset_right = 53.0
+offset_bottom = 105.0
+texture = ExtResource("5_05emd")
+expand_mode = 1
+
+[node name="CutterLabel" type="Label" parent="Tools/Cutter"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 107.0
+offset_bottom = 14.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "- Cuts plants"
+
+[node name="Hourglass" type="TextureRect" parent="Tools"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 123.0
+offset_right = 39.0
+offset_bottom = 163.0
+texture = ExtResource("6_kqtmr")
+expand_mode = 1
+
+[node name="HourglassLabel" type="Label" parent="Tools/Hourglass"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 7.0
+offset_right = 113.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "- Flip to mark 10 
+seconds"
+horizontal_alignment = 1
+
+[node name="Bellow" type="TextureRect" parent="Tools"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 23.0
+offset_right = 219.0
+offset_bottom = 45.0
+texture = ExtResource("7_i11dw")
+expand_mode = 1
+
+[node name="BellowsLabel" type="Label" parent="Tools/Bellow"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 3.0
+offset_right = 129.0
+offset_bottom = 17.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "- Boils cauldron
+(if there is liquid)"
+horizontal_alignment = 1
+
+[node name="DryNet" type="TextureRect" parent="Tools"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 67.0
+offset_right = 266.0
+offset_bottom = 164.0
+mouse_filter = 2
+texture = ExtResource("8_1l1lx")
+expand_mode = 1
+
+[node name="NetLabel" type="Label" parent="Tools/DryNet"]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 9.0
+offset_right = 205.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "- Dries plant if cauldron
+is boiling
+(7 seconds to dry)"
+horizontal_alignment = 1
+
+[node name="Healing" type="Control" parent="." groups=["RecipesP1"]]
+visible = false
+anchors_preset = 0
+
+[node name="PotionName" type="Label" parent="Healing"]
+texture_filter = 1
+offset_left = 25.0
+offset_top = 20.0
+offset_right = 108.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Potion of Healing"
+
+[node name="Arrow" type="Label" parent="Healing"]
+texture_filter = 1
+offset_left = 65.0
+offset_top = 50.0
+offset_right = 84.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "---->"
+
+[node name="Arrow2" type="Label" parent="Healing"]
+texture_filter = 1
+offset_left = 65.0
+offset_top = 80.0
+offset_right = 85.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "---->"
+
+[node name="Arrow3" type="Label" parent="Healing"]
+texture_filter = 1
+offset_left = 65.0
+offset_top = 100.0
+offset_right = 85.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "---->"
+
+[node name="MIX" type="Label" parent="Healing"]
+texture_filter = 1
+offset_left = 64.0
+offset_top = 91.0
+offset_right = 84.0
+offset_bottom = 105.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "MIX"
+
+[node name="Arrow4" type="Label" parent="Healing"]
+texture_filter = 1
+offset_left = 66.0
+offset_top = 138.0
+offset_right = 85.0
+offset_bottom = 152.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "---->"
+
+[node name="PotionIcon" type="TextureRect" parent="Healing"]
+texture_filter = 1
+offset_left = 114.0
+offset_top = 17.0
+offset_right = 134.0
+offset_bottom = 37.0
+texture = ExtResource("9_go053")
+stretch_mode = 2
+
+[node name="Base" type="TextureRect" parent="Healing"]
+texture_filter = 1
+offset_left = 34.0
+offset_top = 46.0
+offset_right = 54.0
+offset_bottom = 66.0
+texture = ExtResource("10_evorg")
+stretch_mode = 2
+
+[node name="Ingredient1" type="TextureRect" parent="Healing"]
+texture_filter = 1
+offset_left = 34.0
+offset_top = 95.0
+offset_right = 54.0
+offset_bottom = 115.0
+texture = ExtResource("11_rypsa")
+stretch_mode = 2
+
+[node name="Ingredient2" type="TextureRect" parent="Healing"]
+texture_filter = 1
+offset_left = 33.0
+offset_top = 74.0
+offset_right = 53.0
+offset_bottom = 94.0
+texture = ExtResource("12_0dani")
+stretch_mode = 2
+
+[node name="Caldron" type="TextureRect" parent="Healing"]
+texture_filter = 1
+offset_left = 94.0
+offset_top = 45.0
+offset_right = 126.0
+offset_bottom = 72.0
+texture = ExtResource("13_jfxn6")
+expand_mode = 1
+
+[node name="Caldron2" type="TextureRect" parent="Healing"]
+texture_filter = 1
+offset_left = 94.0
+offset_top = 84.0
+offset_right = 126.0
+offset_bottom = 111.0
+texture = ExtResource("13_jfxn6")
+expand_mode = 1
+
+[node name="Caldron3" type="TextureRect" parent="Healing"]
+texture_filter = 1
+offset_left = 94.0
+offset_top = 130.0
+offset_right = 126.0
+offset_bottom = 157.0
+texture = ExtResource("13_jfxn6")
+expand_mode = 1
+
+[node name="Flask1" type="TextureRect" parent="Healing"]
+texture_filter = 1
+offset_left = 21.0
+offset_top = 128.0
+offset_right = 41.0
+offset_bottom = 148.0
+texture = ExtResource("14_iim05")
+stretch_mode = 2
+
+[node name="Flask2" type="TextureRect" parent="Healing"]
+texture_filter = 1
+offset_left = 35.0
+offset_top = 147.0
+offset_right = 55.0
+offset_bottom = 167.0
+texture = ExtResource("15_i1qoi")
+stretch_mode = 2
+
+[node name="Flask3" type="TextureRect" parent="Healing"]
+texture_filter = 1
+offset_left = 42.0
+offset_top = 124.0
+offset_right = 62.0
+offset_bottom = 144.0
+texture = ExtResource("16_2gjte")
+stretch_mode = 2
+
+[node name="Stamina" type="Control" parent="." groups=["RecipesP1"]]
+visible = false
+anchors_preset = 0
+offset_left = 152.0
+offset_right = 152.0
+
+[node name="PotionName" type="Label" parent="Stamina"]
+texture_filter = 1
+offset_left = 28.0
+offset_top = 20.0
+offset_right = 117.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Potion of Stamina"
+
+[node name="Cond2" type="TextureRect" parent="Stamina"]
+texture_filter = 1
+offset_left = 71.0
+offset_top = 102.0
+offset_right = 91.0
+offset_bottom = 112.0
+texture = ExtResource("4_fl336")
+expand_mode = 1
+
+[node name="Arrow" type="Label" parent="Stamina"]
+texture_filter = 1
+offset_left = 69.0
+offset_top = 50.0
+offset_right = 88.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "---->"
+
+[node name="Arrow2" type="Label" parent="Stamina"]
+texture_filter = 1
+offset_left = 48.0
+offset_top = 80.0
+offset_right = 68.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "---->"
+
+[node name="Arrow3" type="Label" parent="Stamina"]
+texture_filter = 1
+offset_left = 48.0
+offset_top = 100.0
+offset_right = 68.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "---->"
+
+[node name="Arrow5" type="Label" parent="Stamina"]
+texture_filter = 1
+offset_left = 94.0
+offset_top = 80.0
+offset_right = 114.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "---->"
+
+[node name="Arrow6" type="Label" parent="Stamina"]
+texture_filter = 1
+offset_left = 94.0
+offset_top = 100.0
+offset_right = 114.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "---->"
+
+[node name="MIX" type="Label" parent="Stamina"]
+texture_filter = 1
+offset_left = 39.0
+offset_top = 126.0
+offset_right = 59.0
+offset_bottom = 140.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "MIX"
+
+[node name="Arrow4" type="Label" parent="Stamina"]
+texture_filter = 1
+offset_left = 40.0
+offset_top = 135.0
+offset_right = 59.0
+offset_bottom = 149.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "---->"
+
+[node name="Arrow7" type="Label" parent="Stamina"]
+texture_filter = 1
+offset_left = 112.0
+offset_top = 150.0
+offset_right = 131.0
+offset_bottom = 164.0
+rotation = 3.14159
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "---->"
+
+[node name="PotionIcon" type="TextureRect" parent="Stamina"]
+texture_filter = 1
+offset_left = 118.0
+offset_top = 17.0
+offset_right = 138.0
+offset_bottom = 37.0
+texture = ExtResource("17_mqmuh")
+stretch_mode = 2
+
+[node name="Base" type="TextureRect" parent="Stamina"]
+texture_filter = 1
+offset_left = 38.0
+offset_top = 46.0
+offset_right = 58.0
+offset_bottom = 66.0
+texture = ExtResource("18_sk0yj")
+stretch_mode = 2
+
+[node name="Ingredient1" type="TextureRect" parent="Stamina"]
+texture_filter = 1
+offset_left = 26.0
+offset_top = 95.0
+offset_right = 46.0
+offset_bottom = 115.0
+texture = ExtResource("12_0dani")
+stretch_mode = 2
+
+[node name="Cond1" type="TextureRect" parent="Stamina"]
+texture_filter = 1
+offset_left = 71.0
+offset_top = 82.0
+offset_right = 91.0
+offset_bottom = 92.0
+texture = ExtResource("4_fl336")
+expand_mode = 1
+
+[node name="Ingredient2" type="TextureRect" parent="Stamina"]
+texture_filter = 1
+offset_left = 25.0
+offset_top = 74.0
+offset_right = 45.0
+offset_bottom = 94.0
+texture = ExtResource("19_wjnlw")
+stretch_mode = 2
+
+[node name="Ingredient3" type="TextureRect" parent="Stamina"]
+texture_filter = 1
+offset_left = 116.0
+offset_top = 74.0
+offset_right = 136.0
+offset_bottom = 94.0
+texture = ExtResource("20_qm400")
+stretch_mode = 2
+
+[node name="Ingredient4" type="TextureRect" parent="Stamina"]
+texture_filter = 1
+offset_left = 115.0
+offset_top = 96.0
+offset_right = 135.0
+offset_bottom = 116.0
+texture = ExtResource("21_hbmls")
+stretch_mode = 2
+
+[node name="Ingredient5" type="TextureRect" parent="Stamina"]
+texture_filter = 1
+offset_left = 17.0
+offset_top = 123.0
+offset_right = 37.0
+offset_bottom = 143.0
+texture = ExtResource("22_8r16s")
+stretch_mode = 2
+
+[node name="Ingredient6" type="TextureRect" parent="Stamina"]
+texture_filter = 1
+offset_left = 24.0
+offset_top = 145.0
+offset_right = 44.0
+offset_bottom = 165.0
+texture = ExtResource("20_qm400")
+stretch_mode = 2
+
+[node name="Flask1" type="TextureRect" parent="Stamina"]
+texture_filter = 1
+offset_left = 128.0
+offset_top = 125.0
+offset_right = 148.0
+offset_bottom = 145.0
+texture = ExtResource("16_2gjte")
+stretch_mode = 2
+
+[node name="Flask2" type="TextureRect" parent="Stamina"]
+texture_filter = 1
+offset_left = 109.0
+offset_top = 121.0
+offset_right = 129.0
+offset_bottom = 141.0
+texture = ExtResource("14_iim05")
+stretch_mode = 2
+
+[node name="Flask3" type="TextureRect" parent="Stamina"]
+texture_filter = 1
+offset_left = 115.0
+offset_top = 145.0
+offset_right = 135.0
+offset_bottom = 165.0
+texture = ExtResource("15_i1qoi")
+stretch_mode = 2
+
+[node name="Caldron" type="TextureRect" parent="Stamina"]
+texture_filter = 1
+offset_left = 98.0
+offset_top = 45.0
+offset_right = 130.0
+offset_bottom = 72.0
+texture = ExtResource("13_jfxn6")
+expand_mode = 1
+
+[node name="Caldron3" type="TextureRect" parent="Stamina"]
+texture_filter = 1
+offset_left = 60.0
+offset_top = 128.0
+offset_right = 92.0
+offset_bottom = 155.0
+texture = ExtResource("13_jfxn6")
+expand_mode = 1
+
+[node name="Strenght" type="Control" parent="." groups=["RecipesP2"]]
+visible = false
+anchors_preset = 0
+
+[node name="PotionName" type="Label" parent="Strenght"]
+texture_filter = 1
+offset_left = 28.0
+offset_top = 20.0
+offset_right = 117.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Potion of Strength"
+
+[node name="Cond2" type="TextureRect" parent="Strenght"]
+texture_filter = 1
+offset_left = 16.0
+offset_top = 97.0
+offset_right = 142.0
+offset_bottom = 168.0
+texture = ExtResource("8_1l1lx")
+expand_mode = 1
+
+[node name="Arrow" type="Label" parent="Strenght"]
+texture_filter = 1
+offset_left = 69.0
+offset_top = 50.0
+offset_right = 88.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "---->"
+
+[node name="Arrow2" type="Label" parent="Strenght"]
+texture_filter = 1
+offset_left = 48.0
+offset_top = 80.0
+offset_right = 68.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "---->"
+
+[node name="Arrow3" type="Label" parent="Strenght"]
+texture_filter = 1
+offset_left = 48.0
+offset_top = 100.0
+offset_right = 68.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "---->"
+
+[node name="Arrow5" type="Label" parent="Strenght"]
+texture_filter = 1
+offset_left = 94.0
+offset_top = 80.0
+offset_right = 114.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "---->"
+
+[node name="Arrow6" type="Label" parent="Strenght"]
+texture_filter = 1
+offset_left = 94.0
+offset_top = 100.0
+offset_right = 114.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "---->"
+
+[node name="MIX" type="Label" parent="Strenght"]
+texture_filter = 1
+offset_left = 46.0
+offset_top = 126.0
+offset_right = 66.0
+offset_bottom = 140.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "MIX"
+
+[node name="Arrow4" type="Label" parent="Strenght"]
+texture_filter = 1
+offset_left = 47.0
+offset_top = 135.0
+offset_right = 66.0
+offset_bottom = 149.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "---->"
+
+[node name="Arrow7" type="Label" parent="Strenght"]
+texture_filter = 1
+offset_left = 119.0
+offset_top = 150.0
+offset_right = 138.0
+offset_bottom = 164.0
+rotation = 3.14159
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "---->"
+
+[node name="PotionIcon" type="TextureRect" parent="Strenght"]
+texture_filter = 1
+offset_left = 118.0
+offset_top = 17.0
+offset_right = 138.0
+offset_bottom = 37.0
+texture = ExtResource("23_dtgpr")
+stretch_mode = 2
+
+[node name="Base" type="TextureRect" parent="Strenght"]
+texture_filter = 1
+offset_left = 38.0
+offset_top = 46.0
+offset_right = 58.0
+offset_bottom = 66.0
+texture = ExtResource("24_p20sw")
+stretch_mode = 2
+
+[node name="Ingredient1" type="TextureRect" parent="Strenght"]
+texture_filter = 1
+offset_left = 26.0
+offset_top = 74.0
+offset_right = 46.0
+offset_bottom = 94.0
+texture = ExtResource("11_rypsa")
+stretch_mode = 2
+
+[node name="Cond1" type="TextureRect" parent="Strenght"]
+texture_filter = 1
+offset_left = 71.0
+offset_top = 82.0
+offset_right = 90.0
+offset_bottom = 93.0
+texture = ExtResource("4_fl336")
+expand_mode = 1
+
+[node name="Ingredient2" type="TextureRect" parent="Strenght"]
+texture_filter = 1
+offset_left = 25.0
+offset_top = 96.0
+offset_right = 45.0
+offset_bottom = 116.0
+texture = ExtResource("19_wjnlw")
+stretch_mode = 2
+
+[node name="Ingredient3" type="TextureRect" parent="Strenght"]
+texture_filter = 1
+offset_left = 116.0
+offset_top = 74.0
+offset_right = 136.0
+offset_bottom = 94.0
+texture = ExtResource("22_8r16s")
+stretch_mode = 2
+
+[node name="Ingredient4" type="TextureRect" parent="Strenght"]
+texture_filter = 1
+offset_left = 115.0
+offset_top = 96.0
+offset_right = 135.0
+offset_bottom = 116.0
+texture = ExtResource("20_qm400")
+stretch_mode = 2
+
+[node name="Ingredient5" type="TextureRect" parent="Strenght"]
+texture_filter = 1
+offset_left = 24.0
+offset_top = 123.0
+offset_right = 44.0
+offset_bottom = 143.0
+texture = ExtResource("22_8r16s")
+stretch_mode = 2
+
+[node name="Ingredient6" type="TextureRect" parent="Strenght"]
+texture_filter = 1
+offset_left = 31.0
+offset_top = 145.0
+offset_right = 51.0
+offset_bottom = 165.0
+texture = ExtResource("20_qm400")
+stretch_mode = 2
+
+[node name="Flask1" type="TextureRect" parent="Strenght"]
+texture_filter = 1
+offset_left = 135.0
+offset_top = 125.0
+offset_right = 155.0
+offset_bottom = 145.0
+texture = ExtResource("16_2gjte")
+stretch_mode = 2
+
+[node name="Flask2" type="TextureRect" parent="Strenght"]
+texture_filter = 1
+offset_left = 116.0
+offset_top = 121.0
+offset_right = 136.0
+offset_bottom = 141.0
+texture = ExtResource("14_iim05")
+stretch_mode = 2
+
+[node name="Flask3" type="TextureRect" parent="Strenght"]
+texture_filter = 1
+offset_left = 122.0
+offset_top = 145.0
+offset_right = 142.0
+offset_bottom = 165.0
+texture = ExtResource("15_i1qoi")
+stretch_mode = 2
+
+[node name="Caldron" type="TextureRect" parent="Strenght"]
+texture_filter = 1
+offset_left = 98.0
+offset_top = 45.0
+offset_right = 130.0
+offset_bottom = 72.0
+texture = ExtResource("13_jfxn6")
+expand_mode = 1
+
+[node name="Caldron3" type="TextureRect" parent="Strenght"]
+texture_filter = 1
+offset_left = 67.0
+offset_top = 128.0
+offset_right = 99.0
+offset_bottom = 155.0
+texture = ExtResource("13_jfxn6")
+expand_mode = 1
+
+[node name="Soon" type="Control" parent="." groups=["RecipesP2"]]
 visible = false
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -477.0
-offset_top = -342.275
-offset_right = 417.0
-offset_bottom = 206.725
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Soon"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 31.0
+offset_right = 137.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "CONTINUE
+RESEARCH"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TurnPages" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(160, 90)
+sprite_frames = SubResource("SpriteFrames_j1hwp")
+animation = &"turn"
+frame = 6
+frame_progress = 1.0
+
+[node name="ReturnTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -24.0
+offset_bottom = 23.0
+grow_horizontal = 0
+texture = ExtResource("30_eo3lq")
+expand_mode = 1
+
+[node name="ReturnButton" type="Button" parent="ReturnTexture"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_8pjvq")
-
-[node name="ReturnButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1699.0
-offset_top = 34.0
-offset_right = 1858.0
-offset_bottom = 114.0
-theme_override_font_sizes/font_size = 50
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
 text = "X"
+flat = true
+
+[node name="NextButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -40.0
+offset_right = -10.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = ">"
+flat = true
 
 [node name="PreviousButton" type="Button" parent="."]
 visible = false
@@ -69,30 +901,20 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 32.0
-offset_top = -40.0
-offset_right = 77.0
-offset_bottom = 40.0
+offset_left = 8.0
+offset_top = 50.0
+offset_right = 28.0
+offset_bottom = 86.0
 grow_vertical = 2
-theme_override_font_sizes/font_size = 50
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "<"
+flat = true
 
-[node name="NextButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -92.0
-offset_top = -40.0
-offset_right = -40.0
-offset_bottom = 40.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 50
-text = ">"
+[node name="PageSound" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/interactive sounds/book-scroll"
+event_guid = "{2ac57178-a090-4e47-991e-b10da3c9e409}"
 
-[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
-[connection signal="pressed" from="PreviousButton" to="." method="_on_previous_button_pressed"]
+[connection signal="pressed" from="ReturnTexture/ReturnButton" to="." method="_on_return_button_pressed"]
 [connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="PreviousButton" to="." method="_on_previous_button_pressed"]

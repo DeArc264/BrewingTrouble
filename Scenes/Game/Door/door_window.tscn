@@ -1,16 +1,320 @@
-[gd_scene load_steps=12 format=3 uid="uid://drlwsjlocg23c"]
+[gd_scene load_steps=49 format=3 uid="uid://drlwsjlocg23c"]
 
 [ext_resource type="Script" path="res://Scripts/requests.gd" id="1_142ph"]
-[ext_resource type="Texture2D" uid="uid://hjflcutwjdne" path="res://Assets/Faces/Shape/body1.png" id="2_8swew"]
-[ext_resource type="Texture2D" uid="uid://cr8f2qdu1vdxk" path="res://Assets/Faces/Ears/ears1.png" id="3_gk8ci"]
-[ext_resource type="Texture2D" uid="uid://b5qhrdn5mygo2" path="res://Assets/Faces/Eyes/eyes1.png" id="4_thxlf"]
-[ext_resource type="Texture2D" uid="uid://bm74ltq3cnlys" path="res://Assets/Faces/Eyebrows/eyebrow1.png" id="5_7gimj"]
-[ext_resource type="Texture2D" uid="uid://cwqn3j6vedqqb" path="res://Assets/Faces/Nose/nose1.png" id="6_l3ao0"]
-[ext_resource type="Texture2D" uid="uid://bdfyd71xh2c4o" path="res://Assets/Faces/Mouth/mouth1.png" id="7_0tp78"]
-[ext_resource type="Texture2D" uid="uid://dwua1lximywt" path="res://Assets/Faces/FacialHair/face_hair1.png" id="8_y136u"]
-[ext_resource type="Texture2D" uid="uid://d2tok3wx8on7l" path="res://Assets/Faces/Hair/hair1.png" id="9_eb5e1"]
+[ext_resource type="VideoStream" path="res://Assets/Animation/outside_bg.ogv" id="2_ww2mn"]
+[ext_resource type="Texture2D" uid="uid://dt37mxto3i2bh" path="res://Assets/Faces/Shape/Shape0/body1_1.png" id="3_m1yg2"]
+[ext_resource type="Texture2D" uid="uid://c786titepdg5e" path="res://Assets/Faces/Shape/Shape0/body1_2.png" id="4_qi6ec"]
+[ext_resource type="Texture2D" uid="uid://csa8r04t5c7w5" path="res://Assets/Faces/Shape/Shape1/body2_1.png" id="5_j4q17"]
+[ext_resource type="Texture2D" uid="uid://boicdjp1a50om" path="res://Assets/Faces/Shape/Shape1/body2_2.png" id="6_6pfbm"]
+[ext_resource type="Texture2D" uid="uid://u08cce613r2r" path="res://Assets/Faces/Shape/Shape2/body3_1.png" id="7_bna5w"]
+[ext_resource type="Texture2D" uid="uid://dma22xml6w2d3" path="res://Assets/Faces/Shape/Shape2/body3_2.png" id="8_452my"]
+[ext_resource type="Texture2D" uid="uid://di4v5a4ptjywt" path="res://Assets/Faces/Shape/Shape3/body4_1.png" id="9_3osvf"]
 [ext_resource type="Texture2D" uid="uid://dcb26yfy4r03q" path="res://Assets/Background/Door_Window/window_board.png" id="10_b237d"]
+[ext_resource type="Texture2D" uid="uid://bkx18781v2mm4" path="res://Assets/Faces/Shape/Shape3/body4_2.png" id="10_l2qn5"]
 [ext_resource type="Texture2D" uid="uid://d2i1edkgv10rb" path="res://Assets/Background/Door_Window/window_view.png" id="11_7o2pm"]
+[ext_resource type="Texture2D" uid="uid://bnbueuuit6hsy" path="res://Assets/Faces/Nose/Nose0/nose1_1.png" id="11_cyvq2"]
+[ext_resource type="Texture2D" uid="uid://b6oqjdyrihf78" path="res://Assets/Faces/Nose/Nose0/nose1_2.png" id="12_qa2kh"]
+[ext_resource type="Texture2D" uid="uid://djhdsqomcojqv" path="res://Assets/Faces/Nose/Nose1/nose2_1.png" id="13_fv6w3"]
+[ext_resource type="Texture2D" uid="uid://dx6knfmyk5mus" path="res://Assets/Faces/Nose/Nose1/nose2_2.png" id="14_441j3"]
+[ext_resource type="Texture2D" uid="uid://ce20nwy32egx2" path="res://Assets/Faces/Nose/Nose2/nose3_1.png" id="15_wfkk5"]
+[ext_resource type="Texture2D" uid="uid://d0dm5f0og1oad" path="res://Assets/Faces/Nose/Nose2/nose3_2.png" id="16_qr0ys"]
+[ext_resource type="Texture2D" uid="uid://1nwqr3q1wdi8" path="res://Assets/Faces/Nose/Nose3/nose4_1.png" id="17_72t0r"]
+[ext_resource type="Texture2D" uid="uid://dus8xybd3m53j" path="res://Assets/Faces/Nose/Nose3/nose4_2.png" id="18_o4eqy"]
+[ext_resource type="Texture2D" uid="uid://bkomnkweim0an" path="res://Assets/Faces/Mouth/Mouth0/mouth1_1.png" id="19_2rmh6"]
+[ext_resource type="Texture2D" uid="uid://d4jtwcuyjbhtd" path="res://Assets/Faces/Mouth/Mouth0/mouth1_2.png" id="20_i6v8d"]
+[ext_resource type="Texture2D" uid="uid://dy1mnqcrt35n" path="res://Assets/Faces/Mouth/Mouth1/mouth2_1.png" id="21_eipg3"]
+[ext_resource type="Texture2D" uid="uid://duvngik010kj7" path="res://Assets/Faces/Mouth/Mouth1/mouth2_2.png" id="22_di5ea"]
+[ext_resource type="Texture2D" uid="uid://bvk7le4pd6k1r" path="res://Assets/Faces/Mouth/Mouth2/mouth3_1.png" id="23_f7vos"]
+[ext_resource type="Texture2D" uid="uid://dxevbtynvoopb" path="res://Assets/Faces/Mouth/Mouth2/mouth3_2.png" id="24_m4l0a"]
+[ext_resource type="Texture2D" uid="uid://dagfhlmvpwste" path="res://Assets/Faces/Mouth/Mouth3/mouth4_1.png" id="25_mmqt7"]
+[ext_resource type="Texture2D" uid="uid://bj58qudpyilk3" path="res://Assets/Faces/Mouth/Mouth3/mouth4_2.png" id="26_kjxpw"]
+[ext_resource type="Texture2D" uid="uid://df22ksyv0ec3d" path="res://Assets/Faces/Hair/Hair0/hair1_1.png" id="27_ggof3"]
+[ext_resource type="Texture2D" uid="uid://btnbx4st1lpvi" path="res://Assets/Faces/Hair/Hair0/hair1_2.png" id="28_k0yes"]
+[ext_resource type="Texture2D" uid="uid://u6d6741j3f68" path="res://Assets/Faces/Hair/Hair1/hair2_1.png" id="29_a7sia"]
+[ext_resource type="Texture2D" uid="uid://be044or8q7trj" path="res://Assets/Faces/Hair/Hair1/hair2_2.png" id="30_ijrq8"]
+[ext_resource type="Texture2D" uid="uid://bfl6onlmvsa02" path="res://Assets/Faces/Hair/Hair2/hair3_1.png" id="31_0usj3"]
+[ext_resource type="Texture2D" uid="uid://txwr8ue3koba" path="res://Assets/Faces/Hair/Hair2/hair3_2.png" id="32_0q6ma"]
+[ext_resource type="Texture2D" uid="uid://01pk338ls5qw" path="res://Assets/Faces/Hair/Hair3/hair4_1.png" id="33_1uppw"]
+[ext_resource type="Texture2D" uid="uid://c33v68bvwfoyy" path="res://Assets/Faces/Eyes/Eyes0/eyes1_1.png" id="34_q5chc"]
+[ext_resource type="Texture2D" uid="uid://dsdvkhu8vaqc3" path="res://Assets/Faces/Eyes/Eyes0/eyes1_2.png" id="35_mbfih"]
+[ext_resource type="Texture2D" uid="uid://g5ddwv3seqbm" path="res://Assets/Faces/Eyes/Eyes1/eyes2_1.png" id="36_7lfti"]
+[ext_resource type="Texture2D" uid="uid://dmb8frpyllw8" path="res://Assets/Faces/Eyes/Eyes1/eyes2_2.png" id="37_keorv"]
+[ext_resource type="Texture2D" uid="uid://dpgip5xo477ee" path="res://Assets/Faces/Eyes/Eyes2/eyes3_1.png" id="38_nt1um"]
+[ext_resource type="Texture2D" uid="uid://1rww3gon6w2l" path="res://Assets/Faces/Eyes/Eyes2/eyes3_2.png" id="39_kiwyt"]
+[ext_resource type="Texture2D" uid="uid://e5df8xric5ki" path="res://Assets/Faces/Eyes/Eyes3/eyes4_1.png" id="40_fd2nk"]
+[ext_resource type="Texture2D" uid="uid://g4s4pgdxi28o" path="res://Assets/Faces/Eyes/Eyes3/eyes4_2.png" id="41_wevnb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dp1t4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_m1yg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qi6ec")
+}],
+"loop": true,
+"name": &"0",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_j4q17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6pfbm")
+}],
+"loop": true,
+"name": &"1",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_bna5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_452my")
+}],
+"loop": true,
+"name": &"2",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_3osvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_l2qn5")
+}],
+"loop": true,
+"name": &"3",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0oniw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_cyvq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qa2kh")
+}],
+"loop": true,
+"name": &"0",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_fv6w3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_441j3")
+}],
+"loop": true,
+"name": &"1",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_wfkk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_qr0ys")
+}],
+"loop": true,
+"name": &"2",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_72t0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_o4eqy")
+}],
+"loop": true,
+"name": &"3",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_psxnm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_2rmh6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_i6v8d")
+}],
+"loop": true,
+"name": &"0",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_eipg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_di5ea")
+}],
+"loop": true,
+"name": &"1",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_f7vos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_m4l0a")
+}],
+"loop": true,
+"name": &"2",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_mmqt7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_kjxpw")
+}],
+"loop": true,
+"name": &"3",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rby75"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_ggof3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_k0yes")
+}],
+"loop": true,
+"name": &"0",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_a7sia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ijrq8")
+}],
+"loop": true,
+"name": &"1",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_0usj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_0q6ma")
+}],
+"loop": true,
+"name": &"2",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_1uppw")
+}],
+"loop": false,
+"name": &"3",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4rbid"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_q5chc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_mbfih")
+}],
+"loop": true,
+"name": &"0",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_7lfti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_keorv")
+}],
+"loop": true,
+"name": &"1",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_nt1um")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_kiwyt")
+}],
+"loop": true,
+"name": &"2",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_fd2nk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_wevnb")
+}],
+"loop": true,
+"name": &"3",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="DoorWindow" type="Control"]
 layout_mode = 3
@@ -19,134 +323,41 @@ offset_right = 320.0
 offset_bottom = 181.0
 script = ExtResource("1_142ph")
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+[node name="OutsideVideo" type="VideoStreamPlayer" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+stream = ExtResource("2_ww2mn")
 
-[node name="Shape" type="TextureRect" parent="."]
+[node name="Shape" type="AnimatedSprite2D" parent="."]
 visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -160.0
-offset_top = -90.5
-offset_right = 160.0
-offset_bottom = 89.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_8swew")
+position = Vector2(161, 97)
+sprite_frames = SubResource("SpriteFrames_dp1t4")
+autoplay = "default"
 
-[node name="Ears" type="TextureRect" parent="Shape"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_gk8ci")
+[node name="Nose" type="AnimatedSprite2D" parent="Shape"]
+sprite_frames = SubResource("SpriteFrames_0oniw")
+animation = &"0"
+autoplay = "default"
 
-[node name="Eyes" type="TextureRect" parent="Shape"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_thxlf")
+[node name="Mouth" type="AnimatedSprite2D" parent="Shape"]
+sprite_frames = SubResource("SpriteFrames_psxnm")
+animation = &"3"
+autoplay = "default"
 
-[node name="Eyebrows" type="TextureRect" parent="Shape"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_7gimj")
+[node name="Hair" type="AnimatedSprite2D" parent="Shape"]
+sprite_frames = SubResource("SpriteFrames_rby75")
+animation = &"3"
+autoplay = "default"
 
-[node name="Nose" type="TextureRect" parent="Shape"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_l3ao0")
-
-[node name="Mouth" type="TextureRect" parent="Shape"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_0tp78")
-
-[node name="Facial_Hair" type="TextureRect" parent="Shape"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_y136u")
-
-[node name="Hair" type="TextureRect" parent="Shape"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -160.0
-offset_top = -90.0
-offset_right = 160.0
-offset_bottom = 90.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("9_eb5e1")
+[node name="Eyes" type="AnimatedSprite2D" parent="Shape"]
+sprite_frames = SubResource("SpriteFrames_4rbid")
+animation = &"3"
+autoplay = "default"
 
 [node name="Board" type="TextureRect" parent="."]
 layout_mode = 0
@@ -165,13 +376,4 @@ mouse_filter = 2
 texture = ExtResource("11_7o2pm")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 264.0
-offset_top = 85.0
-offset_right = 307.0
-offset_bottom = 116.0
-text = "New"
-
 [connection signal="gui_input" from="Board" to="." method="_drag_board"]
-[connection signal="pressed" from="Button" to="." method="new_client"]

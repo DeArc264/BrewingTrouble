@@ -1,20 +1,63 @@
-[gd_scene load_steps=21 format=3 uid="uid://cfvv7x84qgvlj"]
+[gd_scene load_steps=28 format=3 uid="uid://cfvv7x84qgvlj"]
 
 [ext_resource type="Script" path="res://Scripts/Scenes/hud.gd" id="1_kg5u5"]
+[ext_resource type="Texture2D" uid="uid://brtyuhbctsdp5" path="res://Assets/HUD/Buttons/button_icon1.png" id="2_dgjxk"]
 [ext_resource type="Script" path="res://Scripts/inventory.gd" id="2_wgqd0"]
 [ext_resource type="Texture2D" uid="uid://ct23iia7c4660" path="res://Assets/Animation/Scroll/scroll_0.png" id="2_xqdvs"]
+[ext_resource type="Texture2D" uid="uid://c5osd8tvuijhv" path="res://Assets/Animation/Coin/coin_anim_0.png" id="3_0yr0d"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="3_j28ob"]
 [ext_resource type="PackedScene" uid="uid://b0x2emaaeusk" path="res://Scenes/Game/HUD/store.tscn" id="4_7xrsr"]
-[ext_resource type="Texture2D" uid="uid://pojghji23m58" path="res://Assets/Other/Parchment.png" id="5_cqnup"]
+[ext_resource type="Texture2D" uid="uid://gonvx0aunbbs" path="res://Assets/Animation/Coin/coin_anim_1.png" id="4_k2fhd"]
+[ext_resource type="Texture2D" uid="uid://bfgyoygnbyp1b" path="res://Assets/Animation/Coin/coin_anim_2.png" id="5_wulem"]
+[ext_resource type="Texture2D" uid="uid://xsygy3gvv6hl" path="res://Assets/Animation/Coin/coin_anim_3.png" id="6_0k2yl"]
 [ext_resource type="Texture2D" uid="uid://bu76864p0a585" path="res://Assets/Animation/Scroll/scroll_5.png" id="7_66ur4"]
+[ext_resource type="Texture2D" uid="uid://ic1ftuvn437n" path="res://Assets/Animation/Coin/coin_anim_4.png" id="7_im62n"]
+[ext_resource type="Texture2D" uid="uid://cx7gp4lbcorrd" path="res://Assets/Animation/Coin/coin_anim_5.png" id="8_2sry8"]
 [ext_resource type="Texture2D" uid="uid://cye7u8kwrdak4" path="res://Assets/Animation/Scroll/scroll_6.png" id="8_8sv4h"]
+[ext_resource type="Texture2D" uid="uid://8bbefn4imx02" path="res://Assets/Icons/Coin/COIN.png" id="9_innoi"]
 [ext_resource type="Texture2D" uid="uid://cf5eofm0agcpn" path="res://Assets/Animation/Scroll/scroll_1.png" id="10_qntnh"]
-[ext_resource type="Resource" uid="uid://blob2sv1svnds" path="res://Resources/Ingredients/Base/Water.tres" id="11_mhika"]
 [ext_resource type="Texture2D" uid="uid://kohn1dyjsut0" path="res://Assets/Animation/Scroll/scroll_2.png" id="11_s7w1n"]
 [ext_resource type="Texture2D" uid="uid://d31odhymcdcdi" path="res://Assets/Animation/Scroll/scroll_3.png" id="12_572ou"]
-[ext_resource type="Resource" uid="uid://qlwtsvivu18e" path="res://Resources/Ingredients/Plant/Belladona.tres" id="12_od5qw"]
 [ext_resource type="Texture2D" uid="uid://c36w1sg33okdb" path="res://Assets/Animation/Scroll/scroll_4.png" id="13_itdvl"]
-[ext_resource type="Resource" uid="uid://dhts2fo8ey7tg" path="res://Resources/Ingredients/Plant/Berries.tres" id="13_qaqot"]
+[ext_resource type="Texture2D" uid="uid://cskhejvlykdot" path="res://Assets/HUD/Buttons/button_icon2.png" id="21_ubmo4"]
+[ext_resource type="Texture2D" uid="uid://b8osgmm13c6ou" path="res://Assets/Icons/Potions/Flask_A/flask_a_heal.png" id="22_2gg4t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d22q7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0yr0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k2fhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wulem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0k2yl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_im62n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2sry8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0yr0d")
+}],
+"loop": false,
+"name": &"add",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0yr0d")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7udqd"]
 animations = [{
@@ -58,56 +101,69 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("OrderNote:position")
+tracks/0/path = NodePath("CoinPaper:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(30, 1026)]
+"values": [Vector2(321, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OrdersNote:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 60)]
 }
 
-[sub_resource type="Animation" id="Animation_b4r8f"]
-resource_name = "order_go_down"
+[sub_resource type="Animation" id="Animation_1hp1u"]
+resource_name = "coin"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("OrderNote:position")
+tracks/0/path = NodePath("CoinPaper:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(30, 866), Vector2(30, 1026)]
+"values": [Vector2(321, 3), Vector2(217, 3)]
 }
 
 [sub_resource type="Animation" id="Animation_umhoq"]
-resource_name = "order_go_up"
+resource_name = "note"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("OrderNote:position")
+tracks/0/path = NodePath("OrdersNote:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(30, 1026), Vector2(30, 866)]
+"values": [Vector2(0, 60), Vector2(30, 60)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vyxgj"]
 _data = {
 "RESET": SubResource("Animation_h7dlr"),
-"order_go_down": SubResource("Animation_b4r8f"),
-"order_go_up": SubResource("Animation_umhoq")
+"coin": SubResource("Animation_1hp1u"),
+"note": SubResource("Animation_umhoq")
 }
 
 [node name="HUD" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -116,21 +172,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_kg5u5")
-
-[node name="CoinLabel" type="Label" parent="."]
-visible = false
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -67.0
-offset_top = 4.0
-offset_right = -6.0
-offset_bottom = 27.0
-grow_horizontal = 0
-text = "Coins: 0"
-vertical_alignment = 1
 
 [node name="TimeLabel" type="Label" parent="."]
 visible = false
@@ -145,6 +186,44 @@ offset_right = -24.0
 offset_bottom = 49.0
 grow_horizontal = 0
 text = "Time:"
+vertical_alignment = 1
+
+[node name="CoinPaper" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 98.0
+offset_bottom = 43.0
+grow_horizontal = 0
+texture = ExtResource("2_dgjxk")
+expand_mode = 1
+
+[node name="Coin" type="AnimatedSprite2D" parent="CoinPaper"]
+position = Vector2(24, 17)
+sprite_frames = SubResource("SpriteFrames_d22q7")
+animation = &"add"
+autoplay = "default"
+frame = 6
+frame_progress = 1.0
+
+[node name="CoinLabel" type="Label" parent="CoinPaper"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.5
+offset_right = 40.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+"
 vertical_alignment = 1
 
 [node name="Scroll" type="AnimatedSprite2D" parent="."]
@@ -166,19 +245,16 @@ script = ExtResource("2_wgqd0")
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 1
-item = ExtResource("11_mhika")
 
 [node name="Slot2" parent="Scroll/Hands" instance=ExtResource("3_j28ob")]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 1
-item = ExtResource("12_od5qw")
 
 [node name="Slot3" parent="Scroll/Hands" instance=ExtResource("3_j28ob")]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 1
-item = ExtResource("13_qaqot")
 
 [node name="HandButton" type="Button" parent="."]
 layout_mode = 0
@@ -188,91 +264,104 @@ offset_right = 15.0
 offset_bottom = 46.0
 flat = true
 
+[node name="OrdersNote" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -30.0
+offset_right = 90.0
+offset_bottom = -2.0
+grow_vertical = 2
+rotation = 1.5708
+texture = ExtResource("2_dgjxk")
+expand_mode = 1
+
+[node name="OrdersPull" type="TextureRect" parent="OrdersNote"]
+show_behind_parent = true
+layout_mode = 1
+offset_left = 1.0
+offset_top = -6.0
+offset_right = 16.0
+offset_bottom = 8.0
+texture = ExtResource("21_ubmo4")
+expand_mode = 1
+
+[node name="NotesButton" type="Button" parent="OrdersNote/OrdersPull"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OrdersNote"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 24.0
+offset_right = -65.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5708
+
+[node name="Order1" type="TextureRect" parent="OrdersNote/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("22_2gg4t")
+
+[node name="Order2" type="TextureRect" parent="OrdersNote/VBoxContainer"]
+layout_mode = 2
+
+[node name="Order3" type="TextureRect" parent="OrdersNote/VBoxContainer"]
+layout_mode = 2
+
 [node name="Store" parent="." instance=ExtResource("4_7xrsr")]
 visible = false
 layout_mode = 1
 
-[node name="PayLabel" type="Label" parent="."]
+[node name="Coin" type="TextureRect" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 20.0
-offset_top = 17.0
-offset_right = 283.0
-offset_bottom = 59.0
-theme_override_font_sizes/font_size = 30
-text = "I can´t afford that"
+offset_left = 19.0
+offset_top = 8.0
+offset_right = 38.0
+offset_bottom = 27.0
+texture = ExtResource("9_innoi")
 
-[node name="OrderNote" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 30.0
-offset_top = 846.0
-offset_right = 132.0
-offset_bottom = 916.0
-grow_vertical = 0
-color = Color(0.73303, 0.444622, 0.194185, 1)
-
-[node name="OrderLabel" type="Label" parent="OrderNote"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -21.0
-offset_top = -11.5
-offset_right = 21.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "None"
-
-[node name="Detail" type="ColorRect" parent="OrderNote"]
+[node name="GoldLabel" type="Label" parent="Coin"]
 layout_mode = 0
-offset_right = 102.0
-offset_bottom = 20.0
-mouse_filter = 2
-color = Color(0.582191, 0.343159, 0.136624, 1)
+offset_left = 24.0
+offset_right = 41.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "999"
 
-[node name="Label" type="Label" parent="OrderNote/Detail"]
+[node name="PayLabel" type="Label" parent="."]
+visible = false
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -22.0
-offset_top = -12.5
-offset_right = 22.0
-offset_bottom = 10.5
+anchor_bottom = 1.0
+offset_left = -66.0
+offset_top = -20.0
+offset_right = 66.0
+offset_bottom = 8.0
 grow_horizontal = 2
-grow_vertical = 2
-text = "NOTE"
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "I can´t afford that"
 
 [node name="DayTimer" type="Timer" parent="."]
 wait_time = 300.0
 one_shot = true
-
-[node name="Helper" type="Sprite2D" parent="."]
-visible = false
-scale = Vector2(0.504934, 0.504934)
-texture = ExtResource("5_cqnup")
-centered = false
-
-[node name="HelperLabel" type="Label" parent="Helper"]
-offset_left = 65.0
-offset_top = 230.0
-offset_right = 535.0
-offset_bottom = 710.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-text = "Click to raise fire and boil liquid
-
-NOTE: The fire goes out with time"
-horizontal_alignment = 1
-autowrap_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -281,6 +370,6 @@ libraries = {
 
 [connection signal="new_day" from="." to="Store" method="set_prices"]
 [connection signal="pressed" from="HandButton" to="." method="show_hands"]
+[connection signal="pressed" from="OrdersNote/OrdersPull/NotesButton" to="." method="show_notes"]
 [connection signal="send" from="Store" to="." method="buy_stuff"]
-[connection signal="mouse_exited" from="OrderNote" to="." method="_hide_HUD_piece" binds= ["order"]]
 [connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]

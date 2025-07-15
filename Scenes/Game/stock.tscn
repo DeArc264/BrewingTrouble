@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://c1p1lg8vh5nr8"]
+[gd_scene load_steps=49 format=3 uid="uid://c1p1lg8vh5nr8"]
 
 [ext_resource type="Script" path="res://Scripts/Scenes/stock.gd" id="1_p2uxu"]
 [ext_resource type="Texture2D" uid="uid://c8oe86ik5v73f" path="res://Assets/Stock/stock_bg.png" id="2_d4nrd"]
@@ -47,6 +47,7 @@
 [ext_resource type="Texture2D" uid="uid://cyge8gbt1psp3" path="res://Assets/Stock/ginger_half.png" id="36_0xhi1"]
 [ext_resource type="Texture2D" uid="uid://cnph0u2nm5vk2" path="res://Assets/Stock/lavander_half.png" id="43_a84fx"]
 [ext_resource type="Texture2D" uid="uid://b6gnded2e2r4u" path="res://Assets/Stock/belladona_half.png" id="47_02rir"]
+[ext_resource type="Texture2D" uid="uid://cskhejvlykdot" path="res://Assets/HUD/Buttons/button_icon2.png" id="48_tcbwq"]
 
 [node name="Stock" type="Control"]
 texture_filter = 1
@@ -73,33 +74,6 @@ offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_d4nrd")
-
-[node name="MoveLeft_Stock" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -11.0
-offset_right = 14.0
-offset_bottom = 11.0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 10
-text = "<"
-
-[node name="MoveRight_Stock" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -14.0
-offset_top = -11.0
-offset_bottom = 11.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 10
-text = ">"
 
 [node name="Flavor" type="Label" parent="."]
 layout_mode = 1
@@ -411,8 +385,59 @@ script = ExtResource("5_1042u")
 normal_icon = ExtResource("32_htiv4")
 half_icon = ExtResource("47_02rir")
 
-[connection signal="pressed" from="MoveLeft_Stock" to="." method="_on_move_left_stock_pressed"]
-[connection signal="pressed" from="MoveRight_Stock" to="." method="_on_move_right_stock_pressed"]
+[node name="RightButton" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = -8.0
+offset_bottom = -9.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("48_tcbwq")
+expand_mode = 1
+
+[node name="MoveRight_Stock" type="Button" parent="RightButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = ">"
+flat = true
+
+[node name="LeftButton" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -30.0
+offset_right = 32.0
+offset_bottom = -9.0
+grow_vertical = 0
+texture = ExtResource("48_tcbwq")
+expand_mode = 1
+
+[node name="MoveLeft_Stock" type="Button" parent="LeftButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "<"
+flat = true
+
 [connection signal="pressed" from="base_0" to="." method="_pick_up" binds= ["base_0"]]
 [connection signal="pressed" from="base_1" to="." method="_pick_up" binds= ["base_1"]]
 [connection signal="pressed" from="base_2" to="." method="_pick_up" binds= ["base_2"]]
@@ -423,3 +448,5 @@ half_icon = ExtResource("47_02rir")
 [connection signal="pressed" from="plant_1" to="." method="_pick_up" binds= ["plant_1"]]
 [connection signal="pressed" from="plant_2" to="." method="_pick_up" binds= ["plant_2"]]
 [connection signal="pressed" from="plant_0" to="." method="_pick_up" binds= ["plant_0"]]
+[connection signal="pressed" from="RightButton/MoveRight_Stock" to="." method="_on_move_right_stock_pressed"]
+[connection signal="pressed" from="LeftButton/MoveLeft_Stock" to="." method="_on_move_left_stock_pressed"]

@@ -34,8 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://be4wj3c2dxqvl" path="res://Assets/Animation/Hourglass/hourglass_turn1.png" id="20_mhacd"]
 [ext_resource type="Texture2D" uid="uid://cujosn85kbcix" path="res://Assets/Animation/Hourglass/hourglass_turn2.png" id="21_ro1gc"]
 [ext_resource type="Texture2D" uid="uid://c6prxirhl4s1n" path="res://Assets/Animation/Hourglass/hourglass_turn3.png" id="22_yrswd"]
-[ext_resource type="PackedScene" uid="uid://cfvv7x84qgvlj" path="res://Scenes/Game/HUD/hud.tscn" id="24_esyk5"]
-[ext_resource type="Resource" uid="uid://dqfq5vk43r08" path="res://Resources/Ingredients/Flasks/Empty_Flask_A.tres" id="24_lcj71"]
+[ext_resource type="BitMap" uid="uid://dpiqivub3e6bt" path="res://Assets/Bitmaps/table_book.bmp" id="24_kfcoa"]
 [ext_resource type="Texture2D" uid="uid://cm6gwhkgxohvh" path="res://Assets/Animation/Smoke/boil_smoke1.png" id="24_vcu5j"]
 [ext_resource type="Texture2D" uid="uid://c3et3r3dhgy0y" path="res://Assets/Animation/Embers/ember0.png" id="25_q6agj"]
 [ext_resource type="Texture2D" uid="uid://k5cy1gnj45uh" path="res://Assets/Animation/Smoke/boil_smoke2.png" id="25_vlo8v"]
@@ -65,6 +64,7 @@
 [ext_resource type="Texture2D" uid="uid://k5wu1gilq65f" path="res://Assets/Animation/Bellows/bellows0.png" id="56_7eaft"]
 [ext_resource type="Texture2D" uid="uid://cr38l0ibtxqvp" path="res://Assets/Animation/Bellows/bellows1.png" id="57_4fook"]
 [ext_resource type="Texture2D" uid="uid://cqtt2cuhg7lfp" path="res://Assets/Animation/Bellows/bellows2.png" id="58_q2l7m"]
+[ext_resource type="Texture2D" uid="uid://cskhejvlykdot" path="res://Assets/HUD/Buttons/button_icon2.png" id="65_y3pvq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_spoof"]
 animations = [{
@@ -311,6 +311,7 @@ animations = [{
 }]
 
 [node name="Table" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -358,14 +359,15 @@ grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
-[node name="BookImg" type="TextureRect" parent="."]
+[node name="BookButton" type="TextureButton" parent="."]
 texture_filter = 1
 layout_mode = 0
 offset_left = 16.0
 offset_top = 56.0
 offset_right = 140.0
 offset_bottom = 128.0
-texture = ExtResource("15_7uukh")
+texture_normal = ExtResource("15_7uukh")
+texture_click_mask = ExtResource("24_kfcoa")
 
 [node name="Smoke" type="AnimatedSprite2D" parent="."]
 position = Vector2(160, 74)
@@ -463,10 +465,6 @@ metadata/_edit_horizontal_guides_ = [25.0]
 [node name="Book" parent="." instance=ExtResource("10_irqxx")]
 visible = false
 layout_mode = 1
-offset_left = 176.0
-offset_top = 88.0
-offset_right = 176.0
-offset_bottom = 88.0
 
 [node name="Cutter" parent="." instance=ExtResource("11_60dht")]
 visible = false
@@ -485,34 +483,58 @@ anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="MoveLeft_Table" type="Button" parent="."]
-visible = false
+[node name="RightButton" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 8.0
-offset_top = -71.5
-offset_right = 26.0
-offset_bottom = -40.5
-grow_vertical = 2
-text = "<"
-
-[node name="MoveRight_Table" type="Button" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 6
+anchors_preset = 3
 anchor_left = 1.0
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -26.0
-offset_top = -71.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -30.0
 offset_right = -8.0
-offset_bottom = -40.5
+offset_bottom = -9.0
 grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("65_y3pvq")
+expand_mode = 1
+
+[node name="MoveRight_Table" type="Button" parent="RightButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 text = ">"
+flat = true
+
+[node name="LeftButton" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -30.0
+offset_right = 32.0
+offset_bottom = -9.0
+grow_vertical = 0
+texture = ExtResource("65_y3pvq")
+expand_mode = 1
+
+[node name="MoveLeft_Table" type="Button" parent="LeftButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "<"
+flat = true
 
 [node name="BoilTimer" type="Timer" parent="."]
 wait_time = 11.0
@@ -532,9 +554,6 @@ wait_time = 10.0
 wait_time = 5.0
 one_shot = true
 
-[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-bank_paths = ["res://Assets/Audio/fmodbanks/Desktop/Master.bank"]
-
 [node name="Fire" type="FmodEventEmitter2D" parent="."]
 event_name = "event:/amb/fireplace"
 event_guid = "{408b6bb6-ef8b-4de5-9491-f545841b8418}"
@@ -543,25 +562,11 @@ event_guid = "{408b6bb6-ef8b-4de5-9491-f545841b8418}"
 event_name = "event:/games/bubbling_cauldron"
 event_guid = "{a0f38773-673d-4cd3-ae12-228b7501cc84}"
 
-[node name="HUD" parent="." instance=ExtResource("24_esyk5")]
-visible = false
-layout_mode = 1
-
-[node name="Slot" parent="." instance=ExtResource("2_gvcte")]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -10.0
-offset_bottom = 0.0
-grow_vertical = 0
-item = ExtResource("24_lcj71")
-
-[connection signal="new_item" from="." to="HUD" method="_get_item"]
 [connection signal="new_ing" from="DryNet" to="." method="update_item"]
 [connection signal="mouse_entered" from="Hourglass/TurnHourglass" to="." method="show_help" binds= ["hour"]]
 [connection signal="mouse_exited" from="Hourglass/TurnHourglass" to="." method="hide_help"]
 [connection signal="pressed" from="Hourglass/TurnHourglass" to="." method="_on_turn_hourglass_pressed"]
+[connection signal="pressed" from="BookButton" to="." method="_on_book_button_pressed"]
 [connection signal="pressed" from="BoardButton" to="." method="_on_board_clicked"]
 [connection signal="pressed" from="MortarButton" to="." method="_on_mortar_clicked"]
 [connection signal="dropped" from="CaldronSlot" to="." method="_on_caldron_slot_dropped"]
@@ -578,8 +583,8 @@ item = ExtResource("24_lcj71")
 [connection signal="modified_ing" from="Mortar" to="." method="update_item"]
 [connection signal="modified_ing" from="Cutter" to="." method="update_item"]
 [connection signal="mixed" from="Caldron" to="." method="_on_caldron_mixed"]
-[connection signal="pressed" from="MoveLeft_Table" to="." method="_on_move_left_table_pressed"]
-[connection signal="pressed" from="MoveRight_Table" to="." method="_on_move_right_table_pressed"]
+[connection signal="pressed" from="RightButton/MoveRight_Table" to="." method="_on_move_right_table_pressed"]
+[connection signal="pressed" from="LeftButton/MoveLeft_Table" to="." method="_on_move_left_table_pressed"]
 [connection signal="timeout" from="BoilTimer" to="." method="_on_boil_timer_timeout"]
 [connection signal="timeout" from="HourglassTimer" to="." method="_on_hourglass_timer_timeout"]
 [connection signal="timeout" from="ING1BoilTimer" to="." method="ing_1_boil_round"]

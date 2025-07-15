@@ -88,6 +88,7 @@ mouse_filter = 2
 texture = ExtResource("3_yjoex")
 
 [node name="PlantPot" parent="." instance=ExtResource("4_fd8bi")]
+visible = false
 layout_mode = 0
 offset_left = 164.0
 offset_top = 148.0
@@ -95,6 +96,7 @@ offset_right = 200.0
 offset_bottom = 176.0
 
 [node name="PlantPot2" parent="." instance=ExtResource("4_fd8bi")]
+visible = false
 layout_mode = 0
 offset_left = 209.0
 offset_top = 148.0
@@ -102,6 +104,7 @@ offset_right = 245.0
 offset_bottom = 176.0
 
 [node name="PlantPot3" parent="." instance=ExtResource("4_fd8bi")]
+visible = false
 layout_mode = 0
 offset_left = 253.0
 offset_top = 148.0

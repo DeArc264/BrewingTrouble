@@ -30,6 +30,7 @@ var img_dict = {
 func _cut(area: Area2D) -> void:
 	if area.name == "KnifeArea":
 		$Cut.play()
+		$Particles.play("default")
 		increase_progress()
 
 		if progress >= 1.0:

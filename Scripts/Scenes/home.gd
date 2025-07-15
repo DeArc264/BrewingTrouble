@@ -3,12 +3,11 @@ extends Control
 @export var steps : Array[AudioStreamWAV]
 
 func _ready():
-	$Events.show()
-	$Door.hide()
+	$Door.show()
 	$Stock.hide()
-	$Table.show()
+	$Table.hide()
 	$HUD.show()
-	$BGMusic.play()
+	#$BGMusic.play()
 
 
 func to_table():
