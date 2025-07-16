@@ -43,34 +43,13 @@ func new_request():
 	$Knocking.play()
 	client_at_door = true
 	client_signal.emit()
+	$DeliveryBoxBG.show()
 
 	for i in range(temp_rand):
 		curr_order.append(possible_orders.pick_random())
 
 	$PatienceTimer.start(120 * temp_rand)
 	$SpeachTexture/ClientLabel.text = dia.phrase_constructor(curr_order)
-
-
-func deliver():
-	if not client_at_door:
-		$SpeachTexture/ClientLabel.text = dia.none_at_door.pick_random()
-		await get_tree().create_timer(3).timeout
-		$SpeachTexture/ClientLabel.text = ""
-		return
-
-	for slot in delivery_node.get_children():
-		if slot.item == null : break
-		if slot.item.state == "Wasted":
-			$SpeachTexture/ClientLabel.text = dia.reject_potion.pick_random()
-			$MaleReject.play()
-			await get_tree().create_timer(3).timeout
-			$SpeachTexture/ClientLabel.text = ""
-			return
-		else:
-			for item in curr_order:
-				if item.id == slot.item.id:
-					curr_order.erase(item)
-					sell_potion(slot.item.state)
 
 
 func sell_potion(potion_state : String):
@@ -130,8 +109,25 @@ func _on_move_right_door_pressed() -> void:
 
 
 func _on_delivery_button_pressed() -> void:
-	$DeliveryBoxBG.visible = !$DeliveryBoxBG.visible
+	if not client_at_door:
+		$SpeachTexture/ClientLabel.text = dia.none_at_door.pick_random()
+		await get_tree().create_timer(3).timeout
+		$SpeachTexture/ClientLabel.text = ""
+		return
 
-	if $DeliveryBoxBG.hidden:
-		deliver()
+	for slot in delivery_node.get_children():
+		if slot.item == null : break
+		if slot.item.state == "Wasted":
+			$SpeachTexture/ClientLabel.text = dia.reject_potion.pick_random()
+			$MaleReject.play()
+			await get_tree().create_timer(3).timeout
+			$SpeachTexture/ClientLabel.text = ""
+			$DeliveryButton.show()
+			return
+		else:
+			for item in curr_order:
+				if item.id == slot.item.id:
+					curr_order.erase(item)
+					sell_potion(slot.item.state)
+			$DeliveryButton.show()
 #endregion

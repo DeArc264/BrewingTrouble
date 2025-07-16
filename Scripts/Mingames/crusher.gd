@@ -66,4 +66,5 @@ func _on_button_pressed() -> void:
 
 
 func reset():
+	$Slot.empty()
 	$Pebble.position = Vector2(290, 10)

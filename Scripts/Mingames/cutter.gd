@@ -64,4 +64,5 @@ func _on_end_button_pressed() -> void:
 
 
 func reset():
+	$Slot.empty()
 	$Knife.position = Vector2(130, 10)

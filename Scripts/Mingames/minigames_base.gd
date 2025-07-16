@@ -66,9 +66,12 @@ func change_icon(arr : Array):
 	else:
 		element.get_parent().texture = arr[0]
 
+	element.get_parent().show()
+
 
 func end_minigame():
 	hide()
+	element.get_parent().hide()
 	element.monitoring = false
 	dirt.monitoring = false
 	end_button.hide()

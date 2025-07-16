@@ -1,17 +1,26 @@
-[gd_scene load_steps=13 format=3 uid="uid://b0x2emaaeusk"]
+[gd_scene load_steps=22 format=3 uid="uid://b0x2emaaeusk"]
 
 [ext_resource type="Script" path="res://Scripts/store.gd" id="1_due8k"]
 [ext_resource type="Texture2D" uid="uid://k3lyplcc2inn" path="res://Assets/Other/Store.png" id="2_0xya1"]
 [ext_resource type="Texture2D" uid="uid://c4ldg8pmch0jl" path="res://Assets/Store/Bases/store_water.png" id="3_62l58"]
 [ext_resource type="Texture2D" uid="uid://mv5hvdd5e4es" path="res://Assets/Store/Bases/store_milk.png" id="4_4fyfd"]
+[ext_resource type="Texture2D" uid="uid://dgojgli4kn32f" path="res://Assets/Store/Disabled/store_disabled_water.png" id="4_rgq43"]
 [ext_resource type="Texture2D" uid="uid://bd80h8vrbvil1" path="res://Assets/Store/Bases/store_wine.png" id="5_0ibuc"]
+[ext_resource type="Texture2D" uid="uid://dqri2otfektfi" path="res://Assets/Store/Disabled/store_disabled_milk.png" id="6_saibl"]
 [ext_resource type="Texture2D" uid="uid://cskhejvlykdot" path="res://Assets/HUD/Buttons/button_icon2.png" id="6_ugvq1"]
 [ext_resource type="Texture2D" uid="uid://cnx7k6iprjb22" path="res://Assets/Store/Plants/store_belladonna.png" id="7_p6mg8"]
+[ext_resource type="Texture2D" uid="uid://cm0rjqr0i7xai" path="res://Assets/Store/Disabled/store_disabled_wine.png" id="8_hbgsr"]
 [ext_resource type="Texture2D" uid="uid://cgcac1jl5n758" path="res://Assets/Store/Plants/store_berries.png" id="8_i7y57"]
 [ext_resource type="Texture2D" uid="uid://da2du605p2ii" path="res://Assets/Store/Plants/store_lavender.png" id="9_fe15k"]
 [ext_resource type="Texture2D" uid="uid://cr2m2q8oe461q" path="res://Assets/Store/Ores/store_gold.png" id="10_bx7ih"]
 [ext_resource type="Texture2D" uid="uid://rebip1180taw" path="res://Assets/Store/Ores/store_sulfur.png" id="11_hqv15"]
+[ext_resource type="Texture2D" uid="uid://cios4nxm85r5y" path="res://Assets/Store/Disabled/store_disabled_belladona.png" id="11_ps8sq"]
 [ext_resource type="Texture2D" uid="uid://d1qdbb2mvc1tu" path="res://Assets/Store/Ores/store_coal.png" id="12_ko1ee"]
+[ext_resource type="Texture2D" uid="uid://cexfclv5r8g7e" path="res://Assets/Store/Disabled/store_disabled_berries.png" id="13_4iehm"]
+[ext_resource type="Texture2D" uid="uid://dujk2j0ke5euk" path="res://Assets/Store/Disabled/store_disabled_lavender.png" id="15_eckwe"]
+[ext_resource type="Texture2D" uid="uid://b4r27gog7hawv" path="res://Assets/Store/Disabled/store_disabled_gold.png" id="17_5qmbp"]
+[ext_resource type="Texture2D" uid="uid://blj0jilg5d1jf" path="res://Assets/Store/Disabled/store_disabled_sulfur.png" id="19_fxmay"]
+[ext_resource type="Texture2D" uid="uid://cat1spglvkf4d" path="res://Assets/Store/Disabled/store_disabled_coal.png" id="21_3owvq"]
 
 [node name="Store" type="Control"]
 texture_filter = 1
@@ -58,6 +67,7 @@ custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("3_62l58")
+texture_disabled = ExtResource("4_rgq43")
 
 [node name="Water" type="Label" parent="Bases/BuyWater"]
 texture_filter = 1
@@ -81,6 +91,7 @@ custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("4_4fyfd")
+texture_disabled = ExtResource("6_saibl")
 
 [node name="Milk" type="Label" parent="Bases/BuyMilk"]
 texture_filter = 1
@@ -103,6 +114,7 @@ custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("5_0ibuc")
+texture_disabled = ExtResource("8_hbgsr")
 
 [node name="Wine" type="Label" parent="Bases/BuyWine"]
 layout_mode = 2
@@ -173,6 +185,7 @@ custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("7_p6mg8")
+texture_disabled = ExtResource("11_ps8sq")
 
 [node name="Belladona" type="Label" parent="Plants/BuyBelladona"]
 texture_filter = 1
@@ -196,6 +209,7 @@ custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("8_i7y57")
+texture_disabled = ExtResource("13_4iehm")
 
 [node name="Berries" type="Label" parent="Plants/BuyBerries"]
 texture_filter = 1
@@ -218,6 +232,7 @@ custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 texture_normal = ExtResource("9_fe15k")
+texture_disabled = ExtResource("15_eckwe")
 
 [node name="Lavender" type="Label" parent="Plants/BuyLavender"]
 layout_mode = 2
@@ -319,7 +334,9 @@ texture_filter = 1
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 texture_normal = ExtResource("10_bx7ih")
+texture_disabled = ExtResource("17_5qmbp")
 
 [node name="Gold" type="Label" parent="Ores/BuyGold"]
 texture_filter = 1
@@ -342,7 +359,9 @@ texture_filter = 1
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 texture_normal = ExtResource("11_hqv15")
+texture_disabled = ExtResource("19_fxmay")
 
 [node name="Sulfur" type="Label" parent="Ores/BuySulfur"]
 texture_filter = 1
@@ -364,7 +383,9 @@ texture_filter = 1
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 texture_normal = ExtResource("12_ko1ee")
+texture_disabled = ExtResource("21_3owvq")
 
 [node name="Coal" type="Label" parent="Ores/BuyCoal"]
 layout_mode = 2

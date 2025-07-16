@@ -17,10 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://cku7hnkkp1xl0" path="res://Assets/Icons/Ingredients/Normal/Bases/icon_water.png" id="10_evorg"]
 [ext_resource type="Texture2D" uid="uid://cfwa6djqrkgxm" path="res://Assets/Icons/Ingredients/Normal/Plants/icon_belladona.png" id="11_rypsa"]
 [ext_resource type="Texture2D" uid="uid://dlvx0ul7b4ski" path="res://Assets/Icons/Ingredients/Normal/Plants/icon_berries.png" id="12_0dani"]
+[ext_resource type="Texture2D" uid="uid://blhlx6qs4iy2j" path="res://Assets/Icons/Ingredients/Cut/icon_cut_belladona.png" id="12_0qoo0"]
 [ext_resource type="Texture2D" uid="uid://syygt5ej8krj" path="res://Assets/Table/caldron_table.png" id="13_jfxn6"]
+[ext_resource type="Texture2D" uid="uid://c8l34x0behg1p" path="res://Assets/Icons/Ingredients/Normal/Ores/icon_gold.png" id="13_xms7m"]
 [ext_resource type="Texture2D" uid="uid://ctqo4nekowlo3" path="res://Assets/Icons/Potions/Flask_A/flask_a_empty.png" id="14_iim05"]
-[ext_resource type="Texture2D" uid="uid://dw6l42km7ua05" path="res://Assets/Icons/Potions/Flask_B/flask_b_empty.png" id="15_i1qoi"]
-[ext_resource type="Texture2D" uid="uid://b7grbnau3edmo" path="res://Assets/Icons/Potions/Flask_C/flask_c_empty.png" id="16_2gjte"]
 [ext_resource type="Texture2D" uid="uid://cm58rq5n700yc" path="res://Assets/Icons/Potions/Flask_C/flask_c_stamina.png" id="17_mqmuh"]
 [ext_resource type="Texture2D" uid="uid://bsm4qeqn0oo0g" path="res://Assets/Icons/Ingredients/Normal/Bases/icon_milk.png" id="18_sk0yj"]
 [ext_resource type="Texture2D" uid="uid://dxy0fd0bocqn0" path="res://Assets/Icons/Ingredients/Normal/Plants/icon_lavander.png" id="19_wjnlw"]
@@ -92,6 +92,7 @@ texture = ExtResource("3_x6d5r")
 stretch_mode = 2
 
 [node name="Tools" type="Control" parent="." groups=["ToolsP1"]]
+visible = false
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 0
@@ -237,9 +238,9 @@ text = "---->"
 texture_filter = 1
 layout_mode = 0
 offset_left = 49.0
-offset_top = 88.0
-offset_right = 69.0
-offset_bottom = 102.0
+offset_top = 115.0
+offset_right = 113.0
+offset_bottom = 129.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 10
 text = "------------------>"
@@ -248,9 +249,9 @@ text = "------------------>"
 texture_filter = 1
 layout_mode = 0
 offset_left = 46.0
-offset_top = 108.0
+offset_top = 79.0
 offset_right = 66.0
-offset_bottom = 122.0
+offset_bottom = 93.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 10
 text = "---->"
@@ -259,9 +260,9 @@ text = "---->"
 texture_filter = 1
 layout_mode = 0
 offset_left = 94.0
-offset_top = 108.0
+offset_top = 79.0
 offset_right = 114.0
-offset_bottom = 122.0
+offset_bottom = 93.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 10
 text = "---->"
@@ -269,10 +270,10 @@ text = "---->"
 [node name="MIX" type="Label" parent="Healing"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 89.0
-offset_top = 99.0
-offset_right = 109.0
-offset_bottom = 113.0
+offset_left = 72.0
+offset_top = 104.0
+offset_right = 92.0
+offset_bottom = 118.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 10
 text = "MIX"
@@ -312,19 +313,39 @@ stretch_mode = 2
 texture_filter = 1
 layout_mode = 0
 offset_left = 23.0
-offset_top = 79.0
+offset_top = 74.0
 offset_right = 43.0
-offset_bottom = 99.0
+offset_bottom = 94.0
 texture = ExtResource("11_rypsa")
+stretch_mode = 2
+
+[node name="Ingredient3" type="TextureRect" parent="Healing"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 117.0
+offset_top = 74.0
+offset_right = 137.0
+offset_bottom = 94.0
+texture = ExtResource("12_0qoo0")
+stretch_mode = 2
+
+[node name="Ingredient4" type="TextureRect" parent="Healing"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 23.0
+offset_top = 104.0
+offset_right = 43.0
+offset_bottom = 124.0
+texture = ExtResource("12_0qoo0")
 stretch_mode = 2
 
 [node name="Cut" type="TextureRect" parent="Healing"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 66.0
-offset_top = 111.0
+offset_top = 82.0
 offset_right = 92.0
-offset_bottom = 121.0
+offset_bottom = 92.0
 texture = ExtResource("5_05emd")
 expand_mode = 1
 
@@ -332,10 +353,10 @@ expand_mode = 1
 texture_filter = 1
 layout_mode = 0
 offset_left = 23.0
-offset_top = 100.0
+offset_top = 118.0
 offset_right = 43.0
-offset_bottom = 120.0
-texture = ExtResource("12_0dani")
+offset_bottom = 138.0
+texture = ExtResource("13_xms7m")
 stretch_mode = 2
 
 [node name="Caldron" type="TextureRect" parent="Healing"]
@@ -352,9 +373,9 @@ expand_mode = 1
 texture_filter = 1
 layout_mode = 0
 offset_left = 115.0
-offset_top = 89.0
+offset_top = 106.0
 offset_right = 147.0
-offset_bottom = 116.0
+offset_bottom = 133.0
 texture = ExtResource("13_jfxn6")
 expand_mode = 1
 
@@ -379,7 +400,6 @@ texture = ExtResource("14_iim05")
 stretch_mode = 2
 
 [node name="Stamina" type="Control" parent="." groups=["RecipesP1"]]
-visible = false
 anchors_preset = 0
 offset_left = 152.0
 offset_right = 152.0
@@ -584,34 +604,14 @@ offset_bottom = 165.0
 texture = ExtResource("20_qm400")
 stretch_mode = 2
 
-[node name="Flask1" type="TextureRect" parent="Stamina"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 128.0
-offset_top = 125.0
-offset_right = 148.0
-offset_bottom = 145.0
-texture = ExtResource("16_2gjte")
-stretch_mode = 2
-
 [node name="Flask2" type="TextureRect" parent="Stamina"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 109.0
-offset_top = 121.0
-offset_right = 129.0
-offset_bottom = 141.0
+offset_left = 113.0
+offset_top = 132.0
+offset_right = 133.0
+offset_bottom = 152.0
 texture = ExtResource("14_iim05")
-stretch_mode = 2
-
-[node name="Flask3" type="TextureRect" parent="Stamina"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 115.0
-offset_top = 145.0
-offset_right = 135.0
-offset_bottom = 165.0
-texture = ExtResource("15_i1qoi")
 stretch_mode = 2
 
 [node name="Caldron" type="TextureRect" parent="Stamina"]
@@ -635,7 +635,6 @@ texture = ExtResource("13_jfxn6")
 expand_mode = 1
 
 [node name="Strenght" type="Control" parent="." groups=["RecipesP2"]]
-visible = false
 anchors_preset = 0
 
 [node name="PotionName" type="Label" parent="Strenght"]
@@ -838,34 +837,14 @@ offset_bottom = 165.0
 texture = ExtResource("20_qm400")
 stretch_mode = 2
 
-[node name="Flask1" type="TextureRect" parent="Strenght"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 135.0
-offset_top = 125.0
-offset_right = 155.0
-offset_bottom = 145.0
-texture = ExtResource("16_2gjte")
-stretch_mode = 2
-
 [node name="Flask2" type="TextureRect" parent="Strenght"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 116.0
-offset_top = 121.0
-offset_right = 136.0
-offset_bottom = 141.0
+offset_left = 120.0
+offset_top = 132.0
+offset_right = 140.0
+offset_bottom = 152.0
 texture = ExtResource("14_iim05")
-stretch_mode = 2
-
-[node name="Flask3" type="TextureRect" parent="Strenght"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 122.0
-offset_top = 145.0
-offset_right = 142.0
-offset_bottom = 165.0
-texture = ExtResource("15_i1qoi")
 stretch_mode = 2
 
 [node name="Caldron" type="TextureRect" parent="Strenght"]
