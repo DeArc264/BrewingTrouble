@@ -6,9 +6,6 @@ class_name Ingredient
 @export var cut_icon : Texture2D
 @export var dry_icon : Texture2D
 
-@export_enum("Ore", "Plant", "Base")
-var type = "Base"
-
 var conditions = []
 
 var rank = 0

@@ -1,10 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://dy28cq04q01tl"]
+[gd_scene load_steps=13 format=3 uid="uid://dy28cq04q01tl"]
 
 [ext_resource type="Script" path="res://Scripts/Scenes/home.gd" id="1_h2uwy"]
 [ext_resource type="PackedScene" uid="uid://v1uemubo3trk" path="res://Scenes/Game/Door/door.tscn" id="2_yvdsa"]
 [ext_resource type="PackedScene" uid="uid://gdr3cf0jg005" path="res://Scenes/Game/Table/table.tscn" id="3_b482c"]
 [ext_resource type="PackedScene" uid="uid://cfvv7x84qgvlj" path="res://Scenes/Game/HUD/hud.tscn" id="4_o5oo2"]
 [ext_resource type="PackedScene" uid="uid://c1p1lg8vh5nr8" path="res://Scenes/Game/stock.tscn" id="4_ym7fq"]
+[ext_resource type="Script" path="res://Scripts/Items/item.gd" id="4_ynyxo"]
+[ext_resource type="Resource" uid="uid://dyljjx5q3ilc1" path="res://Resources/Potions/PotionHealing.tres" id="5_nxaiv"]
+[ext_resource type="Resource" uid="uid://b8dibpsfka1x8" path="res://Resources/Potions/PotionStamina.tres" id="6_myg66"]
+[ext_resource type="Resource" uid="uid://d2qnj6b3mkl0d" path="res://Resources/Potions/PotionStrenght.tres" id="7_f3ul8"]
 
 [sub_resource type="Animation" id="Animation_f6da7"]
 length = 0.001
@@ -22,7 +26,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_3rxub"]
-resource_name = "fade_in"
+resource_name = "fade"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -37,27 +41,10 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_njnqv"]
-resource_name = "fade_out"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Effect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_42486"]
 _data = {
 "RESET": SubResource("Animation_f6da7"),
-"fade_in": SubResource("Animation_3rxub"),
-"fade_out": SubResource("Animation_njnqv")
+"fade": SubResource("Animation_3rxub")
 }
 
 [node name="Home" type="Control"]
@@ -74,6 +61,7 @@ layout_mode = 1
 
 [node name="Table" parent="." instance=ExtResource("3_b482c")]
 layout_mode = 1
+craftables = Array[ExtResource("4_ynyxo")]([ExtResource("5_nxaiv"), ExtResource("6_myg66"), ExtResource("7_f3ul8")])
 
 [node name="Stock" parent="." instance=ExtResource("4_ym7fq")]
 layout_mode = 1
@@ -102,13 +90,14 @@ libraries = {
 [node name="BGMusic" type="FmodEventEmitter2D" parent="."]
 event_guid = "{00000006-0b39-0045-0500-000000000000}"
 
-[connection signal="move_to_stock" from="Door" to="." method="to_stock"]
-[connection signal="move_to_table" from="Door" to="." method="to_table"]
+[connection signal="move_to_stock" from="Door" to="." method="change_room" binds= ["stock"]]
+[connection signal="move_to_table" from="Door" to="." method="change_room" binds= ["table"]]
 [connection signal="order" from="Door" to="HUD" method="update_note"]
 [connection signal="pay" from="Door" to="HUD" method="_on_door_pay"]
-[connection signal="move_to_door" from="Table" to="." method="to_door"]
-[connection signal="move_to_stock" from="Table" to="." method="to_stock"]
+[connection signal="move_to_door" from="Table" to="." method="change_room" binds= ["door"]]
+[connection signal="move_to_stock" from="Table" to="." method="change_room" binds= ["stock"]]
+[connection signal="new_item" from="Table" to="HUD" method="_get_item"]
 [connection signal="get_ingredient" from="Stock" to="HUD" method="_get_item"]
-[connection signal="move_to_door" from="Stock" to="." method="to_door"]
-[connection signal="move_to_table" from="Stock" to="." method="to_table"]
+[connection signal="move_to_door" from="Stock" to="." method="change_room" binds= ["door"]]
+[connection signal="move_to_table" from="Stock" to="." method="change_room" binds= ["table"]]
 [connection signal="buy_ingredient" from="HUD" to="Stock" method="add_stock_item"]

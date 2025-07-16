@@ -29,8 +29,8 @@ func to_door():
 
 
 func change_room(room : String):
-	$AnimationPlayer.play("fade_in")
-	play_steps()
+	$AnimationPlayer.play("fade")
+	#play_steps()
 	await $AnimationPlayer.animation_finished
 
 	match room:
@@ -41,7 +41,7 @@ func change_room(room : String):
 		"door":
 			to_door()
 
-	$AnimationPlayer.play("fade_out")
+	$AnimationPlayer.play_backwards("fade")
 
 
 func _on_day_over() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cfvv7x84qgvlj"]
+[gd_scene load_steps=27 format=3 uid="uid://cfvv7x84qgvlj"]
 
 [ext_resource type="Script" path="res://Scripts/Scenes/hud.gd" id="1_kg5u5"]
 [ext_resource type="Texture2D" uid="uid://brtyuhbctsdp5" path="res://Assets/HUD/Buttons/button_icon1.png" id="2_dgjxk"]
@@ -20,7 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://d31odhymcdcdi" path="res://Assets/Animation/Scroll/scroll_3.png" id="12_572ou"]
 [ext_resource type="Texture2D" uid="uid://c36w1sg33okdb" path="res://Assets/Animation/Scroll/scroll_4.png" id="13_itdvl"]
 [ext_resource type="Texture2D" uid="uid://cskhejvlykdot" path="res://Assets/HUD/Buttons/button_icon2.png" id="21_ubmo4"]
-[ext_resource type="Texture2D" uid="uid://b8osgmm13c6ou" path="res://Assets/Icons/Potions/Flask_A/flask_a_heal.png" id="22_2gg4t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d22q7"]
 animations = [{
@@ -311,14 +310,19 @@ grow_vertical = 2
 rotation = -1.5708
 
 [node name="Order1" type="TextureRect" parent="OrdersNote/VBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
-texture = ExtResource("22_2gg4t")
+expand_mode = 1
 
 [node name="Order2" type="TextureRect" parent="OrdersNote/VBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
 [node name="Order3" type="TextureRect" parent="OrdersNote/VBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+expand_mode = 1
 
 [node name="Store" parent="." instance=ExtResource("4_7xrsr")]
 visible = false

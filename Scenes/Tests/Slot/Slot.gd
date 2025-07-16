@@ -4,7 +4,7 @@ class_name Slot
 signal dropped
 
 @onready var texture_rect = $TextureRect
-@onready var name_label = $TextureRect/ColorRect/Label
+@onready var name_label = $TextureRect/TextureRect/Label
 
 @export var item : Item = null:
 	set(value):
@@ -47,8 +47,8 @@ func empty():
 func _on_mouse_entered() -> void:
 	if item:
 		name_label.text = item.name
-		$TextureRect/ColorRect.show()
+		$TextureRect/TextureRect.show()
 
 
 func _on_mouse_exited() -> void:
-	$TextureRect/ColorRect.hide()
+	$TextureRect/TextureRect.hide()

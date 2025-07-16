@@ -319,7 +319,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rxm4g")
-craftables = Array[ExtResource("2_wejl3")]([ExtResource("3_bmf7n"), ExtResource("4_emhfe"), ExtResource("5_18i7f")])
+craftables = Array[ExtResource("2_wejl3")]([ExtResource("5_18i7f"), ExtResource("3_bmf7n"), ExtResource("4_emhfe")])
 
 [node name="Table" type="TextureRect" parent="."]
 layout_mode = 0
@@ -456,24 +456,6 @@ offset_top = 71.0
 offset_right = 254.0
 offset_bottom = 97.0
 
-[node name="Mortar" parent="." instance=ExtResource("5_wnxhj")]
-visible = false
-layout_mode = 1
-metadata/_edit_vertical_guides_ = [0.0]
-metadata/_edit_horizontal_guides_ = [25.0]
-
-[node name="Book" parent="." instance=ExtResource("10_irqxx")]
-visible = false
-layout_mode = 1
-
-[node name="Cutter" parent="." instance=ExtResource("11_60dht")]
-visible = false
-layout_mode = 1
-
-[node name="Caldron" parent="." instance=ExtResource("19_hqp1p")]
-visible = false
-layout_mode = 1
-
 [node name="Clean" parent="." instance=ExtResource("16_6ulko")]
 visible = false
 layout_mode = 0
@@ -536,6 +518,24 @@ theme_override_font_sizes/font_size = 15
 text = "<"
 flat = true
 
+[node name="Mortar" parent="." instance=ExtResource("5_wnxhj")]
+visible = false
+layout_mode = 1
+metadata/_edit_vertical_guides_ = [0.0]
+metadata/_edit_horizontal_guides_ = [25.0]
+
+[node name="Book" parent="." instance=ExtResource("10_irqxx")]
+visible = false
+layout_mode = 1
+
+[node name="Cutter" parent="." instance=ExtResource("11_60dht")]
+visible = false
+layout_mode = 1
+
+[node name="Caldron" parent="." instance=ExtResource("19_hqp1p")]
+visible = false
+layout_mode = 1
+
 [node name="BoilTimer" type="Timer" parent="."]
 wait_time = 11.0
 one_shot = true
@@ -562,6 +562,17 @@ event_guid = "{408b6bb6-ef8b-4de5-9491-f545841b8418}"
 event_name = "event:/games/bubbling_cauldron"
 event_guid = "{a0f38773-673d-4cd3-ae12-228b7501cc84}"
 
+[node name="Liquid" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/games/liquid_pour"
+event_guid = "{28c7ab85-f47b-4e0a-acad-1cb14a3a9f11}"
+
+[node name="Ingredient" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/games/drop_item"
+event_guid = "{dddce930-8343-453f-b10d-216106c4eba9}"
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://Assets/Audio/fmodbanks/Desktop/Master.strings.bank", "res://Assets/Audio/fmodbanks/Desktop/Master.bank"]
+
 [connection signal="new_ing" from="DryNet" to="." method="update_item"]
 [connection signal="mouse_entered" from="Hourglass/TurnHourglass" to="." method="show_help" binds= ["hour"]]
 [connection signal="mouse_exited" from="Hourglass/TurnHourglass" to="." method="hide_help"]
@@ -580,11 +591,11 @@ event_guid = "{a0f38773-673d-4cd3-ae12-228b7501cc84}"
 [connection signal="dropped" from="DistillerySlot" to="." method="_on_distillery_slot_dropped"]
 [connection signal="mouse_entered" from="DistillerySlot" to="." method="show_help" binds= ["distill"]]
 [connection signal="mouse_exited" from="DistillerySlot" to="." method="hide_help"]
+[connection signal="pressed" from="RightButton/MoveRight_Table" to="." method="_on_move_right_table_pressed"]
+[connection signal="pressed" from="LeftButton/MoveLeft_Table" to="." method="_on_move_left_table_pressed"]
 [connection signal="modified_ing" from="Mortar" to="." method="update_item"]
 [connection signal="modified_ing" from="Cutter" to="." method="update_item"]
 [connection signal="mixed" from="Caldron" to="." method="_on_caldron_mixed"]
-[connection signal="pressed" from="RightButton/MoveRight_Table" to="." method="_on_move_right_table_pressed"]
-[connection signal="pressed" from="LeftButton/MoveLeft_Table" to="." method="_on_move_left_table_pressed"]
 [connection signal="timeout" from="BoilTimer" to="." method="_on_boil_timer_timeout"]
 [connection signal="timeout" from="HourglassTimer" to="." method="_on_hourglass_timer_timeout"]
 [connection signal="timeout" from="ING1BoilTimer" to="." method="ing_1_boil_round"]

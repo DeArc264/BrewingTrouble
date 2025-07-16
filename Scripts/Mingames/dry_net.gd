@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 
 func _on_slot_dropped() -> void:
 	if $Slot.item.type == "Plant":
-		self.texture = img_full
+		self.texture = load(img_full)
 		$Timer.start(10)
 		$EndButton.show()
 
@@ -33,15 +33,16 @@ func _on_end_button_pressed() -> void:
 		0:
 			$Slot.item.conditions.append("normal")
 		1:
-			$Slot.item.conditions.append("slightly dry")
+			$Slot.item.conditions.append("dry")
 		2:
 			$Slot.item.conditions.append("dry")
 		3:
-			$Slot.item.conditions.append("dehydrated")
+			$Slot.item.conditions.append("dry")
 		_:
 			$Slot.item.conditions.append("useless")
 
+	$Slot.item.icon = $Slot.item.dry_icon
 	new_ing.emit($Slot.item)
 	$Slot.empty()
-	self.texture = img_empty
+	self.texture = load(img_empty)
 	$EndButton.hide()

@@ -203,6 +203,9 @@ mouse_default_cursor_shape = 2
 event_name = "event:/games/almofariz(crunch)"
 event_guid = "{3a40c933-bb6b-4965-901a-bd47f67f2a65}"
 
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://Assets/Audio/fmodbanks/Desktop/Master.strings.bank", "res://Assets/Audio/fmodbanks/Desktop/Master.bank"]
+
 [connection signal="mouse_entered" from="Herb" to="." method="_on_herb_mouse_entered"]
 [connection signal="area_entered" from="Herb/HerbArea" to="." method="_on_bowl_crushing"]
 [connection signal="gui_input" from="Pebble" to="Pebble" method="start_dragging"]

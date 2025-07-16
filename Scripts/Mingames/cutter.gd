@@ -50,11 +50,11 @@ func _on_end_button_pressed() -> void:
 			0:
 				current_ing.conditions.append("uncut")
 			1:
-				current_ing.conditions.append("thick slice")
+				current_ing.conditions.append("cut")
 			2:
-				current_ing.conditions.append("medium slice")
+				current_ing.conditions.append("cut")
 			3:
-				current_ing.conditions.append("thin slice")
+				current_ing.conditions.append("cut")
 			_:
 				current_ing.conditions.append("useless")
 

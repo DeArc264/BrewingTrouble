@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Ingredient" load_steps=5 format=3 uid="uid://dhuw0jrqg1tvh"]
+[gd_resource type="Resource" script_class="Ingredient" load_steps=6 format=3 uid="uid://dhuw0jrqg1tvh"]
 
 [ext_resource type="Texture2D" uid="uid://c7vr32pn5vgs" path="res://Assets/Icons/Ingredients/Crushed/icon_crush_ginger.png" id="1_a231y"]
 [ext_resource type="Texture2D" uid="uid://tyt4uyi6rlju" path="res://Assets/Icons/Ingredients/Cut/icon_cut_ginger.png" id="2_ssiks"]
+[ext_resource type="Texture2D" uid="uid://b7bv6qbc1ncjg" path="res://Assets/Icons/Ingredients/Dry/icon_dry_ginger.png" id="3_5j551"]
 [ext_resource type="Script" path="res://Scripts/Items/ingredient.gd" id="3_tyqfc"]
 [ext_resource type="Texture2D" uid="uid://cjpbatws3m7qn" path="res://Assets/Icons/Ingredients/Normal/Plants/icon_ginger.png" id="3_w5q1s"]
 
@@ -10,8 +11,9 @@ script = ExtResource("3_tyqfc")
 normal_icon = ExtResource("3_w5q1s")
 crush_icon = ExtResource("1_a231y")
 cut_icon = ExtResource("2_ssiks")
-type = "Plant"
+dry_icon = ExtResource("3_5j551")
 icon = ExtResource("3_w5q1s")
 name = "Ginger"
 id = "plant_1"
 description = "Ingredient used for potions."
+type = "Plant"

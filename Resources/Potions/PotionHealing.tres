@@ -11,7 +11,7 @@
 
 [resource]
 script = ExtResource("8_aqd28")
-recipe = Array[ExtResource("2_h77x2")]([ExtResource("5_b08n6"), ExtResource("4_fsykw"), ExtResource("7_h7jac")])
+recipe = Array[ExtResource("2_h77x2")]([ExtResource("5_b08n6"), ExtResource("7_h7jac"), ExtResource("4_fsykw")])
 flaskA = ExtResource("1_6p5kt")
 flaskB = ExtResource("2_o7ja5")
 flaskC = ExtResource("3_fpe53")
@@ -20,3 +20,4 @@ icon = ExtResource("1_6p5kt")
 name = "Healing Potion"
 id = "potion_1"
 description = ""
+type = "Base"

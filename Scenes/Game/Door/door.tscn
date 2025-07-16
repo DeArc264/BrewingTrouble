@@ -38,7 +38,6 @@ grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("6_v5exn")
 autoplay = true
-paused = true
 
 [node name="Door_Window" type="TextureRect" parent="."]
 texture_filter = 1
@@ -217,6 +216,9 @@ event_guid = "{1420ccfc-c21b-4067-8620-45df823f2002}"
 [node name="MaleAccept" type="FmodEventEmitter2D" parent="."]
 event_name = "event:/voices/male_normal"
 event_guid = "{10f13deb-9230-41f9-ab19-101e50d4b5d6}"
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://Assets/Audio/fmodbanks/Desktop/Master.bank", "res://Assets/Audio/fmodbanks/Desktop/Master.strings.bank"]
 
 [connection signal="client_signal" from="." to="DoorWindow" method="is_client_there"]
 [connection signal="day_start" from="." to="DoorWindow" method="_on_door_day_start"]

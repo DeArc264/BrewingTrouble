@@ -213,6 +213,9 @@ theme_override_font_sizes/font_size = 50
 event_name = "event:/games/knife_slicing"
 event_guid = "{4ac1f52d-9782-403c-ba1d-4fc7590b0ef4}"
 
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://Assets/Audio/fmodbanks/Desktop/Master.strings.bank", "res://Assets/Audio/fmodbanks/Desktop/Master.bank"]
+
 [connection signal="area_entered" from="Ingredient/IngredientArea" to="." method="_cut"]
 [connection signal="dropped" from="Slot" to="." method="start_minigame"]
 [connection signal="pressed" from="EndButton" to="." method="_on_end_button_pressed"]

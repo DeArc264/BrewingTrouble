@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ck30j2kwwdvko"]
 
-[ext_resource type="Texture2D" uid="uid://c211ys61qoaca" path="res://Assets/Icons/Potions/Flask_C/flask_c_empty.png" id="1_g1dca"]
+[ext_resource type="Texture2D" uid="uid://b7grbnau3edmo" path="res://Assets/Icons/Potions/Flask_C/flask_c_empty.png" id="1_g1dca"]
 [ext_resource type="Script" path="res://Scripts/Items/item.gd" id="2_h7hul"]
 
 [resource]
@@ -9,3 +9,4 @@ icon = ExtResource("1_g1dca")
 name = "Empty C"
 id = "flask_2"
 description = ""
+type = "Flask"

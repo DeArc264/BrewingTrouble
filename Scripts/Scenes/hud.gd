@@ -73,7 +73,7 @@ func show_hands():
 		$Scroll.play("open")
 		await $Scroll.animation_finished
 		$Scroll/Hands.show()
-	
+
 	$HandButton.show()
 
 #region Note Tab
@@ -86,9 +86,24 @@ func show_notes():
 	visible_notes = !visible_notes
 
 
-func update_note(note : Array[String]):
-	#$OrderNote/OrderLabel.text = note
-	pass
+func update_note(note : Array[Item]):
+	var new_icons
+
+	for order in note:
+		match order.id:
+			"potion_1":
+				new_icons = load("res://Assets/Icons/Potions/Flask_A/flask_a_heal.png")
+			"potion_2":
+				new_icons = load("res://Assets/Icons/Potions/Flask_A/flask_a_stamina.png")
+			"potion_3":
+				new_icons = load("res://Assets/Icons/Potions/Flask_A/flask_a_strenght.png")
+			_:
+				new_icons = load("res://Assets/Icons/missing.png")
+
+		for texture in $OrdersNote/VBoxContainer.get_children():
+			if texture.texture == null:
+				texture.texture = new_icons
+				break
 #endregion
 
 

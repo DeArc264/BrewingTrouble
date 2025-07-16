@@ -5,7 +5,7 @@ signal move_to_table
 signal move_to_stock
 signal day_start
 signal pay (int)
-signal order(String)
+signal order(Array)
 signal client_signal
 
 @export var possible_orders : Array[Item]
@@ -17,6 +17,9 @@ var delivery_box: Array[Item]
 var slide = false
 var client_at_door = false
 #endregion
+
+func _ready() -> void:
+	$OutsideVideo.paused = true
 
 func _process(_delta: float) -> void:
 	if not $DoorWindow.visible:
@@ -101,10 +104,7 @@ func check_door():
 		$PatienceTimer.paused = true
 
 	if not curr_order.is_empty():
-		var noted_order : Array[String]
-		for item in curr_order:
-			noted_order.append(item.name + "\n")
-		order.emit(noted_order)
+		order.emit(curr_order)
 
 
 func _door_window_slide(event: InputEvent) -> void:

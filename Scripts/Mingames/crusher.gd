@@ -52,11 +52,11 @@ func _on_button_pressed() -> void:
 			0:
 				current_ing.conditions.append("uncrushed")
 			1:
-				current_ing.conditions.append("thick powder")
+				current_ing.conditions.append("crushed")
 			2:
-				current_ing.conditions.append("medium powder")
+				current_ing.conditions.append("crushed")
 			3:
-				current_ing.conditions.append("thin powder")
+				current_ing.conditions.append("crushed")
 			_:
 				current_ing.conditions.append("useless")
 

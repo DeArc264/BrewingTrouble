@@ -21,7 +21,7 @@ var holder
 var ing_conditions = {
 	"potion_1" : {
 		"plant_0" : [],
-		"plant_3" : []
+		"plant_3" : ["cut"]
 	},
 	"potion_2" : {
 		"plant_2" : ["crushed"],
@@ -29,7 +29,7 @@ var ing_conditions = {
 	},
 	"potion_3" : {
 		"plant_0" : ["crushed"],
-		"plant_2" : ["fully dry"]
+		"plant_2" : ["dry"]
 	}
 }
 #endregion
@@ -80,7 +80,6 @@ func _on_bellows_pressed() -> void:
 # Ends boiling state when timer runs out.
 func _on_boil_timer_timeout() -> void:
 	boiling = false
-	$BoilLabel.hide()
 	$DryNet.can_dry = false
 	$ING1BoilTimer.paused = true
 	$ING2BoilTimer.paused = true
@@ -130,16 +129,17 @@ func update_item(new : Item):
 # Checks the item dropped into the caldron. If it's a type "Base", it is assigned
 # to the first index. If not, it is appended to the "in_caldron" array.
 func _on_caldron_slot_dropped() -> void:
-	if $CaldronSlot.item.name == "Rag":
+	if caldron_slot.item.get_script().get_global_name() != "Ingredient": return
+
+	if caldron_slot.item.type == "Tool":
 		pass
 	else:
-		if $CaldronSlot.item.get_script().get_global_name() == "Ingredient":
-			if caldron_slot.item.type == "Base":
-				in_caldron[0] = caldron_slot.item
-			else:
-				in_caldron.append(caldron_slot.item)
+		if caldron_slot.item.type == "Base":
+			in_caldron[0] = caldron_slot.item
+			$Liquid.play()
 		else:
 			in_caldron.append(caldron_slot.item)
+			$Ingredient.play()
 
 		if in_caldron.size() == 2 and in_caldron[1] != null:
 			$ING1BoilTimer.start()
@@ -154,8 +154,6 @@ func _on_caldron_slot_dropped() -> void:
 
 func mix() -> void:
 	if in_caldron.size() >= 3 and in_caldron[0] != null:
-		$CaldronSlot.hide()
-		$FlaskSlot.show()
 		$ING1BoilTimer.stop()
 		$ING2BoilTimer.stop()
 		$Caldron.start_minigame(in_caldron[0].id, check_recipe())
@@ -166,31 +164,34 @@ func check_recipe():
 		return "potion_0"
 
 	for i in in_caldron:
-		if i == Potion or i.conditions.has("useless") or i == null:
+		if i is Potion or i.conditions.has("useless") or i == null:
 			return "potion_0"
 
-	for p in craftables.size():
-		if is_in_recipe(p):
-			if recipe_conditions(craftables[p].id):
-				return craftables[p].id
-			else:
-				return "potion_0"
+	return which_recipe()
 
 
 # Get's every item in "in_caldron", then compares to every element of a specific
 # recipe. If all items match, no matter the order, returns true to indicate
 # this is the correct recipe
-func is_in_recipe(recipe : int):
-	var aligned_array = []
+func which_recipe():
+	for potion in craftables:
+		var all_match := true
 
-	for i in craftables[recipe].recipe:
-		if i not in in_caldron:
-			return false
-		else:
-			aligned_array.append(i)
+		for ing in in_caldron:
+			var match_found := false
+			for r_ing in potion.recipe:
+				if ing.id == r_ing.id:
+					match_found = true
+					break
 
-	in_caldron = aligned_array
-	return true
+			if not match_found:
+				all_match = false
+				break
+
+		if all_match:
+			return potion.id
+
+	return "potion_0"
 
 
 # Checks the variables of the items in "in_caldron". If they match all the
@@ -208,7 +209,10 @@ func _on_caldron_mixed(potion_id : String) -> void:
 
 	if in_caldron[0].rank + in_caldron[1].rank + in_caldron[2].rank > 3:
 		potion.state = "Perfect"
-	
+
+	$CaldronSlot.hide()
+	$FlaskSlot.show()
+
 	await $FlaskSlot.dropped
 	potion.fill_potion(in_caldron.back().id)
 	new_item.emit(potion)

@@ -19,6 +19,7 @@ func _on_next_button_pressed() -> void:
 	$Soon.hide()
 
 	$TurnPages.play("turn")
+	$PageSound.play()
 	await $TurnPages.animation_finished
 
 	update_buttons()
@@ -35,6 +36,7 @@ func _on_previous_button_pressed() -> void:
 	$Soon.hide()
 
 	$TurnPages.play_backwards("turn")
+	$PageSound.play()
 	await $TurnPages.animation_finished
 
 	update_buttons()

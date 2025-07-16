@@ -15,7 +15,7 @@ custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 expand_mode = 1
 
-[node name="ColorRect" type="TextureRect" parent="TextureRect"]
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
 visible = false
 layout_mode = 1
 anchors_preset = 5
@@ -27,13 +27,15 @@ offset_right = 30.5
 offset_bottom = 59.0
 grow_horizontal = 2
 texture = ExtResource("2_pyg24")
-expand_mode = 1
+expand_mode = 3
+stretch_mode = 5
 
-[node name="Label" type="Label" parent="TextureRect/ColorRect"]
+[node name="Label" type="Label" parent="TextureRect/TextureRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)

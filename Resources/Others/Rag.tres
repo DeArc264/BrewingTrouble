@@ -9,3 +9,4 @@ icon = ExtResource("1_4fijy")
 name = "Rag"
 id = "tool_0"
 description = "A rag I use for cleaning my stuff"
+type = "Tool"

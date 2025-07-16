@@ -6,10 +6,8 @@
 [resource]
 script = ExtResource("2_n3ney")
 normal_icon = ExtResource("1_dx17f")
-crushed_icon = ExtResource("1_dx17f")
-dry_icon = Array[Texture2D]([])
-type = "Ore"
 icon = ExtResource("1_dx17f")
 name = "Gold"
 id = "ore_0"
 description = "Had to sacrifice a coin..."
+type = "Ore"

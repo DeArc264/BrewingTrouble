@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Ingredient" load_steps=5 format=3 uid="uid://d3qr7snp5bw8y"]
+[gd_resource type="Resource" script_class="Ingredient" load_steps=6 format=3 uid="uid://d3qr7snp5bw8y"]
 
 [ext_resource type="Texture2D" uid="uid://c15q2053564ny" path="res://Assets/Icons/Ingredients/Crushed/icon_crush_lavander.png" id="1_thfqr"]
 [ext_resource type="Texture2D" uid="uid://cogjvquh3ctwg" path="res://Assets/Icons/Ingredients/Cut/icon_cut_lavander.png" id="2_2ymul"]
 [ext_resource type="Script" path="res://Scripts/Items/ingredient.gd" id="3_bqydv"]
+[ext_resource type="Texture2D" uid="uid://bvv2y4v337f2e" path="res://Assets/Icons/Ingredients/Dry/icon_dry_lavender.png" id="3_iws0q"]
 [ext_resource type="Texture2D" uid="uid://dxy0fd0bocqn0" path="res://Assets/Icons/Ingredients/Normal/Plants/icon_lavander.png" id="3_ymek3"]
 
 [resource]
@@ -10,8 +11,9 @@ script = ExtResource("3_bqydv")
 normal_icon = ExtResource("3_ymek3")
 crush_icon = ExtResource("1_thfqr")
 cut_icon = ExtResource("2_2ymul")
-type = "Plant"
+dry_icon = ExtResource("3_iws0q")
 icon = ExtResource("3_ymek3")
-name = "Lavander"
+name = "Lavender"
 id = "plant_2"
 description = "Ingredient used for potions."
+type = "Plant"

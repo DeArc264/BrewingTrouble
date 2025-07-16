@@ -6,3 +6,6 @@ class_name Item
 @export var id : String
 
 @export_multiline var description : String
+
+@export_enum("Ore", "Plant", "Base", "Flask", "Tool")
+var type = "Base"
