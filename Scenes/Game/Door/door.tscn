@@ -75,14 +75,27 @@ theme_override_font_sizes/font_size = 10
 text = "Start Day"
 flat = true
 
-[node name="DeliveryButton" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
+[node name="DeliveryTexture" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
-offset_left = 60.0
-offset_top = 82.0
-offset_right = 96.0
-offset_bottom = 95.0
+offset_left = 54.0
+offset_top = 81.0
+offset_right = 106.0
+offset_bottom = 97.0
+texture = ExtResource("9_4uw27")
+expand_mode = 1
+
+[node name="DeliveryButton" type="Button" parent="DeliveryTexture"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Deliver"
 flat = true
 
 [node name="DeliveryBoxBG" type="TextureRect" parent="."]
@@ -216,6 +229,39 @@ text = "Teste"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="MySpeechTexture" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 66.0
+offset_top = -188.0
+offset_right = -51.0
+offset_bottom = -155.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("9_4uw27")
+expand_mode = 1
+
+[node name="MySpeechLabel" type="Label" parent="MySpeechTexture"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -7.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Teste"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="NewClientTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
@@ -242,7 +288,7 @@ bank_paths = ["res://Assets/Audio/fmodbanks/Desktop/Master.bank", "res://Assets/
 [connection signal="day_start" from="." to="DoorWindow" method="_on_door_day_start"]
 [connection signal="gui_input" from="Door_Window" to="." method="_door_window_slide"]
 [connection signal="pressed" from="OpenTexture/OpenStore" to="." method="_on_open_store_pressed"]
-[connection signal="pressed" from="DeliveryButton" to="." method="_on_delivery_button_pressed"]
+[connection signal="pressed" from="DeliveryTexture/DeliveryButton" to="." method="_on_delivery_button_pressed"]
 [connection signal="dropped" from="DiscardSlot" to="." method="_on_discard_slot_dropped"]
 [connection signal="pressed" from="TextureRect/MoveRight_Door" to="." method="_on_move_right_door_pressed"]
 [connection signal="pressed" from="TextureRect2/MoveLeft_Door" to="." method="_on_move_left_door_pressed"]

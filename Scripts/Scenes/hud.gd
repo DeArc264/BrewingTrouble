@@ -103,6 +103,10 @@ func update_note(note : Array[Item]):
 			texture_rect.texture = load(icon_path)
 		else:
 			texture_rect.texture = null
+
+	$AnimationPlayer.play("note")
+	get_tree().create_timer(2).timeout
+	$AnimationPlayer.play_backwards("note")
 #endregion
 
 

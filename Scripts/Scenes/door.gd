@@ -44,6 +44,7 @@ func new_request():
 	$Knocking.play()
 	client_at_door = true
 	client_signal.emit()
+	$DeliveryTexture.show()
 	$DeliveryBoxBG.show()
 
 	for i in range(temp_rand):
@@ -64,6 +65,7 @@ func sell_potion(potion_state : String):
 
 	client_at_door = false
 	$MaleAccept.play()
+	$DeliveryTexture.hide()
 
 
 #region Timers
@@ -114,6 +116,8 @@ func _on_move_right_door_pressed() -> void:
 
 
 func _on_delivery_button_pressed() -> void:
+	$DeliveryTexture.hide()
+
 	if not client_at_door:
 		$SpeachTexture.show()
 		$SpeachTexture/ClientLabel.text = dia.none_at_door.pick_random()
@@ -130,11 +134,12 @@ func _on_delivery_button_pressed() -> void:
 			continue
 
 		if slot.item.state == "Wasted":
+			var stored_order = $SpeachTexture/ClientLabel.text
 			$SpeachTexture/ClientLabel.text = dia.reject_potion.pick_random()
 			$MaleReject.play()
+			$DeliveryTexture.show()
 			await get_tree().create_timer(3).timeout
-			$SpeachTexture/ClientLabel.text = ""
-			$DeliveryButton.show()
+			$SpeachTexture/ClientLabel.text = stored_order
 			return
 
 		delivered_ids.append(slot.item.id)
@@ -149,11 +154,11 @@ func _on_delivery_button_pressed() -> void:
 			break
 
 	if not all_found:
-		$SpeachTexture.show()
-		$SpeachTexture/ClientLabel.text = "I still don't have all the itens!"
+		$MySpeechTexture.show()
+		$MySpeechTexture/MySpeechLabel.text = "I still don't have all the itens!"
 		await get_tree().create_timer(2).timeout
-		$SpeachTexture.hide()
-		$SpeachTexture/ClientLabel.text = ""
+		$MySpeechTexture.hide()
+		$DeliveryTexture.show()
 		return
 
 	for slot in delivery_node.get_children():
@@ -165,7 +170,6 @@ func _on_delivery_button_pressed() -> void:
 	$SpeachTexture/ClientLabel.text = ""
 
 	curr_order.clear()
-	$DeliveryButton.show()
 #endregion
 
 

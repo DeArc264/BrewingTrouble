@@ -29,7 +29,7 @@ DSP/dsp_buffer_count=4
 [application]
 
 config/name="Alchemy"
-run/main_scene="res://Scenes/Game/home.tscn"
+run/main_scene="res://Scenes/Game/menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -53,6 +53,10 @@ project/assembly_name="Alchemy"
 [editor]
 
 movie_writer/movie_file="C:/Users/João Ricardo/Downloads/Desenvolvimento de Games/Para meus projetos/Alquimia/video/recording.png"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
 
 [rendering]
 

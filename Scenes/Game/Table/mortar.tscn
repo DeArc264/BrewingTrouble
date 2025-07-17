@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Mingames/crusher.gd" id="1_kqu4g"]
 [ext_resource type="Texture2D" uid="uid://b0qhamgydfxej" path="res://Assets/Minigames/Mortar/bowl.png" id="2_bnppa"]
-[ext_resource type="Texture2D" uid="uid://dtr7xemb00t62" path="res://Assets/Clean/bowl  sujeira.png" id="3_70r74"]
+[ext_resource type="Texture2D" uid="uid://8ead11gq853g" path="res://Assets/Clean/dirty_bowl.png" id="3_4r6q7"]
 [ext_resource type="Texture2D" uid="uid://dx2e1ty3gbiu2" path="res://Assets/Minigames/Mortar/pebble.png" id="3_o0n0t"]
 [ext_resource type="Script" path="res://Scripts/Mingames/pebble.gd" id="3_xh525"]
 [ext_resource type="Texture2D" uid="uid://x3rrrreawq8x" path="res://Assets/Animation/Patricles/particles0.png" id="4_lsfcy"]
@@ -101,7 +101,7 @@ offset_right = 160.0
 offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_70r74")
+texture = ExtResource("3_4r6q7")
 stretch_mode = 2
 
 [node name="DirtSpot" type="Area2D" parent="Dirt"]
