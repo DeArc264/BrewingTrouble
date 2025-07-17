@@ -1,0 +1,302 @@
+[gd_scene load_steps=24 format=3 uid="uid://bei8jcyh0y02c"]
+
+[ext_resource type="Script" path="res://Scenes/Game/bedroom.gd" id="1_gsb7s"]
+[ext_resource type="Texture2D" uid="uid://ckpvpi8tb2gi0" path="res://Assets/HUD/bedroom.png" id="1_qpggd"]
+[ext_resource type="Texture2D" uid="uid://cefo631onnsrr" path="res://Assets/Animation/Bedroom/bedroom_candle0.png" id="2_cu3vb"]
+[ext_resource type="Texture2D" uid="uid://b64tt31ovlld3" path="res://Assets/Animation/Bedroom/bedroom_candle1.png" id="3_rqwfv"]
+[ext_resource type="Texture2D" uid="uid://csr1eocssjwov" path="res://Assets/Animation/Bedroom/bedroom_candle2.png" id="4_ujqbq"]
+[ext_resource type="Texture2D" uid="uid://cte166d0156t1" path="res://Assets/Animation/Bedroom/bedroom_candle3.png" id="5_iud28"]
+[ext_resource type="Texture2D" uid="uid://bijwp08seci4i" path="res://Assets/Animation/Bedroom/bedroom_candle4.png" id="6_u2q3a"]
+[ext_resource type="Texture2D" uid="uid://bqpcm4ebqxw7i" path="res://Assets/Animation/Bedroom/bedroom_candle5.png" id="7_revyi"]
+[ext_resource type="Texture2D" uid="uid://c8cxee1lk5sso" path="res://Assets/Animation/Bedroom/bedroom_candle6.png" id="8_hg8rh"]
+[ext_resource type="Texture2D" uid="uid://8v1hhmwqvx0e" path="res://Assets/Animation/Bedroom/bedroom_candle7.png" id="9_iirwe"]
+[ext_resource type="Texture2D" uid="uid://bihyv7wuq0j3n" path="res://Assets/Animation/Bedroom/bedroom_candle8.png" id="10_eqik0"]
+[ext_resource type="Texture2D" uid="uid://dohr818tac48n" path="res://Assets/Animation/Bedroom/bedroom_candle9.png" id="11_3nd1w"]
+[ext_resource type="Texture2D" uid="uid://kfg86tfysh1i" path="res://Assets/Animation/Bedroom/bedroom_candle10.png" id="12_dpo8k"]
+[ext_resource type="Texture2D" uid="uid://n64b315w2v40" path="res://Assets/Animation/Bedroom/bedroom_candle11.png" id="13_jw4y8"]
+[ext_resource type="Texture2D" uid="uid://brtyuhbctsdp5" path="res://Assets/HUD/Buttons/button_icon1.png" id="14_0ombl"]
+[ext_resource type="Texture2D" uid="uid://boidm0dlhb6iu" path="res://Assets/HUD/EndScreen/bad_ending.png" id="15_etgl5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gm2aa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cu3vb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rqwfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ujqbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_iud28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_u2q3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_revyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hg8rh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_iirwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_eqik0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3nd1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dpo8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jw4y8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="Animation" id="Animation_inbo8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Speech:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 183)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Speech/SpeechLabel:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.0769231]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ExtraLabel:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ExtraLabel:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_f45jv"]
+resource_name = "extra_label"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ExtraLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ExtraLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rf31s"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wyd1a"]
+resource_name = "speech"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Speech:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 183), Vector2(0, 151)]
+}
+
+[sub_resource type="Animation" id="Animation_qyc3p"]
+resource_name = "text"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Speech/SpeechLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.0769231, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gdj61"]
+_data = {
+"RESET": SubResource("Animation_inbo8"),
+"extra_label": SubResource("Animation_f45jv"),
+"fade": SubResource("Animation_rf31s"),
+"speech": SubResource("Animation_wyd1a"),
+"text": SubResource("Animation_qyc3p")
+}
+
+[node name="Bedroom" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gsb7s")
+
+[node name="BedroomBG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_qpggd")
+
+[node name="Fireplace" type="AnimatedSprite2D" parent="BedroomBG"]
+position = Vector2(160, 90)
+sprite_frames = SubResource("SpriteFrames_gm2aa")
+autoplay = "default"
+frame_progress = 0.0577993
+
+[node name="EndingScreen" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_etgl5")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ExtraLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -11.5
+offset_right = 56.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "The next day..."
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Speech" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("14_0ombl")
+expand_mode = 3
+
+[node name="SpeechLabel" type="Label" parent="Speech"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = -21.0
+offset_bottom = 30.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "What a day..."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gdj61")
+}

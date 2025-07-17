@@ -6,12 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://dmbe6bw14ibgg" path="res://Assets/Icons/Potions/Flask_C/flask_c_heal.png" id="3_fpe53"]
 [ext_resource type="Resource" uid="uid://qlwtsvivu18e" path="res://Resources/Ingredients/Plant/Belladona.tres" id="4_fsykw"]
 [ext_resource type="Resource" uid="uid://blob2sv1svnds" path="res://Resources/Ingredients/Base/Water.tres" id="5_b08n6"]
-[ext_resource type="Resource" uid="uid://dhts2fo8ey7tg" path="res://Resources/Ingredients/Plant/Berries.tres" id="7_h7jac"]
+[ext_resource type="Resource" uid="uid://cvbk2ungnc8jc" path="res://Resources/Ingredients/Ore/Gold.tres" id="6_x06r3"]
 [ext_resource type="Script" path="res://Scripts/Items/potion.gd" id="8_aqd28"]
 
 [resource]
 script = ExtResource("8_aqd28")
-recipe = Array[ExtResource("2_h77x2")]([ExtResource("5_b08n6"), ExtResource("7_h7jac"), ExtResource("4_fsykw")])
+recipe = Array[ExtResource("2_h77x2")]([ExtResource("5_b08n6"), ExtResource("6_x06r3"), ExtResource("4_fsykw")])
 flaskA = ExtResource("1_6p5kt")
 flaskB = ExtResource("2_o7ja5")
 flaskC = ExtResource("3_fpe53")

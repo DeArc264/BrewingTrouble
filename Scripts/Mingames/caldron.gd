@@ -38,7 +38,6 @@ func start_minigame(base : String, brewed : String):
 	to_send = brewed
 
 	$Liquid.play(liquid_base + "bubble")
-	$EndButton.hide()
 	show()
 
 
@@ -68,10 +67,9 @@ func change_color():
 	tween = get_tree().create_tween()
 
 	tween.tween_property($Liquid, "modulate", potion_color, 5)
-	if tween.finished:
-		$EndButton.show()
 
 
 func _on_end_button_pressed() -> void:
 	mixed.emit(to_send)
 	hide()
+	$Liquid.modulate = Color.WHITE

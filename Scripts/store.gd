@@ -87,4 +87,4 @@ func what_to_buy(ing : String):
 
 
 func _on_close_button_pressed() -> void:
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://Scenes/Game/bedroom.tscn")

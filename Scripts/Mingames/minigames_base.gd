@@ -37,7 +37,6 @@ func start_minigame():
 		current_ing = slot.item
 		element.get_parent().texture = start_dict[current_ing.id]
 		element.monitoring = true
-		end_button.show()
 
 	elif slot.item.id == "tool_0":
 		dirt.monitoring = true
@@ -74,7 +73,6 @@ func end_minigame():
 	element.get_parent().hide()
 	element.monitoring = false
 	dirt.monitoring = false
-	end_button.hide()
 
 	if current_ing:
 		modified_ing.emit(current_ing)

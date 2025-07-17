@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cun7jmlf65cbq"]
+[gd_scene load_steps=20 format=3 uid="uid://cun7jmlf65cbq"]
 
 [ext_resource type="Script" path="res://Scripts/Mingames/crusher.gd" id="1_kqu4g"]
 [ext_resource type="Texture2D" uid="uid://b0qhamgydfxej" path="res://Assets/Minigames/Mortar/bowl.png" id="2_bnppa"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://chqy3aabwwgfl" path="res://Assets/Animation/Patricles/particles5.png" id="9_o5nwi"]
 [ext_resource type="Texture2D" uid="uid://bxedl6ms2umnq" path="res://Assets/Animation/Patricles/particles6.png" id="10_aj656"]
 [ext_resource type="Texture2D" uid="uid://dopf2nptmarmn" path="res://Assets/Animation/Patricles/particles7.png" id="11_idki4"]
+[ext_resource type="Texture2D" uid="uid://cskhejvlykdot" path="res://Assets/HUD/Buttons/button_icon2.png" id="15_ox7fk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m8mwc"]
 radius = 73.0
@@ -73,7 +74,7 @@ script = ExtResource("1_kqu4g")
 dirt = NodePath("Dirt/DirtSpot")
 element = NodePath("Herb/HerbArea")
 slot = NodePath("Slot")
-end_button = NodePath("EndButton")
+end_button = NodePath("TextureRect2/EndButton")
 
 [node name="Background" type="TextureRect" parent="."]
 texture_filter = 1
@@ -182,22 +183,28 @@ offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="EndButton" type="Button" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0)
+[node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -34.0
+offset_right = 35.0
+grow_vertical = 0
+texture = ExtResource("15_ox7fk")
+expand_mode = 1
+
+[node name="EndButton" type="Button" parent="TextureRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "X"
+flat = true
 
 [node name="Crush" type="FmodEventEmitter2D" parent="."]
 event_name = "event:/games/almofariz(crunch)"
@@ -210,4 +217,4 @@ bank_paths = ["res://Assets/Audio/fmodbanks/Desktop/Master.strings.bank", "res:/
 [connection signal="area_entered" from="Herb/HerbArea" to="." method="_on_bowl_crushing"]
 [connection signal="gui_input" from="Pebble" to="Pebble" method="start_dragging"]
 [connection signal="dropped" from="Slot" to="." method="start_minigame"]
-[connection signal="pressed" from="EndButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TextureRect2/EndButton" to="." method="_on_button_pressed"]

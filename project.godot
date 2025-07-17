@@ -54,10 +54,6 @@ project/assembly_name="Alchemy"
 
 movie_writer/movie_file="C:/Users/João Ricardo/Downloads/Desenvolvimento de Games/Para meus projetos/Alquimia/video/recording.png"
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
-
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

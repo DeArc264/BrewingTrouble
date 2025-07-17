@@ -23,7 +23,7 @@ func _on_slot_dropped() -> void:
 
 func _on_timer_timeout() -> void:
 	level += 1
-	$Slot.item.change_icon("dry")
+	$Slot.item.icon = $Slot.item.dry_icon
 
 
 func _on_end_button_pressed() -> void:

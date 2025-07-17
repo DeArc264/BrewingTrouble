@@ -1,6 +1,7 @@
 extends Node
 
 var hands_full = false
+var requests_fulfilled : int
 
 var ingredients = {
 	# Bases

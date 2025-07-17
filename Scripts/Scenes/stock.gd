@@ -15,7 +15,7 @@ var ing_dict = {
 	"plant_2" : 3,
 	"plant_3" : 3,
 # Ores
-	"ore_0" : 0,
+	"ore_0" : 3,
 	"ore_1" : 0,
 # Flasks
 	"flask_0" : 10,

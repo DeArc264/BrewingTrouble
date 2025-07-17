@@ -42,6 +42,10 @@ func _on_bowl_crushing(area: Area2D) -> void:
 
 
 func _on_button_pressed() -> void:
+	if $Slot.item == null:
+		hide()
+		return
+
 	if dirty:
 		current_ing.conditions.append("useless")
 		end_minigame()

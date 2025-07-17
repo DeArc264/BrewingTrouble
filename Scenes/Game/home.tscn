@@ -87,9 +87,6 @@ libraries = {
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
 
-[node name="BGMusic" type="FmodEventEmitter2D" parent="."]
-event_guid = "{00000006-0b39-0045-0500-000000000000}"
-
 [connection signal="move_to_stock" from="Door" to="." method="change_room" binds= ["stock"]]
 [connection signal="move_to_table" from="Door" to="." method="change_room" binds= ["table"]]
 [connection signal="order" from="Door" to="HUD" method="update_note"]

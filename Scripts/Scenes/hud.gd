@@ -87,23 +87,22 @@ func show_notes():
 
 
 func update_note(note : Array[Item]):
-	var new_icons
+	var icons := {
+		"potion_1": "res://Assets/Icons/Potions/Flask_A/flask_a_heal.png",
+		"potion_2": "res://Assets/Icons/Potions/Flask_A/flask_a_stamina.png",
+		"potion_3": "res://Assets/Icons/Potions/Flask_A/flask_a_strenght.png"
+	}
 
-	for order in note:
-		match order.id:
-			"potion_1":
-				new_icons = load("res://Assets/Icons/Potions/Flask_A/flask_a_heal.png")
-			"potion_2":
-				new_icons = load("res://Assets/Icons/Potions/Flask_A/flask_a_stamina.png")
-			"potion_3":
-				new_icons = load("res://Assets/Icons/Potions/Flask_A/flask_a_strenght.png")
-			_:
-				new_icons = load("res://Assets/Icons/missing.png")
+	var children = $OrdersNote/VBoxContainer.get_children()
 
-		for texture in $OrdersNote/VBoxContainer.get_children():
-			if texture.texture == null:
-				texture.texture = new_icons
-				break
+	for i in range(children.size()):
+		var texture_rect = children[i]
+		if i < note.size():
+			var order = note[i]
+			var icon_path = icons.get(order.id, "res://Assets/Icons/missing.png")
+			texture_rect.texture = load(icon_path)
+		else:
+			texture_rect.texture = null
 #endregion
 
 

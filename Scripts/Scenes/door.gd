@@ -16,6 +16,7 @@ var curr_order: Array[Item]
 var delivery_box: Array[Item]
 var slide = false
 var client_at_door = false
+var price
 #endregion
 
 func _ready() -> void:
@@ -54,10 +55,14 @@ func new_request():
 
 func sell_potion(potion_state : String):
 	if potion_state == "Normal":
-		pay.emit(5)
+		price += 5
 	elif potion_state == "Perfect":
-		pay.emit(5 * 1.25)
+		price += 5 * 1.25
 
+	pay.emit(price)
+	price = 0
+
+	client_at_door = false
 	$MaleAccept.play()
 
 
@@ -110,13 +115,20 @@ func _on_move_right_door_pressed() -> void:
 
 func _on_delivery_button_pressed() -> void:
 	if not client_at_door:
+		$SpeachTexture.show()
 		$SpeachTexture/ClientLabel.text = dia.none_at_door.pick_random()
 		await get_tree().create_timer(3).timeout
+		$SpeachTexture.hide()
 		$SpeachTexture/ClientLabel.text = ""
 		return
 
+	var delivered_ids := []
+
+	# Coleta os IDs dos itens entregues, e verifica se algum está "Wasted"
 	for slot in delivery_node.get_children():
-		if slot.item == null : break
+		if slot.item == null:
+			continue
+
 		if slot.item.state == "Wasted":
 			$SpeachTexture/ClientLabel.text = dia.reject_potion.pick_random()
 			$MaleReject.play()
@@ -124,10 +136,38 @@ func _on_delivery_button_pressed() -> void:
 			$SpeachTexture/ClientLabel.text = ""
 			$DeliveryButton.show()
 			return
-		else:
-			for item in curr_order:
-				if item.id == slot.item.id:
-					curr_order.erase(item)
-					sell_potion(slot.item.state)
-			$DeliveryButton.show()
+
+		delivered_ids.append(slot.item.id)
+
+	# Verifica se todos os itens da ordem estão entre os entregues
+	var order_ids := curr_order.map(func(i): return i.id)
+
+	var all_found := true
+	for id in order_ids:
+		if not delivered_ids.has(id):
+			all_found = false
+			break
+
+	if not all_found:
+		$SpeachTexture.show()
+		$SpeachTexture/ClientLabel.text = "I still don't have all the itens!"
+		await get_tree().create_timer(2).timeout
+		$SpeachTexture.hide()
+		$SpeachTexture/ClientLabel.text = ""
+		return
+
+	for slot in delivery_node.get_children():
+		Itens.requests_fulfilled += 1
+		if slot.item != null:
+			sell_potion(slot.item.state)
+			slot.empty()
+
+	$SpeachTexture/ClientLabel.text = ""
+
+	curr_order.clear()
+	$DeliveryButton.show()
 #endregion
+
+
+func _on_discard_slot_dropped() -> void:
+	$DiscardSlot.empty()

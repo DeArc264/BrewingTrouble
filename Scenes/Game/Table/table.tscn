@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://gdr3cf0jg005"]
+[gd_scene load_steps=71 format=3 uid="uid://gdr3cf0jg005"]
 
 [ext_resource type="Script" path="res://Scripts/Scenes/table.gd" id="1_rxm4g"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="2_gvcte"]
@@ -61,6 +61,7 @@
 [ext_resource type="Texture2D" uid="uid://bdr12t5asg48b" path="res://Assets/Animation/Embers/fire_loop1.png" id="35_racqp"]
 [ext_resource type="Texture2D" uid="uid://nj7y4frmpv8u" path="res://Assets/Animation/Embers/fire_loop2.png" id="36_1lcvu"]
 [ext_resource type="Texture2D" uid="uid://drotiio0fs6fn" path="res://Assets/Animation/Embers/fire_loop3.png" id="37_gah1i"]
+[ext_resource type="Texture2D" uid="uid://brtyuhbctsdp5" path="res://Assets/HUD/Buttons/button_icon1.png" id="54_qpuy6"]
 [ext_resource type="Texture2D" uid="uid://k5wu1gilq65f" path="res://Assets/Animation/Bellows/bellows0.png" id="56_7eaft"]
 [ext_resource type="Texture2D" uid="uid://cr38l0ibtxqvp" path="res://Assets/Animation/Bellows/bellows1.png" id="57_4fook"]
 [ext_resource type="Texture2D" uid="uid://cqtt2cuhg7lfp" path="res://Assets/Animation/Bellows/bellows2.png" id="58_q2l7m"]
@@ -137,7 +138,10 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g2mcq"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
 "loop": false,
 "name": &"default",
 "speed": 5.0
@@ -374,6 +378,16 @@ position = Vector2(160, 74)
 sprite_frames = SubResource("SpriteFrames_g2mcq")
 autoplay = "default"
 
+[node name="BoardButton" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 207.0
+offset_top = 112.0
+offset_right = 317.0
+offset_bottom = 154.0
+texture_normal = ExtResource("14_xfd8c")
+texture_click_mask = ExtResource("15_1n0en")
+
 [node name="CaldronImg" type="TextureRect" parent="."]
 texture_filter = 1
 layout_mode = 0
@@ -390,15 +404,48 @@ sprite_frames = SubResource("SpriteFrames_ljrd2")
 autoplay = "default"
 frame_progress = 0.773564
 
-[node name="BoardButton" type="TextureButton" parent="."]
-texture_filter = 1
+[node name="MixButton" type="TextureRect" parent="CaldronImg"]
+visible = false
 layout_mode = 0
-offset_left = 207.0
-offset_top = 112.0
-offset_right = 317.0
-offset_bottom = 154.0
-texture_normal = ExtResource("14_xfd8c")
-texture_click_mask = ExtResource("15_1n0en")
+offset_top = 76.0
+offset_right = 40.0
+offset_bottom = 100.0
+texture = ExtResource("54_qpuy6")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="CaldronImg/MixButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "MIX"
+flat = true
+
+[node name="DiscardButton" type="TextureRect" parent="CaldronImg"]
+visible = false
+layout_mode = 0
+offset_left = 48.0
+offset_top = 76.0
+offset_right = 102.0
+offset_bottom = 100.0
+texture = ExtResource("54_qpuy6")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="CaldronImg/DiscardButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "CLEAR"
+flat = true
 
 [node name="MortarButton" type="TextureButton" parent="."]
 texture_filter = 1
@@ -537,7 +584,7 @@ visible = false
 layout_mode = 1
 
 [node name="BoilTimer" type="Timer" parent="."]
-wait_time = 11.0
+wait_time = 10.0
 one_shot = true
 
 [node name="HourglassTimer" type="Timer" parent="."]
@@ -579,6 +626,8 @@ bank_paths = ["res://Assets/Audio/fmodbanks/Desktop/Master.strings.bank", "res:/
 [connection signal="pressed" from="Hourglass/TurnHourglass" to="." method="_on_turn_hourglass_pressed"]
 [connection signal="pressed" from="BookButton" to="." method="_on_book_button_pressed"]
 [connection signal="pressed" from="BoardButton" to="." method="_on_board_clicked"]
+[connection signal="pressed" from="CaldronImg/MixButton/Button" to="." method="mix"]
+[connection signal="pressed" from="CaldronImg/DiscardButton/Button" to="." method="discart_all"]
 [connection signal="pressed" from="MortarButton" to="." method="_on_mortar_clicked"]
 [connection signal="dropped" from="CaldronSlot" to="." method="_on_caldron_slot_dropped"]
 [connection signal="mouse_entered" from="CaldronSlot" to="." method="show_help" binds= ["caldron"]]

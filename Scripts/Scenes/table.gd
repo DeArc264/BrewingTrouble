@@ -14,14 +14,14 @@ signal move_to_door
 
 @export var craftables : Array[Item] # Array of possible crafts
 
-var in_caldron = [null] # Current in the mixture(112-192)
+var in_caldron = [] # Current in the mixture(112-192)
 var boiling = false # Boiling(42-69) state
 var holder
 
 var ing_conditions = {
 	"potion_1" : {
-		"plant_0" : [],
-		"plant_3" : ["cut"]
+		"ore_0" : [],
+		"plant_0" : ["cut"]
 	},
 	"potion_2" : {
 		"plant_2" : ["crushed"],
@@ -45,6 +45,7 @@ func _process(_delta: float) -> void:
 	else:
 		$ING1BoilTimer.paused = true
 		$ING2BoilTimer.paused = true
+		$Bubbling.stop()
 
 # Boiling control
 #region Boil
@@ -57,7 +58,7 @@ func _on_bellows_pressed() -> void:
 
 	await embers.animation_finished
 
-	if in_caldron[0] != null and in_caldron[0].type == "Base":
+	if !in_caldron.is_empty() and in_caldron[0] != null and in_caldron[0].type == "Base":
 		embers.play("loop")
 		if boiling:
 			$BoilTimer.start(11)
@@ -81,8 +82,11 @@ func _on_bellows_pressed() -> void:
 func _on_boil_timer_timeout() -> void:
 	boiling = false
 	$DryNet.can_dry = false
-	$ING1BoilTimer.paused = true
-	$ING2BoilTimer.paused = true
+
+	$CaldronImg/Embers.play("dying")
+	await $CaldronImg/Embers.animation_finished
+	$Smoke.play("default")
+	$CaldronImg/Embers.play("default")
 
 # Boil control for ingredient at position 1 in "in_caldron" array.
 func ing_1_boil_round():
@@ -131,28 +135,39 @@ func update_item(new : Item):
 func _on_caldron_slot_dropped() -> void:
 	if caldron_slot.item.get_script().get_global_name() != "Ingredient": return
 
-	if caldron_slot.item.type == "Tool":
-		pass
-	else:
+	if !in_caldron.is_empty():
 		if caldron_slot.item.type == "Base":
-			in_caldron[0] = caldron_slot.item
-			$Liquid.play()
+			if in_caldron[0].type == "Base":
+				in_caldron[0] = caldron_slot.item
+			else:
+				in_caldron.push_front(caldron_slot.item)
 		else:
 			in_caldron.append(caldron_slot.item)
-			$Ingredient.play()
+	else:
+		in_caldron.append(caldron_slot.item)
 
-		if in_caldron.size() == 2 and in_caldron[1] != null:
-			$ING1BoilTimer.start()
-		if in_caldron.size() == 3 and in_caldron[2] != null:
-			$ING2BoilTimer.start()
+	if in_caldron.size() == 2 and in_caldron[1] != null:
+		$ING1BoilTimer.start()
+	if in_caldron.size() == 3 and in_caldron[2] != null:
+		$ING2BoilTimer.start()
 
-		caldron_slot.empty()
+	caldron_slot.empty()
 
-		if in_caldron.size() >= 3:
-			mix()
+	if in_caldron.size() == 1:
+		$CaldronImg/DiscardButton.show()
+
+	if in_caldron.size() >= 3:
+		$CaldronImg/MixButton.show()
+
+
+func discart_all():
+	in_caldron.clear()
 
 
 func mix() -> void:
+	$CaldronImg/MixButton.hide()
+	$CaldronImg/DiscardButton.hide()
+
 	if in_caldron.size() >= 3 and in_caldron[0] != null:
 		$ING1BoilTimer.stop()
 		$ING2BoilTimer.stop()
@@ -216,9 +231,9 @@ func _on_caldron_mixed(potion_id : String) -> void:
 	await $FlaskSlot.dropped
 	potion.fill_potion(in_caldron.back().id)
 	new_item.emit(potion)
+	$FlaskSlot.empty()
 
 	in_caldron.clear()
-	in_caldron = [null]
 	$CaldronSlot.show()
 	$FlaskSlot.hide()
 #endregion

@@ -97,9 +97,12 @@ expand_mode = 1
 
 [node name="DeliveryBox" type="HBoxContainer" parent="DeliveryBoxBG"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 14
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.5
+offset_top = -10.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -114,6 +117,20 @@ layout_mode = 2
 [node name="Slot3" parent="DeliveryBoxBG/DeliveryBox" instance=ExtResource("2_7tixl")]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+
+[node name="DiscardSlot" parent="." instance=ExtResource("2_7tixl")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = -34.0
+offset_right = 37.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -183,6 +200,7 @@ offset_top = -25.0
 offset_bottom = 27.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 texture = ExtResource("9_4uw27")
 
 [node name="ClientLabel" type="Label" parent="SpeachTexture"]
@@ -225,6 +243,7 @@ bank_paths = ["res://Assets/Audio/fmodbanks/Desktop/Master.bank", "res://Assets/
 [connection signal="gui_input" from="Door_Window" to="." method="_door_window_slide"]
 [connection signal="pressed" from="OpenTexture/OpenStore" to="." method="_on_open_store_pressed"]
 [connection signal="pressed" from="DeliveryButton" to="." method="_on_delivery_button_pressed"]
+[connection signal="dropped" from="DiscardSlot" to="." method="_on_discard_slot_dropped"]
 [connection signal="pressed" from="TextureRect/MoveRight_Door" to="." method="_on_move_right_door_pressed"]
 [connection signal="pressed" from="TextureRect2/MoveLeft_Door" to="." method="_on_move_left_door_pressed"]
 [connection signal="timeout" from="NewClientTimer" to="." method="_on_new_client_timer_timeout"]

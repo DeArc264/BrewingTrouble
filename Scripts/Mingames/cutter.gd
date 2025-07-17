@@ -40,6 +40,10 @@ func _cut(area: Area2D) -> void:
 
 #["uncut", "thick slice", "medium slice", "thin slice"]
 func _on_end_button_pressed() -> void:
+	if $Slot.item == null:
+		hide()
+		return
+
 	if dirty:
 		current_ing.conditions.append("useless")
 		end_minigame()

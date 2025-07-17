@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://clb5bygcnejvp"]
+[gd_scene load_steps=61 format=3 uid="uid://clb5bygcnejvp"]
 
 [ext_resource type="Script" path="res://Scripts/Mingames/caldron.gd" id="1_d12dr"]
 [ext_resource type="Texture2D" uid="uid://c6ly734dfj6pr" path="res://Assets/Minigames/table.png" id="2_eua51"]
@@ -55,10 +55,14 @@
 [ext_resource type="Texture2D" uid="uid://lvidb0npxsp8" path="res://Assets/Minigames/Caldron/animation/bubble/wine/wine_bubble7.png" id="45_ajdmu"]
 [ext_resource type="Texture2D" uid="uid://dswycsh205mjj" path="res://Assets/Minigames/Caldron/spoon.png" id="54_ka451"]
 [ext_resource type="Script" path="res://Scripts/Mingames/spoon.gd" id="55_1480i"]
+[ext_resource type="Texture2D" uid="uid://cskhejvlykdot" path="res://Assets/HUD/Buttons/button_icon2.png" id="56_2unu2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pud3u"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
 "loop": false,
 "name": &"default",
 "speed": 0.0
@@ -304,7 +308,6 @@ texture = ExtResource("3_84wje")
 [node name="Liquid" type="AnimatedSprite2D" parent="."]
 position = Vector2(160, 90)
 sprite_frames = SubResource("SpriteFrames_pud3u")
-animation = &"wine_still"
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(160, 90)
@@ -353,23 +356,29 @@ position = Vector2(20.0919, 148.134)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spoon/SpoonArea"]
 shape = SubResource("CapsuleShape2D_dusxg")
 
-[node name="EndButton" type="Button" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0)
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -53.0
-offset_top = -56.0
-offset_right = 56.0
-offset_bottom = 53.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -34.0
+offset_right = 35.0
+grow_vertical = 0
+texture = ExtResource("56_2unu2")
+expand_mode = 1
+
+[node name="EndButton" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "X"
+flat = true
 
 [connection signal="animation_looped" from="Liquid" to="." method="_on_liquid_animation_looped"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="MixTimer" to="." method="_on_mix_timer_timeout"]
-[connection signal="pressed" from="EndButton" to="." method="_on_end_button_pressed"]
+[connection signal="pressed" from="TextureRect/EndButton" to="." method="_on_end_button_pressed"]

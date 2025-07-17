@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dus7ooufchbdn"]
+[gd_scene load_steps=34 format=3 uid="uid://dus7ooufchbdn"]
 
 [ext_resource type="Script" path="res://Scripts/Mingames/book.gd" id="1_32dp3"]
 [ext_resource type="Texture2D" uid="uid://c6ly734dfj6pr" path="res://Assets/Minigames/table.png" id="2_sv8u4"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bwep6p57uo2vi" path="res://Assets/Animation/Book/book_anim3.png" id="7_jo7wj"]
 [ext_resource type="Texture2D" uid="uid://cmn54cmvgdmp5" path="res://Assets/Table/drying_net_empty.png" id="8_1l1lx"]
 [ext_resource type="Texture2D" uid="uid://3blo1qaknaev" path="res://Assets/Animation/Book/book_anim4.png" id="8_mimmt"]
+[ext_resource type="Texture2D" uid="uid://diaqei2pvn862" path="res://Assets/Farm/pot_dry.png" id="9_4qkrn"]
 [ext_resource type="Texture2D" uid="uid://b8osgmm13c6ou" path="res://Assets/Icons/Potions/Flask_A/flask_a_heal.png" id="9_go053"]
 [ext_resource type="Texture2D" uid="uid://cku7hnkkp1xl0" path="res://Assets/Icons/Ingredients/Normal/Bases/icon_water.png" id="10_evorg"]
 [ext_resource type="Texture2D" uid="uid://cfwa6djqrkgxm" path="res://Assets/Icons/Ingredients/Normal/Plants/icon_belladona.png" id="11_rypsa"]
@@ -29,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://451uow4uk76k" path="res://Assets/Icons/Ingredients/Crushed/icon_crush_belladona.png" id="22_8r16s"]
 [ext_resource type="Texture2D" uid="uid://c6ee5vkchodfl" path="res://Assets/Icons/Potions/Flask_B/flask_b_strenght.png" id="23_dtgpr"]
 [ext_resource type="Texture2D" uid="uid://cu2amskq6vfvg" path="res://Assets/Icons/Ingredients/Normal/Bases/icon_wine.png" id="24_p20sw"]
+[ext_resource type="Texture2D" uid="uid://bvv2y4v337f2e" path="res://Assets/Icons/Ingredients/Dry/icon_dry_lavender.png" id="25_6tupo"]
 [ext_resource type="Texture2D" uid="uid://cskhejvlykdot" path="res://Assets/HUD/Buttons/button_icon2.png" id="30_eo3lq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j1hwp"]
@@ -92,7 +94,6 @@ texture = ExtResource("3_x6d5r")
 stretch_mode = 2
 
 [node name="Tools" type="Control" parent="." groups=["ToolsP1"]]
-visible = false
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 0
@@ -206,6 +207,27 @@ theme_override_font_sizes/font_size = 10
 text = "- Dries plant if cauldron
 is boiling
 (7 seconds to dry)"
+horizontal_alignment = 1
+
+[node name="Pot" type="TextureRect" parent="Tools"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 125.0
+offset_right = 193.0
+offset_bottom = 151.0
+texture = ExtResource("9_4qkrn")
+expand_mode = 1
+
+[node name="PotLabel" type="Label" parent="Tools/Pot"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 7.0
+offset_right = 106.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "- Discard useless
+items"
 horizontal_alignment = 1
 
 [node name="Healing" type="Control" parent="." groups=["RecipesP1"]]
@@ -400,6 +422,7 @@ texture = ExtResource("14_iim05")
 stretch_mode = 2
 
 [node name="Stamina" type="Control" parent="." groups=["RecipesP1"]]
+visible = false
 anchors_preset = 0
 offset_left = 152.0
 offset_right = 152.0
@@ -591,7 +614,7 @@ offset_left = 17.0
 offset_top = 123.0
 offset_right = 37.0
 offset_bottom = 143.0
-texture = ExtResource("22_8r16s")
+texture = ExtResource("21_hbmls")
 stretch_mode = 2
 
 [node name="Ingredient6" type="TextureRect" parent="Stamina"]
@@ -635,6 +658,7 @@ texture = ExtResource("13_jfxn6")
 expand_mode = 1
 
 [node name="Strenght" type="Control" parent="." groups=["RecipesP2"]]
+visible = false
 anchors_preset = 0
 
 [node name="PotionName" type="Label" parent="Strenght"]
@@ -814,7 +838,7 @@ offset_left = 115.0
 offset_top = 96.0
 offset_right = 135.0
 offset_bottom = 116.0
-texture = ExtResource("20_qm400")
+texture = ExtResource("25_6tupo")
 stretch_mode = 2
 
 [node name="Ingredient5" type="TextureRect" parent="Strenght"]
@@ -834,7 +858,7 @@ offset_left = 31.0
 offset_top = 145.0
 offset_right = 51.0
 offset_bottom = 165.0
-texture = ExtResource("20_qm400")
+texture = ExtResource("25_6tupo")
 stretch_mode = 2
 
 [node name="Flask2" type="TextureRect" parent="Strenght"]
