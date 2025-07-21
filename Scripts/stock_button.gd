@@ -3,6 +3,7 @@ extends TextureButton
 @export var normal_icon : Texture2D
 @export var half_icon : Texture2D
 @export var empty_icon : Texture2D
+@export var pick_up_icon : TextureRect
 
 var quantity
 
@@ -28,3 +29,11 @@ func change_texture():
 		mouse_default_cursor_shape = CURSOR_FORBIDDEN
 	else:
 		mouse_default_cursor_shape = CURSOR_POINTING_HAND
+
+
+func _on_mouse_entered() -> void:
+	pick_up_icon.show()
+
+
+func _on_mouse_exited() -> void:
+		pick_up_icon.hide()

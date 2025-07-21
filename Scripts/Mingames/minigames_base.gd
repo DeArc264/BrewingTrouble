@@ -36,6 +36,7 @@ func start_minigame():
 	if slot.item is Ingredient:
 		current_ing = slot.item
 		element.get_parent().texture = start_dict[current_ing.id]
+		element.get_parent().show()
 		element.monitoring = true
 
 	elif slot.item.id == "tool_0":
@@ -64,8 +65,6 @@ func change_icon(arr : Array):
 		element.get_parent().texture = arr[next_index]
 	else:
 		element.get_parent().texture = arr[0]
-
-	element.get_parent().show()
 
 
 func end_minigame():

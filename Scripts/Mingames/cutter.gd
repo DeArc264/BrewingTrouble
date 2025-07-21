@@ -62,11 +62,13 @@ func _on_end_button_pressed() -> void:
 			_:
 				current_ing.conditions.append("useless")
 
-		reset()
+	if level > 0:
 		current_ing.icon = current_ing.cut_icon
-		end_minigame()
+	reset()
+	end_minigame()
 
 
 func reset():
+	level = 0
 	$Slot.empty()
 	$Knife.position = Vector2(130, 10)
