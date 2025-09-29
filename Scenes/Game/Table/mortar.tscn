@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://b0qhamgydfxej" path="res://Assets/Minigames/Mortar/bowl.png" id="2_bnppa"]
 [ext_resource type="Texture2D" uid="uid://8ead11gq853g" path="res://Assets/Clean/dirty_bowl.png" id="3_4r6q7"]
 [ext_resource type="Texture2D" uid="uid://dx2e1ty3gbiu2" path="res://Assets/Minigames/Mortar/pebble.png" id="3_o0n0t"]
-[ext_resource type="Script" uid="uid://cqwqyhr58hpia" path="res://Scripts/Mingames/pebble.gd" id="3_xh525"]
 [ext_resource type="Texture2D" uid="uid://x3rrrreawq8x" path="res://Assets/Animation/Patricles/particles0.png" id="4_lsfcy"]
 [ext_resource type="Texture2D" uid="uid://cqo1cqe2hmbf1" path="res://Assets/Animation/Patricles/particles1.png" id="5_knkkl"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="6_joicf"]
@@ -14,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://chqy3aabwwgfl" path="res://Assets/Animation/Patricles/particles5.png" id="9_o5nwi"]
 [ext_resource type="Texture2D" uid="uid://bxedl6ms2umnq" path="res://Assets/Animation/Patricles/particles6.png" id="10_aj656"]
 [ext_resource type="Texture2D" uid="uid://dopf2nptmarmn" path="res://Assets/Animation/Patricles/particles7.png" id="11_idki4"]
+[ext_resource type="Script" uid="uid://py7nfluafi8t" path="res://Scripts/Mingames/click_and_drag.gd" id="13_dnrsv"]
 [ext_resource type="Texture2D" uid="uid://cskhejvlykdot" path="res://Assets/HUD/Buttons/button_icon2.png" id="15_ox7fk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m8mwc"]
@@ -149,7 +149,10 @@ grow_horizontal = 0
 rotation = 0.785398
 texture = ExtResource("3_o0n0t")
 stretch_mode = 2
-script = ExtResource("3_xh525")
+script = ExtResource("13_dnrsv")
+min_limit = Vector2(200, 10)
+max_limit = Vector2(310, 60)
+offset = Vector2(0, 20)
 
 [node name="PebbleArea" type="Area2D" parent="Pebble"]
 position = Vector2(11, 80)

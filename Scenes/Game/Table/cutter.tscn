@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://b4qdut1p0m3d7" path="res://Assets/Minigames/Cut/board.png" id="3_sulvu"]
 [ext_resource type="Texture2D" uid="uid://ctrqfhu27tuop" path="res://Assets/Clean/dirty_board.png" id="4_3um1l"]
 [ext_resource type="Texture2D" uid="uid://bx2lwni41htfm" path="res://Assets/Minigames/Cut/knife.png" id="4_khgx1"]
-[ext_resource type="Script" uid="uid://b5hu2utbwkgfe" path="res://Scripts/Mingames/knife.gd" id="5_e213k"]
 [ext_resource type="Texture2D" uid="uid://x3rrrreawq8x" path="res://Assets/Animation/Patricles/particles0.png" id="5_m1pah"]
 [ext_resource type="Texture2D" uid="uid://cqo1cqe2hmbf1" path="res://Assets/Animation/Patricles/particles1.png" id="6_e1hhs"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="6_k4qiw"]
@@ -15,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://chqy3aabwwgfl" path="res://Assets/Animation/Patricles/particles5.png" id="10_qbx87"]
 [ext_resource type="Texture2D" uid="uid://bxedl6ms2umnq" path="res://Assets/Animation/Patricles/particles6.png" id="11_djjsb"]
 [ext_resource type="Texture2D" uid="uid://dopf2nptmarmn" path="res://Assets/Animation/Patricles/particles7.png" id="12_8u35t"]
+[ext_resource type="Script" uid="uid://py7nfluafi8t" path="res://Scripts/Mingames/click_and_drag.gd" id="14_4mx6g"]
 [ext_resource type="Texture2D" uid="uid://cskhejvlykdot" path="res://Assets/HUD/Buttons/button_icon2.png" id="16_gc74m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffpoi"]
@@ -166,7 +166,10 @@ offset_bottom = 43.0
 grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("4_khgx1")
-script = ExtResource("5_e213k")
+script = ExtResource("14_4mx6g")
+min_limit = Vector2(25, 5)
+max_limit = Vector2(295, 175)
+offset = Vector2(145, 100)
 
 [node name="KnifeArea" type="Area2D" parent="Knife"]
 position = Vector2(52, 38.5)
