@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://bei8jcyh0y02c"]
 
-[ext_resource type="Script" path="res://Scenes/Game/bedroom.gd" id="1_gsb7s"]
+[ext_resource type="Script" uid="uid://cx6j7oxsycy0s" path="res://Scripts/Scenes/bedroom.gd" id="1_gsb7s"]
 [ext_resource type="Texture2D" uid="uid://ckpvpi8tb2gi0" path="res://Assets/HUD/bedroom.png" id="1_qpggd"]
 [ext_resource type="Texture2D" uid="uid://cefo631onnsrr" path="res://Assets/Animation/Bedroom/bedroom_candle0.png" id="2_cu3vb"]
 [ext_resource type="Texture2D" uid="uid://b64tt31ovlld3" path="res://Assets/Animation/Bedroom/bedroom_candle1.png" id="3_rqwfv"]

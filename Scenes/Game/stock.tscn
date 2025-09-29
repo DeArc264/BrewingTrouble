@@ -1,11 +1,11 @@
 [gd_scene load_steps=57 format=3 uid="uid://c1p1lg8vh5nr8"]
 
-[ext_resource type="Script" path="res://Scripts/Scenes/stock.gd" id="1_p2uxu"]
+[ext_resource type="Script" uid="uid://bgwmi4a0jl122" path="res://Scripts/Scenes/stock.gd" id="1_p2uxu"]
 [ext_resource type="Texture2D" uid="uid://c8oe86ik5v73f" path="res://Assets/Stock/stock_bg.png" id="2_d4nrd"]
 [ext_resource type="Texture2D" uid="uid://dxlgw7fc35xto" path="res://Assets/Stock/water_full.png" id="3_3286q"]
 [ext_resource type="BitMap" uid="uid://r8mpuv68l6yo" path="res://Assets/Bitmaps/stock_water.png" id="4_8xq2y"]
 [ext_resource type="Texture2D" uid="uid://dhyctbths2vkb" path="res://Assets/Stock/milk_full.png" id="5_6fia7"]
-[ext_resource type="Script" path="res://Scripts/stock_button.gd" id="5_1042u"]
+[ext_resource type="Script" uid="uid://bxlpcjoeai0ww" path="res://Scripts/stock_button.gd" id="5_1042u"]
 [ext_resource type="Texture2D" uid="uid://510lnj5rwwj6" path="res://Assets/Stock/water_half.png" id="6_2d53h"]
 [ext_resource type="BitMap" uid="uid://dmdutbsip7ibu" path="res://Assets/Bitmaps/stock_milk.bmp" id="6_vnnfn"]
 [ext_resource type="Texture2D" uid="uid://be8jcpkxqq3ht" path="res://Assets/Stock/hanger.png" id="7_et1kc"]
