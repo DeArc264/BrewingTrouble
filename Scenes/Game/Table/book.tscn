@@ -1,6 +1,6 @@
 [gd_scene load_steps=34 format=3 uid="uid://dus7ooufchbdn"]
 
-[ext_resource type="Script" path="res://Scripts/Mingames/book.gd" id="1_32dp3"]
+[ext_resource type="Script" uid="uid://dowx3n82wacci" path="res://Scripts/Mingames/book.gd" id="1_32dp3"]
 [ext_resource type="Texture2D" uid="uid://c6ly734dfj6pr" path="res://Assets/Minigames/table.png" id="2_sv8u4"]
 [ext_resource type="Texture2D" uid="uid://fopc8lfhaqlx" path="res://Assets/Book/Book.png" id="3_x6d5r"]
 [ext_resource type="Texture2D" uid="uid://bsrk1x1uxpv2v" path="res://Assets/Table/mortar.png" id="4_fl336"]
@@ -978,13 +978,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "<"
 flat = true
-
-[node name="PageSound" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/interactive sounds/book-scroll"
-event_guid = "{2ac57178-a090-4e47-991e-b10da3c9e409}"
-
-[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-bank_paths = ["res://Assets/Audio/fmodbanks/Desktop/Master.strings.bank", "res://Assets/Audio/fmodbanks/Desktop/Master.bank"]
 
 [connection signal="pressed" from="ReturnTexture/ReturnButton" to="." method="_on_return_button_pressed"]
 [connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

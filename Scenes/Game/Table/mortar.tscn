@@ -1,10 +1,10 @@
 [gd_scene load_steps=20 format=3 uid="uid://cun7jmlf65cbq"]
 
-[ext_resource type="Script" path="res://Scripts/Mingames/crusher.gd" id="1_kqu4g"]
+[ext_resource type="Script" uid="uid://bcv0voqr37nuo" path="res://Scripts/Mingames/crusher.gd" id="1_kqu4g"]
 [ext_resource type="Texture2D" uid="uid://b0qhamgydfxej" path="res://Assets/Minigames/Mortar/bowl.png" id="2_bnppa"]
 [ext_resource type="Texture2D" uid="uid://8ead11gq853g" path="res://Assets/Clean/dirty_bowl.png" id="3_4r6q7"]
 [ext_resource type="Texture2D" uid="uid://dx2e1ty3gbiu2" path="res://Assets/Minigames/Mortar/pebble.png" id="3_o0n0t"]
-[ext_resource type="Script" path="res://Scripts/Mingames/pebble.gd" id="3_xh525"]
+[ext_resource type="Script" uid="uid://cqwqyhr58hpia" path="res://Scripts/Mingames/pebble.gd" id="3_xh525"]
 [ext_resource type="Texture2D" uid="uid://x3rrrreawq8x" path="res://Assets/Animation/Patricles/particles0.png" id="4_lsfcy"]
 [ext_resource type="Texture2D" uid="uid://cqo1cqe2hmbf1" path="res://Assets/Animation/Patricles/particles1.png" id="5_knkkl"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="6_joicf"]
@@ -205,13 +205,6 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "X"
 flat = true
-
-[node name="Crush" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/games/almofariz(crunch)"
-event_guid = "{3a40c933-bb6b-4965-901a-bd47f67f2a65}"
-
-[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-bank_paths = ["res://Assets/Audio/fmodbanks/Desktop/Master.strings.bank", "res://Assets/Audio/fmodbanks/Desktop/Master.bank"]
 
 [connection signal="mouse_entered" from="Herb" to="." method="_on_herb_mouse_entered"]
 [connection signal="area_entered" from="Herb/HerbArea" to="." method="_on_bowl_crushing"]

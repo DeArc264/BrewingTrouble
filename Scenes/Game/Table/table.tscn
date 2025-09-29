@@ -1,8 +1,8 @@
 [gd_scene load_steps=71 format=3 uid="uid://gdr3cf0jg005"]
 
-[ext_resource type="Script" path="res://Scripts/Scenes/table.gd" id="1_rxm4g"]
+[ext_resource type="Script" uid="uid://b2r33m8d6aixr" path="res://Scripts/Scenes/table.gd" id="1_rxm4g"]
 [ext_resource type="PackedScene" uid="uid://2w6y6v1ibjxi" path="res://Scenes/Tests/Slot/slot.tscn" id="2_gvcte"]
-[ext_resource type="Script" path="res://Scripts/Items/item.gd" id="2_wejl3"]
+[ext_resource type="Script" uid="uid://c5o4gqhej44ky" path="res://Scripts/Items/item.gd" id="2_wejl3"]
 [ext_resource type="Resource" uid="uid://d2qnj6b3mkl0d" path="res://Resources/Potions/PotionStrenght.tres" id="3_bmf7n"]
 [ext_resource type="Resource" uid="uid://b8dibpsfka1x8" path="res://Resources/Potions/PotionStamina.tres" id="4_emhfe"]
 [ext_resource type="Resource" uid="uid://dyljjx5q3ilc1" path="res://Resources/Potions/PotionHealing.tres" id="5_18i7f"]
@@ -459,7 +459,7 @@ texture_click_mask = ExtResource("17_41n66")
 
 [node name="CaldronSlot" parent="." instance=ExtResource("2_gvcte")]
 modulate = Color(1, 1, 1, 0)
-layout_mode = 2
+layout_mode = 0
 offset_left = 141.0
 offset_top = 85.0
 offset_right = 194.0
@@ -468,7 +468,7 @@ offset_bottom = 100.0
 [node name="FlaskSlot" parent="." instance=ExtResource("2_gvcte")]
 visible = false
 modulate = Color(1, 1, 1, 0)
-layout_mode = 2
+layout_mode = 0
 offset_left = 141.0
 offset_top = 85.0
 offset_right = 194.0
@@ -600,25 +600,6 @@ wait_time = 10.0
 [node name="DistilTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
-
-[node name="Fire" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/amb/fireplace"
-event_guid = "{408b6bb6-ef8b-4de5-9491-f545841b8418}"
-
-[node name="Bubbling" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/games/bubbling_cauldron"
-event_guid = "{a0f38773-673d-4cd3-ae12-228b7501cc84}"
-
-[node name="Liquid" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/games/liquid_pour"
-event_guid = "{28c7ab85-f47b-4e0a-acad-1cb14a3a9f11}"
-
-[node name="Ingredient" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/games/drop_item"
-event_guid = "{dddce930-8343-453f-b10d-216106c4eba9}"
-
-[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-bank_paths = ["res://Assets/Audio/fmodbanks/Desktop/Master.strings.bank", "res://Assets/Audio/fmodbanks/Desktop/Master.bank"]
 
 [connection signal="new_ing" from="DryNet" to="." method="update_item"]
 [connection signal="mouse_entered" from="Hourglass/TurnHourglass" to="." method="show_help" binds= ["hour"]]
