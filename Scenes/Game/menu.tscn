@@ -1,11 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://c6m5pqu6bc23i"]
 
 [ext_resource type="Texture2D" uid="uid://frac08byunq2" path="res://Assets/Table/table_bg.png" id="1_xyeun"]
-[ext_resource type="Script" path="res://Scripts/Scenes/menu.gd" id="2_mjqjh"]
+[ext_resource type="Script" uid="uid://bj654sxiridgl" path="res://Scripts/Scenes/menu.gd" id="2_mjqjh"]
 [ext_resource type="Texture2D" uid="uid://r5ds0m4yvycc" path="res://Assets/HUD/game_logo.png" id="3_6hj1r"]
 [ext_resource type="Texture2D" uid="uid://brtyuhbctsdp5" path="res://Assets/HUD/Buttons/button_icon1.png" id="3_7dcr3"]
 
 [node name="Menu" type="TextureRect"]
+texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
