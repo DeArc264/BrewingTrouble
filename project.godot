@@ -36,7 +36,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Itens="*res://Scripts/game_manager.gd"
-FmodManager="*res://addons/fmod/FmodManager.gd"
 
 [display]
 
