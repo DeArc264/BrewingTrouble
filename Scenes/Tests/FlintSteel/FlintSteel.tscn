@@ -1,0 +1,148 @@
+[gd_scene load_steps=19 format=3 uid="uid://lfkkrnwgai1x"]
+
+[ext_resource type="Script" uid="uid://bvrfij116imk8" path="res://Scripts/Mingames/flint_steel.gd" id="1_17555"]
+[ext_resource type="Texture2D" uid="uid://c6ly734dfj6pr" path="res://Assets/Minigames/table.png" id="1_djpsa"]
+[ext_resource type="Texture2D" uid="uid://bfnwv2jgij7jy" path="res://Assets/Minigames/FlintSteel/flint.png" id="2_28suu"]
+[ext_resource type="Texture2D" uid="uid://d22vywhl5m1hy" path="res://Assets/Minigames/FlintSteel/steel.png" id="3_hyr0n"]
+[ext_resource type="Script" uid="uid://py7nfluafi8t" path="res://Scripts/Mingames/click_and_drag.gd" id="4_cysuu"]
+[ext_resource type="Texture2D" uid="uid://o73q7ii7hlee" path="res://Assets/Animation/Sparks/Common/CSpark0.png" id="6_a6ru3"]
+[ext_resource type="Texture2D" uid="uid://crxvbenckj1pc" path="res://Assets/Animation/Sparks/Common/CSpark1.png" id="7_4iyoe"]
+[ext_resource type="Texture2D" uid="uid://beiepf86xld42" path="res://Assets/Animation/Sparks/Common/CSpark2.png" id="8_72al8"]
+[ext_resource type="Texture2D" uid="uid://dk1ojfqu1n30e" path="res://Assets/Animation/Sparks/Common/CSpark3.png" id="9_biav4"]
+[ext_resource type="Texture2D" uid="uid://c52uqu22o1q2q" path="res://Assets/Animation/Sparks/Common/CSpark4.png" id="10_1nb4m"]
+[ext_resource type="Texture2D" uid="uid://t2v1h4pqmby8" path="res://Assets/Animation/Sparks/Success/SSpark0.png" id="11_8u052"]
+[ext_resource type="Texture2D" uid="uid://cbsr8ivyy66fj" path="res://Assets/Animation/Sparks/Success/SSpark1.png" id="12_8r7x5"]
+[ext_resource type="Texture2D" uid="uid://be2nv2joqxdwf" path="res://Assets/Animation/Sparks/Success/SSpark2.png" id="13_2b123"]
+[ext_resource type="Texture2D" uid="uid://1ynup1scayq5" path="res://Assets/Animation/Sparks/Success/SSpark3.png" id="14_foken"]
+[ext_resource type="Texture2D" uid="uid://c7e1tp7xe5fjo" path="res://Assets/Animation/Sparks/Success/SSpark4.png" id="15_a4qsu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ldoi"]
+radius = 24.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mdaj"]
+size = Vector2(12, 51.34931)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fr0cg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_a6ru3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4iyoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_72al8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_biav4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1nb4m")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"common",
+"speed": 20.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_8u052")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8r7x5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2b123")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_foken")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_a4qsu")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"success",
+"speed": 20.0
+}]
+
+[node name="FlintSteel" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_17555")
+
+[node name="Table" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("1_djpsa")
+
+[node name="Flint" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_28suu")
+expand_mode = 1
+
+[node name="FlintArea2D" type="Area2D" parent="Flint"]
+position = Vector2(25, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flint/FlintArea2D"]
+shape = SubResource("CircleShape2D_0ldoi")
+
+[node name="Steel" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = -25.0
+offset_right = -31.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_hyr0n")
+expand_mode = 1
+script = ExtResource("4_cysuu")
+max_limit = Vector2(170, 180)
+offset = Vector2(28, 25)
+
+[node name="SteelArea2D" type="Area2D" parent="Steel"]
+position = Vector2(33, 26)
+rotation = 0.43633232
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Steel/SteelArea2D"]
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_4mdaj")
+
+[node name="SparkAnimations" type="AnimatedSprite2D" parent="."]
+position = Vector2(160, 89)
+sprite_frames = SubResource("SpriteFrames_fr0cg")
+
+[connection signal="area_entered" from="Flint/FlintArea2D" to="." method="hit"]
